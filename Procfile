@@ -1,1 +1,1 @@
-web: python manage.py runserver 192.168.1.2:80
+web: python manage.py runserver 192.168.1.2:fe80::1%14
