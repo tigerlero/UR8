@@ -11,21 +11,21 @@ from math import floor, ceil, modf
 import json
 import time
 
-def thumb(id):
-    video = Video.objects.get(id=id)
-    print(video)
-    v = ""
-
-    clip = VideoFileClip(video)
-    clip.save_frame("thumbnail.jpg", t=0.00)
-    return clip
-
-
-def generate_thumbnails(tmp_directory):
-    clip = VideoFileClip(os.path.join(tmp_directory, "video.mp4"))
-    for i in range(3):
-        thumbnail = os.path.join(tmp_directory, "thumbnail_%s.png" % i)
-        clip.save_frame(thumbnail, t=random.uniform(0.1, clip.duration))
+# def thumb(id):
+#     video = Video.objects.get(id=id)
+#     print(video)
+#     v = ""
+#
+#     clip = VideoFileClip(video)
+#     clip.save_frame("thumbnail.jpg", t=0.00)
+#     return clip
+#
+#
+# def generate_thumbnails(tmp_directory):
+#     clip = VideoFileClip(os.path.join(tmp_directory, "video.mp4"))
+#     for i in range(3):
+#         thumbnail = os.path.join(tmp_directory, "thumbnail_%s.png" % i)
+#         clip.save_frame(thumbnail, t=random.uniform(0.1, clip.duration))
 
 # Create your views here.
 # Login is required to view this page..
@@ -510,13 +510,13 @@ def upld_vid(request):
             tg = form.cleaned_data['tags']
             new_video = user.video_set.create(video=v, title=t, description=d, thumpnail=tn, tags=tg)
             new_video.save()
-            videos = Video.objects.all()
-            for video in videos:
-                if video.thumpnail == "thumpnail/None/default_thump.png":
-                    im = thumb(video.id)
-                    print(im)
-                    video.thumpnail = im
-                    video.save()
+            # videos = Video.objects.all()
+            # for video in videos:
+            #     if video.thumpnail == "thumpnail/None/default_thump.png":
+            #         im = thumb(video.id)
+            #         print(im)
+            #         video.thumpnail = im
+            #         video.save()
 
             for u in users:
                 if u != user and (user.username in u.profile.subscribes):
@@ -524,7 +524,7 @@ def upld_vid(request):
                     u.notifications = u.notifications + " " + t
                     u.count += 1
                     u.save()
-            return render(request, 'profile.html', {"users": users, "im": im})
+            return render(request, 'profile.html', {"users": users})
         else:
             return render(request, 'upld_vid.html', {'form': form})
     else:
