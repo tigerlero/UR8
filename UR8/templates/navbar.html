@@ -1,0 +1,18 @@
+<form class="navbar-form navbar-left" action="{% url 'search_vid' %}" method="post">
+  {% csrf_token %}
+  <div class="form-group">
+    <input type="text" class="form-control" style="border-radius:0px;" placeholder="search..." name="search">
+  </div>
+  <button type="submit" class="btn btn-primary search-btn" style="border-radius:0px;
+                                                                  background-color:#808080;
+                                                                  border-color:#808080;
+                                                                  "><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+</form>
+<!--
+          :focus{background-color: #262626;border-color: ##262626;}
+          .active {background-color: #262626;border-color: ##262626;}
+          .dropdown-toggle {background-color: #262626;border-color: ##262626;}
+          .open {background-color: #262626;border-color: ##262626;}
+          :hover {background-color: #262626;border-color: ##262626;}
+          :active {background-color: #262626;border-color: ##262626;}
+ -->

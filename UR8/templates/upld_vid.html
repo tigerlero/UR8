@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+{% block title %}Upload Video Page{% endblock %}
+{% block css_files %}
+  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static 'css_files/styles.css' %}">
+  <style>
+    .notimage {
+   position: relative;
+}
+
+.note {
+    position: absolute;
+    top: 24px;
+    text-align: center;
+    color: black;
+    width: 28px;
+}
+    .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+        background-color: #595959 !important;
+        border-color: #595959 !important;
+    }
+    h1{
+      padding-top: 30px;
+    }
+    hr{
+      border-color: #ccebff;
+    }
+
+  </style>
+{% endblock %}
+{% block body %}
+
+  <nav class="navbar navbar-default" style="border-radius:0px; border:0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <span><a class="navbar-brand" href="{% url 'home' %}">
+              <img src="{% static 'UR8.png' %}" width="45" height="30"></a></span>
+          <form style="padding-top: 7px;" class="navbar-form navbar-left" action="{% url 'search_vid' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="text" size="17" class="form-control" style="border-radius:0px;" placeholder="Search..." name="search">
+                <button type="submit" style="border-radius:0px;
+                                         background-color:#888888;
+                                         border-color:#808080;
+                                         " class="btn btn-primary search-btn"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            </div>
+          </form>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul style="float: right;" class="nav navbar-nav">
+        <li class="navbar-text">{% if request.user.is_authenticated %}
+              {% if request.user.profile.image == 'avatar/None/default_avatar.png' %}
+                <span><a href="{% url 'profile' %}">
+                    <img class="sm-avatar" src="{% static request.user.profile.image %}" width="30" height="30">
+                    </a></span>
+              {% else %}
+                <span><a href="{% url 'profile' %}">
+                    <img class="sm-avatar" src="{{ request.user.profile.image.url }}" width="30" height="30">
+                   </a></span>
+              {% endif %}{% else %}
+                <img src="{% static "v.png" %}" width="30" height="30">
+            {% endif %}</li>
+        <li><a href="{% url 'channels' %}"><img src="{% static "tv.png" %}" width="30" height="30"></a></li>
+          {% if not request.user.is_authenticated %}
+            <li><a href="{% url 'sign_in' %}"><img src="{% static "login.png" %}" width="30" height="30"></a></li>
+            <li><a href="{% url 'sign_up' %}"><img src="{% static "sign.png" %}" width="30" height="30"></a></li>
+          {% endif %}
+
+          {% if request.user.is_authenticated %}
+              <li><a href="{% url 'upld_vid' %}" ><img  src="{% static "up.png" %}" style="margin-top: 5px;" width="30" height="30"></a></li>
+            <li><a href="{% url 'view_vid' %}"><img src="{% static "my.png" %}" style="margin-top: 5px;" width="30" height="28"></a></li>
+              <li><a href="{% url 'subscribes' %}"><img src="{% static "sub.png" %}" style="margin-top: 5px;" width="30" height="28"></a></li>
+              <li><a href="{% url 'notifications' %}" ><img class="notimage" src="{% static "not.png" %}" style="margin-top: 2px;" width="31" height="31"><div class="note">{{ request.user.profile.count }}</div></a></li>
+            <li><a href="{% url 'sign_out' %}"><img src="{% static "door.png" %}" style="margin-top: 5px;" width="28" height="28"></a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <h1>Upload Your Video Here:</h1>
+  <hr>
+  <br>
+  <p></p>
+  <br>
+
+  <form class="form-horizontal" action="{% url 'upld_vid' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+        {% if form.title.errors %}
+            <small><ul class="alert alert-warning" >{{ form.title.errors }}</ul></small>
+        {% endif %}
+
+        {{ form.title.label_tag }}
+        <br>
+        {{ form.title }}
+        <br>
+        <p></p>
+        {% if form.title.help_text %}
+          <small><ul class="alert alert-info">{{ form.title.help_text|safe }}</ul></small>
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {% if form.description.errors %}
+            <small><ul class="alert alert-warning" >{{ form.description.errors }}</ul></small>
+        {% endif %}
+
+        {{ form.description.label_tag }}
+        <br>
+        {{ form.description }}
+        <br>
+        <p></p>
+        {% if form.description.help_text %}
+          <small><ul class="alert alert-info">{{ form.description.help_text|safe }}</ul></small>
+        {% endif %}
+      </div>
+        <div class="form-group">
+        {% if form.video.errors %}
+            <small><ul class="alert alert-warning" >{{ form.video.errors }}</ul></small>
+        {% endif %}
+
+        {{ form.video.label_tag }}
+        <br>
+        <input style="padding-left: 45%" type="file" name="video" accept="video/mp4">
+        <br>
+        <p></p>
+        {% if form.video.help_text %}
+          <small><ul class="alert alert-info">{{ form.video.help_text|safe }}</ul></small>
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {% if form.thumpnail.errors %}
+            <small><ul class="alert alert-warning" >{{ form.thumpnail.errors }}</ul></small>
+        {% endif %}
+
+        {{ form.thumpnail.label_tag }}
+        <br>
+        <input style="padding-left: 45%" type="file" name="thumpnail" accept="image/*">
+        <br>
+        <p></p>
+        {% if form.thumpnail.help_text %}
+          <small><ul class="alert alert-info">{{ form.thumpnail.help_text|safe }}</ul></small>
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {% if form.tags.errors %}
+            <small><ul class="alert alert-warning" >{{ form.tags.errors }}</ul></small>
+        {% endif %}
+
+        {{ form.tags.label_tag }}
+        <br>
+        <input type="text" name="tags">
+        <br>
+        <p></p>
+        {% if form.tags.help_text %}
+          <small><ul class="alert alert-info">{{ form.tags.help_text|safe }}</ul></small>
+        {% endif %}
+      </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-8">
+        <button type="submit" class="btn btn-lg btn-success" style="border-radius:0px;border:0;">Upload Video</button>
+      </div>
+    </div>
+
+  </form>
+{% endblock %}

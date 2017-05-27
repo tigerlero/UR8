@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% block title %}Edit Review Page{% endblock %}
+{% block css_files %}
+  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static 'css_files/styles.css' %}">
+  <style media="screen">
+  .notimage {
+   position: relative;
+}
+
+.note {
+    position: absolute;
+    top: 24px;
+    text-align: center;
+    color: black;
+    width: 28px;
+}
+    label > input{ /* HIDE RADIO */
+        visibility: hidden; /* Makes input not-clickable */
+        position: absolute; /* Remove input from document flow */
+    }
+      label > input + img{ /* IMAGE STYLES */
+        cursor:pointer;
+        border:2px solid transparent;
+    }
+      label > input:checked + img { /*(RADIO CHECKED) IMAGE STYLES */
+        opacity: .6;
+    }
+
+    h1{
+      padding-top: 30px;
+      padding-bottom: 0px;
+    }
+    hr{
+      border-color: #ccebff;
+    }
+
+  </style>
+{% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-default" style="border-radius:0px; border:0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <span><a class="navbar-brand" href="{% url 'home' %}">
+              <img src="{% static 'UR8.png' %}" width="45" height="30"></a></span>
+          <form style="padding-top: 7px;" class="navbar-form navbar-left" action="{% url 'search_vid' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="text" size="17" class="form-control" style="border-radius:0px;" placeholder="Search..." name="search">
+                <button type="submit" style="border-radius:0px;
+                                         background-color:#888888;
+                                         border-color:#808080;
+                                         " class="btn btn-primary search-btn"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            </div>
+          </form>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul style="float: right;" class="nav navbar-nav">
+        <li class="navbar-text">{% if request.user.is_authenticated %}
+              {% if request.user.profile.image == 'avatar/None/default_avatar.png' %}
+                <span><a href="{% url 'profile' %}">
+                    <img class="sm-avatar" src="{% static request.user.profile.image %}" width="30" height="30">
+                    </a></span>
+              {% else %}
+                <span><a href="{% url 'profile' %}">
+                    <img class="sm-avatar" src="{{ request.user.profile.image.url }}" width="30" height="30">
+                   </a></span>
+              {% endif %}{% else %}
+                <img src="{% static "v.png" %}" width="30" height="30">
+            {% endif %}</li>
+        <li><a href="{% url 'channels' %}"><img src="{% static "tv.png" %}" width="30" height="30"></a></li>
+          {% if not request.user.is_authenticated %}
+            <li><a href="{% url 'sign_in' %}"><img src="{% static "login.png" %}" width="30" height="30"></a></li>
+            <li><a href="{% url 'sign_up' %}"><img src="{% static "sign.png" %}" width="30" height="30"></a></li>
+          {% endif %}
+
+          {% if request.user.is_authenticated %}
+              <li><a href="{% url 'upld_vid' %}" ><img  src="{% static "up.png" %}" style="margin-top: 5px;" width="30" height="30"></a></li>
+            <li><a href="{% url 'view_vid' %}"><img src="{% static "my.png" %}" style="margin-top: 5px;" width="30" height="28"></a></li>
+              <li><a href="{% url 'subscribes' %}"><img src="{% static "sub.png" %}" style="margin-top: 5px;" width="30" height="28"></a></li>
+              <li><a href="{% url 'notifications' %}" ><img class="notimage" src="{% static "not.png" %}" style="margin-top: 2px;" width="31" height="31"><div class="note">{{ request.user.profile.count }}</div></a></li>
+            <li><a href="{% url 'sign_out' %}"><img src="{% static "door.png" %}" style="margin-top: 5px;" width="28" height="28"></a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<h1>Edit Your Review Here:</h1>
+<hr style="padding-top: 0px; padding-bottom: 15px; border-color: #ccebff;">
+
+<form class="" id="edit-review-form" data-id="{{ review.id }}" data-vid="{{ vID }}">
+  {% csrf_token %}
+  <b style="font-size: 150%; padding-right: 6px;">Rating:</b>
+        <label>
+        <input type="radio" name="star" value=1>
+          <img src="{% static 'star.png'%}" id="1">
+        </label>
+        <label>
+        <input type="radio" name="star" value=2 >
+        <img src="{% static 'star.png'%}" id="2">
+        </label>
+        <label>
+        <input type="radio" name="star" value=3 >
+        <img src="{% static 'star.png'%}" id="3">
+        </label>
+        <label>
+        <input type="radio" name="star" value=4>
+        <img src="{% static 'star.png'%}" id="4">
+        </label>
+        <label>
+        <input type="radio" name="star" value=5>
+        <img src="{% static 'star.png'%}" id="5">
+      </label><br>
+      <p></p>
+  <textarea id="edit-review-area" rows="4" cols="60">{{ review.text }}</textarea><br>
+  <p></p>
+  <button type="submit" id="edit-review-btn" style="border-radius:0px;margin-left:5px;margin-bottom:26px;" class="btn btn-success">Edit Review !</button>
+</form>
+
+{% endblock %}
+
+{% block js_files %}
+
+  <script type="text/javascript">
+
+    $("#edit-review-form").submit(function(e){
+
+      var text = $('#edit-review-area').val();
+      var pk = $(this).data('id');
+      var pk2 = $(this).data('vid');
+      var url = "http://127.0.0.1:8000/ur8/edit-review/"+pk2+"/"+pk+"/";
+      var token = $('#edit-review-form > input[name=csrfmiddlewaretoken]').val();
+
+      e.preventDefault();
+      if($('input[name=star]').is(':checked') && (text != "") && (text.length > 0) ){
+        var rating = $('input[name=star]:checked').val();
+
+        $.ajax({
+          type:'POST',
+          url:url,
+          data:{
+            edit_review:'yes',
+            rating:rating,
+            text:text,
+            csrfmiddlewaretoken:token
+          },
+          success:function(data){
+            if (data.ok == 'yes') {
+              var url = "http://127.0.0.1:8000/ur8/";
+              $(location).attr('href', url);
+            }
+          }
+        });
+
+      }else{
+        window.alert("You haven't rated or reviewed the video");
+      }
+
+    });
+
+  </script>
+
+{% endblock %}

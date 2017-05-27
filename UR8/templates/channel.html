@@ -1,0 +1,286 @@
+{% extends "base.html" %}
+{% block title %}Channel of: {{ user.username }}{% endblock %}
+{% block css_files %}
+  {% load staticfiles %}
+  <style>
+    .notimage {
+   position: relative;
+}
+
+.note {
+    position: absolute;
+    top: 24px;
+    text-align: center;
+    color: black;
+    width: 28px;
+}
+    .material-icons{
+      color: #ffcc00;
+      font-size: 24px;
+    }
+    .fa-thumbs-o-up{
+      color: #0066cc;
+      font-size: 24px;
+    }
+    .fa-thumbs-o-down{
+      color: #cc3300;
+      font-size: 24px;
+    }
+    .btn-warning{
+      border-radius: 0px;
+      padding-right: 20px;
+      background-color: #ffcc00;
+      border-color: #ffcc00;
+      color: white;
+    }
+    .btn-warning:hover,
+    .btn-warning:focus,
+    .btn-warning:active,
+    .btn-warning.active,
+    .open .dropdown-toggle .btn-warning {
+      background-color: #ff9900;
+      border-color: #ff9900;
+      color: white;
+    }
+    .btn-danger{
+      background-color: #ff3300;
+      border-color: #ff3300;
+      border-radius: 0px;
+      padding-right: 20px;
+      color: white;
+    }
+    .btn-danger:hover,
+    .btn-danger:focus,
+    .btn-danger:active,
+    .btn-danger.active,
+    .open .dropdown-toggle .btn-danger {
+      background-color: #e62e00;
+      border-color: #e62e00;
+      color: white;
+    }
+
+    .btn-default{
+      padding-right: 20px;
+    }
+
+    #view-btn{
+      background-color: #99ccff !important;
+      border-color: #99ccff !important;
+      color: white;
+    }
+
+    #view-btn:hover, #view-btn:active{
+      background-color: #4da6ff !important;
+      border-color: #4da6ff !important;
+      color: white !important;
+    }
+
+    .glyphicon-remove{
+      padding-right: 4px;
+    }
+    .glyphicon-pencil{
+      padding-right: 4px;
+    }
+    .thumbnail{
+      border-radius: 0px;
+      border:0;
+      /*box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;*/
+    }
+    h3{
+      padding-top: 0px;
+    }
+    .sm-avatar{
+      border-radius: 15px;
+    }
+
+    .bg-avatar{
+      border-radius: 150px;
+    }
+
+    /*.btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary.active,
+    .open .dropdown-toggle..btn-primary {
+      background-color: #595959;
+      border-color: #595959;
+    }*/
+    .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+        background-color: #595959 !important;
+        border-color: #595959 !important;
+    }
+
+    h1{
+      padding-top: 30px;
+    }
+
+  </style>
+{% endblock %}
+{% block body %}
+<nav class="navbar navbar-default" style="border-radius:0px; border:0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <span><a class="navbar-brand" href="{% url 'home' %}">
+              <img src="{% static 'UR8.png' %}" width="45" height="30"></a></span>
+          <form style="padding-top: 7px;" class="navbar-form navbar-left" action="{% url 'search_vid' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="text" size="17" class="form-control" style="border-radius:0px;" placeholder="Search..." name="search">
+                <button type="submit" style="border-radius:0px;
+                                         background-color:#888888;
+                                         border-color:#808080;
+                                         " class="btn btn-primary search-btn"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            </div>
+          </form>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul style="float: right;" class="nav navbar-nav">
+        <li class="navbar-text">{% if request.user.is_authenticated %}
+              {% if request.user.profile.image == 'avatar/None/default_avatar.png' %}
+                <span><a href="{% url 'profile' %}">
+                    <img class="sm-avatar" src="{% static request.user.profile.image %}" width="30" height="30">
+                    </a></span>
+              {% else %}
+                <span><a href="{% url 'profile' %}">
+                    <img class="sm-avatar" src="{{ request.user.profile.image.url }}" width="30" height="30">
+                   </a></span>
+              {% endif %}{% else %}
+                <img src="{% static "v.png" %}" width="30" height="30">
+            {% endif %}</li>
+        <li><a href="{% url 'channels' %}"><img src="{% static "tv.png" %}" width="30" height="30"></a></li>
+          {% if not request.user.is_authenticated %}
+            <li><a href="{% url 'sign_in' %}"><img src="{% static "login.png" %}" width="30" height="30"></a></li>
+            <li><a href="{% url 'sign_up' %}"><img src="{% static "sign.png" %}" width="30" height="30"></a></li>
+          {% endif %}
+
+          {% if request.user.is_authenticated %}
+              <li><a href="{% url 'upld_vid' %}" ><img  src="{% static "up.png" %}" style="margin-top: 5px;" width="30" height="30"></a></li>
+            <li><a href="{% url 'view_vid' %}"><img src="{% static "my.png" %}" style="margin-top: 5px;" width="30" height="28"></a></li>
+              <li><a href="{% url 'subscribes' %}"><img src="{% static "sub.png" %}" style="margin-top: 5px;" width="30" height="28"></a></li>
+              <li><a href="{% url 'notifications' %}" ><img class="notimage" src="{% static "not.png" %}" style="margin-top: 2px;" width="31" height="31"><div class="note">{{ request.user.profile.count }}</div></a></li>
+            <li><a href="{% url 'sign_out' %}"><img src="{% static "door.png" %}" style="margin-top: 5px;" width="28" height="28"></a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+ <h1>Channel of: <i>{{ user.username }}</i></h1>
+  <hr style="border-color: #ccebff;">
+
+  {% if hasRes %}
+    <div class="row">
+      {% for video in videos %}
+      <div class="col-sm-6 col-md-3">
+      <div class="thumbnail" style="border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
+
+        {% if video.thumpnail == 'thumpnail/None/default_thump.png' %}
+          <!-- video width="320" height="240" controls -->
+          <video width="100%" height="56%">
+            <source src="{{video.video.url}}#t=0" type="video/mp4">
+            <div class="alert alert-warning" style="border-radius:0px; border:0"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
+          </video>
+        {% else %}
+        <!-- video width="320" height="240" controls -->
+        <video width="100%" height="56%" poster="{{ video.thumpnail.url }}">
+          <source src="{{video.video.url}}" type="video/mp4">
+          <div class="alert alert-warning" style="border-radius:0px; border:0"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
+        </video>
+        {% endif %}
+  <hr>
+          <div class="caption">
+          <h2>{{ video.title }}</h2>
+          <b>User: </b><a href="{% url 'channel' video.user.username %}">{{ video.user.username }}</a>
+      <br><span ><b>Views: </b>
+          {{video.views}}
+      </span><br>
+      <span><b>Rating: </b>
+          {% if video.avg_rating == 0.0 %}
+                <img width="24px" height="24px" src="{% static 'bat.png'%}" >
+          {% elif video.avg_rating >= 0 and video.avg_rating < 1 %}
+              {% if video.avg_rating > 0.6 %}
+                <img src="{% static '75.png'%}" >
+              {% elif video.avg_rating > 0.3 %}
+                <img src="{% static '50.png'%}" >
+              {% elif video.avg_rating > 0.0 %}
+                <img src="{% static '25.png'%}" >
+                {% endif %}
+      {% elif video.avg_rating >= 1.0 and video.avg_rating < 2.0  %}
+        <img style="" src="{% static 'star.png'%}" >
+          {% if video.avg_rating > 1.6 %}
+                <img style="" src="{% static '75.png'%}" >
+          {% elif video.avg_rating > 1.3 %}
+                <img style="" src="{% static '50.png'%}" >
+          {% elif video.avg_rating > 1.0 %}
+                <img style="" src="{% static '25.png'%}" >
+          {% endif %}
+      {% elif video.avg_rating >= 2.0 and video.avg_rating < 3.0 %}
+        <img src="{% static 'star.png'%}" >
+        <img style="" src="{% static 'star.png'%}" >
+          {% if video.avg_rating > 2.6 %}
+                <img style="" src="{% static '75.png'%}" >
+          {% elif video.avg_rating > 2.3 %}
+                <img style="" src="{% static '50.png'%}" >
+          {% elif video.avg_rating > 2.0 %}
+                <img style="" src="{% static '25.png'%}" >
+          {% endif %}
+      {% elif video.avg_rating >= 3.0 and video.avg_rating < 4.0  %}
+        <img src="{% static 'star.png'%}" >
+        <img src="{% static 'star.png'%}" >
+        <img style="" src="{% static 'star.png'%}" >
+          {% if video.avg_rating > 3.6 %}
+                <img style="" src="{% static '75.png'%}" >
+          {% elif video.avg_rating > 3.3 %}
+                <img style="" src="{% static '50.png'%}" >
+          {% elif video.avg_rating > 3.0 %}
+                <img style="" src="{% static '25.png'%}" >
+          {% endif %}
+      {% elif video.avg_rating >= 4.0 and video.avg_rating < 5.0  %}
+              <img src="{% static 'star.png'%}" >
+        <img src="{% static 'star.png'%}" >
+        <img style="" src="{% static 'star.png'%}" >
+              <img style="" src="{% static 'star.png'%}" >
+          {% if video.avg_rating > 4.6 %}
+                <img style="" src="{% static '75.png'%}" >
+          {% elif video.avg_rating > 4.3 %}
+                <img style="" src="{% static '50.png'%}" >
+          {% elif video.avg_rating > 4.0 %}
+                <img style="" src="{% static '25.png'%}" >
+          {% endif %}
+          {% elif video.avg_rating == 5.0 %}
+                <img src="{% static 'star.png'%}" >
+              <img style="" src="{% static 'star.png'%}" >
+              <img style="" src="{% static 'star.png'%}" >
+              <img style="" src="{% static 'star.png'%}" >
+              <img style="" src="{% static 'star.png'%}" >
+      {% endif %}
+      </span>
+  <br><b>Description: </b>
+    {{ video.description }}<br>
+{##}
+{#  <b>Tags:</b>#}
+{#    <!-- {{ video.tags }} -->#}
+{#    {% for tag in video.tags %}#}
+{#      {% if forloop.last %}#}
+{#        {{ tag }}#}
+{#      {% else %}#}
+{#        {{ tag }} ,#}
+{#      {% endif %}#}
+{#    {% endfor %}#}
+    <hr>
+
+              <a href="{% url 's_vid' video.id %}" id="view-btn" style="border-radius:0px;" class="btn btn-default" role="button"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> View </a>
+          </div>
+        </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>This channel hasn't uploaded videos yet.</p>
+  {% endif %}
+
+{% endblock %}

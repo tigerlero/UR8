@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+{% block title %}Channels{% endblock %}
+{% block css_files %}
+  {% load staticfiles %}
+  <style>
+    .notimage {
+   position: relative;
+}
+
+.note {
+    position: absolute;
+    top: 24px;
+    text-align: center;
+    color: black;
+    width: 28px;
+}
+    .material-icons{
+      color: #ffcc00;
+      font-size: 24px;
+    }
+    .fa-thumbs-o-up{
+      color: #0066cc;
+      font-size: 24px;
+    }
+    .fa-thumbs-o-down{
+      color: #cc3300;
+      font-size: 24px;
+    }
+    .btn-warning{
+      border-radius: 0px;
+      padding-right: 20px;
+      background-color: #ffcc00;
+      border-color: #ffcc00;
+      color: white;
+    }
+    .btn-warning:hover,
+    .btn-warning:focus,
+    .btn-warning:active,
+    .btn-warning.active,
+    .open .dropdown-toggle .btn-warning {
+      background-color: #ff9900;
+      border-color: #ff9900;
+      color: white;
+    }
+    .btn-danger{
+      background-color: #ff3300;
+      border-color: #ff3300;
+      border-radius: 0px;
+      padding-right: 20px;
+      color: white;
+    }
+    .btn-danger:hover,
+    .btn-danger:focus,
+    .btn-danger:active,
+    .btn-danger.active,
+    .open .dropdown-toggle .btn-danger {
+      background-color: #e62e00;
+      border-color: #e62e00;
+      color: white;
+    }
+
+    .btn-default{
+      padding-right: 20px;
+    }
+
+    #view-btn{
+      background-color: #99ccff !important;
+      border-color: #99ccff !important;
+      color: white;
+    }
+
+    #view-btn:hover, #view-btn:active{
+      background-color: #4da6ff !important;
+      border-color: #4da6ff !important;
+      color: white !important;
+    }
+
+    .glyphicon-remove{
+      padding-right: 4px;
+    }
+    .glyphicon-pencil{
+      padding-right: 4px;
+    }
+    .thumbnail{
+      border-radius: 0px;
+      border:0;
+      /*box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;*/
+    }
+    h3{
+      padding-top: 0px;
+    }
+    .sm-avatar{
+      border-radius: 15px;
+    }
+
+    .bg-avatar{
+      border-radius: 150px;
+    }
+
+    /*.btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary.active,
+    .open .dropdown-toggle..btn-primary {
+      background-color: #595959;
+      border-color: #595959;
+    }*/
+    .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+        background-color: #595959 !important;
+        border-color: #595959 !important;
+    }
+
+    h1{
+      padding-top: 30px;
+    }
+
+  </style>
+{% endblock %}
+{% block body %}
+<nav class="navbar navbar-default" style="border-radius:0px; border:0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <span><a class="navbar-brand" href="{% url 'home' %}">
+              <img src="{% static 'UR8.png' %}" width="45" height="30"></a></span>
+          <form style="padding-top: 7px;" class="navbar-form navbar-left" action="{% url 'search_vid' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="text" size="17" class="form-control" style="border-radius:0px;" placeholder="Search..." name="search">
+                <button type="submit" style="border-radius:0px;
+                                         background-color:#888888;
+                                         border-color:#808080;
+                                         " class="btn btn-primary search-btn"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            </div>
+          </form>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul style="float: right;" class="nav navbar-nav">
+        <li class="navbar-text">{% if request.user.is_authenticated %}
+              {% if request.user.profile.image == 'avatar/None/default_avatar.png' %}
+                <span><a href="{% url 'profile' %}">
+                    <img class="sm-avatar" src="{% static request.user.profile.image %}" width="30" height="30">
+                    </a></span>
+              {% else %}
+                <span><a href="{% url 'profile' %}">
+                    <img class="sm-avatar" src="{{ request.user.profile.image.url }}" width="30" height="30">
+                   </a></span>
+              {% endif %}{% else %}
+                <img src="{% static "v.png" %}" width="30" height="30">
+            {% endif %}</li>
+        <li><a href="{% url 'channels' %}"><img src="{% static "tv.png" %}" width="30" height="30"></a></li>
+          {% if not request.user.is_authenticated %}
+            <li><a href="{% url 'sign_in' %}"><img src="{% static "login.png" %}" width="30" height="30"></a></li>
+            <li><a href="{% url 'sign_up' %}"><img src="{% static "sign.png" %}" width="30" height="30"></a></li>
+          {% endif %}
+
+          {% if request.user.is_authenticated %}
+              <li><a href="{% url 'upld_vid' %}" ><img  src="{% static "up.png" %}" style="margin-top: 5px;" width="30" height="30"></a></li>
+            <li><a href="{% url 'view_vid' %}"><img src="{% static "my.png" %}" style="margin-top: 5px;" width="30" height="28"></a></li>
+              <li><a href="{% url 'subscribes' %}"><img src="{% static "sub.png" %}" style="margin-top: 5px;" width="30" height="28"></a></li>
+              <li><a href="{% url 'notifications' %}" ><img class="notimage" src="{% static "not.png" %}" style="margin-top: 2px;" width="31" height="31"><div class="note">{{ request.user.profile.count }}</div></a></li>
+            <li><a href="{% url 'sign_out' %}"><img src="{% static "door.png" %}" style="margin-top: 5px;" width="28" height="28"></a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div class="row">
+
+
+{% for channel in users %}
+    {% if not channel.is_superuser  %}
+<div class="col-sm-6 col-md-4">
+  <h1>Channel of: <i>{{ channel.username }}</i></h1>
+  {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
+    <a href="{% url 'channel' channel.username %}"><img src="{% static channel.profile.image %}" width="250" height="250" ></a>
+  {% else %}
+    <a href="{% url 'channel' channel.username %}"><img src="{{ channel.profile.image.url }}" width="250" height="250" ></a>
+  {% endif %}</div>
+    {% endif %}
+{% endfor %}
+
+</div>
+
+
+
+{% endblock %}
