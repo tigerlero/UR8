@@ -6,7 +6,7 @@ from .forms import UserRegFrom, EditAvatarForm, ResetPasswordForm, UploadVideoFo
 from .models import Profile, Video, Review
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-from moviepy.editor import *
+# from moviepy.editor import *
 from math import floor, ceil, modf
 import json
 import time
