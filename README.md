@@ -4,15 +4,19 @@ The hippest and hoppest.
 In this project our team will be creating a simple and **_`not beautiful`_** YouTube **_`clone`_**.
 
 It will include:
-- [ ] Video Rating
-- [ ] Video Review
-- [ ] Like/ Dislike Reviews
-- [ ] Recommended Videos
+- [x] Video Rating
+- [x] Video Review
+- [x] Like/ Dislike Reviews
+- [x] Recommended Videos
 - [x] Image Uploading
 - [x] Video Uploading
 - [x] Update Video
 - [x] Delete Video
 - [x] Password Reset
-- [ ] Channel
+- [x] Channel
+- [x] Subscribes
+- [x] Notifications
+- [ ] Auto thumbnail generate
+
 
 ### Enjoy!!
