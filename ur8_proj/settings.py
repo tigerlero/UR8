@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'ur8_proj.wsgi.application'
 # This database configuration might change in the near future...
 DATABASES = {
 
-    'default': dj_database_url.config{
+    'default': {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "d20dnnhplf5u38",
         "USER": "lbzfosxynlpgep",
