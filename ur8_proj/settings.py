@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'ur8_proj.wsgi.application'
 DATABASES = {
     'default': {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "post",
-        "USER": "postgres",
-        "PASSWORD": "omega",
-        "HOST": "localhost",
+        "NAME": "d20dnnhplf5u38",
+        "USER": "lbzfosxynlpgep",
+        "PASSWORD": "f615d11f2cc6666d092944fdccd4fb820c45a35e25625c7de2e08410372af6c5",
+        "HOST": "ec2-54-247-99-159.eu-west-1.compute.amazonaws.com",
         "PORT": "5432",
     }
 }
