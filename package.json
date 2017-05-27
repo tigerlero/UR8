@@ -2,7 +2,8 @@
   "name": "amazonur8",
   "description": "asd",
   "scripts": {
-  },
+  "start": "node index.js"
+},
   "env": {
   },
   "formation": {
