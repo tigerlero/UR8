@@ -11,6 +11,7 @@ from math import floor, ceil, modf
 import json
 import time
 
+
 # def thumb(id):
 #     video = Video.objects.get(id=id)
 #     print(video)
@@ -55,15 +56,22 @@ def home(request):
             hasRes = True
         else:
             hasRes = False
-        # for video in video_results:
-        #     video.tags = video.tags.split(',')
-        #     video.tags.pop()
 
-        return render(request, 'home.html', {'video_results': video_results, 'hasRes': hasRes, 'users': users, 'new': new, 'popular': popular, 'best': best})
+        u = request.user
+        subchan = []
+        subs = u.profile.subscribes
+        for v in videos:
+            if (v.user.username in subs) and (subs != ""):
+                if v.user not in subchan and v.user != u:
+                    subchan.append(v.user)
+
+        return render(request, 'home.html',
+                      {'video_results': video_results, 'hasRes': hasRes, 'users': users, 'new': new, 'popular': popular,
+                       'best': best, "subchan": subchan})
 
 
 def sort_videos(videos):
-    overall = [0]*30
+    overall = [0] * 30
     # calculate overall score
     for i, video in enumerate(videos):
         overall[i] += 5 * video.id
@@ -80,7 +88,7 @@ def sort_videos(videos):
 
 
 def best_videos(videos):
-    overall = [0]*30
+    overall = [0] * 30
     # calculate overall score
     for i, video in enumerate(videos):
         overall[i] += 1 * video.id
@@ -97,7 +105,7 @@ def best_videos(videos):
 
 
 def popular_videos(videos):
-    overall = [0]*30
+    overall = [0] * 30
     # calculate overall score
     for i, video in enumerate(videos):
         overall[i] += 1 * video.id
@@ -114,7 +122,7 @@ def popular_videos(videos):
 
 
 def new_videos(videos):
-    overall = [0]*30
+    overall = [0] * 30
     # calculate overall score
     for i, video in enumerate(videos):
         overall[i] += 10 * video.id
@@ -162,11 +170,12 @@ def edit_review(request, vid, rid):
         review = Review.objects.get(id=rid)
         video = video = Video.objects.get(id=vid)
         vID = video.id
-        return render(request, 'edit_review.html', {'review':review, 'vID':vID})
-    elif request.method == 'POST' and request.is_ajax() and request.POST['edit_review'] == 'yes' and request.user.is_authenticated():
+        return render(request, 'edit_review.html', {'review': review, 'vID': vID})
+    elif request.method == 'POST' and request.is_ajax() and request.POST[
+        'edit_review'] == 'yes' and request.user.is_authenticated():
 
         newText = request.POST['text']
-        newVal = int(request.POST['rating']) # new rating
+        newVal = int(request.POST['rating'])  # new rating
         video = video = Video.objects.get(id=vid)
         review = Review.objects.get(id=rid)
 
@@ -176,7 +185,7 @@ def edit_review(request, vid, rid):
         count = float(video.rating_counter)
         new_avg = 0.0
         if (count - 1) > 0:
-            new_avg = ( (old_avg * count) - rating ) / ( count-1 )
+            new_avg = ((old_avg * count) - rating) / (count - 1)
 
         video.avg_rating = new_avg
         video.rating_counter -= 1
@@ -191,7 +200,7 @@ def edit_review(request, vid, rid):
         video.rating_counter += 1
         old_avg2 = video.avg_rating
         count2 = video.rating_counter
-        video.avg_rating = (old_avg2 * (count2-1) + newVal)/count2
+        video.avg_rating = (old_avg2 * (count2 - 1) + newVal) / count2
         video.save()
 
         data = {'ok': 'yes'}
@@ -199,7 +208,8 @@ def edit_review(request, vid, rid):
 
 
 def delete_review(request, rID):
-    if request.method == 'POST' and request.is_ajax() and request.POST['del_review'] == 'yes' and request.user.is_authenticated():
+    if request.method == 'POST' and request.is_ajax() and request.POST[
+        'del_review'] == 'yes' and request.user.is_authenticated():
         review = Review.objects.get(id=rID)
         vID = request.POST['vID']
         video = Video.objects.get(id=vID)
@@ -210,14 +220,14 @@ def delete_review(request, rID):
         count = float(video.rating_counter)
         new_avg = 0.0
         if (count - 1) > 0:
-            new_avg = ( (old_avg * count) - rating ) / ( count-1 )
+            new_avg = ((old_avg * count) - rating) / (count - 1)
 
         video.avg_rating = new_avg
         video.rating_counter -= 1
         video.save()
 
         review.delete()
-        data = {'ok':'yes'}
+        data = {'ok': 'yes'}
         return HttpResponse(json.dumps(data), content_type='application/json')
 
 
@@ -229,24 +239,24 @@ def rated_review2(request, vID, rID):
 
         if request.POST['disapprove'] == 'yes':
             if (uname in review.disapprovedBy):
-                data = {'ok':'yes'}
+                data = {'ok': 'yes'}
                 return HttpResponse(json.dumps(data), content_type='application/json')
             else:
                 if uname in review.approvedBy:
                     review.disapprovedBy += uname
                     review.disapprovedBy += ","
-                    liked = review.approvedBy.replace(''+uname+',', "")
+                    liked = review.approvedBy.replace('' + uname + ',', "")
                     review.approvedBy = liked
                     review.save()
 
-                    data = {'ok':'yes'}
+                    data = {'ok': 'yes'}
                     return HttpResponse(json.dumps(data), content_type='application/json')
                 else:
                     review.disapprovedBy += uname
                     review.disapprovedBy += ","
                     review.save()
 
-                    data = {'ok':'yes'}
+                    data = {'ok': 'yes'}
                     return HttpResponse(json.dumps(data), content_type='application/json')
 
 
@@ -258,23 +268,23 @@ def rated_review(request, vID, rID):
 
         if request.POST['approve'] == 'yes':
             if (uname in review.approvedBy):
-                data = {'ok':'yes'}
+                data = {'ok': 'yes'}
                 return HttpResponse(json.dumps(data), content_type='application/json')
             else:
                 if uname in review.disapprovedBy:
                     review.approvedBy += uname
                     review.approvedBy += ","
-                    disliked = review.disapprovedBy.replace(''+uname+',', "")
+                    disliked = review.disapprovedBy.replace('' + uname + ',', "")
                     review.disapprovedBy = disliked
                     review.save()
 
-                    data = {'ok':'yes'}
+                    data = {'ok': 'yes'}
                     return HttpResponse(json.dumps(data), content_type='application/json')
                 else:
                     review.approvedBy += uname
                     review.approvedBy += ","
                     review.save()
-                    data = {'ok':'yes'}
+                    data = {'ok': 'yes'}
                     return HttpResponse(json.dumps(data), content_type='application/json')
 
 
@@ -289,9 +299,9 @@ def rated_video(request, id):
         # (previous_mean * (count -1)) + new_value) / count
         old_avg = video.avg_rating
         count = video.rating_counter
-        video.avg_rating = (old_avg * (count-1) + rating)/count
+        video.avg_rating = (old_avg * (count - 1) + rating) / count
         video.save()
-        data = {'ok':'yes'}
+        data = {'ok': 'yes'}
         return HttpResponse(json.dumps(data), content_type='application/json')
 
 
@@ -312,23 +322,18 @@ def s_vid(request, id):
         for review in user_reviews:
             if request.user.username == review.user.username:
                 rated = True
-
         reviews = video.review_set.order_by('-pk')
         approves = []
         disapproves = []
-
         for review in reviews:
             approvedBy = review.approvedBy.split(',')
             approvedBy.pop()
             approves.append(len(approvedBy))
-
             disapprovedBy = review.disapprovedBy.split(',')
             disapprovedBy.pop()
             disapproves.append(len(disapprovedBy))
-
             rating = int(review.rating)
             review.rating = rating
-
         # sorting related
         lists = list(zip(reviews, approves, disapproves))
         rel_videos = []
@@ -339,10 +344,10 @@ def s_vid(request, id):
                     if other.lower() == tag.lower():
                         if v not in rel_videos and v != video:
                             rel_videos.append(v)
-
         rel_videos = rel_videos[-5:]
         rel_videos = sort_videos(rel_videos)
-        return render(request, 's_vid.html', {'video': video, 'tags': tags, 'rated': rated, 'lists': lists, "rel_videos":rel_videos})
+        return render(request, 's_vid.html',
+                      {'video': video, 'tags': tags, 'rated': rated, 'lists': lists, "rel_videos": rel_videos})
     elif request.method == 'POST':
         return render(request, 'home.html', {})
     else:
@@ -378,7 +383,8 @@ def search_vid(request):
                 video.tags = video.tags.split(',')
                 video.tags.pop()
 
-            return render(request, 'search_res.html', {'results': results, 'term': term, 'hasRes': hasRes, 'channels': channels})
+            return render(request, 'search_res.html',
+                          {'results': results, 'term': term, 'hasRes': hasRes, 'channels': channels})
         else:
             term = request.POST['search']
             hasRes = False
@@ -429,7 +435,7 @@ def updt_vid(request, id):
             video.save()
             return render(request, 'profile.html', {})
         else:
-            return render(request, 'updt_vid.html', {'form': form, 'pk': pk,"users":users})
+            return render(request, 'updt_vid.html', {'form': form, 'pk': pk, "users": users})
     else:
         return render(request, 'sign-in.html', {})
 
@@ -442,10 +448,10 @@ def del_vid(request, id):
         video = user.video_set.get(id=id)
 
         for u in users:
-                if video.title in u.profile.notifications:
-                    u.profile.notifications = u.profile.notifications.replace(video.title, " ")
-                    u.profile.count -= 1
-                    u.profile.save()
+            if video.title in u.profile.notifications:
+                u.profile.notifications = u.profile.notifications.replace(video.title, " ")
+                u.profile.count -= 1
+                u.profile.save()
         video.delete()
         return render(request, 'profile.html', {'video': video, "users": users})
     else:
@@ -510,21 +516,13 @@ def upld_vid(request):
             tg = form.cleaned_data['tags']
             new_video = user.video_set.create(video=v, title=t, description=d, thumpnail=tn, tags=tg)
             new_video.save()
-            # videos = Video.objects.all()
-            # for video in videos:
-            #     if video.thumpnail == "thumpnail/None/default_thump.png":
-            #         im = thumb(video.id)
-            #         print(im)
-            #         video.thumpnail = im
-            #         video.save()
-
             for u in users:
                 if u != user and (user.username in u.profile.subscribes):
                     u = u.profile
                     u.notifications = u.notifications + " " + t
                     u.count += 1
                     u.save()
-            return render(request, 'profile.html', {"users": users})
+            return render(request, 'profile.html', {})
         else:
             return render(request, 'upld_vid.html', {'form': form})
     else:
@@ -605,9 +603,11 @@ def subscribes(request):
             hasRes = True
         else:
             hasRes = False
-        return render(request, 'subscribes.html', {'hasRes': hasRes, "subscr": subscr, "sub_vid": sub_vid, "subchan": subchan})
+        return render(request, 'subscribes.html',
+                      {'hasRes': hasRes, "subscr": subscr, "sub_vid": sub_vid, "subchan": subchan})
     else:
         return render(request, 'home.html', {})
+
 
 # edit profile picture
 def edit_avatar(request):

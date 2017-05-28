@@ -10,6 +10,7 @@ It will include:
 - [x] Recommended Videos
 - [x] Image Uploading
 - [x] Video Uploading
+- [x] Video Sort
 - [x] Update Video
 - [x] Delete Video
 - [x] Password Reset

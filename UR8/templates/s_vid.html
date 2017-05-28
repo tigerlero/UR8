@@ -7,7 +7,6 @@
     .notimage {
    position: relative;
 }
-
 .note {
     position: absolute;
     top: 24px;
@@ -15,13 +14,6 @@
     color: black;
     width: 28px;
 }
-
-    .description{
-      background-color: aliceblue;
-      border: none;
-      resize: none;
-    }
-
     .btn-link{
       background-color: aliceblue;
       color: #007399;
@@ -154,7 +146,7 @@
   </style>
 {% endblock %}
 {% block body %}
-  <nav class="navbar navbar-default" style="border-radius:0px; border:0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+<nav class="navbar navbar-default" style="border-radius:0px; border:0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -189,7 +181,6 @@
               {% endif %}{% else %}
                 <img src="{% static "v.png" %}" width="30" height="30">
             {% endif %}</li>
-        <li><a href="{% url 'channels' %}"><img src="{% static "tv.png" %}" width="30" height="30"></a></li>
           {% if not request.user.is_authenticated %}
             <li><a href="{% url 'sign_in' %}"><img src="{% static "login.png" %}" width="30" height="30"></a></li>
             <li><a href="{% url 'sign_up' %}"><img src="{% static "sign.png" %}" width="30" height="30"></a></li>
@@ -198,8 +189,8 @@
           {% if request.user.is_authenticated %}
               <li><a href="{% url 'upld_vid' %}" ><img  src="{% static "up.png" %}" style="margin-top: 5px;" width="30" height="30"></a></li>
             <li><a href="{% url 'view_vid' %}"><img src="{% static "my.png" %}" style="margin-top: 5px;" width="30" height="28"></a></li>
-              <li><a href="{% url 'subscribes' %}"><img src="{% static "sub.png" %}" style="margin-top: 5px;" width="30" height="28"></a></li>
-              <li><a href="{% url 'notifications' %}" ><img class="notimage" src="{% static "not.png" %}" style="margin-top: 2px;" width="31" height="31"><div class="note">{{ request.user.profile.count }}</div></a></li>
+              <li><a href="{% url 'notifications' %}" ><img class="notimage" src="{% static "not.png" %}" style="margin-top: 2px;" width="31" height="31">
+                  <div class="note">{{ request.user.profile.count }}</div></a></li>
             <li><a href="{% url 'sign_out' %}"><img src="{% static "door.png" %}" style="margin-top: 5px;" width="28" height="28"></a></li>
           {% endif %}
         </ul>
@@ -209,36 +200,37 @@
 
 <!-- start row -->
 
-  <div class="row" style="padding-left: 2%">
+  <div class="row" style="padding-left: 3%">
 
     <!-- start col-1 -->
   <div class="col-sm-6">
   <h1 style="padding-top: 30px;"></h1>
+  <script>
+var video = document.getElementById("play");
+
+function toggleControls() {
+  if (video.hasAttribute("controls")) {
+     video.removeAttribute("controls")
+  } else {
+     video.setAttribute("controls","controls")
+  }
+}
+</script>
   {% if video.thumpnail == 'thumpnail/None/default_thump.png' %}
     <!-- video width="853" height="480" controls -->
-    <video width="128%" height="72%" id="{{ video.id }}" controls>
+    <video onmouseout="toggleControls()" id="play" width="144%" height="81%" id="{{ video.id }}" controls >
       <source src="{{video.video.url}}#t=0" type="video/mp4">
-        <source src="{{video.video.url}}#t=0" type="video/ogg">
       <div class="alert alert-warning"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
     </video>
   {% else %}
     <!-- video width="320" height="240" controls -->
-    <video width="128%" height="72%" poster="{{ video.thumpnail.url }}" id="{{ video.id }}" controls>
+    <video id="play" width="144%" height="81%" poster="{{ video.thumpnail.url }}" id="{{ video.id }}" controls >
       <source src="{{video.video.url}}" type="video/mp4">
-      <source src="{{video.video.url}}" type="video/ogg">
       <div class="alert alert-warning"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
     </video>
   {% endif %}
-<div style="padding-left: 29%">
-  <h3><b>{{ video.title }}</b></h3>
-  <hr>
-  <!-- style="padding-left: 5%;text-align: right;" -->
-      <div style="padding-right: 12px;"><b>Views: </b>
-          {{video.views}}
-      </div>
-    <p>
-      <span><b>Rating: </b>
-{#          {{video.avg_rating}} / 5#}
+<div style="width: 144%">
+  <b style="font-size: 200%;float: left;">{{ video.title }}</b><span style="float: right; margin-top: 1%;"><b>Rating: </b>
         {% if video.avg_rating == 0.0 %}
                 <img width="24px" height="24px" src="{% static 'bat.png'%}" >
           {% elif video.avg_rating >= 0 and video.avg_rating < 1 %}
@@ -298,42 +290,89 @@
               <img style="" src="{% static 'star.png'%}" >
               <img style="" src="{% static 'star.png'%}" >
       {% endif %}
-      </span>
-    </p>
+      </span><BR><Br>
+      <Br>
+<div style="padding-right: 12px;float: left;">
+    <b>Views: </b>
+          {{video.views}}
+      </div>
+  <hr>
   <p>
-    <b>User: </b><a href="{% url 'channel' video.user.username %}">{{ video.user.username }}</a>
-    <br>
+    <b style="float: left">
+        {% if request.user.profile.image == 'avatar/None/default_avatar.png' %}
+                <span><a href="{% url 'profile' %}">
+                    <img class="sm-avatar" src="{% static video.user.profile.image %}" width="40" height="40">
+                    </a></span>
+        {% else %}
+                <span><a href="{% url 'profile' %}">
+                    <img class="sm-avatar" src="{{ video.user.profile.image.url }}" width="40" height="40">
+                   </a></span>
+        {% endif %}
+          <a href="{% url 'channel' video.user.username %}">{{ video.user.username }}</b></a>
+
       {% if video.user.username in request.user.profile.subscribes and video.user.username != request.user.username %}
-          <a href="{% url 'del_subscribes' video.id %}" class="btn btn-danger" role="button">
-                  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Undo Subscribe </a>
+          <a style="background-color: darkcyan; border-color: #99ccff; float: right" href="{% url 'del_subscribes' video.id %}" class="btn btn-danger" role="button">
+                  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Subscribed </a>
       {% elif video.user.username not in request.user.profile.subscribes and video.user.username != request.user.username %}
-      <a href="{% url 'sub' video.id %}" class="btn btn-danger" role="button">
-                  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Subscribe </a>
-      {% endif %}<br>
+      <a style="background-color: darkcyan; border-color: #99ccff; float: right" href="{% url 'sub' video.id %}" class="btn btn-danger" role="button">
+                  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Subscribe </a>
+      {% endif %}<br><br>
 
-    <span><b>Description: </b>
-      <p id="dec" style="white-space: pre-wrap;
+{#     <b style="width: 100%;#}
+{#         float: left;padding-top: 1%; ">#}
+      <div id="dec"
+         style="margin-top: 2%;
+         float: left;
+      white-space: pre-wrap;
     width: 100%;
-    height: 3em;
+    height: 1.7em;
     overflow: hidden;
-    text-overflow: clip;">{{ video.description }}</p>
+    text-overflow: clip;"><div style="text-align: left">{{ video.description }}</div></div>
         <script>
-            document.getElementById("dec").style.height = " 200em;";
-function ShowMore() {
-    document.getElementById("dec").style.height = "200em;";
-}
-function Hide() {
-    document.getElementById("dec").style.height = "3em";
-}
-</script>
-        <button type="button" onclick="ShowMore()">Show more</button>
-        <button type="button" onclick="Hide()">Hide</button>
-      <br>
-    </span>
-  </p>
-<b><span class="glyphicon glyphicon-tags"></span> Tags:</b> <br><p></p>
 
-    <div id="tag-list" class="btn-group">
+function ShowMore() {
+
+    if (document.getElementById("dec").style.height == "1.7em") {
+        document.getElementById("dec").style.height = "100%";
+    } else {
+        document.getElementById("dec").style.height = "1.7em";
+    }
+    var change = document.getElementById("decb");
+    if (change.innerHTML == "Show more")
+    {
+        change.innerHTML = "Hide";
+    }
+    else
+    {
+        change.innerHTML = "Show more";
+    }
+    if (document.getElementById("dec").offsetHeight < document.getElementById("dec").scrollHeight ||
+    document.getElementById("dec").offsetWidth < document.getElementById("dec").scrollWidth) {
+    // your element have overflow
+} else {
+    // your element doesn't have overflow
+        document.getElementById('decb').style.visibility = 'hidden';
+}
+}
+</script><BR>
+        <button style=" background-color: Transparent;
+            background-repeat:no-repeat;
+            border: none;
+            cursor:pointer;
+            overflow: hidden;
+            text-align: left;
+            font-size: 134%;
+            outline:none;
+            width: 100%;
+            float: left;"
+                id="decb" type="button" onclick="ShowMore()">Show more</button>
+<Br>
+
+  </p>
+    <p style="float: left;margin-top: 2%;">
+<b><span class="glyphicon glyphicon-tags"></span> Tags: </b> <br><p></p>
+
+    <div style="float: left;margin-top: 2%;" id="tag-list" class="btn-group">
         {% for tag in tags %}
           {% if forloop.last %}
             <button type="button" style="margin-bottom: 2%;" class="btn-link"><b>{{ tag }}</b></button>
@@ -341,8 +380,7 @@ function Hide() {
             <button type="button" style="margin-bottom: 2%;" class="btn-link"><b>{{ tag }}</b></button> ,
           {% endif %}
         {% endfor %}
-    </div>
-
+    </div></p>
 
     <br>
 </div>
@@ -351,34 +389,31 @@ function Hide() {
 
 
     <!-- end col-2 -->
-    <div class="col-sm-6" style="margin-top: 35px; padding-left: 4%;padding-right: 1%;">
-      <h3>Related Videos:</h3>
-      <br>
+    <div style="padding-left: 13%;padding-top: 2.4%;" class="col-sm-6 col-md-6"  style="margin-top: 35px;padding-right: 1%;">
+      <h4>Related Videos:</h4>
 
       {% for v in rel_videos %}
       <a href="{% url 's_vid' v.id %}">
         <div class="row">
             {% if v.thumpnail == 'thumpnail/None/default_thump.png' %}
             <!-- video width="853" height="480" controls -->
-                <video width="32%" height="18%"  id="{{ v.id }}" >
+                <video width="38.4%" height="21.6%"  id="{{ v.id }}" >
                     <source src="{{v.video.url}}#t=0" type="video/mp4">
-                    <source src="{{v.video.url}}#t=0" type="video/ogg">
                 <div class="alert alert-warning"><b>
                 <span class="glyphicon glyphicon-warning-sign" aria-hidden="true">
                 </span> Warning: </b> Your browser does not support the video tag.
                         </div> </video>
             {% else %}
                 <!-- video width="320" height="240" controls -->
-                <video width="32%" height="18%" poster="{{ v.thumpnail.url }}" id="{{ v.id }}" >
+                <video width="38.4%" height="21.6%" poster="{{ v.thumpnail.url }}" id="{{ v.id }}" >
                     <source src="{{v.video.url}}" type="video/mp4">
-                    <source src="{{v.video.url}}" type="video/ogg">
                 <div class="alert alert-warning"><b>
                 <span class="glyphicon glyphicon-warning-sign" aria-hidden="true">
                 </span> Warning: </b> Your browser does not support the video tag.
                         </div>
                     </video>
-            {% endif %}</a><br>
-            <b>{{ v.title }} </b><br>Views: {{ v.views }}
+            {% endif %}
+           <div style="position: inherit; float: inherit; "> <b>{{ v.title }} </b></a><br>Views: {{ v.views }}</div>
         </div>
 
       {% endfor %}
@@ -391,6 +426,8 @@ function Hide() {
   <hr>
   <p></p>
 
+{#review part#}
+    
   {% if request.user.is_authenticated %}
 
     {% if not rated  %}

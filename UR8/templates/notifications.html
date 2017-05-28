@@ -152,7 +152,6 @@
               {% endif %}{% else %}
                 <img src="{% static "v.png" %}" width="30" height="30">
             {% endif %}</li>
-        <li><a href="{% url 'channels' %}"><img src="{% static "tv.png" %}" width="30" height="30"></a></li>
           {% if not request.user.is_authenticated %}
             <li><a href="{% url 'sign_in' %}"><img src="{% static "login.png" %}" width="30" height="30"></a></li>
             <li><a href="{% url 'sign_up' %}"><img src="{% static "sign.png" %}" width="30" height="30"></a></li>
@@ -161,8 +160,8 @@
           {% if request.user.is_authenticated %}
               <li><a href="{% url 'upld_vid' %}" ><img  src="{% static "up.png" %}" style="margin-top: 5px;" width="30" height="30"></a></li>
             <li><a href="{% url 'view_vid' %}"><img src="{% static "my.png" %}" style="margin-top: 5px;" width="30" height="28"></a></li>
-              <li><a href="{% url 'subscribes' %}"><img src="{% static "sub.png" %}" style="margin-top: 5px;" width="30" height="28"></a></li>
-              <li><a href="{% url 'notifications' %}" ><img class="notimage" src="{% static "not.png" %}" style="margin-top: 2px;" width="31" height="31"><div class="note">{{ request.user.profile.count }}</div></a></li>
+              <li><a href="{% url 'notifications' %}" ><img class="notimage" src="{% static "not.png" %}" style="margin-top: 2px;" width="31" height="31">
+                  <div class="note">{{ request.user.profile.count }}</div></a></li>
             <li><a href="{% url 'sign_out' %}"><img src="{% static "door.png" %}" style="margin-top: 5px;" width="28" height="28"></a></li>
           {% endif %}
         </ul>
@@ -176,24 +175,20 @@
 
     <div class="row">
     {% for video in not_vid %}
-        <div class="col-sm-6 col-md-2">
+        <div class="col-sm-4 col-md-2">
             <B>NOTIFICATION</B><BR>
-            <B>{{ video.title }}</B><Br>
+            <a href="{% url 's_vid' video.id %}"><B>{{ video.title }}</B><Br>
             {% if video.thumpnail == 'thumpnail/None/default_thump.png' %}
-          <!-- video width="320" height="240" controls -->
-          <video width="96%" height="54%">
+          <video width="100%" height="56%">
             <source src="{{video.video.url}}#t=0" type="video/mp4">
-            <source src="{{video.video.url}}#t=0" type="video/ogg">
             <div class="alert alert-warning" style="border-radius:0px; border:0"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
           </video>
         {% else %}
-        <!-- video width="320" height="240" controls -->
-        <video width="96%" height="54%" poster="{{ video.thumpnail.url }}">
+        <video width="100%" height="56%" poster="{{ video.thumpnail.url }}">
           <source src="{{video.video.url}}" type="video/mp4">
-          <source src="{{video.video.url}}" type="video/ogg">
           <div class="alert alert-warning" style="border-radius:0px; border:0"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
         </video>
-        {% endif %}<br>
+        {% endif %}</a><br>
         <a href="{% url 'del_notifications' video.id %}" class="btn btn-danger" role="button">
                   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete </a>
       </div>

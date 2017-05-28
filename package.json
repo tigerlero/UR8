@@ -1,0 +1,11 @@
+{
+  "name": "ur8",
+  "private": true,
+  "scripts": {
+  },
+  "engines": {
+    "npm": ">=1.3.0 <4.0.0"
+  },
+  "devDependencies": {
+  }
+}
