@@ -269,7 +269,12 @@
         </video>
         {% endif %}
           <div class="caption">
-          <h5>{{ video.title }}</h5></a>
+          <h5 style="
+      white-space: pre-wrap;
+    width: 101%;
+    height: 3em;
+    overflow: hidden;
+    text-overflow: clip;">{{ video.title }}</h5></a>
           <b ><a style="color: black;!important;" href="{% url 'channel' video.user.username %}">{{ video.user.username }}</a></b>
       <br><span ><b>Views: </b>
           {{video.views}}
@@ -359,7 +364,12 @@
         </video>
         {% endif %}
           <div class="caption">
-          <h5>{{ video.title }}</h5></a>
+          <h5 style="
+      white-space: pre-wrap;
+    width: 101%;
+    height: 3em;
+    overflow: hidden;
+    text-overflow: clip;">{{ video.title }}</h5></a>
           <b ><a style="color: black;!important;" href="{% url 'channel' video.user.username %}">{{ video.user.username }}</a></b>
       <br><span ><b>Views: </b>
           {{video.views}}
@@ -450,7 +460,12 @@
         </video>
         {% endif %}
           <div class="caption">
-          <h5>{{ video.title }}</h5></a>
+          <h5 style="
+      white-space: pre-wrap;
+    width: 101%;
+    height: 3em;
+    overflow: hidden;
+    text-overflow: clip;">{{ video.title }}</h5></a>
          <b ><a style="color: black;!important;" href="{% url 'channel' video.user.username %}">{{ video.user.username }}</a></b>
       <br><span ><b>Views: </b>
           {{video.views}}
