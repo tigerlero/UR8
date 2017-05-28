@@ -154,7 +154,7 @@
             {% endif %}</li>
           {% if not request.user.is_authenticated %}
             <li><a href="{% url 'sign_in' %}"><img src="{% static "login.png" %}" width="30" height="30"></a></li>
-            <li><a href="{% url 'sign_up' %}"><img src="{% static "sign.png" %}" width="30" height="30"></a></li>
+            <li><a href="{% url 'sign_up' %}"><img src="{% static "Sign.png" %}" width="30" height="30"></a></li>
           {% endif %}
 
           {% if request.user.is_authenticated %}
