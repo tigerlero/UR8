@@ -31,12 +31,15 @@ mccabe==0.3.1
 mock==1.3.0
 model-mommy==1.2.6
 moviepy==0.2.3.2
+npm==0.1.1
 numpy==1.12.1
 olefile==0.44
+optional-django==0.1.0
 ordereddict==1.1
 packaging==16.8
 path.py==8.1.2
 pbr==1.8.1
+pdbpp==0.8.3
 pep8==1.5.7
 Pillow==4.1.1
 pip-tools==1.3.0
