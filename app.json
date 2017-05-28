@@ -1,13 +1,18 @@
 {
   "name": "ur8",
-  "description": "asd",
-  "scripts": {
-  },
+  "description": "A simple project to get started with Django on Heroku",
+  "repository": "https://github.com/tigerlero/amazonur8",
+  "keywords": ["python", "django", "template", "ur8"],
   "env": {
-  },
-  "formation": {
+    "DJANGO_SECRET_KEY": {
+      "description": "A randomly generated secret to secure your Django installation",
+      "generator": "lxprlcqarvh1vwopff_z7u-&bwt-yyff=yo$z3mqp+6v(442p4"
+    }
   },
   "addons": [
     "heroku-postgresql"
-  ]
+  ],
+  "scripts": {
+    "postdeploy": "python manage.py migrate --noinput"
+  }
 }
