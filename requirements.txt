@@ -1,70 +1,25 @@
-asn1crypto==0.22.0
-awscli==1.11.93
-beautifulsoup4==4.4.1
-botocore==1.5.56
-cffi==1.10.0
-click==6.2
-colorama==0.3.7
-coverage==4.0.3
-cryptography==1.8.2
-decorator==4.0.11
-dj-database-url==0.4.2
-dj-static==0.0.6
-Django==1.10
-django-appconf==1.0.2
-django-braces==1.8.1
-django-model-utils==2.4
-django-star-ratings==0.5.5
-django-toolbelt==0.0.1
-django-video-encoding==0.1.0
-django-webtest==1.7.8
-docutils==0.13.1
-fancycompleter==0.4
-first==2.0.1
-flake8==2.5.1
-gunicorn==19.7.1
-hypothesis==1.16.0
-idna==2.5
-imageio==2.1.2
-jmespath==0.9.3
-mccabe==0.3.1
-mock==1.3.0
-model-mommy==1.2.6
-moviepy==0.2.3.2
-npm==0.1.1
-numpy==1.12.1
-olefile==0.44
-optional-django==0.1.0
-ordereddict==1.1
-packaging==16.8
-path.py==8.1.2
-pbr==1.8.1
-pep8==1.5.7
-Pillow==4.1.1
-pip-tools==1.3.0
-psycopg2==2.7.1
-py==1.4.31
-pyasn1==0.2.3
-pycparser==2.17
-pyflakes==1.0.0
-Pygments==2.0.2
-pyparsing==2.2.0
-pytest==2.8.4
-pytest-cov==2.2.0
-pytest-django==2.9.1
-python-dateutil==2.6.0
-pytz==2017.2
-PyYAML==3.12
-rsa==3.4.2
-s3transfer==0.1.10
-selenium==2.48.0
-shutilwhich==1.1.0
-six==1.10.0
-static3==0.7.0
-tqdm==4.11.2
-virtualenv==15.1.0
-waitress==0.8.10
-WebOb==1.5.1
-WebTest==2.0.20
-whitenoise==3.3.0
-wmctrl==0.3
+
+Usage: npm <command>
+
+where <command> is one of:
+    access, adduser, bin, bugs, c, cache, completion, config,
+    ddp, dedupe, deprecate, dist-tag, docs, doctor, edit,
+    explore, get, help, help-search, i, init, install,
+    install-test, it, link, list, ln, login, logout, ls,
+    outdated, owner, pack, ping, prefix, prune, publish, rb,
+    rebuild, repo, restart, root, run, run-script, s, se,
+    search, set, shrinkwrap, star, stars, start, stop, t, team,
+    test, tst, un, uninstall, unpublish, unstar, up, update, v,
+    version, view, whoami
+
+npm <cmd> -h     quick help on <cmd>
+npm -l           display full usage info
+npm help <term>  search for help on <term>
+npm help npm     involved overview
+
+Specify configs in the ini-formatted file:
+    C:\Users\tiger\.npmrc
+or on the command line via: npm <command> --key value
+Config info can be viewed via: npm help config
+
+npm@4.2.0 E:\Program Files\nodejs\node_modules\npm
