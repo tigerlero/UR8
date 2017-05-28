@@ -1,2 +1,2 @@
-web: waitress-serve --port=$PORT {ur8}.wsgi:application
+web: python manage.py runserver 0.0.0.0:$PORT --noreload
 release: python manage.py migrate
