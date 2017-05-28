@@ -8,6 +8,7 @@
       "description": "A randomly generated secret to secure your Django installation",
       "generator": "lxprlcqarvh1vwopff_z7u-&bwt-yyff=yo$z3mqp+6v(442p4"
     }
+	"WEB_CONCURRENCY": "5"
   },
   "addons": [
     "heroku-postgresql"
