@@ -217,7 +217,6 @@ function toggleControls() {
 }
 </script>
   {% if video.thumpnail == 'thumpnail/None/default_thump.png' %}
-    <!-- video width="853" height="480" controls -->
     <video onmouseout="toggleControls()" id="play" width="144%" height="81%" id="{{ video.id }}" controls >
       <source src="{{video.video.url}}#t=0" type="video/mp4">
       <div class="alert alert-warning"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
@@ -299,7 +298,7 @@ function toggleControls() {
   <hr>
   <p>
     <b style="float: left">
-        {% if request.user.profile.image == 'avatar/None/default_avatar.png' %}
+        {% if video.user.profile.image == 'avatar/None/default_avatar.png' %}
                 <span><a href="{% url 'profile' %}">
                     <img class="sm-avatar" src="{% static video.user.profile.image %}" width="40" height="40">
                     </a></span>
@@ -334,7 +333,8 @@ function ShowMore() {
 
     if (document.getElementById("dec").style.height == "1.7em") {
         document.getElementById("dec").style.height = "100%";
-    } else {
+    }
+    else {
         document.getElementById("dec").style.height = "1.7em";
     }
     var change = document.getElementById("decb");
@@ -345,15 +345,7 @@ function ShowMore() {
     else
     {
         change.innerHTML = "Show more";
-    }
-    if (document.getElementById("dec").offsetHeight < document.getElementById("dec").scrollHeight ||
-    document.getElementById("dec").offsetWidth < document.getElementById("dec").scrollWidth) {
-    // your element have overflow
-} else {
-    // your element doesn't have overflow
-        document.getElementById('decb').style.visibility = 'hidden';
-}
-}
+    }}
 </script><BR>
         <button style=" background-color: Transparent;
             background-repeat:no-repeat;

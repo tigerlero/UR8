@@ -43,10 +43,10 @@ def home(request):
             new.append(video)
             popular.append(video)
             best.append(video)
-        video_results = video_results[-19:]
-        new = new[-19:]
-        popular = popular[-19:]
-        best = best[-19:]
+        video_results = video_results[-29:]
+        new = new[-29:]
+        popular = popular[-29:]
+        best = best[-29:]
         video_results = sort_videos(video_results)
         new = new_videos(new)
         popular = popular_videos(popular)
@@ -56,7 +56,34 @@ def home(request):
             hasRes = True
         else:
             hasRes = False
-
+        return render(request, 'home.html',
+                      {'video_results': video_results, 'hasRes': hasRes, 'users': users, 'new': new, 'popular': popular,
+                       'best': best})
+    if request.method == 'GET' and request.user.is_authenticated():
+        videos = Video.objects.all()
+        video_results = []
+        new = []
+        popular = []
+        best = []
+        users = User.objects.all()
+        for video in videos:
+            video_results.append(video)
+            new.append(video)
+            popular.append(video)
+            best.append(video)
+        video_results = video_results[-29:]
+        new = new[-29:]
+        popular = popular[-29:]
+        best = best[-29:]
+        video_results = sort_videos(video_results)
+        new = new_videos(new)
+        popular = popular_videos(popular)
+        best = best_videos(best)
+        hasRes = False
+        if len(video_results) >= 1:
+            hasRes = True
+        else:
+            hasRes = False
         u = request.user
         subchan = []
         subs = u.profile.subscribes
@@ -93,7 +120,7 @@ def best_videos(videos):
     for i, video in enumerate(videos):
         overall[i] += 1 * video.id
         overall[i] += 10 * video.avg_rating
-        overall[i] += 1 * video.views
+        overall[i] += 2 * video.views
     # insertion sort for overall score
     for i in range(1, len(videos)):
         j = i
