@@ -505,7 +505,7 @@ function ShowMore() {
 
         var text = $('#review-area').val();
         var pk = $("video").attr('id');
-        var url = "https://0.0.0.0:$PORT/ur8/rated-video/"+pk+"/";
+        var url = "0.0.0.0:$PORT/ur8/rated-video/"+pk+"/";
         var token = $('#review-form > input[name=csrfmiddlewaretoken]').val();
 
         e.preventDefault();
@@ -539,7 +539,7 @@ function ShowMore() {
         var vID = $("video").attr('id');
         var rID = $(this).parent('#approve-form').data('id');
         var token = $(this).siblings("input[name=csrfmiddlewaretoken]").val();
-        var url = "https://0.0.0.0:$PORT/ur8/liked-review/"+vID+"/"+rID+"/";
+        var url = "0.0.0.0:$PORT/ur8/liked-review/"+vID+"/"+rID+"/";
 
         $.ajax({
           type:'POST',
@@ -562,7 +562,7 @@ function ShowMore() {
         var vID = $("video").attr('id');
         var rID = $(this).parent('#approve-form').data('id');
         var token = $(this).siblings("input[name=csrfmiddlewaretoken]").val();
-        var url = "https://0.0.0.0:$PORT/ur8/disliked-review/"+vID+"/"+rID+"/";
+        var url = "0.0.0.0:$PORT/ur8/disliked-review/"+vID+"/"+rID+"/";
 
         $.ajax({
           type:'POST',
@@ -585,7 +585,7 @@ function ShowMore() {
         var rID = $(this).parent('#approve-form').data('id');
         var vID = $("video").attr('id');
         var token = $(this).siblings("input[name=csrfmiddlewaretoken]").val();
-        var url = "https://0.0.0.0:$PORT/ur8/delete-review/"+rID+"/";
+        var url = "0.0.0.0:$PORT/ur8/delete-review/"+rID+"/";
         window.alert( "Review deleted !" );
 
         $.ajax({
@@ -608,7 +608,7 @@ function ShowMore() {
       $( ".ed-btn" ).on("click",function(e) {
         var rID = $(this).parent('#approve-form').data('id');
         var vID = $("video").attr('id');
-        var url = "https://0.0.0.0:$PORT/ur8/edit-review/"+vID+"/"+rID+"/";
+        var url = "0.0.0.0:$PORT/ur8/edit-review/"+vID+"/"+rID+"/";
         $(location).attr('href', url);
       });
 
