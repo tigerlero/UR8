@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdba3134-eb2b-42f0-8c12-9d864dd77c7c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/edit_review.html" afterPath="$PROJECT_DIR$/UR8/templates/edit_review.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/s_vid.html" afterPath="$PROJECT_DIR$/UR8/templates/s_vid.html" />
     </list>
@@ -15,11 +16,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="s_vid.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="s_vid.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UR8/templates/s_vid.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="507" column="22" lean-forward="false" selection-start-line="507" selection-start-column="22" selection-end-line="507" selection-end-column="22" />
+            <state relative-caret-position="515">
+              <caret line="507" column="24" lean-forward="false" selection-start-line="507" selection-start-column="24" selection-end-line="507" selection-end-column="24" />
               <folding>
                 <element signature="n#style#0;n#b#0;n#p#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -30,21 +31,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit_review.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UR8/templates/edit_review.html">
+      <file leaf-file-name="reset_pwd.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/UR8/templates/reset_pwd.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="821">
-              <caret line="154" column="28" lean-forward="false" selection-start-line="154" selection-start-column="28" selection-end-line="154" selection-end-column="28" />
+            <state relative-caret-position="459">
+              <caret line="86" column="6" lean-forward="false" selection-start-line="86" selection-start-column="6" selection-end-line="86" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="runtime.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/runtime.txt">
+      <file leaf-file-name="edit_review.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UR8/templates/edit_review.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="974">
+              <caret line="154" column="30" lean-forward="false" selection-start-line="154" selection-start-column="30" selection-end-line="154" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -54,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/Procfile.windows">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="32" lean-forward="true" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="45" />
+              <caret line="0" column="32" lean-forward="false" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -63,8 +64,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UR8/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="48" column="46" lean-forward="true" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="46" />
+            <state relative-caret-position="-1853">
+              <caret line="48" column="46" lean-forward="false" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="46" />
               <folding>
                 <element signature="e#3580#4099#0" expanded="false" />
                 <element signature="e#4130#4649#0" expanded="false" />
@@ -117,7 +118,7 @@
         <entry file="file://$PROJECT_DIR$/UR8/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-189">
-              <caret line="102" column="31" lean-forward="true" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
+              <caret line="102" column="31" lean-forward="false" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
               <folding>
                 <element signature="n#nav#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -165,7 +166,6 @@
         <option value="$PROJECT_DIR$/UR8/templates/sign-up.html" />
         <option value="$PROJECT_DIR$/UR8/templates/sign-in.html" />
         <option value="$PROJECT_DIR$/UR8/templates/search_res.html" />
-        <option value="$PROJECT_DIR$/UR8/templates/reset_pwd.html" />
         <option value="$PROJECT_DIR$/UR8/templates/profile.html" />
         <option value="$PROJECT_DIR$/UR8/templates/notifications.html" />
         <option value="$PROJECT_DIR$/UR8/templates/edit_avatar.html" />
@@ -177,8 +177,9 @@
         <option value="$PROJECT_DIR$/UR8/templates/subscribes.html" />
         <option value="$PROJECT_DIR$/UR8/templates/home.html" />
         <option value="$PROJECT_DIR$/UR8/views.py" />
-        <option value="$PROJECT_DIR$/UR8/templates/edit_review.html" />
+        <option value="$PROJECT_DIR$/UR8/templates/reset_pwd.html" />
         <option value="$PROJECT_DIR$/UR8/templates/s_vid.html" />
+        <option value="$PROJECT_DIR$/UR8/templates/edit_review.html" />
       </list>
     </option>
   </component>
@@ -905,14 +906,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UR8/templates/reset_pwd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="69" column="71" lean-forward="false" selection-start-line="69" selection-start-column="71" selection-end-line="69" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/profile.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -969,7 +962,7 @@
     <entry file="file://$PROJECT_DIR$/Procfile.windows">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="32" lean-forward="true" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="45" />
+          <caret line="0" column="32" lean-forward="false" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -977,7 +970,7 @@
     <entry file="file://$PROJECT_DIR$/UR8/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-189">
-          <caret line="102" column="31" lean-forward="true" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
+          <caret line="102" column="31" lean-forward="false" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
           <folding>
             <element signature="n#nav#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -992,37 +985,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#225#234#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UR8/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="48" column="46" lean-forward="true" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="46" />
-          <folding>
-            <element signature="e#3580#4099#0" expanded="false" />
-            <element signature="e#4130#4649#0" expanded="false" />
-            <element signature="e#4688#5187#0" expanded="false" />
-            <element signature="e#6886#7673#0" expanded="false" />
-            <element signature="e#7718#8894#0" expanded="false" />
-            <element signature="e#8938#10107#0" expanded="false" />
-            <element signature="e#10144#10821#0" expanded="false" />
-            <element signature="e#10882#12661#0" expanded="false" />
-            <element signature="e#12717#14037#0" expanded="false" />
-            <element signature="e#14122#15696#0" expanded="false" />
-            <element signature="e#15753#16328#0" expanded="false" />
-            <element signature="e#16371#16807#0" expanded="false" />
-            <element signature="e#16847#17261#0" expanded="false" />
-            <element signature="e#17291#17690#0" expanded="false" />
-            <element signature="e#17758#18968#0" expanded="false" />
-            <element signature="e#19018#19735#0" expanded="false" />
-            <element signature="e#19770#20456#0" expanded="false" />
-            <element signature="e#20485#20906#0" expanded="false" />
-            <element signature="e#21791#22763#0" expanded="false" />
-            <element signature="e#22809#22987#0" expanded="false" />
-            <element signature="e#23039#23739#0" expanded="false" />
-            <element signature="e#23791#24888#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1053,24 +1015,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UR8/templates/edit_review.html">
+    <entry file="file://$PROJECT_DIR$/UR8/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="821">
-          <caret line="154" column="28" lean-forward="false" selection-start-line="154" selection-start-column="28" selection-end-line="154" selection-end-column="28" />
-          <folding />
+        <state relative-caret-position="-1853">
+          <caret line="48" column="46" lean-forward="false" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="46" />
+          <folding>
+            <element signature="e#3580#4099#0" expanded="false" />
+            <element signature="e#4130#4649#0" expanded="false" />
+            <element signature="e#4688#5187#0" expanded="false" />
+            <element signature="e#6886#7673#0" expanded="false" />
+            <element signature="e#7718#8894#0" expanded="false" />
+            <element signature="e#8938#10107#0" expanded="false" />
+            <element signature="e#10144#10821#0" expanded="false" />
+            <element signature="e#10882#12661#0" expanded="false" />
+            <element signature="e#12717#14037#0" expanded="false" />
+            <element signature="e#14122#15696#0" expanded="false" />
+            <element signature="e#15753#16328#0" expanded="false" />
+            <element signature="e#16371#16807#0" expanded="false" />
+            <element signature="e#16847#17261#0" expanded="false" />
+            <element signature="e#17291#17690#0" expanded="false" />
+            <element signature="e#17758#18968#0" expanded="false" />
+            <element signature="e#19018#19735#0" expanded="false" />
+            <element signature="e#19770#20456#0" expanded="false" />
+            <element signature="e#20485#20906#0" expanded="false" />
+            <element signature="e#21791#22763#0" expanded="false" />
+            <element signature="e#22809#22987#0" expanded="false" />
+            <element signature="e#23039#23739#0" expanded="false" />
+            <element signature="e#23791#24888#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/s_vid.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="507" column="22" lean-forward="false" selection-start-line="507" selection-start-column="22" selection-end-line="507" selection-end-column="22" />
+        <state relative-caret-position="515">
+          <caret line="507" column="24" lean-forward="false" selection-start-line="507" selection-start-column="24" selection-end-line="507" selection-end-column="24" />
           <folding>
             <element signature="n#style#0;n#b#0;n#p#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UR8/templates/edit_review.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="974">
+          <caret line="154" column="30" lean-forward="false" selection-start-line="154" selection-start-column="30" selection-end-line="154" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UR8/templates/reset_pwd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="86" column="6" lean-forward="false" selection-start-line="86" selection-start-column="6" selection-end-line="86" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
