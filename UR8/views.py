@@ -211,8 +211,7 @@ def edit_review(request, vid, rid):
 
 
 def delete_review(request, rID):
-    if request.method == 'POST' and request.is_ajax() and request.POST[
-        'del_review'] == 'yes' and request.user.is_authenticated():
+    if request.method == 'POST' and request.is_ajax() and request.POST['del_review'] == 'yes' and request.user.is_authenticated():
         review = Review.objects.get(id=rID)
         vID = request.POST['vID']
         video = Video.objects.get(id=vID)
@@ -241,7 +240,7 @@ def rated_review2(request, vID, rID):
         uname = request.user.username
 
         if request.POST['disapprove'] == 'yes':
-            if (uname in review.disapprovedBy):
+            if uname in review.disapprovedBy:
                 data = {'ok': 'yes'}
                 return HttpResponse(json.dumps(data), content_type='application/json')
             else:
@@ -270,7 +269,7 @@ def rated_review(request, vID, rID):
         uname = request.user.username
 
         if request.POST['approve'] == 'yes':
-            if (uname in review.approvedBy):
+            if uname in review.approvedBy:
                 data = {'ok': 'yes'}
                 return HttpResponse(json.dumps(data), content_type='application/json')
             else:
