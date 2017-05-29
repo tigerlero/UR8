@@ -31,7 +31,7 @@ import time
 # Create your views here.
 # Login is required to view this page..
 def home(request):
-    if request.method == 'GET':
+    if request.method == 'GET' and request.user.is_authenticated():
         videos = Video.objects.all()
         video_results = []
         new = []
@@ -59,7 +59,7 @@ def home(request):
         return render(request, 'home.html',
                       {'video_results': video_results, 'hasRes': hasRes, 'users': users, 'new': new, 'popular': popular,
                        'best': best})
-    if request.method == 'GET' and request.user.is_authenticated():
+    else :
         videos = Video.objects.all()
         video_results = []
         new = []
