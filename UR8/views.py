@@ -56,6 +56,30 @@ def home(request):
             hasRes = True
         else:
             hasRes = False
+        else:
+        videos = Video.objects.all()
+        video_results = []
+        new = []
+        popular = []
+        best = []
+        users = User.objects.all()
+        for video in videos:
+            video_results.append(video)
+            new.append(video)
+            popular.append(video)
+            best.append(video)
+        video_results = video_results[-29:]
+        new = new[-29:]
+        popular = popular[-29:]
+        best = best[-29:]
+        video_results = sort_videos(video_results)
+        new = new_videos(new)
+        popular = popular_videos(popular)
+        best = best_videos(best)
+        hasRes = False
+        if len(video_results) >= 1:
+            hasRes = True
+        else:
         return render(request, 'home.html',
                       {'video_results': video_results, 'hasRes': hasRes, 'users': users, 'new': new, 'popular': popular,
                        'best': best})
@@ -84,17 +108,10 @@ def home(request):
             hasRes = True
         else:
             hasRes = False
-        u = request.user
-        subchan = []
-        subs = u.profile.subscribes
-        for v in videos:
-            if (v.user.username in subs) and (subs != ""):
-                if v.user not in subchan and v.user != u:
-                    subchan.append(v.user)
 
         return render(request, 'home.html',
                       {'video_results': video_results, 'hasRes': hasRes, 'users': users, 'new': new, 'popular': popular,
-                       'best': best, "subchan": subchan})
+                       'best': best})
 
 
 def sort_videos(videos):

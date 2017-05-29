@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdba3134-eb2b-42f0-8c12-9d864dd77c7c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/home.html" afterPath="$PROJECT_DIR$/UR8/templates/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/views.py" afterPath="$PROJECT_DIR$/UR8/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -88,31 +87,31 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UR8/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="61" column="9" lean-forward="false" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
+            <state relative-caret-position="646">
+              <caret line="109" column="26" lean-forward="false" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
               <folding>
-                <element signature="e#4403#4922#0" expanded="false" />
-                <element signature="e#4953#5472#0" expanded="false" />
-                <element signature="e#5511#6010#0" expanded="false" />
-                <element signature="e#7709#8496#0" expanded="false" />
-                <element signature="e#8541#9717#0" expanded="false" />
-                <element signature="e#9761#10930#0" expanded="false" />
-                <element signature="e#10967#11644#0" expanded="false" />
-                <element signature="e#11705#13484#0" expanded="false" />
-                <element signature="e#13540#14860#0" expanded="false" />
-                <element signature="e#14945#16519#0" expanded="false" />
-                <element signature="e#16576#17151#0" expanded="false" />
-                <element signature="e#17194#17630#0" expanded="false" />
-                <element signature="e#17670#18084#0" expanded="false" />
-                <element signature="e#18114#18513#0" expanded="false" />
-                <element signature="e#18581#19791#0" expanded="false" />
-                <element signature="e#19841#20558#0" expanded="false" />
-                <element signature="e#20593#21279#0" expanded="false" />
-                <element signature="e#21308#21729#0" expanded="false" />
-                <element signature="e#22614#23586#0" expanded="false" />
-                <element signature="e#23632#23810#0" expanded="false" />
-                <element signature="e#23862#24562#0" expanded="false" />
-                <element signature="e#24614#25711#0" expanded="false" />
+                <element signature="e#4830#5349#0" expanded="false" />
+                <element signature="e#5380#5899#0" expanded="false" />
+                <element signature="e#5938#6437#0" expanded="false" />
+                <element signature="e#8136#8923#0" expanded="false" />
+                <element signature="e#8968#10144#0" expanded="false" />
+                <element signature="e#10188#11357#0" expanded="false" />
+                <element signature="e#11394#12071#0" expanded="false" />
+                <element signature="e#12132#13911#0" expanded="false" />
+                <element signature="e#13967#15287#0" expanded="false" />
+                <element signature="e#15372#16946#0" expanded="false" />
+                <element signature="e#17003#17578#0" expanded="false" />
+                <element signature="e#17621#18057#0" expanded="false" />
+                <element signature="e#18097#18511#0" expanded="false" />
+                <element signature="e#18541#18940#0" expanded="false" />
+                <element signature="e#19008#20218#0" expanded="false" />
+                <element signature="e#20268#20985#0" expanded="false" />
+                <element signature="e#21020#21706#0" expanded="false" />
+                <element signature="e#21735#22156#0" expanded="false" />
+                <element signature="e#23041#24013#0" expanded="false" />
+                <element signature="e#24059#24237#0" expanded="false" />
+                <element signature="e#24289#24989#0" expanded="false" />
+                <element signature="e#25041#26138#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -121,13 +120,15 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UR8/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-611">
-              <caret line="462" column="42" lean-forward="false" selection-start-line="462" selection-start-column="42" selection-end-line="462" selection-end-column="42" />
+            <state relative-caret-position="666">
+              <caret line="150" column="12" lean-forward="true" selection-start-line="150" selection-start-column="12" selection-end-line="150" selection-end-column="12" />
               <folding>
                 <element signature="n#style#0;n#h5#0;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h5#0;n#div#0;n#a#0;n#a#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#span#0;n#a#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#h5#0;n#div#0;n#a#0;n#a#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h5#0;n#div#0;n#a#0;n#a#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -169,8 +170,8 @@
         <option value="$PROJECT_DIR$/UR8/templates/upld_vid.html" />
         <option value="$PROJECT_DIR$/UR8/templates/updt_vid.html" />
         <option value="$PROJECT_DIR$/UR8/templates/subscribes.html" />
-        <option value="$PROJECT_DIR$/UR8/views.py" />
         <option value="$PROJECT_DIR$/UR8/templates/home.html" />
+        <option value="$PROJECT_DIR$/UR8/views.py" />
       </list>
     </option>
   </component>
@@ -758,37 +759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UR8/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="61" column="9" lean-forward="false" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
-          <folding>
-            <element signature="e#4403#4922#0" expanded="false" />
-            <element signature="e#4953#5472#0" expanded="false" />
-            <element signature="e#5511#6010#0" expanded="false" />
-            <element signature="e#7709#8496#0" expanded="false" />
-            <element signature="e#8541#9717#0" expanded="false" />
-            <element signature="e#9761#10930#0" expanded="false" />
-            <element signature="e#10967#11644#0" expanded="false" />
-            <element signature="e#11705#13484#0" expanded="false" />
-            <element signature="e#13540#14860#0" expanded="false" />
-            <element signature="e#14945#16519#0" expanded="false" />
-            <element signature="e#16576#17151#0" expanded="false" />
-            <element signature="e#17194#17630#0" expanded="false" />
-            <element signature="e#17670#18084#0" expanded="false" />
-            <element signature="e#18114#18513#0" expanded="false" />
-            <element signature="e#18581#19791#0" expanded="false" />
-            <element signature="e#19841#20558#0" expanded="false" />
-            <element signature="e#20593#21279#0" expanded="false" />
-            <element signature="e#21308#21729#0" expanded="false" />
-            <element signature="e#22614#23586#0" expanded="false" />
-            <element signature="e#23632#23810#0" expanded="false" />
-            <element signature="e#23862#24562#0" expanded="false" />
-            <element signature="e#24614#25711#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/search_res.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -797,15 +767,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/UR8/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="109" column="26" lean-forward="false" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
+          <folding>
+            <element signature="e#4830#5349#0" expanded="false" />
+            <element signature="e#5380#5899#0" expanded="false" />
+            <element signature="e#5938#6437#0" expanded="false" />
+            <element signature="e#8136#8923#0" expanded="false" />
+            <element signature="e#8968#10144#0" expanded="false" />
+            <element signature="e#10188#11357#0" expanded="false" />
+            <element signature="e#11394#12071#0" expanded="false" />
+            <element signature="e#12132#13911#0" expanded="false" />
+            <element signature="e#13967#15287#0" expanded="false" />
+            <element signature="e#15372#16946#0" expanded="false" />
+            <element signature="e#17003#17578#0" expanded="false" />
+            <element signature="e#17621#18057#0" expanded="false" />
+            <element signature="e#18097#18511#0" expanded="false" />
+            <element signature="e#18541#18940#0" expanded="false" />
+            <element signature="e#19008#20218#0" expanded="false" />
+            <element signature="e#20268#20985#0" expanded="false" />
+            <element signature="e#21020#21706#0" expanded="false" />
+            <element signature="e#21735#22156#0" expanded="false" />
+            <element signature="e#23041#24013#0" expanded="false" />
+            <element signature="e#24059#24237#0" expanded="false" />
+            <element signature="e#24289#24989#0" expanded="false" />
+            <element signature="e#25041#26138#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-611">
-          <caret line="462" column="42" lean-forward="false" selection-start-line="462" selection-start-column="42" selection-end-line="462" selection-end-column="42" />
+        <state relative-caret-position="666">
+          <caret line="150" column="12" lean-forward="true" selection-start-line="150" selection-start-column="12" selection-end-line="150" selection-end-column="12" />
           <folding>
             <element signature="n#style#0;n#h5#0;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h5#0;n#div#0;n#a#0;n#a#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#span#0;n#a#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="false" />
             <element signature="n#style#0;n#h5#0;n#div#0;n#a#0;n#a#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#0;n#a#0;n#a#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
