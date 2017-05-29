@@ -306,10 +306,10 @@ def rated_video(request, id):
 
 
 # view a specific uploaded video
-def s_vid(request, id, rid):
+def s_vid(request, id):
     if request.method == 'GET':
-        review = Review.objects.get(id=rid)
         video = Video.objects.get(id=id)
+
         videos = Video.objects.all()
         tags = video.tags.split(",")  # l = ["","",""]
         if tags[-1] == "":
@@ -348,7 +348,7 @@ def s_vid(request, id, rid):
         rel_videos = rel_videos[-5:]
         rel_videos = sort_videos(rel_videos)
         return render(request, 's_vid.html',
-                      {'video': video, "review": review, 'tags': tags, 'rated': rated, 'lists': lists, "rel_videos": rel_videos})
+                      {'video': video, 'tags': tags, 'rated': rated, 'lists': lists, "rel_videos": rel_videos})
     elif request.method == 'POST':
         return render(request, 'home.html', {})
     else:
