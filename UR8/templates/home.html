@@ -92,11 +92,11 @@
                 {% if not channel.is_superuser  %}
 <div style="font-size: 70%;" class="col-sm-1 col-md-">
                     {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
-                    <a href="{% url 'channel' channel.username %}"><img src="{% static channel.profile.image %}" width="25" height="25" ></a>
+                    <a href="{% url 'channel' channel.username %}"><img src="{% static channel.profile.image %}" width="30" height="30" ></a>
                     {% else %}
-                    <a href="{% url 'channel' channel.username %}"><img src="{{ channel.profile.image.url }}" width="25" height="25" ></a>
+                    <a href="{% url 'channel' channel.username %}"><img src="{{ channel.profile.image.url }}" width="30" height="30" ></a>
                     {% endif %}</div>
-                {% endif %}<i style="font-size: 220%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
+                {% endif %}<i style="font-size: 220%"><a style="font-size: 60%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
             {% endfor %}
         {% endif %}
 <br>
@@ -114,9 +114,9 @@
                 <div style="font-size: 70%;" class="col-sm-1 col-md-1">
 <a href="{% url 'channel' channel.username %}">
                 {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
-                    <img src="{% static channel.profile.image %}" width="25" height="25" >
+                    <img src="{% static channel.profile.image %}" width="30" height="30" >
                 {% else %}
-                    <img src="{{ channel.profile.image.url }}" width="25" height="25" >
+                    <img src="{{ channel.profile.image.url }}" width="30" height="30" >
                 {% endif %}
                 </div>
                     {% endif %}<i style="font-size: 70%">  {{ channel.username }}</i></a><br>
@@ -129,11 +129,11 @@
                 <div style="font-size: 70%;" class="col-sm-1 col-md-1">
 <a href="{% url 'channel' channel.username %}">
                 {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
-                    <img src="{% static channel.profile.image %}" width="25" height="25" >
+                    <img src="{% static channel.profile.image %}" width="30" height="30" >
                 {% else %}
-                    <img src="{{ channel.profile.image.url }}" width="25" height="25" >
+                    <img src="{{ channel.profile.image.url }}" width="30" height="30" >
                 </a>{% endif %}</div>
-            {% endif %}<i style="font-size: 220%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
+            {% endif %}<i style="font-size: 220%"><a style="font-size: 60%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
             {% endfor %}
             {% endif %}
       </div>
