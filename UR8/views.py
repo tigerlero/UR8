@@ -250,14 +250,12 @@ def rated_review2(request, vID, rID):
                     liked = review.approvedBy.replace('' + uname + ',', "")
                     review.approvedBy = liked
                     review.save()
-
                     data = {'ok': 'yes'}
                     return HttpResponse(json.dumps(data), content_type='application/json')
                 else:
                     review.disapprovedBy += uname
                     review.disapprovedBy += ","
                     review.save()
-
                     data = {'ok': 'yes'}
                     return HttpResponse(json.dumps(data), content_type='application/json')
 
