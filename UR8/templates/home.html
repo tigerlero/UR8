@@ -23,17 +23,17 @@
       padding-top: 30px;
     }
 
-    #view-btn{
-      background-color: #99ccff !important;
-      border-color: #99ccff !important;
-      color: white;
-      border-radius: 0px;
-    }
-
-    #view-btn:hover, #view-btn:active{
-      background-color: #4da6ff !important;
-      border-color: #4da6ff !important;
-      color: white !important;
+{#    #view-btn{#}
+{#      background-color: #99ccff !important;#}
+{#      border-color: #99ccff !important;#}
+{#      color: white;#}
+{#      border-radius: 0px;#}
+{#    }#}
+{##}
+{#    #view-btn:hover, #view-btn:active{#}
+{#      background-color: #4da6ff !important;#}
+{#      border-color: #4da6ff !important;#}
+{#      color: white !important;#}
     }
 
     /*hr{
@@ -100,25 +100,25 @@
 
 <br><Br>
     <div class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;">
-        <b style="font-size: 220%;">
+        <b style="font-size: 180%;">
         <a href="{% url 'subscribes' %}"><img style="float: right; margin-right: 7%; margin-top: 3%;" src="{% static "sub.png" %}" style="margin-top: 5px;" width="30" height="28">
          Subs</a></b>
     </div><br>
         {% if request.user.is_authenticated %}
             {% for channel in subchan %}
                 {% if not channel.is_superuser  %}
-<div class="col-sm-1 col-md-">
+<div style="font-size: 70%" class="col-sm-1 col-md-">
                     {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
                     <a href="{% url 'channel' channel.username %}"><img src="{% static channel.profile.image %}" width="40" height="40" ></a>
                     {% else %}
                     <a href="{% url 'channel' channel.username %}"><img src="{{ channel.profile.image.url }}" width="40" height="40" ></a>
                     {% endif %}</div>
-                {% endif %}<i style="font-size: 220%">  {{ channel.username }}</i><br>
+                {% endif %}<i style="font-size: 70%">  {{ channel.username }}</i><br>
             {% endfor %}
         {% endif %}
 <br>
      <div class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;">
-        <b style="font-size: 220%;">
+        <b style="font-size: 180%;">
         <a href="{% url 'channels' %}"><img src="{% static "tv.png" %}" style="float: right; margin-right: 7%; margin-top: 3%;" width="30" height="30">
          Channels</a></b>
     </div><br>
@@ -128,7 +128,7 @@
                         {% for sub in subchan %}
                     {% if channel != sub %}
                 {% if not channel.is_superuser   %}
-                <div class="col-sm-1 col-md-1">
+                <div style="font-size: 70%;" class="col-sm-1 col-md-1">
 <a href="{% url 'channel' channel.username %}">
                 {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
                     <img src="{% static channel.profile.image %}" width="40" height="40" >
@@ -136,31 +136,31 @@
                     <img src="{{ channel.profile.image.url }}" width="40" height="40" >
                 {% endif %}
                 </div>
-                    {% endif %}<i style="font-size: 220%">  {{ channel.username }}</i></a><br>
+                    {% endif %}<i style="font-size: 70%">  {{ channel.username }}</i></a><br>
                 {% endif %}
                         {% endfor %}{% endif %}
                 {% endfor %}
             {% else %}
                 {% for channel in users %}
             {% if not channel.is_superuser   %}
-                <div class="col-sm-1 col-md-1">
+                <div style="font-size: 70%;" class="col-sm-1 col-md-1">
 <a href="{% url 'channel' channel.username %}">
                 {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
                     <img src="{% static channel.profile.image %}" width="40" height="40" >
                 {% else %}
                     <img src="{{ channel.profile.image.url }}" width="40" height="40" >
                 </a>{% endif %}</div>
-            {% endif %}<i style="font-size: 220%"><a href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
+            {% endif %}<i style="font-size: 220%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
             {% endfor %}
             {% endif %}
       </div>
 
-    <div style="width: 84%; padding-top: 0.96%; float: left;">
+    <div style="width: 84%; padding-top: 1.69%; float: left;">
 
 
-  <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px;font-size: 250%; !important;"><b>Upload</b> videos and <b>see</b> your rating !</p>
+  <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px;font-size: 180%; !important;"><b>Upload</b> videos and <b>see</b> your rating !</p>
 <P></P><br>
-    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 220%;">Top Videos</b></p><br>
+    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 180%;">Top Videos</b></p><br>
     {% if hasRes %}
     <div class="row">
       {% for video in video_results %}
@@ -255,7 +255,7 @@
       {% endfor %}
     </div>
   {% endif %}
-    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 220%;">Newest Videos</b></p><br>
+    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 180%;">Newest Videos</b></p><br>
     {% if hasRes %}
     <div class="row">
       {% for video in new %}
@@ -263,7 +263,6 @@
       <div class="thumbnail" style="border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
 
         {% if video.thumpnail == 'thumpnail/None/default_thump.png' %}
-          <!-- video width="320" height="240" controls -->
           <a href="{% url 's_vid' video.id %}"><video width="100%" height="56%">
             <source src="{{video.video.url}}#t=0" type="video/mp4">
             <div class="alert alert-warning" style="border-radius:0px; border:0"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
@@ -351,7 +350,7 @@
       {% endfor %}
     </div>
   {% endif %}
-    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 220%;">Popular Videos</b></p><br>
+    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 180%;">Popular Videos</b></p><br>
     {% if hasRes %}
     <div style="font-size: 92%;" class="row">
       {% for video in popular %}
@@ -446,7 +445,7 @@
       {% endfor %}
     </div>
   {% endif %}
-    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 220%;">Best Rated Videos</b></p><br>
+    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 180%;">Best Rated Videos</b></p><br>
     {% if hasRes %}
     <div class="row">
       {% for video in best %}

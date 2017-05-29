@@ -7,6 +7,7 @@
     .notimage {
    position: relative;
 }
+
 .note {
     position: absolute;
     top: 24px;
@@ -14,6 +15,13 @@
     color: black;
     width: 28px;
 }
+
+    .description{
+      background-color: aliceblue;
+      border: none;
+      resize: none;
+    }
+
     .btn-link{
       background-color: aliceblue;
       color: #007399;
@@ -217,13 +225,13 @@ function toggleControls() {
 }
 </script>
   {% if video.thumpnail == 'thumpnail/None/default_thump.png' %}
-    <video onmouseout="toggleControls()" id="play" width="144%" height="81%" id="{{ video.id }}" controls >
+    <video onmouseout="toggleControls()" width="144%" height="81%" id="{{ video.id }}" controls >
       <source src="{{video.video.url}}#t=0" type="video/mp4">
       <div class="alert alert-warning"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
     </video>
   {% else %}
     <!-- video width="320" height="240" controls -->
-    <video id="play" width="144%" height="81%" poster="{{ video.thumpnail.url }}" id="{{ video.id }}" controls >
+    <video width="144%" height="81%" poster="{{ video.thumpnail.url }}" id="{{ video.id }}" controls >
       <source src="{{video.video.url}}" type="video/mp4">
       <div class="alert alert-warning"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
     </video>
@@ -497,15 +505,15 @@ function ShowMore() {
 {% endblock %}
 
 {% block js_files %}
-   <script type='text/javascript'>
 
+    <script type='text/javascript'>
  $(document).ready(function() {
 
       $("#review-form").submit(function(e){
 
         var text = $('#review-area').val();
         var pk = $("video").attr('id');
-        var url = "http://ur8.herokuapp.com/ur8/rated-video/"+pk+"/";
+        var url = "http://127.0.0.1:8000/ur8/rated-video/"+pk+"/";
         var token = $('#review-form > input[name=csrfmiddlewaretoken]').val();
 
         e.preventDefault();
@@ -539,7 +547,7 @@ function ShowMore() {
         var vID = $("video").attr('id');
         var rID = $(this).parent('#approve-form').data('id');
         var token = $(this).siblings("input[name=csrfmiddlewaretoken]").val();
-        var url = "http://ur8.herokuapp.com/ur8/liked-review/"+vID+"/"+rID+"/";
+        var url = "http://127.0.0.1:8000/ur8/liked-review/"+vID+"/"+rID+"/";
 
         $.ajax({
           type:'POST',
@@ -562,7 +570,7 @@ function ShowMore() {
         var vID = $("video").attr('id');
         var rID = $(this).parent('#approve-form').data('id');
         var token = $(this).siblings("input[name=csrfmiddlewaretoken]").val();
-        var url = "http://ur8.herokuapp.com/ur8/disliked-review/"+vID+"/"+rID+"/";
+        var url = "http://127.0.0.1:8000/ur8/disliked-review/"+vID+"/"+rID+"/";
 
         $.ajax({
           type:'POST',
@@ -585,7 +593,7 @@ function ShowMore() {
         var rID = $(this).parent('#approve-form').data('id');
         var vID = $("video").attr('id');
         var token = $(this).siblings("input[name=csrfmiddlewaretoken]").val();
-        var url = "https://ur8.herokuapp.com/ur8/delete-review/"+rID+"/";
+        var url = "http://127.0.0.1:8000/ur8/delete-review/"+rID+"/";
         window.alert( "Review deleted !" );
 
         $.ajax({
@@ -608,7 +616,7 @@ function ShowMore() {
       $( ".ed-btn" ).on("click",function(e) {
         var rID = $(this).parent('#approve-form').data('id');
         var vID = $("video").attr('id');
-        var url = "http://ur8.herokuapp.com/ur8/edit-review/"+vID+"/"+rID+"/";
+        var url = "http://127.0.0.1:8000/ur8/edit-review/"+vID+"/"+rID+"/";
         $(location).attr('href', url);
       });
 
@@ -616,3 +624,4 @@ function ShowMore() {
 
 </script>
 {% endblock %}
+
