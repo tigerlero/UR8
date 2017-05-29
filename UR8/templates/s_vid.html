@@ -451,7 +451,7 @@ function ShowMore() {
           </label><br>
           <p></p>
       <textarea id="review-area" rows="4" cols="60"></textarea>
-      <button type="submit" id="review-btn" style="border-radius:0px;margin-left:5px;margin-bottom:26px;" class="btn btn-success">Write Review !</button>
+      <button type="submit" id="review-btn" data_url="{% url "rated-video" %}" style="border-radius:0px;margin-left:5px;margin-bottom:26px;" class="btn btn-success">Write Review !</button>
     </form>
     <hr>
     {% else %}
@@ -505,7 +505,8 @@ function ShowMore() {
 
         var text = $('#review-area').val();
         var pk = $("video").attr('id');
-        var url = "ur8.herokuapp.com/ur8/rated-video/"+pk+"/";
+{#        var url = "ur8.herokuapp.com/ur8/rated-video/"+pk+"/";#}
+        var url = $(this).attr("data_url")+pk+"/";
         var token = $('#review-form > input[name=csrfmiddlewaretoken]').val();
 
         e.preventDefault();
@@ -539,7 +540,8 @@ function ShowMore() {
         var vID = $("video").attr('id');
         var rID = $(this).parent('#approve-form').data('id');
         var token = $(this).siblings("input[name=csrfmiddlewaretoken]").val();
-        var url = "ur8.herokuapp.com/ur8/liked-review/"+vID+"/"+rID+"/";
+        var url = $(this).attr("data_url")+vID+"/"+rID+"/";
+
 
         $.ajax({
           type:'POST',
@@ -562,7 +564,8 @@ function ShowMore() {
         var vID = $("video").attr('id');
         var rID = $(this).parent('#approve-form').data('id');
         var token = $(this).siblings("input[name=csrfmiddlewaretoken]").val();
-        var url = "ur8.herokuapp.com/ur8/disliked-review/"+vID+"/"+rID+"/";
+        var url = $(this).attr("data_url")+vID+"/"+rID+"/";
+
 
         $.ajax({
           type:'POST',
@@ -585,7 +588,7 @@ function ShowMore() {
         var rID = $(this).parent('#approve-form').data('id');
         var vID = $("video").attr('id');
         var token = $(this).siblings("input[name=csrfmiddlewaretoken]").val();
-        var url = "ur8.herokuapp.com/ur8/delete-review/"+rID+"/";
+        var url = $(this).attr("data_url")+rID+"/";
         window.alert( "Review deleted !" );
 
         $.ajax({
@@ -608,7 +611,7 @@ function ShowMore() {
       $( ".ed-btn" ).on("click",function(e) {
         var rID = $(this).parent('#approve-form').data('id');
         var vID = $("video").attr('id');
-        var url = "ur8.herokuapp.com/ur8/edit-review/"+vID+"/"+rID+"/";
+        var url = $(this).attr("data_url")+vID+"/"+rID+"/";
         $(location).attr('href', url);
       });
 

@@ -34,9 +34,16 @@
       {{ text }}
       <form class="form-inline" id="approve-form" data-id="{{ ID }}">
         {% csrf_token %}
-        <button id="OK" type="button" class="btn btn-default ok-btn"><span class="glyphicon glyphicon-ok"></span> Approve ({{ like }})</button> <button type="button" id="RM" class="btn btn-default rm-btn"><span class="glyphicon glyphicon-remove"></span> Disapprove ({{ dislike }})</button>
+        <button id="OK" type="button" data_url="{% url "liked-review" %}" class="btn btn-default ok-btn">
+            <span class="glyphicon glyphicon-ok"></span> Approve ({{ like }})
+        </button>
+      <button type="button" data_url="{% url "disliked-review" %}" id="RM" class="btn btn-default rm-btn">
+          <span class="glyphicon glyphicon-remove"></span> Disapprove ({{ dislike }})</button>
         {% if request.user.username == uname %}
-          <button id="ED" type="button" class="btn btn-default ed-btn"><span class="glyphicon glyphicon-pencil"></span> Edit</button> <button id="DEL" type="button" class="btn btn-default del-btn"><span class="glyphicon glyphicon-minus"></span> Delete</button>
+          <button id="ED" data_url="{% url "edit-review" %}" type="button" class="btn btn-default ed-btn">
+              <span class="glyphicon glyphicon-pencil"></span> Edit</button>
+            <button id="DEL" data_url="{% url "delete-review" %}" type="button" class="btn btn-default del-btn">
+                <span class="glyphicon glyphicon-minus"></span> Delete</button>
         {% endif %}
       </form>
     </p>
