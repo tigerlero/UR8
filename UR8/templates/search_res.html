@@ -187,110 +187,106 @@
 
   {% if hasRes %}
 
-<p class="bg-info text-info" style="margin-left: 0px;font-size: 250%; !important;margin-right: 0px !important;"><b>Channels</b></p><br>
+<p class="bg-info text-info" style="margin-left: 0px;font-size: 170%; !important;margin-right: 0px !important;"><b>Channels</b></p><br>
       <div class="row">
       {% for channel in channels %}
           <div class="col-sm-6 col-md-3">
-
-             <h1>Channel of: <i>{{ channel.username }}</i></h1>
+             <h3><i>{{ channel.username }}</i></h3>
         {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
-            <a href="{% url 'channel' channel.username %}"><img src="{% static channel.profile.image %}" width="250" height="250" ></a>
+            <a href="{% url 'channel' channel.username %}"><img src="{% static channel.profile.image %}" width="189" height="189" ></a>
         {% else %}
-            <a href="{% url 'channel' channel.username %}"><img src="{{ channel.profile.image.url }}" width="250" height="250" ></a>
+            <a href="{% url 'channel' channel.username %}"><img src="{{ channel.profile.image.url }}" width="189" height="189" ></a>
         {% endif %}</div></div>
       {% endfor %}
     <br><br>
-    <p class="bg-info text-info" style="margin-left: 0px;font-size: 250%; !important;margin-right: 0px !important;"><b>Videos</b></p><br>
+    <p class="bg-info text-info" style="margin-left: 0px;font-size: 170%; !important;margin-right: 0px !important;"><b>Videos</b></p><br>
       <div class="row">
       {% for video in results %}
-      <div class="col-sm-4 col-md-2">
-      <div class="thumbnail" style="border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
-
+      <div style="font-size: 92%;" class="col-sm-4 col-md-2">
+      <div class="thumbnail" style=" border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
+ <a href="{% url 's_vid' video.id %}"><video width="100%" height="56%">
         {% if video.thumpnail == 'thumpnail/None/default_thump.png' %}
-          <!-- video width="320" height="240" controls -->
-          <a href="{% url 's_vid' video.id %}"><video width="100%" height="56%">
             <source src="{{video.video.url}}#t=0" type="video/mp4">
-            <source src="{{video.video.url}}#t=0" type="video/ogg">
             <div class="alert alert-warning" style="border-radius:0px; border:0"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
-          </video></a>
+          </video>
         {% else %}
-        <!-- video width="320" height="240" controls -->
-        <a href="{% url 's_vid' video.id %}"><video width="100%" height="56%" poster="{{ video.thumpnail.url }}">
+        <video width="100%" height="56%" poster="{{ video.thumpnail.url }}">
           <source src="{{video.video.url}}" type="video/mp4">
-          <source src="{{video.video.url}}" type="video/ogg">
           <div class="alert alert-warning" style="border-radius:0px; border:0"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
-        </video></a>
+        </video>
         {% endif %}
-  <hr>
           <div class="caption">
-          <h2>{{ video.title }}</h2>
-          <b>User: </b><a href="{% url 'channel' video.user.username %}">{{ video.user.username }}</a>
+              <h5 style="
+              color: darkslategrey;
+      white-space: pre-wrap;
+    width: 101%;
+    height: 3em;
+    overflow: hidden;
+    text-overflow: clip;"> {{ video.title }}</h5> </a>
+          <b ><a style="color: black;!important;" href="{% url 'channel' video.user.username %}">{{ video.user.username }}</a></b>
       <br><span ><b>Views: </b>
           {{video.views}}
       </span><br>
-      <span><b>Rating: </b>
-          {% if video.avg_rating == 0.0 %}
-                <img style="width: 10%; height: 10%;" src="{% static 'bat.png'%}" >
+      <b>Rating: </b>
+            {% if video.avg_rating == 0.0 %}
+                <img width="24px" height="24px" src="{% static 'bat.png'%}" >
           {% elif video.avg_rating >= 0 and video.avg_rating < 1 %}
               {% if video.avg_rating > 0.6 %}
-                <img style="width: 10%; height: 10%;" src="{% static '75.png'%}" >
+                <img src="{% static '75.png'%}" >
               {% elif video.avg_rating > 0.3 %}
-                <img style="width: 10%; height: 10%;" src="{% static '50.png'%}" >
+                <img src="{% static '50.png'%}" >
               {% elif video.avg_rating > 0.0 %}
-                <img style="width: 10%; height: 10%;" src="{% static '25.png'%}" >
+                <img src="{% static '25.png'%}" >
                 {% endif %}
       {% elif video.avg_rating >= 1 and video.avg_rating < 2  %}
-        <img  style="width: 10%; height: 10%;" style="" src="{% static 'star.png'%}" >
+        <img style="" src="{% static 'star.png'%}" >
           {% if video.avg_rating > 1.6 %}
-                <img style="width: 10%; height: 10%;"style="width: 10%; height: 10%;" src="{% static '75.png'%}" >
+                <img style="" src="{% static '75.png'%}" >
           {% elif video.avg_rating > 1.3 %}
-                <img style="width: 10%; height: 10%;"style="width: 10%; height: 10%;" src="{% static '50.png'%}" >
+                <img style="" src="{% static '50.png'%}" >
           {% elif video.avg_rating > 1.0 %}
-                <img style="width: 10%; height: 10%;"style="width: 10%; height: 10%;" src="{% static '25.png'%}" >
+                <img style="" src="{% static '25.png'%}" >
           {% endif %}
       {% elif video.avg_rating >= 2 and video.avg_rating < 3 %}
-        <img src="{% static 'star.png'%}" style="width: 10%; height: 10%;">
-        <img  style="width: 10%; height: 10%;" src="{% static 'star.png'%}" >
+        <img src="{% static 'star.png'%}" >
+        <img style="" src="{% static 'star.png'%}" >
           {% if video.avg_rating > 2.6 %}
-                <img style="width: 10%; height: 10%;" src="{% static '75.png'%}" >
+                <img style="" src="{% static '75.png'%}" >
           {% elif video.avg_rating > 2.3 %}
-                <img style="width: 10%; height: 10%;" src="{% static '50.png'%}" >
+                <img style="" src="{% static '50.png'%}" >
           {% elif video.avg_rating > 2.0 %}
-                <img style="width: 10%; height: 10%;" src="{% static '25.png'%}" >
+                <img style="" src="{% static '25.png'%}" >
           {% endif %}
       {% elif video.avg_rating >= 3 and video.avg_rating < 4  %}
-        <img style="width: 10%; height: 10%;" src="{% static 'star.png'%}" >
-        <img style="width: 10%; height: 10%;" src="{% static 'star.png'%}" >
-        <img style="width: 10%; height: 10%;" src="{% static 'star.png'%}" >
+        <img src="{% static 'star.png'%}" >
+        <img src="{% static 'star.png'%}" >
+        <img style="" src="{% static 'star.png'%}" >
           {% if video.avg_rating > 3.6 %}
-                <img style="width: 10%; height: 10%;" src="{% static '75.png'%}" >
+                <img style="" src="{% static '75.png'%}" >
           {% elif video.avg_rating > 3.3 %}
-                <img style="width: 10%; height: 10%;" src="{% static '50.png'%}" >
+                <img style="" src="{% static '50.png'%}" >
           {% elif video.avg_rating > 3.0 %}
-                <img style="width: 10%; height: 10%;" src="{% static '25.png'%}" >
+                <img style="" src="{% static '25.png'%}" >
           {% endif %}
       {% elif video.avg_rating >= 4 and video.avg_rating < 5  %}
-              <img style="width: 10%; height: 10%;" src="{% static 'star.png'%}" >
-        <img style="width: 10%; height: 10%;" src="{% static 'star.png'%}" >
-        <img style="width: 10%; height: 10%;" src="{% static 'star.png'%}" >
-              <img style="width: 10%; height: 10%;" src="{% static 'star.png'%}" >
+              <img src="{% static 'star.png'%}" >
+        <img src="{% static 'star.png'%}" >
+        <img style="" src="{% static 'star.png'%}" >
+              <img style="" src="{% static 'star.png'%}" >
           {% if video.avg_rating > 4.6 %}
-                <img style="width: 10%; height: 10%;" src="{% static '75.png'%}" >
+                <img style="" src="{% static '75.png'%}" >
           {% elif video.avg_rating > 4.3 %}
-                <img style="width: 10%; height: 10%;" src="{% static '50.png'%}" >
+                <img style="" src="{% static '50.png'%}" >
           {% elif video.avg_rating > 4.0 %}
-                <img style="width: 10%; height: 10%;" src="{% static '25.png'%}" >
+                <img style="" src="{% static '25.png'%}" >
           {% endif %}
           {% elif video.avg_rating == 5.0 %}
-        <img style="width: 10%; height: 10%;" src="{% static 'star.png'%}" >
-              <img style="width: 10%; height: 10%;" src="{% static 'star.png'%}" >
-              <img style="width: 10%; height: 10%;" src="{% static 'star.png'%}" >
-              <img style="width: 10%; height: 10%;" src="{% static 'star.png'%}" >
-              <img style="width: 10%; height: 10%;" src="{% static 'star.png'%}" >
+        <img src="{% static 'star.png'%}" >
+              <img style="" src="{% static 'star.png'%}" >
+              <img style="" src="{% static 'star.png'%}" >
+              <img style="" src="{% static 'star.png'%}" >
+              <img style="" src="{% static 'star.png'%}" >
       {% endif %}
-      </span>
-  <br><b>Description: </b>
-    {{ video.description }}<br>
  </div>
         </div>
         </div>
