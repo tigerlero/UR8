@@ -104,39 +104,43 @@
         <a href="{% url 'subscribes' %}"><img style="float: right; margin-right: 7%; margin-top: 3%;" src="{% static "sub.png" %}" style="margin-top: 5px;" width="30" height="28">
          Subs</a></b>
     </div><br>
-{% if request.user.is_authenticated %}
+        {% if request.user.is_authenticated %}
             {% for channel in subchan %}
-    {% if not channel.is_superuser  %}
+                {% if not channel.is_superuser  %}
 <div class="col-sm-1 col-md-">
-  {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
+                    {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
                     <a href="{% url 'channel' channel.username %}"><img src="{% static channel.profile.image %}" width="40" height="40" ></a>
-                {% else %}
+                    {% else %}
                     <a href="{% url 'channel' channel.username %}"><img src="{{ channel.profile.image.url }}" width="40" height="40" ></a>
-                {% endif %}</div>
-            {% endif %}<i style="font-size: 220%">  {{ channel.username }}</i><br>
-        {% endfor %}
-    {% endif %}
+                    {% endif %}</div>
+                {% endif %}<i style="font-size: 220%">  {{ channel.username }}</i><br>
+            {% endfor %}
+        {% endif %}
 <br>
      <div class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;">
         <b style="font-size: 220%;">
         <a href="{% url 'channels' %}"><img src="{% static "tv.png" %}" style="float: right; margin-right: 7%; margin-top: 3%;" width="30" height="30">
          Channels</a></b>
     </div><br>
-            {% if request.user.is_authenicated %}{% for channel in users %}
-                {% if channel != request.user %}
-                {% for sub in subchan %}
+            {% if request.user.is_authenicated %}
+                {% for channel in users %}
+                    {% if channel != request.user %}
+                        {% for sub in subchan %}
                     {% if channel != sub %}
-            {% if not channel.is_superuser   %}
+                {% if not channel.is_superuser   %}
                 <div class="col-sm-1 col-md-1">
 <a href="{% url 'channel' channel.username %}">
                 {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
                     <img src="{% static channel.profile.image %}" width="40" height="40" >
                 {% else %}
                     <img src="{{ channel.profile.image.url }}" width="40" height="40" >
-                {% endif %}</div>
-            {% endif %}<i style="font-size: 220%">  {{ channel.username }}</i></a><br>
-        {% endif %}{% endfor %}{% endif %}
-            {% endfor %}{% else %}
+                {% endif %}
+                </div>
+                    {% endif %}<i style="font-size: 220%">  {{ channel.username }}</i></a><br>
+                {% endif %}
+                        {% endfor %}{% endif %}
+                {% endfor %}
+            {% else %}
                 {% for channel in users %}
             {% if not channel.is_superuser   %}
                 <div class="col-sm-1 col-md-1">
@@ -145,9 +149,10 @@
                     <img src="{% static channel.profile.image %}" width="40" height="40" >
                 {% else %}
                     <img src="{{ channel.profile.image.url }}" width="40" height="40" >
-                {% endif %}</div>
-            {% endif %}<i style="font-size: 220%">  {{ channel.username }}</i></a><br>
-            {% endfor %}{% endif %}
+                </a>{% endif %}</div>
+            {% endif %}<i style="font-size: 220%"><a href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
+            {% endfor %}
+            {% endif %}
       </div>
 
     <div style="width: 84%; padding-top: 0.96%; float: left;">

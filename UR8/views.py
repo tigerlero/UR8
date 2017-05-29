@@ -31,84 +31,43 @@ import time
 # Create your views here.
 # Login is required to view this page..
 def home(request):
+    videos = Video.objects.all()
+    video_results = []
+    new = []
+    popular = []
+    best = []
+    users = User.objects.all()
+    for video in videos:
+        video_results.append(video)
+        new.append(video)
+        popular.append(video)
+        best.append(video)
+    video_results = video_results[-29:]
+    new = new[-29:]
+    popular = popular[-29:]
+    best = best[-29:]
+    video_results = sort_videos(video_results)
+    new = new_videos(new)
+    popular = popular_videos(popular)
+    best = best_videos(best)
+    hasRes = False
+    if len(video_results) >= 1:
+        hasRes = True
+    else:
+        hasRes = False
     if request.method == 'GET' and request.user.is_authenticated():
-        videos = Video.objects.all()
-        video_results = []
-        new = []
-        popular = []
-        best = []
-        users = User.objects.all()
-        for video in videos:
-            video_results.append(video)
-            new.append(video)
-            popular.append(video)
-            best.append(video)
-        video_results = video_results[-29:]
-        new = new[-29:]
-        popular = popular[-29:]
-        best = best[-29:]
-        video_results = sort_videos(video_results)
-        new = new_videos(new)
-        popular = popular_videos(popular)
-        best = best_videos(best)
-        hasRes = False
-        if len(video_results) >= 1:
-            hasRes = True
-        else:
-            hasRes = False
-        else:
-        videos = Video.objects.all()
-        video_results = []
-        new = []
-        popular = []
-        best = []
-        users = User.objects.all()
-        for video in videos:
-            video_results.append(video)
-            new.append(video)
-            popular.append(video)
-            best.append(video)
-        video_results = video_results[-29:]
-        new = new[-29:]
-        popular = popular[-29:]
-        best = best[-29:]
-        video_results = sort_videos(video_results)
-        new = new_videos(new)
-        popular = popular_videos(popular)
-        best = best_videos(best)
-        hasRes = False
-        if len(video_results) >= 1:
-            hasRes = True
-        else:
+        u = request.user
+        subchan = []
+        subs = u.profile.subscribes
+        for v in videos:
+            if (v.user.username in subs) and (subs != ""):
+                if v.user not in subchan and v.user != u:
+                    subchan.append(v.user)
+
         return render(request, 'home.html',
                       {'video_results': video_results, 'hasRes': hasRes, 'users': users, 'new': new, 'popular': popular,
-                       'best': best})
-    else :
-        videos = Video.objects.all()
-        video_results = []
-        new = []
-        popular = []
-        best = []
-        users = User.objects.all()
-        for video in videos:
-            video_results.append(video)
-            new.append(video)
-            popular.append(video)
-            best.append(video)
-        video_results = video_results[-29:]
-        new = new[-29:]
-        popular = popular[-29:]
-        best = best[-29:]
-        video_results = sort_videos(video_results)
-        new = new_videos(new)
-        popular = popular_videos(popular)
-        best = best_videos(best)
-        hasRes = False
-        if len(video_results) >= 1:
-            hasRes = True
-        else:
-            hasRes = False
-
+                       'best': best, "subchan": subchan })
+    else:
         return render(request, 'home.html',
                       {'video_results': video_results, 'hasRes': hasRes, 'users': users, 'new': new, 'popular': popular,
                        'best': best})
