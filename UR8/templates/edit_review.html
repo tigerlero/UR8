@@ -134,7 +134,7 @@
       var text = $('#edit-review-area').val();
       var pk = $(this).data('id');
       var pk2 = $(this).data('vid');
-      var url = "0.0.0.0:$PORT/ur8/edit-review/"+pk2+"/"+pk+"/";
+      var url = "{%url 'home' %}edit-review/"+pk2+"/"+pk+"/";
       var token = $('#edit-review-form > input[name=csrfmiddlewaretoken]').val();
 
       e.preventDefault();
@@ -152,7 +152,7 @@
           },
           success:function(data){
             if (data.ok == 'yes') {
-              var url = "0.0.0.0:$PORT/ur8/";
+              var url = "{%url 'home' %}/ur8/";
               $(location).attr('href', url);
             }
           }
