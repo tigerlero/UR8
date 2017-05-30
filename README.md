@@ -17,7 +17,9 @@ It will include:
 - [x] Channel
 - [x] Subscribes
 - [x] Notifications
-- [ ] Auto thumbnail generate
+- [x] Auto thumbnail generate
+- [ ] Custom thumbnail
+- [ ] Channel Sort
 
 
 ### Enjoy!!
