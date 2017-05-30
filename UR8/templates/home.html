@@ -77,7 +77,6 @@
       </div>
     </div>
   </nav>
-
     <div style="width: 20%; float: right;">
         <img src="{% static 'UR8.png' %}" width="118px;" height="84px;">
 
@@ -90,7 +89,7 @@
         {% if request.user.is_authenticated %}
             {% for channel in subchan %}
                 {% if not channel.is_superuser  %}
-<div style="font-size: 70%;" class="col-sm-1 col-md-1">
+<div style="font-size: 50%;" class="col-sm-1 col-md-1">
                     {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
                     <a href="{% url 'channel' channel.username %}"><img src="{% static channel.profile.image %}" width="30" height="30" ></a>
                     {% else %}
@@ -165,7 +164,7 @@
               color: darkslategrey;
       white-space: pre-wrap;
     width: 101%;
-    height: 3em;
+    height: 2.5em;
     overflow: hidden;
     text-overflow: clip;" > {{ video.title }}</div> </a>
           <b><a style="color: black;!important; float: left;" href="{% url 'channel' video.user.username %}">{{ video.user.username }}</a></b><div style="float: right">
@@ -259,12 +258,12 @@
               color: darkslategrey;
       white-space: pre-wrap;
     width: 101%;
-    height: 3em;
+    height: 2.5em;
     overflow: hidden;
     text-overflow: clip;" > {{ video.title }}</div> </a>
           <b><a style="color: black;!important; float: left;" href="{% url 'channel' video.user.username %}">{{ video.user.username }}</a></b><div style="float: right">
             {% if video.avg_rating == 0.0 %}
-                <img width="22px" height="22px" src="{% static 'bat.png'%}" >
+                <img width="24px" height="24px" src="{% static 'bat.png'%}" >
           {% elif video.avg_rating >= 0 and video.avg_rating < 1 %}
               {% if video.avg_rating > 0.6 %}
                 <img src="{% static '75.png'%}" >
@@ -353,7 +352,7 @@
               color: darkslategrey;
       white-space: pre-wrap;
     width: 101%;
-    height: 3em;
+    height: 2.5em;
     overflow: hidden;
     text-overflow: clip;" > {{ video.title }}</div> </a>
           <b><a style="color: black;!important; float: left;" href="{% url 'channel' video.user.username %}">{{ video.user.username }}</a></b><div style="float: right">
@@ -447,7 +446,7 @@
               color: darkslategrey;
       white-space: pre-wrap;
     width: 101%;
-    height: 3em;
+    height: 2.5em;
     overflow: hidden;
     text-overflow: clip;" > {{ video.title }}</div> </a>
           <b><a style="color: black;!important; float: left;" href="{% url 'channel' video.user.username %}">{{ video.user.username }}</a></b>

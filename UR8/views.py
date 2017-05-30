@@ -171,16 +171,14 @@ def channels(request):
 def edit_review(request, vid, rid):
     if request.method == 'GET' and request.user.is_authenticated():
         review = Review.objects.get(id=rid)
-        video = video = Video.objects.get(id=vid)
+        video = Video.objects.get(id=vid)
         vID = video.id
         return render(request, 'edit_review.html', {'review':review, 'vID':vID})
     elif request.method == 'POST' and request.is_ajax() and request.POST['edit_review'] == 'yes' and request.user.is_authenticated():
-
         newText = request.POST['text']
         newVal = int(request.POST['rating']) # new rating
         video = video = Video.objects.get(id=vid)
         review = Review.objects.get(id=rid)
-
         # remove old rating
         old_avg = float(video.avg_rating)
         rating = float(review.rating)
@@ -188,23 +186,19 @@ def edit_review(request, vid, rid):
         new_avg = 0.0
         if (count - 1) > 0:
             new_avg = ( (old_avg * count) - rating ) / ( count-1 )
-
         video.avg_rating = new_avg
         video.rating_counter -= 1
         video.save()
-
         # save changes
         review.text = newText
         review.rating = newVal
         review.save()
-
         # add new rating
         video.rating_counter += 1
         old_avg2 = video.avg_rating
         count2 = video.rating_counter
         video.avg_rating = (old_avg2 * (count2-1) + newVal)/count2
         video.save()
-
         data = {'ok': 'yes'}
         return HttpResponse(json.dumps(data), content_type='application/json')
 
@@ -341,10 +335,11 @@ def s_vid(request, id):
         for v in videos:
             other_tags = v.tags.split(",")
             for tag in tags:
-                for other in other_tags:
-                    if other.lower() == tag.lower():
-                        if v not in rel_videos and v != video:
-                            rel_videos.append(v)
+                if tag != " ":
+                    for other in other_tags:
+                        if other.lower() == tag.lower():
+                            if v not in rel_videos and v != video:
+                                rel_videos.append(v)
 
         rel_videos = rel_videos[-5:]
         rel_videos = sort_videos(rel_videos)

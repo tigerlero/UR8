@@ -21,7 +21,7 @@ class Video(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     video = models.FileField(upload_to="videos")
     # videos will be uploaded to: 'uploads/media/videos'
-    title = models.CharField(max_length=94)
+    title = models.CharField(max_length=46)
     tags = models.CharField(default="", max_length=200)
     description = models.TextField(max_length=3000)
     avg_rating = models.DecimalField(max_digits=2, decimal_places=1, default=0.0)
