@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fdba3134-eb2b-42f0-8c12-9d864dd77c7c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/media/videos/Anime_Studio_10_Promo_Video.mp4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/media/videos/How_to_make_anime_-_Cartoon_maker_-_Online_video_maker_-_Best_small_business_ideas.mp4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/media/videos/mov_bbb_OM3AOTv.mp4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/media/videos/mov_bbb_OM3AOTv_ulYTLUS.mp4" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/models.py" afterPath="$PROJECT_DIR$/UR8/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/s_vid.html" afterPath="$PROJECT_DIR$/UR8/templates/s_vid.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/views.py" afterPath="$PROJECT_DIR$/UR8/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ur8_proj/settings.py" afterPath="$PROJECT_DIR$/ur8_proj/settings.py" />
-    </list>
+    <list default="true" id="fdba3134-eb2b-42f0-8c12-9d864dd77c7c" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -587,7 +577,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="0" width="1872" height="1084" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
