@@ -6,8 +6,9 @@ from .forms import UserRegFrom, EditAvatarForm, ResetPasswordForm, UploadVideoFo
 from .models import Profile, Video, Review
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-# from moviepy.editor import *
-from math import floor, ceil, modf
+from moviepy.editor import VideoFileClip, ImageClip
+# from math import floor, ceil, modf
+import os
 import json
 import time
 
@@ -511,14 +512,22 @@ def upld_vid(request):
             tg = form.cleaned_data['tags']
             new_video = user.video_set.create(video=v, title=t, description=d, thumpnail=tn, tags=tg)
             new_video.save()
-            # videos = Video.objects.all()
-            # for video in videos:
-            #     if video.thumpnail == "thumpnail/None/default_thump.png":
-            #         im = thumb(video.id)
-            #         print(im)
-            #         video.thumpnail = im
-            #         video.save()
-
+            if new_video.th == False:
+                s_vid = repr(new_video.video)
+                s_vid = s_vid[19:]
+                s_vid = s_vid[:-1]
+                fileDir = os.path.dirname(os.path.realpath('__file__'))
+                filename = os.path.join(fileDir, 'uploads/media/videos/'+s_vid)
+                print(filename)
+                # filename = os.path.abspath(os.path.realpath(filename))
+                # print(s_vid)
+                clip = VideoFileClip(filename)
+                s_vid = s_vid[:-4] + ".jpeg"
+                fileDir = os.path.dirname(os.path.realpath('__file__'))
+                clip.save_frame(os.path.join(fileDir, 'uploads/media/thumpnails/'+s_vid))
+                new_video.thumpnail = 'thumpnails/'+s_vid
+            else:
+                th = True
             for u in users:
                 if u != user and (user.username in u.profile.subscribes):
                     u = u.profile

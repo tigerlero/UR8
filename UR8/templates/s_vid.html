@@ -224,13 +224,12 @@ function toggleControls() {
   }
 }
 </script>
-  {% if video.thumpnail == 'thumpnail/None/default_thump.png' %}
-    <video onmouseout="toggleControls()" width="144%" height="81%" id="{{ video.id }}" controls >
-      <source src="{{video.video.url}}#t=0" type="video/mp4">
+  {% if video.th == False %}
+    <video onmouseout="toggleControls()" poster="{{ video.thumpnail }}" width="144%" height="81%" id="{{ video.id }}" controls >
+      <source src="{{video.video.url}}" type="video/mp4">
       <div class="alert alert-warning"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
     </video>
   {% else %}
-    <!-- video width="320" height="240" controls -->
     <video width="144%" height="81%" poster="{{ video.thumpnail.url }}" id="{{ video.id }}" controls >
       <source src="{{video.video.url}}" type="video/mp4">
       <div class="alert alert-warning"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
@@ -395,9 +394,9 @@ function ShowMore() {
       {% for v in rel_videos %}
       <a href="{% url 's_vid' v.id %}">
         <div class="row">
-            {% if v.thumpnail == 'thumpnail/None/default_thump.png' %}
+            {% if v.th == False %}
             <!-- video width="853" height="480" controls -->
-                <video width="38.4%" height="21.6%"  id="{{ v.id }}" >
+                <video width="38.4%" height="21.6%" poster="{{ video.thumpnail }}"  id="{{ v.id }}" >
                     <source src="{{v.video.url}}#t=0" type="video/mp4">
                 <div class="alert alert-warning"><b>
                 <span class="glyphicon glyphicon-warning-sign" aria-hidden="true">
