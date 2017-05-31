@@ -213,17 +213,6 @@
     <!-- start col-1 -->
   <div class="col-sm-6">
   <h1 style="padding-top: 30px;"></h1>
-{#  <script>#}
-{#var video = document.getElementById("play");#}
-{##}
-{#function toggleControls() {#}
-{#  if (video.hasAttribute("controls")) {#}
-{#     video.removeAttribute("controls")#}
-{#  } else {#}
-{#     video.setAttribute("controls","controls")#}
-{#  }#}
-{#}#}
-{#</script>#}
   {% if not video.th %}
     <video poster="{{ video.thumpnail }}" width="144%" height="81%" preload="none" id="{{ video.id }}" controls >
       <source src="{{video.video.url}}" type="video/mp4">
