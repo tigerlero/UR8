@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fdba3134-eb2b-42f0-8c12-9d864dd77c7c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/home.html" afterPath="$PROJECT_DIR$/UR8/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/upld_vid.html" afterPath="$PROJECT_DIR$/UR8/templates/upld_vid.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,7 +21,7 @@
         <entry file="file://$PROJECT_DIR$/UR8/templates/s_vid.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2506">
-              <caret line="409" column="0" lean-forward="true" selection-start-line="409" selection-start-column="0" selection-end-line="409" selection-end-column="0" />
+              <caret line="409" column="0" lean-forward="false" selection-start-line="409" selection-start-column="0" selection-end-line="409" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#video#1;n#div#0;n#a#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -140,8 +139,8 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UR8/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="136">
+              <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#0;n#div#0;n#!!top" expanded="true" />
@@ -1028,7 +1027,7 @@
     <entry file="file://$PROJECT_DIR$/UR8/templates/s_vid.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2506">
-          <caret line="409" column="0" lean-forward="true" selection-start-line="409" selection-start-column="0" selection-end-line="409" selection-end-column="0" />
+          <caret line="409" column="0" lean-forward="false" selection-start-line="409" selection-start-column="0" selection-end-line="409" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#0;n#video#1;n#div#0;n#a#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
@@ -1045,8 +1044,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="136">
+          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#div#0;n#!!top" expanded="true" />
