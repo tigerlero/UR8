@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdba3134-eb2b-42f0-8c12-9d864dd77c7c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/s_vid.html" afterPath="$PROJECT_DIR$/UR8/templates/s_vid.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +20,8 @@
       <file leaf-file-name="s_vid.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UR8/templates/s_vid.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="304" column="66" lean-forward="false" selection-start-line="304" selection-start-column="66" selection-end-line="304" selection-end-column="66" />
+            <state relative-caret-position="538">
+              <caret line="347" column="4" lean-forward="false" selection-start-line="347" selection-start-column="4" selection-end-line="347" selection-end-column="4" />
               <folding>
                 <element signature="e#3799#3913#0#HTML" expanded="true" />
                 <element signature="e#4388#4413#0#HTML" expanded="true" />
@@ -41,21 +40,22 @@
                 <element signature="e#11009#11049#0#HTML" expanded="true" />
                 <element signature="e#11129#11148#0#HTML" expanded="true" />
                 <element signature="e#11882#11954#0#HTML" expanded="true" />
+                <element signature="e#12272#12344#0#HTML" expanded="true" />
                 <element signature="e#12645#12802#0#HTML" expanded="true" />
                 <element signature="e#12808#12832#0#HTML" expanded="true" />
                 <element signature="e#13352#13651#0#HTML" expanded="true" />
-                <element signature="e#13752#13787#0#HTML" expanded="true" />
-                <element signature="e#13872#13907#0#HTML" expanded="true" />
-                <element signature="e#14037#14063#0#HTML" expanded="true" />
-                <element signature="e#14162#14188#0#HTML" expanded="true" />
-                <element signature="e#14352#14396#0#HTML" expanded="true" />
-                <element signature="e#14424#14467#0#HTML" expanded="true" />
-                <element signature="e#14821#14864#0#HTML" expanded="true" />
+                <element signature="e#13751#13786#0#HTML" expanded="true" />
+                <element signature="e#13871#13906#0#HTML" expanded="true" />
+                <element signature="e#14036#14062#0#HTML" expanded="true" />
+                <element signature="e#14161#14187#0#HTML" expanded="true" />
+                <element signature="e#14351#14395#0#HTML" expanded="true" />
+                <element signature="e#14423#14466#0#HTML" expanded="true" />
+                <element signature="e#14820#14863#0#HTML" expanded="true" />
                 <element signature="n#if#15;n#!!top" expanded="false" />
-                <element signature="e#15220#15266#0#HTML" expanded="true" />
-                <element signature="e#16253#16314#0#HTML" expanded="true" />
-                <element signature="e#16437#16487#0#HTML" expanded="true" />
-                <element signature="e#17495#17567#0#HTML" expanded="true" />
+                <element signature="e#15219#15265#0#HTML" expanded="true" />
+                <element signature="e#16252#16313#0#HTML" expanded="true" />
+                <element signature="e#16436#16486#0#HTML" expanded="true" />
+                <element signature="e#17494#17566#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1097,8 +1097,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/s_vid.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="304" column="66" lean-forward="false" selection-start-line="304" selection-start-column="66" selection-end-line="304" selection-end-column="66" />
+        <state relative-caret-position="538">
+          <caret line="347" column="4" lean-forward="false" selection-start-line="347" selection-start-column="4" selection-end-line="347" selection-end-column="4" />
           <folding>
             <element signature="e#3799#3913#0#HTML" expanded="true" />
             <element signature="e#4388#4413#0#HTML" expanded="true" />
@@ -1117,21 +1117,22 @@
             <element signature="e#11009#11049#0#HTML" expanded="true" />
             <element signature="e#11129#11148#0#HTML" expanded="true" />
             <element signature="e#11882#11954#0#HTML" expanded="true" />
+            <element signature="e#12272#12344#0#HTML" expanded="true" />
             <element signature="e#12645#12802#0#HTML" expanded="true" />
             <element signature="e#12808#12832#0#HTML" expanded="true" />
             <element signature="e#13352#13651#0#HTML" expanded="true" />
-            <element signature="e#13752#13787#0#HTML" expanded="true" />
-            <element signature="e#13872#13907#0#HTML" expanded="true" />
-            <element signature="e#14037#14063#0#HTML" expanded="true" />
-            <element signature="e#14162#14188#0#HTML" expanded="true" />
-            <element signature="e#14352#14396#0#HTML" expanded="true" />
-            <element signature="e#14424#14467#0#HTML" expanded="true" />
-            <element signature="e#14821#14864#0#HTML" expanded="true" />
+            <element signature="e#13751#13786#0#HTML" expanded="true" />
+            <element signature="e#13871#13906#0#HTML" expanded="true" />
+            <element signature="e#14036#14062#0#HTML" expanded="true" />
+            <element signature="e#14161#14187#0#HTML" expanded="true" />
+            <element signature="e#14351#14395#0#HTML" expanded="true" />
+            <element signature="e#14423#14466#0#HTML" expanded="true" />
+            <element signature="e#14820#14863#0#HTML" expanded="true" />
             <element signature="n#if#15;n#!!top" expanded="false" />
-            <element signature="e#15220#15266#0#HTML" expanded="true" />
-            <element signature="e#16253#16314#0#HTML" expanded="true" />
-            <element signature="e#16437#16487#0#HTML" expanded="true" />
-            <element signature="e#17495#17567#0#HTML" expanded="true" />
+            <element signature="e#15219#15265#0#HTML" expanded="true" />
+            <element signature="e#16252#16313#0#HTML" expanded="true" />
+            <element signature="e#16436#16486#0#HTML" expanded="true" />
+            <element signature="e#17494#17566#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
