@@ -17,11 +17,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="s_vid.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="s_vid.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UR8/templates/s_vid.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="215">
-              <caret line="198" column="20" lean-forward="false" selection-start-line="198" selection-start-column="20" selection-end-line="198" selection-end-column="20" />
+              <caret line="198" column="18" lean-forward="false" selection-start-line="198" selection-start-column="18" selection-end-line="198" selection-end-column="18" />
               <folding>
                 <element signature="e#3799#3913#0#HTML" expanded="true" />
                 <element signature="e#4388#4413#0#HTML" expanded="true" />
@@ -32,31 +32,41 @@
                 <element signature="e#6492#6516#0#HTML" expanded="true" />
                 <element signature="e#6656#6680#0#HTML" expanded="true" />
                 <element signature="e#6871#6895#0#HTML" expanded="true" />
-                <element signature="e#7038#7062#0#HTML" expanded="true" />
-                <element signature="e#7120#7146#0#HTML" expanded="true" />
-                <element signature="e#7919#7938#0#HTML" expanded="true" />
-                <element signature="e#7945#7981#0#HTML" expanded="true" />
-                <element signature="e#8009#8046#0#HTML" expanded="true" />
-                <element signature="e#11008#11048#0#HTML" expanded="true" />
-                <element signature="e#11128#11147#0#HTML" expanded="true" />
-                <element signature="e#11881#11953#0#HTML" expanded="true" />
-                <element signature="e#12271#12343#0#HTML" expanded="true" />
-                <element signature="e#12644#12801#0#HTML" expanded="true" />
-                <element signature="e#12807#12831#0#HTML" expanded="true" />
-                <element signature="e#13351#13650#0#HTML" expanded="true" />
-                <element signature="e#13750#13785#0#HTML" expanded="true" />
-                <element signature="e#13870#13905#0#HTML" expanded="true" />
-                <element signature="e#14035#14061#0#HTML" expanded="true" />
-                <element signature="e#14160#14186#0#HTML" expanded="true" />
-                <element signature="e#14350#14394#0#HTML" expanded="true" />
-                <element signature="e#14422#14465#0#HTML" expanded="true" />
-                <element signature="e#14819#14862#0#HTML" expanded="true" />
+                <element signature="e#7036#7060#0#HTML" expanded="true" />
+                <element signature="e#7118#7144#0#HTML" expanded="true" />
+                <element signature="e#7917#7936#0#HTML" expanded="true" />
+                <element signature="e#7943#7979#0#HTML" expanded="true" />
+                <element signature="e#8007#8044#0#HTML" expanded="true" />
+                <element signature="e#11006#11046#0#HTML" expanded="true" />
+                <element signature="e#11126#11145#0#HTML" expanded="true" />
+                <element signature="e#11879#11951#0#HTML" expanded="true" />
+                <element signature="e#12269#12341#0#HTML" expanded="true" />
+                <element signature="e#12642#12799#0#HTML" expanded="true" />
+                <element signature="e#12805#12829#0#HTML" expanded="true" />
+                <element signature="e#13349#13648#0#HTML" expanded="true" />
+                <element signature="e#13748#13783#0#HTML" expanded="true" />
+                <element signature="e#13868#13903#0#HTML" expanded="true" />
+                <element signature="e#14033#14059#0#HTML" expanded="true" />
+                <element signature="e#14158#14184#0#HTML" expanded="true" />
+                <element signature="e#14348#14392#0#HTML" expanded="true" />
+                <element signature="e#14420#14463#0#HTML" expanded="true" />
+                <element signature="e#14817#14860#0#HTML" expanded="true" />
                 <element signature="n#if#15;n#!!top" expanded="false" />
-                <element signature="e#15218#15264#0#HTML" expanded="true" />
-                <element signature="e#16251#16312#0#HTML" expanded="true" />
-                <element signature="e#16435#16485#0#HTML" expanded="true" />
-                <element signature="e#17493#17565#0#HTML" expanded="true" />
+                <element signature="e#15216#15262#0#HTML" expanded="true" />
+                <element signature="e#16249#16310#0#HTML" expanded="true" />
+                <element signature="e#16433#16483#0#HTML" expanded="true" />
+                <element signature="e#17491#17563#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ur8_proj/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1377">
+              <caret line="81" column="31" lean-forward="false" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,16 +105,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UR8/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="channel.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UR8/templates/channel.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -117,11 +117,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="profile.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UR8/templates/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1785">
-              <caret line="108" column="71" lean-forward="false" selection-start-line="108" selection-start-column="71" selection-end-line="108" selection-end-column="71" />
+            <state relative-caret-position="399">
+              <caret line="121" column="9" lean-forward="false" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -192,7 +192,6 @@
       <list>
         <option value="$PROJECT_DIR$/UR8/templates/sign-up.html" />
         <option value="$PROJECT_DIR$/UR8/templates/sign-in.html" />
-        <option value="$PROJECT_DIR$/UR8/templates/profile.html" />
         <option value="$PROJECT_DIR$/UR8/templates/edit_avatar.html" />
         <option value="$PROJECT_DIR$/UR8/templates/channels.html" />
         <option value="$PROJECT_DIR$/UR8/templates/updt_vid.html" />
@@ -202,7 +201,6 @@
         <option value="$PROJECT_DIR$/UR8/templates/review.html" />
         <option value="$PROJECT_DIR$/UR8/templates/edit_review.html" />
         <option value="$PROJECT_DIR$/../../movie.py" />
-        <option value="$PROJECT_DIR$/ur8_proj/settings.py" />
         <option value="$PROJECT_DIR$/UR8/models.py" />
         <option value="$PROJECT_DIR$/UR8/views.py" />
         <option value="$PROJECT_DIR$/UR8/templates/upld_vid.html" />
@@ -213,6 +211,8 @@
         <option value="$PROJECT_DIR$/UR8/templates/notifications.html" />
         <option value="$PROJECT_DIR$/UR8/templates/channel.html" />
         <option value="$PROJECT_DIR$/UR8/templates/s_vid.html" />
+        <option value="$PROJECT_DIR$/ur8_proj/settings.py" />
+        <option value="$PROJECT_DIR$/UR8/templates/profile.html" />
       </list>
     </option>
   </component>
@@ -254,6 +254,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ur8_proj" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -591,7 +605,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="3" width="1872" height="1084" extended-state="1" />
+    <frame x="55" y="3" width="1872" height="1084" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -912,14 +926,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ur8_proj/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2176">
-          <caret line="128" column="51" lean-forward="false" selection-start-line="128" selection-start-column="13" selection-end-line="128" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UR8/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1077,14 +1083,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UR8/templates/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="108" column="71" lean-forward="false" selection-start-line="108" selection-start-column="71" selection-end-line="108" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/channel.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -1098,7 +1096,7 @@
     <entry file="file://$PROJECT_DIR$/UR8/templates/s_vid.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
-          <caret line="198" column="20" lean-forward="false" selection-start-line="198" selection-start-column="20" selection-end-line="198" selection-end-column="20" />
+          <caret line="198" column="18" lean-forward="false" selection-start-line="198" selection-start-column="18" selection-end-line="198" selection-end-column="18" />
           <folding>
             <element signature="e#3799#3913#0#HTML" expanded="true" />
             <element signature="e#4388#4413#0#HTML" expanded="true" />
@@ -1109,31 +1107,47 @@
             <element signature="e#6492#6516#0#HTML" expanded="true" />
             <element signature="e#6656#6680#0#HTML" expanded="true" />
             <element signature="e#6871#6895#0#HTML" expanded="true" />
-            <element signature="e#7038#7062#0#HTML" expanded="true" />
-            <element signature="e#7120#7146#0#HTML" expanded="true" />
-            <element signature="e#7919#7938#0#HTML" expanded="true" />
-            <element signature="e#7945#7981#0#HTML" expanded="true" />
-            <element signature="e#8009#8046#0#HTML" expanded="true" />
-            <element signature="e#11008#11048#0#HTML" expanded="true" />
-            <element signature="e#11128#11147#0#HTML" expanded="true" />
-            <element signature="e#11881#11953#0#HTML" expanded="true" />
-            <element signature="e#12271#12343#0#HTML" expanded="true" />
-            <element signature="e#12644#12801#0#HTML" expanded="true" />
-            <element signature="e#12807#12831#0#HTML" expanded="true" />
-            <element signature="e#13351#13650#0#HTML" expanded="true" />
-            <element signature="e#13750#13785#0#HTML" expanded="true" />
-            <element signature="e#13870#13905#0#HTML" expanded="true" />
-            <element signature="e#14035#14061#0#HTML" expanded="true" />
-            <element signature="e#14160#14186#0#HTML" expanded="true" />
-            <element signature="e#14350#14394#0#HTML" expanded="true" />
-            <element signature="e#14422#14465#0#HTML" expanded="true" />
-            <element signature="e#14819#14862#0#HTML" expanded="true" />
+            <element signature="e#7036#7060#0#HTML" expanded="true" />
+            <element signature="e#7118#7144#0#HTML" expanded="true" />
+            <element signature="e#7917#7936#0#HTML" expanded="true" />
+            <element signature="e#7943#7979#0#HTML" expanded="true" />
+            <element signature="e#8007#8044#0#HTML" expanded="true" />
+            <element signature="e#11006#11046#0#HTML" expanded="true" />
+            <element signature="e#11126#11145#0#HTML" expanded="true" />
+            <element signature="e#11879#11951#0#HTML" expanded="true" />
+            <element signature="e#12269#12341#0#HTML" expanded="true" />
+            <element signature="e#12642#12799#0#HTML" expanded="true" />
+            <element signature="e#12805#12829#0#HTML" expanded="true" />
+            <element signature="e#13349#13648#0#HTML" expanded="true" />
+            <element signature="e#13748#13783#0#HTML" expanded="true" />
+            <element signature="e#13868#13903#0#HTML" expanded="true" />
+            <element signature="e#14033#14059#0#HTML" expanded="true" />
+            <element signature="e#14158#14184#0#HTML" expanded="true" />
+            <element signature="e#14348#14392#0#HTML" expanded="true" />
+            <element signature="e#14420#14463#0#HTML" expanded="true" />
+            <element signature="e#14817#14860#0#HTML" expanded="true" />
             <element signature="n#if#15;n#!!top" expanded="false" />
-            <element signature="e#15218#15264#0#HTML" expanded="true" />
-            <element signature="e#16251#16312#0#HTML" expanded="true" />
-            <element signature="e#16435#16485#0#HTML" expanded="true" />
-            <element signature="e#17493#17565#0#HTML" expanded="true" />
+            <element signature="e#15216#15262#0#HTML" expanded="true" />
+            <element signature="e#16249#16310#0#HTML" expanded="true" />
+            <element signature="e#16433#16483#0#HTML" expanded="true" />
+            <element signature="e#17491#17563#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ur8_proj/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="81" column="31" lean-forward="false" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UR8/templates/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="121" column="9" lean-forward="false" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
