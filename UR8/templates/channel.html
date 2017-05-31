@@ -58,23 +58,19 @@
       border-color: #e62e00;
       color: white;
     }
-
     .btn-default{
       padding-right: 20px;
     }
-
     #view-btn{
       background-color: #99ccff !important;
       border-color: #99ccff !important;
       color: white;
     }
-
     #view-btn:hover, #view-btn:active{
       background-color: #4da6ff !important;
       border-color: #4da6ff !important;
       color: white !important;
     }
-
     .glyphicon-remove{
       padding-right: 4px;
     }
@@ -92,11 +88,9 @@
     .sm-avatar{
       border-radius: 15px;
     }
-
     .bg-avatar{
       border-radius: 150px;
     }
-
     /*.btn-primary:hover,
     .btn-primary:focus,
     .btn-primary:active,
@@ -109,11 +103,9 @@
         background-color: #595959 !important;
         border-color: #595959 !important;
     }
-
     h1{
       padding-top: 30px;
     }
-
   </style>
 {% endblock %}
 {% block body %}
@@ -181,7 +173,7 @@
   {% if hasRes %}
     <div class="row">
       {% for video in videos %}
-      <div style="font-size: 85%;" class="col-sm-4 col-md-3 col-bg-2">
+      <div style="font-size: 85%;" class="col-sm-4  col-md-3 col-bg-2">
       <div class="thumbnail" style=" border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
  <a href="{% url 's_vid' video.id %}">{% if not video.th %}
             <img src="{{ video.thumpnail }}" width="128%" height="72%">

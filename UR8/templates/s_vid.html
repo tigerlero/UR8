@@ -214,13 +214,13 @@
   <div class="col-sm-6">
   <h1 style="padding-top: 30px;"></h1>
   {% if not video.th %}
-    <video poster="{{ video.thumpnail }}" width="144%" height="81%" preload="none" id="{{ video.id }}" controls >
-      <source src="{{video.video.url}}" type="video/mp4">
+    <video poster="{{ video.thumpnail }}" width="144%" height="81%" id="{{ video.id }}" controls >
+      <source src="{{ video.video.url }}" type="video/mp4">
       <div class="alert alert-warning"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
     </video>
   {% else %}
-    <video width="144%" height="81%" preload="none" poster="{{ video.thumpnail.url }}" id="{{ video.id }}" controls >
-      <source src="{{video.video.url}}" type="video/mp4">
+    <video width="144%" height="81%" poster="{{ video.thumpnail.url }}" id="{{ video.id }}" controls >
+      <source src="{{ video.video.url }}" type="video/mp4">
       <div class="alert alert-warning"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
     </video>
   {% endif %}
@@ -374,9 +374,6 @@ function ShowMore() {
 </div>
     </div>
     <!-- end col-1 -->
-
-
-    <!-- end col-2 -->
     <div style="padding-left: 13%;padding-top: 2.4%;" class="col-sm-6 col-md-6"  style="margin-top: 35px;padding-right: 1%;">
       <h4>Related Videos:</h4>
 
@@ -396,7 +393,6 @@ function ShowMore() {
 
     </div>
     <!-- end col-2 -->
-
   </div>
     <!-- end row -->
   <hr>
