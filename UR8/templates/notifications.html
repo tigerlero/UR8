@@ -179,15 +179,9 @@
             <B>NOTIFICATION</B><BR>
             <a href="{% url 's_vid' video.id %}"><B>{{ video.title }}</B><Br>
             {% if not video.th %}
-            <video preload="none" poster="{{ video.thumpnail }}" width="100%" height="56%">
-            <source src="{{video.video.url}}" type="video/mp4">
-            <div class="alert alert-warning" style="border-radius:0px; border:0"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
-          </video>
+            <img src="{{ video.thumpnail }}" width="128%" height="72%">
         {% else %}
-        <video preload="none" width="100%" height="56%" poster="{{ video.thumpnail.url }}">
-          <source src="{{video.video.url}}" type="video/mp4">
-          <div class="alert alert-warning" style="border-radius:0px; border:0"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
-        </video>
+       <img src="{{ video.thumpnail.url }}" width=128%" height="72%">
         {% endif %}</a><br>
         <a href="{% url 'del_notifications' video.id %}" class="btn btn-danger" role="button">
                   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete </a>
