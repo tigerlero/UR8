@@ -212,18 +212,20 @@
 
     <!-- start col-1 -->
   <div class="col-sm-6">
-  <h1 style="padding-top: 30px;"></h1>
+  <h1 style="padding-top: 30px;"></h1><div id="video-container">
   {% if not video.th %}
-    <video poster="{{ video.thumpnail }}" width="144%" height="81%" id="{{ video.id }}" controls >
+    <video controls poster="{{ video.thumpnail }}" width="144%" height="81%" id="{{ video.id }}">
       <source src="{{ video.video.url }}" type="video/mp4">
+
       <div class="alert alert-warning"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
     </video>
   {% else %}
-    <video width="144%" height="81%" poster="{{ video.thumpnail.url }}" id="{{ video.id }}" controls >
+    <video controls width="144%" height="81%" poster="{{ video.thumpnail.url }}" id="{{ video.id }}">
       <source src="{{ video.video.url }}" type="video/mp4">
       <div class="alert alert-warning"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
     </video>
   {% endif %}
+
 <div style="width: 144%">
   <b style="font-size: 200%;float: left;">{{ video.title }}</b><span style="float: right; margin-top: 1%;"><b>Rating: </b>
         {% if video.avg_rating == 0.0 %}
