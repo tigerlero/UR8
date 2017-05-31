@@ -7,7 +7,6 @@
     .notimage {
    position: relative;
 }
-
 .note {
     position: absolute;
     top: 24px;
@@ -25,7 +24,6 @@
     hr{
       border-color: #ccebff;
     }
-
   </style>
 {% endblock %}
 {% block body %}
@@ -68,7 +66,6 @@
             <li><a href="{% url 'sign_in' %}"><img src="{% static "login.png" %}" width="30" height="30"></a></li>
             <li><a href="{% url 'sign_up' %}"><img src="{% static "Sign.png" %}" width="30" height="30"></a></li>
           {% endif %}
-
           {% if request.user.is_authenticated %}
               <li><a href="{% url 'upld_vid' %}" ><img  src="{% static "up.png" %}" style="margin-top: 5px;" width="30" height="30"></a></li>
             <li><a href="{% url 'view_vid' %}"><img src="{% static "my.png" %}" style="margin-top: 5px;" width="30" height="28"></a></li>
