@@ -78,7 +78,7 @@
         <img src="{% static 'UR8.png' %}" width="118px;" height="84px;">
 <br><Br>
     <div class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;">
-        <b style="font-size: 130%;">
+        <b style="font-size: 120%;">
         <a href="{% url 'subscribes' %}"><img style=" margin-right: 1%; margin-top: 1%;" src="{% static "sub.png" %}" width="13" height="13">
          Subs</a></b>
     </div><br>
@@ -87,16 +87,16 @@
                 {% if not channel.is_superuser  %}
 
                     {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
-                    <a href="{% url 'channel' channel.username %}"><img src="{% static channel.profile.image %}" width="30" height="30" ></a>
+                    <a href="{% url 'channel' channel.username %}"><img src="{% static channel.profile.image %}" width="24" height="24" ></a>
                     {% else %}
-                    <a href="{% url 'channel' channel.username %}"><img src="{{ channel.profile.image.url }}" width="30" height="30" ></a>
+                    <a href="{% url 'channel' channel.username %}"><img src="{{ channel.profile.image.url }}" width="24" height="24" ></a>
                     {% endif %}
                 {% endif %}<i style="font-size: 220%"><a style="font-size: 50%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
             {% endfor %}
         {% endif %}
 <br>
      <div class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;">
-        <b style="font-size: 130%;">
+        <b style="font-size: 120%;">
         <a href="{% url 'channels' %}"><img src="{% static "tv.png" %}" style=" margin-right: 1%; margin-top: 1%;" width="13" height="13">
          Channels</a></b>
     </div><br>
@@ -109,9 +109,9 @@
 
                         <a href="{% url 'channel' channel.username %}">
                     {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
-                        <img src="{% static channel.profile.image %}" width="30" height="30" >
+                        <img src="{% static channel.profile.image %}" width="24" height="24" >
                     {% else %}
-                        <img src="{{ channel.profile.image.url }}" width="30" height="30" >
+                        <img src="{{ channel.profile.image.url }}" width="24" height="24" >
                     {% endif %}
                 {% endif %}<i style="font-size: 70%">  {{ channel.username }}</i></a><br>
                     {% endif %}
@@ -123,9 +123,9 @@
 
 <a href="{% url 'channel' channel.username %}">
                 {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
-                    <img src="{% static channel.profile.image %}" width="30" height="30" >
+                    <img src="{% static channel.profile.image %}" width="24" height="24" >
                 {% else %}
-                    <img src="{{ channel.profile.image.url }}" width="30" height="30" >
+                    <img src="{{ channel.profile.image.url }}" width="24" height="24" >
                 </a>{% endif %}
             {% endif %}<i style="font-size: 220%"><a style="font-size: 50%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
             {% endfor %}
@@ -135,18 +135,18 @@
     <div style="width: 81%; padding-top: 49px; float: left;">
 
 
-  <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px;font-size: 130%; !important;"><b>Upload</b> videos and <b>see</b> your rating !</p>
+  <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px;font-size: 120%; !important;"><b>Upload</b> videos and <b>see</b> your rating !</p>
 <P></P><br>
-    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 130%;">Top Videos</b></p><br>
+    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 120%;">Top Videos</b></p><br>
     {% if hasRes %}
     <div class="row">
       {% for video in video_results %}
-      <div style="font-size: 85%;" class="col-sm-5 col-md-3 col-bg-2">
+      <div style="font-size: 85%;" class="col-sm-4 col-md-3 col-bg-2">
       <div class="thumbnail" style=" border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
  <a href="{% url 's_vid' video.id %}">{% if not video.th %}
             <img src="{{ video.thumpnail }}" width="128%" height="72%">
         {% else %}
-       <img src="{{ video.thumpnail.url }}" width="102.4%" height="57.6%">
+       <img src="{{ video.thumpnail.url }}" width=128%" height="72%">
         {% endif %}
           <div class="caption">
               <div style="
@@ -159,7 +159,6 @@
           <b><a style="color: black;!important; float: left;" href="{% url 'channel' video.user.username %}">{{ video.user.username }}</a></b><div style="float: right">
             {% if video.avg_rating == 0.0 %}
                 <img width="19px" height="19px" src="{% static 'bat.png'%}" >
-          <img width="19px" height="19px" src="{% static 'star.png'%}" >
           {% if video.avg_rating > 4.6 %}
                 <img width="15.5px" height="19px" style="" src="{% static '75.png'%}" >
           {% elif video.avg_rating > 4.3 %}
@@ -216,7 +215,7 @@
               <img width="19px" height="19px" src="{% static 'star.png'%}" >
               <img width="19px" height="19px" src="{% static 'star.png'%}" >
       {% endif %}</div>
-      <br><span style="float: left;"><b style="font-size: 80%" >Views: </b>
+      <br><span style="float: left;"><b style="font-size: 82%" >Views: </b>
           {{video.views}}
       </span><BR>
  </div>
@@ -225,23 +224,17 @@
       {% endfor %}
     </div>
   {% endif %}
-    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 130%;">Newest Videos</b></p><br>
+    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 120%;">Newest Videos</b></p><br>
     {% if hasRes %}
     <div class="row">
       {% for video in new %}
-      <div style="font-size: 85%;" class="col-sm-5 col-md-3 col-bg-2">
+      <div style="font-size: 85%;" class="col-sm-4 col-md-3 col-bg-2">
       <div class="thumbnail" style=" border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
  <a href="{% url 's_vid' video.id %}">
          {% if not video.th %}
-            <video preload="none" poster="{{ video.thumpnail }}" width="100%" height="56%">
-            <source src="{{video.video.url}}" type="video/mp4">
-            <div class="alert alert-warning" style="border-radius:0px; border:0"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
-          </video>
+           <img src="{{ video.thumpnail }}" width="128%" height="72%">
         {% else %}
-        <video preload="none" width="100%" height="56%" poster="{{ video.thumpnail.url }}">
-          <source src="{{video.video.url}}" type="video/mp4">
-          <div class="alert alert-warning" style="border-radius:0px; border:0"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
-        </video>
+       <img src="{{ video.thumpnail.url }}" width=128%" height="72%">
         {% endif %}
           <div class="caption">
               <div style="
@@ -254,7 +247,6 @@
           <b><a style="color: black;!important; float: left;" href="{% url 'channel' video.user.username %}">{{ video.user.username }}</a></b><div style="float: right">
             {% if video.avg_rating == 0.0 %}
                 <img width="19px" height="19px" src="{% static 'bat.png'%}" >
-          <img width="19px" height="19px" src="{% static 'star.png'%}" >
           {% if video.avg_rating > 4.6 %}
                 <img width="15.5px" height="19px" style="" src="{% static '75.png'%}" >
           {% elif video.avg_rating > 4.3 %}
@@ -311,7 +303,7 @@
               <img width="19px" height="19px" src="{% static 'star.png'%}" >
               <img width="19px" height="19px" src="{% static 'star.png'%}" >
       {% endif %}</div>
-      <br><span style="float: left;"><b >Views: </b>
+      <br><span style="float: left;"><b style="font-size: 82%" >Views: </b>
           {{video.views}}
       </span><BR>
  </div>
@@ -320,23 +312,17 @@
       {% endfor %}
     </div>
   {% endif %}
-    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 130%;">Popular Videos</b></p><br>
+    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 120%;">Popular Videos</b></p><br>
     {% if hasRes %}
     <div style="font-size:89%;" class="row">
       {% for video in popular %}
-      <div style="font-size: 85%;" class="col-sm-5 col-md-3 col-bg-2">
+      <div style="font-size: 85%;" class="col-sm-4 col-md-3 col-bg-2">
       <div class="thumbnail" style=" border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
  <a href="{% url 's_vid' video.id %}">
          {% if not video.th %}
-            <video preload="none" poster="{{ video.thumpnail }}" width="100%" height="56%">
-            <source src="{{video.video.url}}" type="video/mp4">
-            <div class="alert alert-warning" style="border-radius:0px; border:0"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
-          </video>
+            <img src="{{ video.thumpnail }}" width="128%" height="72%">
         {% else %}
-        <video preload="none" width="100%" height="56%" poster="{{ video.thumpnail.url }}">
-          <source src="{{video.video.url}}" type="video/mp4">
-          <div class="alert alert-warning" style="border-radius:0px; border:0"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
-        </video>
+       <img src="{{ video.thumpnail.url }}" width=128%" height="72%">
         {% endif %}
           <div class="caption">
               <div style="
@@ -349,7 +335,6 @@
           <b><a style="color: black;!important; float: left;" href="{% url 'channel' video.user.username %}">{{ video.user.username }}</a></b><div style="float: right">
             {% if video.avg_rating == 0.0 %}
                 <img width="19px" height="19px" src="{% static 'bat.png'%}" >
-          <img width="19px" height="19px" src="{% static 'star.png'%}" >
           {% if video.avg_rating > 4.6 %}
                 <img width="15.5px" height="19px" style="" src="{% static '75.png'%}" >
           {% elif video.avg_rating > 4.3 %}
@@ -406,7 +391,7 @@
               <img width="19px" height="19px" src="{% static 'star.png'%}" >
               <img width="19px" height="19px" src="{% static 'star.png'%}" >
       {% endif %}</div>
-      <br><span style="float: left;"><b >Views: </b>
+      <br><span style="float: left;"><b style="font-size: 82%">Views: </b>
           {{video.views}}
       </span><BR>
  </div>
@@ -415,23 +400,17 @@
       {% endfor %}
     </div>
   {% endif %}
-    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 130%;">Best Rated Videos</b></p><br>
+    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 120%;">Best Rated Videos</b></p><br>
     {% if hasRes %}
     <div class="row">
       {% for video in best %}
-      <div style="font-size: 85%;" class="col-sm-5 col-md-3 col-bg-2">
+      <div style="font-size: 85%;" class="col-sm-4 col-md-3 col-bg-2">
       <div class="thumbnail" style=" border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
  <a href="{% url 's_vid' video.id %}">
        {% if not video.th %}
-            <video preload="none" poster="{{ video.thumpnail }}" width="100%" height="56%">
-            <source src="{{video.video.url}}" type="video/mp4">
-            <div class="alert alert-warning" style="border-radius:0px; border:0"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
-          </video>
+           <img src="{{ video.thumpnail }}" width="128%" height="72%">
         {% else %}
-        <video preload="none" width="100%" height="56%" poster="{{ video.thumpnail.url }}">
-          <source src="{{video.video.url}}" type="video/mp4">
-          <div class="alert alert-warning" style="border-radius:0px; border:0"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
-        </video>
+       <img src="{{ video.thumpnail.url }}" width=128%" height="72%">
         {% endif %}
           <div class="caption">
               <div style="
@@ -445,7 +424,6 @@
           <div style="float: right">
             {% if video.avg_rating == 0.0 %}
                 <img width="19px" height="19px" src="{% static 'bat.png'%}" >
-          <img width="19px" height="19px" src="{% static 'star.png'%}" >
           {% if video.avg_rating > 4.6 %}
                 <img width="15.5px" height="19px" style="" src="{% static '75.png'%}" >
           {% elif video.avg_rating > 4.3 %}
@@ -502,7 +480,7 @@
               <img width="19px" height="19px" src="{% static 'star.png'%}" >
               <img width="19px" height="19px" src="{% static 'star.png'%}" >
       {% endif %}</div>
-      <br><span style="float: left;"><b >Views: </b>
+      <br><span style="float: left;"><b style="font-size: 82%" >Views: </b>
           {{video.views}}
       </span><BR>
  </div>
