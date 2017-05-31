@@ -397,7 +397,7 @@ function ShowMore() {
             {% if v.th == False %}
             <!-- video width="853" height="480" controls -->
                 <video width="38.4%" height="21.6%" poster="{{ video.thumpnail }}"  id="{{ v.id }}" >
-                    <source src="{{v.video.url}}#t=0" type="video/mp4">
+                    <source src="{{v.video.url}}" type="video/mp4">
                 <div class="alert alert-warning"><b>
                 <span class="glyphicon glyphicon-warning-sign" aria-hidden="true">
                 </span> Warning: </b> Your browser does not support the video tag.
