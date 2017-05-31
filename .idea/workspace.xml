@@ -20,8 +20,8 @@
       <file leaf-file-name="s_vid.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UR8/templates/s_vid.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2849">
-              <caret line="214" column="38" lean-forward="false" selection-start-line="214" selection-start-column="38" selection-end-line="214" selection-end-column="38" />
+            <state relative-caret-position="262">
+              <caret line="412" column="40" lean-forward="false" selection-start-line="412" selection-start-column="40" selection-end-line="412" selection-end-column="40" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#video#1;n#div#0;n#a#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -1052,8 +1052,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/s_vid.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2849">
-          <caret line="214" column="38" lean-forward="false" selection-start-line="214" selection-start-column="38" selection-end-line="214" selection-end-column="38" />
+        <state relative-caret-position="262">
+          <caret line="412" column="40" lean-forward="false" selection-start-line="412" selection-start-column="40" selection-end-line="412" selection-end-column="40" />
           <folding>
             <element signature="n#style#0;n#div#0;n#video#1;n#div#0;n#a#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
