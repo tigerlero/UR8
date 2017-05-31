@@ -7,7 +7,6 @@
     .notimage {
    position: relative;
 }
-
 .note {
     position: absolute;
     top: 24px;
@@ -15,13 +14,11 @@
     color: black;
     width: 28px;
 }
-
     .description{
       background-color: aliceblue;
       border: none;
       resize: none;
     }
-
     .btn-link{
       background-color: aliceblue;
       color: #007399;
@@ -35,21 +32,18 @@
       padding-left: 5px;
       padding-right: 5px;
     }
-
     .btn-link:hover, .btn-link:active, .btn-link:visited {
         background-color: #007399 !important;
         border-color: #007399 !important;
         color: aliceblue !important;
         text-decoration: none;
     }
-
     .bg-primary{
       background: gray;
       padding-bottom: 2px;
       color: white;
       font-weight: 200;
     }
-
     label > input{ /* HIDE RADIO */
         visibility: hidden; /* Makes input not-clickable */
         position: absolute; /* Remove input from document flow */
@@ -61,7 +55,6 @@
       label > input:checked + img { /*(RADIO CHECKED) IMAGE STYLES */
         opacity: .6;
     }
-
     .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
         background-color: #595959 !important;
         border-color: #595959 !important;
@@ -146,11 +139,9 @@
     .alert-warning{
       padding: 5px 5px 5px 5px;
     }
-
     hr{
       border-color: #ccebff;
     }
-
   </style>
 {% endblock %}
 {% block body %}
@@ -212,7 +203,7 @@
 
     <!-- start col-1 -->
   <div class="col-sm-6">
-  <h1 style="padding-top: 30px;"></h1><div id="video-container">
+  <h1 style="padding-top: 30px;"></h1>
   {% if not video.th %}
     <video controls poster="{{ video.thumpnail }}" width="144%" height="81%" id="{{ video.id }}">
       <source src="{{ video.video.url }}" type="video/mp4">
@@ -227,7 +218,7 @@
   {% endif %}
 
 <div style="width: 144%">
-  <b style="font-size: 200%;float: left;">{{ video.title }}</b><span style="float: right; margin-top: 1%;"><b>Rating: </b>
+  <b style="font-size: 150%;float: left;">{{ video.title }}</b><span style="float: right; margin-top: 1%;">
         {% if video.avg_rating == 0.0 %}
                 <img width="24px" height="24px" src="{% static 'bat.png'%}" >
           {% elif video.avg_rating >= 0 and video.avg_rating < 1 %}
@@ -308,10 +299,10 @@
           <a href="{% url 'channel' video.user.username %}">{{ video.user.username }}</b></a>
 
       {% if video.user.username in request.user.profile.subscribes and video.user.username != request.user.username %}
-          <a style="background-color: darkcyan; border-color: #99ccff; float: right" href="{% url 'del_subscribes' video.id %}" class="btn btn-danger" role="button">
+          <a style="background-color: darkcyan; border-color: seagreen; float: right" href="{% url 'del_subscribes' video.id %}" class="btn btn-danger" role="button">
                   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Subscribed </a>
       {% elif video.user.username not in request.user.profile.subscribes and video.user.username != request.user.username %}
-      <a style="background-color: darkcyan; border-color: #99ccff; float: right" href="{% url 'sub' video.id %}" class="btn btn-danger" role="button">
+      <a style="background-color: darkcyan; border-color: seagreen; float: right" href="{% url 'sub' video.id %}" class="btn btn-danger" role="button">
                   <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Subscribe </a>
       {% endif %}<br><br>
 
@@ -326,9 +317,7 @@
     overflow: hidden;
     text-overflow: clip;"><div style="text-align: left">{{ video.description }}</div></div>
         <script>
-
 function ShowMore() {
-
     if (document.getElementById("dec").style.height == "1.4em") {
         document.getElementById("dec").style.height = "100%";
     }
@@ -387,21 +376,17 @@ function ShowMore() {
         {% else %}
        <img src="{{ v.thumpnail.url }}" width=38.4%" height="21.6%">
         {% endif %}
-
            <div style="position: inherit; float: inherit; "> <b>{{ v.title }} </b></a><br>Views: {{ v.views }}</div>
         </div>
-
       {% endfor %}
-
     </div>
     <!-- end col-2 -->
   </div>
     <!-- end row -->
   <hr>
   <p></p>
-
 {#review part#}
-    
+
   {% if request.user.is_authenticated %}
     {% if not rated  %}
     <h3>Write a review for this video:</h3>
@@ -409,7 +394,6 @@ function ShowMore() {
     <span id="error" class="alert alert-danger" style="border-radius:0;border:0;display:none;">Your review must be less than 1000 characters.</span>
     <form class="" id="review-form">
       {% csrf_token %}
-      <b style="font-size: 150%; padding-left: 0px; padding-right: 6px;">Rating:</b>
             <label>
             <input type="radio" name="star" value=1>
               <img src="{% static 'star.png'%}" id="1">
@@ -443,9 +427,7 @@ function ShowMore() {
       Video Reviews:
     </h3>
     <hr>
-
     <span id="reviews">
-
       {% if lists %}
         {% for review, approve, disapprove in lists %}
             {% include 'review.html' with src=review.user.profile.image text=review.text uname=review.user.username rating=review.rating like=approve dislike=disapprove ID=review.id %}
@@ -453,9 +435,7 @@ function ShowMore() {
       {% else %}
         <p><b>There are no reviews yet.</b></p>
       {% endif %}
-
     </span>
-
   {% else %}
      <h3>
       Video Reviews:
@@ -474,25 +454,18 @@ function ShowMore() {
         Warning: </b> You must be logged in to write a review for this video and approve or not a review.
     </div>
   {% endif %}
-
 {% endblock %}
-
 {% block js_files %}
-
     <script type='text/javascript'>
  $(document).ready(function() {
-
       $("#review-form").submit(function(e){
-
         var text = $('#review-area').val();
         var pk = $("video").attr('id');
         var url = "https://ur8.herokuapp.com/ur8/rated-video/"+pk+"/";
         var token = $('#review-form > input[name=csrfmiddlewaretoken]').val();
-
         e.preventDefault();
         if($('input[name=star]').is(':checked') && (text != "") && (text.length > 0) ){
           var rating = $('input[name=star]:checked').val();
-
           $.ajax({
             type:'POST',
             url:url,
@@ -508,20 +481,16 @@ function ShowMore() {
               }
             }
           });
-
         }else{
           window.alert("You haven't rated or reviewed the video");
         }
-
       });
-
       $( ".ok-btn" ).on("click",function(e) {
         var id = $(this).attr('id');
         var vID = $("video").attr('id');
         var rID = $(this).parent('#approve-form').data('id');
         var token = $(this).siblings("input[name=csrfmiddlewaretoken]").val();
         var url = "https://ur8.herokuapp.com/ur8/liked-review/"+vID+"/"+rID+"/";
-
         $.ajax({
           type:'POST',
           url:url,
@@ -535,16 +504,13 @@ function ShowMore() {
             }
           }
         });
-
       });
-
       $( ".rm-btn" ).on("click",function(e) {
         var id = $(this).attr('id');
         var vID = $("video").attr('id');
         var rID = $(this).parent('#approve-form').data('id');
         var token = $(this).siblings("input[name=csrfmiddlewaretoken]").val();
         var url = "https://ur8.herokuapp.com/ur8/disliked-review/"+vID+"/"+rID+"/";
-
         $.ajax({
           type:'POST',
           url:url,
@@ -558,9 +524,7 @@ function ShowMore() {
             }
           }
         });
-
       });
-
       $( ".del-btn" ).on("click",function(e) {
         var id = $(this).attr('id');
         var rID = $(this).parent('#approve-form').data('id');
@@ -568,7 +532,6 @@ function ShowMore() {
         var token = $(this).siblings("input[name=csrfmiddlewaretoken]").val();
         var url = "https://ur8.herokuapp.com/ur8/delete-review/"+rID+"/";
         window.alert( "Review deleted !" );
-
         $.ajax({
           type:'POST',
           url:url,
@@ -583,18 +546,13 @@ function ShowMore() {
             }
           }
         });
-
       });
-
       $( ".ed-btn" ).on("click",function(e) {
         var rID = $(this).parent('#approve-form').data('id');
         var vID = $("video").attr('id');
         var url = "https://ur8.herokuapp.com/ur8/edit-review/"+vID+"/"+rID+"/";
         $(location).attr('href', url);
       });
-
    });
-
 </script>
 {% endblock %}
-
