@@ -74,7 +74,7 @@
       </div>
     </div>
   </nav>
-    <div style="width: 19%; float: right;">
+    <div style="width: 15%; float: right;">
         <img src="{% static 'UR8.png' %}" width="118px;" height="84px;">
 <br><Br>
     <div class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;">
@@ -132,7 +132,7 @@
             {% endif %}
       </div>
 
-    <div style="width: 80%; padding-top: 49px; float: left;">
+    <div style="width: 84%; padding-top: 49px; float: left;">
 
 
   <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px;font-size: 130%; !important;"><b>Upload</b> videos and <b>see</b> your rating !</p>
@@ -141,7 +141,7 @@
     {% if hasRes %}
     <div class="row">
       {% for video in video_results %}
-      <div style="font-size: 85%;" class="col-sm-5 col-md-3 col-bg-2">
+      <div style="font-size: 85%;" class="col-sm-4 col-md-3 col-bg-2">
       <div class="thumbnail" style=" border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
  <a href="{% url 's_vid' video.id %}">{% if not video.th %}
             <video preload="none" poster="{{ video.thumpnail }}" width="100%" height="56%">
