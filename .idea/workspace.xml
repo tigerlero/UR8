@@ -119,8 +119,8 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UR8/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="433" column="22" lean-forward="false" selection-start-line="433" selection-start-column="22" selection-end-line="433" selection-end-column="22" />
+            <state relative-caret-position="129">
+              <caret line="339" column="22" lean-forward="false" selection-start-line="339" selection-start-column="22" selection-end-line="339" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
               </folding>
@@ -1007,8 +1007,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="433" column="22" lean-forward="false" selection-start-line="433" selection-start-column="22" selection-end-line="433" selection-end-column="22" />
+        <state relative-caret-position="129">
+          <caret line="339" column="22" lean-forward="false" selection-start-line="339" selection-start-column="22" selection-end-line="339" selection-end-column="22" />
           <folding>
             <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
           </folding>
