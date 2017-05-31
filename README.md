@@ -18,7 +18,8 @@ It will include:
 - [x] Subscribes
 - [x] Notifications
 - [x] Auto thumbnail generate
-- [ ] Custom thumbnail
+- [x] Upload Custom thumbnail
+- [ ] Auto generate custom thumbnail by video specific frame
 - [ ] Channel Sort
 
 
