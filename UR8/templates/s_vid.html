@@ -213,17 +213,17 @@
     <!-- start col-1 -->
   <div class="col-sm-6">
   <h1 style="padding-top: 30px;"></h1>
-  <script>
-var video = document.getElementById("play");
-
-function toggleControls() {
-  if (video.hasAttribute("controls")) {
-     video.removeAttribute("controls")
-  } else {
-     video.setAttribute("controls","controls")
-  }
-}
-</script>
+{#  <script>#}
+{#var video = document.getElementById("play");#}
+{##}
+{#function toggleControls() {#}
+{#  if (video.hasAttribute("controls")) {#}
+{#     video.removeAttribute("controls")#}
+{#  } else {#}
+{#     video.setAttribute("controls","controls")#}
+{#  }#}
+{#}#}
+{#</script>#}
   {% if video.th == False %}
     <video onmouseout="toggleControls()" poster="{{ video.thumpnail }}" width="144%" height="81%" id="{{ video.id }}" controls >
       <source src="{{video.video.url}}" type="video/mp4">
@@ -394,24 +394,18 @@ function ShowMore() {
       {% for v in rel_videos %}
       <a href="{% url 's_vid' v.id %}">
         <div class="row">
-            {% if v.th == False %}
-            <!-- video width="853" height="480" controls -->
-                <video width="38.4%" height="21.6%" poster="{{ video.thumpnail }}"  id="{{ v.id }}" >
-                    <source src="{{v.video.url}}" type="video/mp4">
-                <div class="alert alert-warning"><b>
-                <span class="glyphicon glyphicon-warning-sign" aria-hidden="true">
-                </span> Warning: </b> Your browser does not support the video tag.
-                        </div> </video>
-            {% else %}
-                <!-- video width="320" height="240" controls -->
-                <video width="38.4%" height="21.6%" poster="{{ v.thumpnail.url }}" id="{{ v.id }}" >
-                    <source src="{{v.video.url}}" type="video/mp4">
-                <div class="alert alert-warning"><b>
-                <span class="glyphicon glyphicon-warning-sign" aria-hidden="true">
-                </span> Warning: </b> Your browser does not support the video tag.
-                        </div>
-                    </video>
-            {% endif %}
+        {% if not v.th %}
+            <video preload="none" poster="{{ v.thumpnail }}" width="38.4%" height="21.6%">
+            <source src="{{v.video.url}}" type="video/mp4">
+            <div class="alert alert-warning" style="border-radius:0px; border:0"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
+          </video>
+        {% else %}
+        <video preload="none" width="38.4%" height="21.6%" poster="{{ v.thumpnail.url }}">
+          <source src="{{v.video.url}}" type="video/mp4">
+          <div class="alert alert-warning" style="border-radius:0px; border:0"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
+        </video>
+        {% endif %}
+
            <div style="position: inherit; float: inherit; "> <b>{{ v.title }} </b></a><br>Views: {{ v.views }}</div>
         </div>
 

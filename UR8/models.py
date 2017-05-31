@@ -26,8 +26,8 @@ class Video(models.Model):
     description = models.TextField(max_length=3000)
     avg_rating = models.DecimalField(max_digits=2, decimal_places=1, default=0.0)
     rating_counter = models.IntegerField(default=0)
-    thumpnail = models.FileField(upload_to="thumpnails", default="")
-    th = models.BooleanField(default=False)
+    thumpnail = models.FileField(upload_to="thumpnails", default="thumpnail/None/default_thump.png")
+    th = models.BooleanField(default=True)
     # thumpnails will be uploaded to: 'uploads/media/thumpnails'
     views = models.IntegerField(default=0)
 
