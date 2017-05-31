@@ -12,25 +12,6 @@ import os
 import json
 import time
 
-
-# def thumb(id):
-#     video = Video.objects.get(id=id)
-#     print(video)
-#     v = ""
-#
-#     clip = VideoFileClip(video)
-#     clip.save_frame("thumbnail.jpg", t=0.00)
-#     return clip
-#
-#
-# def generate_thumbnails(tmp_directory):
-#     clip = VideoFileClip(os.path.join(tmp_directory, "video.mp4"))
-#     for i in range(3):
-#         thumbnail = os.path.join(tmp_directory, "thumbnail_%s.png" % i)
-#         clip.save_frame(thumbnail, t=random.uniform(0.1, clip.duration))
-
-# Create your views here.
-# Login is required to view this page..
 def home(request):
     videos = Video.objects.all()
     video_results = []
