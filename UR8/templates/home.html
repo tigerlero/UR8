@@ -63,7 +63,6 @@
             <li><a href="{% url 'sign_in' %}"><img src="{% static "login.png" %}" width="30" height="30"></a></li>
             <li><a href="{% url 'sign_up' %}"><img src="{% static "Sign.png" %}" width="30" height="30"></a></li>
           {% endif %}
-
           {% if request.user.is_authenticated %}
               <li><a href="{% url 'upld_vid' %}" ><img  src="{% static "up.png" %}" style="margin-top: 5px;" width="30" height="30"></a></li>
             <li><a href="{% url 'view_vid' %}"><img src="{% static "my.png" %}" style="margin-top: 5px;" width="30" height="28"></a></li>
@@ -75,9 +74,8 @@
       </div>
     </div>
   </nav>
-    <div style="width: 20%; float: right;">
+    <div style="width: 21%; float: right;">
         <img src="{% static 'UR8.png' %}" width="118px;" height="84px;">
-
 <br><Br>
     <div class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;">
         <b style="font-size: 130%;">
@@ -134,7 +132,7 @@
             {% endif %}
       </div>
 
-    <div style="width: 79%; padding-top: 49px; float: left;">
+    <div style="width: 77%; padding-top: 49px; float: left;">
 
 
   <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px;font-size: 130%; !important;"><b>Upload</b> videos and <b>see</b> your rating !</p>
