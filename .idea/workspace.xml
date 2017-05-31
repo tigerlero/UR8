@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdba3134-eb2b-42f0-8c12-9d864dd77c7c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/models.py" afterPath="$PROJECT_DIR$/UR8/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/channel.html" afterPath="$PROJECT_DIR$/UR8/templates/channel.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/home.html" afterPath="$PROJECT_DIR$/UR8/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/notifications.html" afterPath="$PROJECT_DIR$/UR8/templates/notifications.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/s_vid.html" afterPath="$PROJECT_DIR$/UR8/templates/s_vid.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/subscribes.html" afterPath="$PROJECT_DIR$/UR8/templates/subscribes.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/view_vid.html" afterPath="$PROJECT_DIR$/UR8/templates/view_vid.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/views.py" afterPath="$PROJECT_DIR$/UR8/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,8 +20,8 @@
       <file leaf-file-name="s_vid.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UR8/templates/s_vid.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="215" column="0" lean-forward="false" selection-start-line="215" selection-start-column="2" selection-end-line="225" selection-end-column="11" />
+            <state relative-caret-position="517">
+              <caret line="232" column="51" lean-forward="false" selection-start-line="232" selection-start-column="51" selection-end-line="232" selection-end-column="51" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#video#1;n#div#0;n#a#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -554,9 +547,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="0" width="1872" height="1084" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1059,8 +1051,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/s_vid.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="215" column="0" lean-forward="false" selection-start-line="215" selection-start-column="2" selection-end-line="225" selection-end-column="11" />
+        <state relative-caret-position="517">
+          <caret line="232" column="51" lean-forward="false" selection-start-line="232" selection-start-column="51" selection-end-line="232" selection-end-column="51" />
           <folding>
             <element signature="n#style#0;n#div#0;n#video#1;n#div#0;n#a#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>

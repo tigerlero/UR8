@@ -224,13 +224,13 @@
 {#  }#}
 {#}#}
 {#</script>#}
-  {% if video.th == False %}
-    <video onmouseout="toggleControls()" poster="{{ video.thumpnail }}" width="144%" height="81%" id="{{ video.id }}" controls >
+  {% if not video.th %}
+    <video poster="{{ video.thumpnail }}" width="144%" height="81%" preload="none" id="{{ video.id }}" controls >
       <source src="{{video.video.url}}" type="video/mp4">
       <div class="alert alert-warning"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
     </video>
   {% else %}
-    <video width="144%" height="81%" poster="{{ video.thumpnail.url }}" id="{{ video.id }}" controls >
+    <video width="144%" height="81%" preload="none" poster="{{ video.thumpnail.url }}" id="{{ video.id }}" controls >
       <source src="{{video.video.url}}" type="video/mp4">
       <div class="alert alert-warning"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
     </video>
