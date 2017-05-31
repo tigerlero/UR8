@@ -381,9 +381,9 @@ function ShowMore() {
       <a href="{% url 's_vid' v.id %}">
         <div class="row">
         {% if not v.th %}
-             <img src="{{ video.thumpnail }}" width="38.4%" height="21.6%">
+             <img src="{{ v.thumpnail }}" width="38.4%" height="21.6%">
         {% else %}
-       <img src="{{ video.thumpnail.url }}" width=38.4%" height="21.6%">
+       <img src="{{ v.thumpnail.url }}" width=38.4%" height="21.6%">
         {% endif %}
 
            <div style="position: inherit; float: inherit; "> <b>{{ v.title }} </b></a><br>Views: {{ v.views }}</div>
