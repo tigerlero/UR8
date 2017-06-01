@@ -203,9 +203,10 @@
     <!-- start col-1 -->
   <div class="col-sm-6">
   <h1 style="padding-top: 30px;"></h1>
-    <video width="144%" height="81%" id="{{ video.id }}" controls autoplay>
+    <video controls width="144%" height="81%" id="{{ video.id }}"  autoplay>
       <source src="{{ video.video.url }}" type="video/mp4">
     </video>
+
 <div style="width: 144%">
   <b style="font-size: 150%;float: left;">{{ video.title }}</b><span style="float: right; margin-top: 1%;">
         {% if video.avg_rating == 0.0 %}
@@ -352,11 +353,48 @@ function ShowMore() {
     <br>
 </div>
     </div>
+
     <!-- end col-1 -->
     <div style="padding-left: 13%;padding-top: 2.4%;" class="col-sm-6 col-md-6"  style="margin-top: 35px;padding-right: 1%;">
-      <h4>Related Videos:</h4>
+      <h4>Next video:</h4>Autoplay:
+        <div class="checkbox">
+  <label>
+    <input style="padding-left: 1%; float: right;" id="toggle-one" type="checkbox" data-toggle="toggle">
+  </label>
+</div>
+        {% for v in rel_videos|slice:":1" %}
+            <script type='text/javascript'>
 
-      {% for v in rel_videos %}
+    $('#toggle-one').bootstrapToggle({
+      on: 'On',
+      off: 'Off',
+        size: 'mini',
+    });
+
+              var t = setTimeout(vidEnd, 10000);
+              function stopAuto() {
+                  clearTimeout(t);
+              }
+    function vidEnd() {
+        document.getElementById('{{ video.id }}').addEventListener('ended',myHandler,false);
+    }
+    function myHandler(e) {
+
+        window.location="{% url 's_vid' v.id %}";
+    }
+</script>
+      <a href="{% url 's_vid' v.id %}">
+        <div class="row">
+        {% if not v.th %}
+             <img src="{{ v.thumpnail }}" width="38.4%" height="21.6%">
+        {% else %}
+       <img src="{{ v.thumpnail.url }}" width=38.4%" height="21.6%">
+        {% endif %}
+           <div style="position: inherit; float: inherit; "> <b>{{ v.title }} </b></a><br>Views: {{ v.views }}</div>
+        </div>
+      {% endfor %}
+    <h4>Related Videos:</h4>
+      {% for v in rel_videos|slice:"1:" %}
       <a href="{% url 's_vid' v.id %}">
         <div class="row">
         {% if not v.th %}
@@ -371,6 +409,9 @@ function ShowMore() {
     <!-- end col-2 -->
   </div>
     <!-- end row -->
+
+
+
   <hr>
   <p></p>
 {#review part#}
