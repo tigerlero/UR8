@@ -177,14 +177,14 @@
 
     <div class="row">
     {% for video in not_vid %}
-        <div class="col-sm-4 col-md-2">
-            <B>NOTIFICATION</B><BR>
-            <a href="{% url 's_vid' video.id %}"><B>{{ video.title }}</B><Br>
+        <div class="col-sm-4 col-md-3 col-bg-2">
+            <B>NOTIFICATION</B><BR><BR>
+            <a href="{% url 's_vid' video.id %}"><B>{{ video.title }}</B><Br><br>
             {% if not video.th %}
-            <img src="{{ video.thumpnail }}" width="128%" height="72%">
+            <img src="{{ video.thumpnail }}" width=38.4%" height="21.6%">
         {% else %}
-       <img src="{{ video.thumpnail.url }}" width=128%" height="72%">
-        {% endif %}</a><br>
+       <img src="{{ video.thumpnail.url }}" width=38.4%" height="21.6%">
+        {% endif %}</a><br><br>
         <a href="{% url 'del_notifications' video.id %}" class="btn btn-danger" role="button">
                   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete </a>
       </div>

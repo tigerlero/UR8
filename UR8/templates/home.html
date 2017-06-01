@@ -66,21 +66,23 @@
           {% if request.user.is_authenticated %}
               <li><a href="{% url 'upld_vid' %}" ><img  src="{% static "up.png" %}" style="margin-top: 5px;" width="30" height="30"></a></li>
             <li><a href="{% url 'view_vid' %}"><img src="{% static "my.png" %}" style="margin-top: 5px;" width="30" height="28"></a></li>
-             {% if requset.user.profile.count < 10%} <li><a href="{% url 'notifications' %}" >
+             {% if requset.user.profile.count < 10 %} <li><a href="{% url 'notifications' %}" >
                  <img class="notimage" src="{% static "not.png" %}" style="margin-top: 2px;" width="31" height="31">
-                  <div class="note">{{ request.user.profile.count }}</div>{% else %}<li><a href="{% url 'notifications' %}" >
-                 <img class="notimage" src="{% static "nonot.gif" %}" style="margin-top: 2px;" width="31" height="31">{% endif %}</a></li>
+                  <div class="note">{{ request.user.profile.count }}</div>
+             {% else %}<li><a href="{% url 'notifications' %}" >
+                 <img class="notimage" src="{% static "nonot.gif" %}" style="margin-top: 2px;" width="31" height="31">
+             {% endif %}</a></li>
             <li><a href="{% url 'sign_out' %}"><img src="{% static "door.png" %}" style="margin-top: 5px;" width="28" height="28"></a></li>
           {% endif %}
         </ul>
       </div>
     </div>
   </nav>
-    <div style="width: 18%; float: right;">
+    <div style="width: 14%; float: left;">
         <img src="{% static 'UR8.png' %}" width="118px;" height="84px;">
-<br><Br>
+<br><Br><div style="text-align: left; padding-left: 1%;">
     <div class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;">
-        <b style="font-size: 120%;">
+        <b style="font-size: 110%;">
         <a href="{% url 'subscribes' %}"><img style=" margin-right: 1%; margin-top: 1%;" src="{% static "sub.png" %}" width="13" height="13">
          Subs</a></b>
     </div><br>
@@ -89,16 +91,16 @@
                 {% if not channel.is_superuser  %}
 
                     {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
-                    <a href="{% url 'channel' channel.username %}"><img src="{% static channel.profile.image %}" width="24" height="24" ></a>
+                    <a href="{% url 'channel' channel.username %}"><img src="{% static channel.profile.image %}" width="25" height="25" ></a>
                     {% else %}
-                    <a href="{% url 'channel' channel.username %}"><img src="{{ channel.profile.image.url }}" width="24" height="24" ></a>
+                    <a href="{% url 'channel' channel.username %}"><img src="{{ channel.profile.image.url }}" width="25" height="25" ></a>
                     {% endif %}
-                {% endif %}<i style="font-size: 220%"><a style="font-size: 50%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
+                {% endif %}<i style="font-size: 160%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
             {% endfor %}
         {% endif %}
 <br>
      <div class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;">
-        <b style="font-size: 120%;">
+        <b style="font-size: 110%;">
         <a href="{% url 'channels' %}"><img src="{% static "tv.png" %}" style=" margin-right: 1%; margin-top: 1%;" width="13" height="13">
          Channels</a></b>
     </div><br>
@@ -108,14 +110,12 @@
                         {% for sub in subchan %}
                     {% if channel != sub %}
                 {% if not channel.is_superuser   %}
-
-                        <a href="{% url 'channel' channel.username %}">
                     {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
-                        <img src="{% static channel.profile.image %}" width="24" height="24" >
+                        <img src="{% static channel.profile.image %}" width="25" height="25" >
                     {% else %}
-                        <img src="{{ channel.profile.image.url }}" width="24" height="24" >
+                        <img src="{{ channel.profile.image.url }}" width="25" height="25" >
                     {% endif %}
-                {% endif %}<i style="font-size: 70%">  {{ channel.username }}</i></a><br>
+                {% endif %}<i style="font-size: 160%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
                     {% endif %}
                         {% endfor %}{% endif %}
                 {% endfor %}
@@ -125,18 +125,18 @@
 
 <a href="{% url 'channel' channel.username %}">
                 {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
-                    <img src="{% static channel.profile.image %}" width="24" height="24" >
+                    <img src="{% static channel.profile.image %}" width="25" height="25" >
                 {% else %}
-                    <img src="{{ channel.profile.image.url }}" width="24" height="24" >
+                    <img src="{{ channel.profile.image.url }}" width="25" height="25" >
                 </a>{% endif %}
-            {% endif %}<i style="font-size: 220%"><a style="font-size: 50%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
+            {% endif %}<i style="font-size: 160%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
             {% endfor %}
             {% endif %}
-      </div>
+      </div></div>
 
-    <div style="width: 81%; padding-top: 49px; float: left;">
+    <div style="width: 85%; padding-top: 49px; float: right;">
 
-
+<div style="text-align: left;">
   <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px;font-size: 120%; !important;"><b>Upload</b> videos and <b>see</b> your rating !</p>
 <P></P><br>
     <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 120%;">Top Videos</b></p><br>
@@ -491,6 +491,6 @@
       {% endfor %}
     </div>
   {% endif %}
-    
+    </div>
     </div>
 {% endblock %}
