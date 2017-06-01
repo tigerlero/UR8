@@ -3,6 +3,7 @@
 {% block css_files %}
   {% load staticfiles %}
   <link rel="stylesheet" href="{% static 'css_files/styles.css' %}">
+    <link rel="shortcut icon" href="{% static 'UR8.png' %}">
   <style>
   .notimage {
    position: relative;
@@ -65,7 +66,6 @@
           {% endif %}
           {% if request.user.is_authenticated %}
               <li><a href="{% url 'upld_vid' %}" ><img  src="{% static "up.png" %}" style="margin-top: 5px;" width="30" height="30"></a></li>
-            <li><a href="{% url 'view_vid' %}"><img src="{% static "my.png" %}" style="margin-top: 5px;" width="30" height="28"></a></li>
              {% if requset.user.profile.count < 10 %} <li><a href="{% url 'notifications' %}" >
                  <img class="notimage" src="{% static "not.png" %}" style="margin-top: 2px;" width="31" height="31">
                   <div class="note">{{ request.user.profile.count }}</div>
@@ -79,10 +79,10 @@
     </div>
   </nav>
     <div style="width: 14%; float: left;">
-        <img src="{% static 'UR8.png' %}" width="118px;" height="84px;">
+        <img style="padding-right: 1%" src="{% static 'UR8.png' %}" width="118px;" height="84px;">
 <br><Br><div style="text-align: left; padding-left: 1%;">
     <div class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;">
-        <b style="font-size: 110%;">
+        <b style="font-size: 130%;">
         <a href="{% url 'subscribes' %}"><img style=" margin-right: 1%; margin-top: 1%;" src="{% static "sub.png" %}" width="13" height="13">
          Subs</a></b>
     </div><br>
@@ -98,10 +98,10 @@
                 {% endif %}<i style="font-size: 160%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
             {% endfor %}
         {% endif %}
-<br>
+
      <div class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;">
-        <b style="font-size: 110%;">
-        <a href="{% url 'channels' %}"><img src="{% static "tv.png" %}" style=" margin-right: 1%; margin-top: 1%;" width="13" height="13">
+        <b style="font-size: 130%;">
+        <a href="{% url 'channels' %}"><img src="{% static "tv.png" %}" style=" margin-right: 1%;" width="13" height="13">
          Channels</a></b>
     </div><br>
             {% if request.user.is_authenicated %}
@@ -134,12 +134,12 @@
             {% endif %}
       </div></div>
 
-    <div style="width: 85%; padding-top: 49px; float: right;">
+    <div style="width: 85%; float: right;">
 
 <div style="text-align: left;">
-  <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px;font-size: 120%; !important;"><b>Upload</b> videos and <b>see</b> your rating !</p>
-<P></P><br>
-    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 120%;">Top Videos</b></p><br>
+  <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px;font-size: 200%; !important;"><b>Upload</b> videos and <b>see</b> your rating !</p>
+<hr>
+    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 130%;">Top Videos</b></p><BR>
     {% if hasRes %}
     <div class="row">
       {% for video in video_results %}
@@ -225,8 +225,8 @@
         </div>
       {% endfor %}
     </div>
-  {% endif %}
-    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 120%;">Newest Videos</b></p><br>
+  {% endif %}<hr>
+    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 130%;">Newest Videos</b></p><BR>
     {% if hasRes %}
     <div class="row">
       {% for video in new %}
@@ -313,8 +313,8 @@
         </div>
       {% endfor %}
     </div>
-  {% endif %}
-    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 120%;">Popular Videos</b></p><br>
+  {% endif %}<hR>
+    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 130%;">Popular Videos</b></p><BR>
     {% if hasRes %}
     <div style="font-size:89%;" class="row">
       {% for video in popular %}
@@ -401,8 +401,8 @@
         </div>
       {% endfor %}
     </div>
-  {% endif %}
-    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 120%;">Best Rated Videos</b></p><br>
+  {% endif %}<hr>
+    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 130%;">Best Rated Videos</b></p><BR>
     {% if hasRes %}
     <div class="row">
       {% for video in best %}

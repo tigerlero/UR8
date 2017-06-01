@@ -2,6 +2,7 @@
 {% block title %}View Video Page{% endblock %}
 {% block css_files %}
   {% load staticfiles %}
+    <link rel="shortcut icon" href="{% static 'UR8.png' %}">
   <link rel="stylesheet" href="{% static 'css_files/styles.css' %}">
   <style>
     .notimage {
@@ -188,7 +189,6 @@
 
           {% if request.user.is_authenticated %}
               <li><a href="{% url 'upld_vid' %}" ><img  src="{% static "up.png" %}" style="margin-top: 5px;" width="30" height="30"></a></li>
-            <li><a href="{% url 'view_vid' %}"><img src="{% static "my.png" %}" style="margin-top: 5px;" width="30" height="28"></a></li>
              {% if requset.user.profile.count < 10%} <li><a href="{% url 'notifications' %}" >
                  <img class="notimage" src="{% static "not.png" %}" style="margin-top: 2px;" width="31" height="31">
                   <div class="note">{{ request.user.profile.count }}</div>{% else %}<li><a href="{% url 'notifications' %}" >
@@ -201,20 +201,11 @@
   </nav>
 
 
-  <div style="float: left;width: 78%">
+  <div style="float: left; width: 80%;padding-left: 2%;">
 
     <video controls width="99.2%" height="55.8%" id="{{ video.id }}"  autoplay>
       <source src="{{ video.video.url }}" type="video/mp4">
     </video>
-  <script>
-	$(document).ready(function() {
-		$('#{{ video.id }}').mediaelementplayer({
-			alwaysShowControls: false,
-			videoVolume: 'horizontal',
-			features: ['playpause','progress','volume','fullscreen']
-		});
-	});
-	</script>
 
   <b style="font-size: 150%;float: left;">{{ video.title }}</b><span style="float: right; margin-top: 1%;">
         {% if video.avg_rating == 0.0 %}
@@ -303,9 +294,6 @@
       <a style="background-color: darkcyan; border-color: seagreen; float: right" href="{% url 'sub' video.id %}" class="btn btn-danger" role="button">
                   <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Subscribe </a>
       {% endif %}<br><br>
-
-{#     <b style="width: 100%;#}
-{#         float: left;padding-top: 1%; ">#}
       <div id="dec"
          style="margin-top: 2%;
          float: left;
@@ -316,21 +304,13 @@
     text-overflow: clip;"><div style="text-align: left">{{ video.description }}</div></div>
         <script>
 function ShowMore() {
-    if (document.getElementById("dec").style.height == "1.4em") {
-        document.getElementById("dec").style.height = "100%";
-    }
-    else {
-        document.getElementById("dec").style.height = "1.4em";
-    }
+    if (document.getElementById("dec").style.height == "1.4em") {document.getElementById("dec").style.height = "100%";}
+    else {document.getElementById("dec").style.height = "1.4em";}
     var change = document.getElementById("decb");
     if (change.innerHTML == "Show more")
-    {
-        change.innerHTML = "Hide";
-    }
+    {change.innerHTML = "Hide";}
     else
-    {
-        change.innerHTML = "Show more";
-    }}
+    {        change.innerHTML = "Show more";}}
 </script><BR>
         <button style=" background-color: Transparent;
             background-repeat:no-repeat;
@@ -389,7 +369,7 @@ function ShowMore() {
             <img src="{% static 'star.png'%}" id="5">
           </label><br>
           <p></p>
-      <textarea id="review-area" rows="4" cols="60"></textarea>
+      <textarea style="padding-left: 27%;" id="review-area" rows="4" cols="100"></textarea><BR>
       <button type="submit" id="review-btn" style="border-radius:0px;margin-left:5px;margin-bottom:26px;" class="btn btn-success">Write Review !</button>
     </form>
     <hr>
@@ -430,13 +410,13 @@ function ShowMore() {
   {% endif %}
     </div>
 </div>
-<div style=" float: right;width:21%;">
+<div style=" float: right;width:18%;">
 
-        <div class="checkbox"><b style="margin-left: 15%;float: left;">Next video:   </b> <i style="margin-left:9%;text-align:right;font-size: 90%">   Autoplay: </i>
-  <label>
+        <div class="checkbox"><b style="float: left;">Next video:</b> <i style="float:right;font-size: 85%;padding-bottom: 5px;">   Autoplay:
+  <label >
       <input data-style="slow" style=" float: right;" id="toggle-one" type="checkbox" checked data-toggle="toggle"
              data-on="<i class='fa fa-play'></i>" data-off="<i class='fa fa-pause'></i>">
-  </label>
+  </label></i>
 </div>
         {% for v in rel_videos|slice:":1" %}
             <script type='text/javascript'>
@@ -465,9 +445,9 @@ function ShowMore() {
 </script>
         <div class="row">
         {% if not v.th %}
-             <a href="{% url 's_vid' v.id %}"><img src="{{ v.thumpnail }}" width="64%" height="36%"></a>
+             <a href="{% url 's_vid' v.id %}"><img src="{{ v.thumpnail }}" width="96%" height="54%"></a>
         {% else %}
-       <a href="{% url 's_vid' v.id %}"><img src="{{ v.thumpnail.url }}" width="64%" height="36%"></a>
+       <a href="{% url 's_vid' v.id %}"><img src="{{ v.thumpnail.url }}" width="96%" height="54%"></a>
         {% endif %}
            <div style="position: inherit; float: inherit; "><a href="{% url 's_vid' v.id %}"> <b>{{ v.title }} </b></a><br>Views: {{ v.views }}
         </div>
@@ -479,9 +459,9 @@ function ShowMore() {
       {% for v in rel_videos|slice:"1:" %}
         <div style="padding-bottom:2%;" class="row">
         {% if not v.th %}
-             <a href="{% url 's_vid' v.id %}"><img src="{{ v.thumpnail }}" width="64%" height="36%"></a>
+             <a href="{% url 's_vid' v.id %}"><img src="{{ v.thumpnail }}" width="96%" height="54%"></a>
         {% else %}
-      <a href="{% url 's_vid' v.id %}"> <img src="{{ v.thumpnail.url }}" width="64%" height="36%"></a>
+      <a href="{% url 's_vid' v.id %}"> <img src="{{ v.thumpnail.url }}" width="96%" height="54%"></a>
         {% endif %}
            <div style="padding-top:2%;position: inherit; float: inherit; "><a href="{% url 's_vid' v.id %}"> <b>{{ v.title }} </b></a><br>Views: {{ v.views }}
           </div></div>

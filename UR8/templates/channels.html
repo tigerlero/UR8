@@ -2,6 +2,7 @@
 {% block title %}Channels{% endblock %}
 {% block css_files %}
   {% load staticfiles %}
+    <link rel="shortcut icon" href="{% static 'UR8.png' %}">
   <style>
     .notimage {
    position: relative;
@@ -159,7 +160,6 @@
 
           {% if request.user.is_authenticated %}
               <li><a href="{% url 'upld_vid' %}" ><img  src="{% static "up.png" %}" style="margin-top: 5px;" width="30" height="30"></a></li>
-            <li><a href="{% url 'view_vid' %}"><img src="{% static "my.png" %}" style="margin-top: 5px;" width="30" height="28"></a></li>
               {% if requset.user.profile.count < 10%} <li><a href="{% url 'notifications' %}" >
                  <img class="notimage" src="{% static "not.png" %}" style="margin-top: 2px;" width="31" height="31">
                   <div class="note">{{ request.user.profile.count }}</div>{% else %}<li><a href="{% url 'notifications' %}" >
