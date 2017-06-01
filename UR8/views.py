@@ -6,11 +6,11 @@ from .forms import UserRegFrom, EditAvatarForm, ResetPasswordForm, UploadVideoFo
 from .models import Profile, Video, Review
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-from moviepy.editor import VideoFileClip, ImageClip
-# from math import floor, ceil, modf
+from moviepy.editor import VideoFileClip
 import os
 import json
 import time
+
 
 def home(request):
     videos = Video.objects.all()
@@ -500,7 +500,7 @@ def upld_vid(request):
                 s_vid = s_vid[:-1]
                 fileDir = os.path.dirname(os.path.realpath('__file__'))
                 filename = os.path.join(fileDir, 'uploads/media/videos/'+s_vid)
-                clip = VideoFileClip(filename)
+                clip = VideoFileClip(filename).subclip(2,3)
                 s_vid = s_vid[:-4] + ".jpeg"
                 fileDir = os.path.dirname(os.path.realpath('__file__'))
                 clip.save_frame(os.path.join(fileDir, 'uploads/media/thumpnails/'+s_vid))

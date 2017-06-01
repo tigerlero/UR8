@@ -188,8 +188,10 @@
           {% if request.user.is_authenticated %}
               <li><a href="{% url 'upld_vid' %}" ><img  src="{% static "up.png" %}" style="margin-top: 5px;" width="30" height="30"></a></li>
             <li><a href="{% url 'view_vid' %}"><img src="{% static "my.png" %}" style="margin-top: 5px;" width="30" height="28"></a></li>
-              <li><a href="{% url 'notifications' %}" ><img class="notimage" src="{% static "not.png" %}" style="margin-top: 2px;" width="31" height="31">
-                  <div class="note">{{ request.user.profile.count }}</div></a></li>
+             {% if requset.user.profile.count < 10%} <li><a href="{% url 'notifications' %}" >
+                 <img class="notimage" src="{% static "not.png" %}" style="margin-top: 2px;" width="31" height="31">
+                  <div class="note">{{ request.user.profile.count }}</div>{% else %}<li><a href="{% url 'notifications' %}" >
+                 <img class="notimage" src="{% static "nonot.gif" %}" style="margin-top: 2px;" width="31" height="31">{% endif %}</a></li>
             <li><a href="{% url 'sign_out' %}"><img src="{% static "door.png" %}" style="margin-top: 5px;" width="28" height="28"></a></li>
           {% endif %}
         </ul>
@@ -201,19 +203,9 @@
     <!-- start col-1 -->
   <div class="col-sm-6">
   <h1 style="padding-top: 30px;"></h1>
-  {% if not video.th %}
-    <video controls poster="{{ video.thumpnail }}" width="144%" height="81%" id="{{ video.id }}">
+    <video width="144%" height="81%" id="{{ video.id }}" controls autoplay>
       <source src="{{ video.video.url }}" type="video/mp4">
-
-      <div class="alert alert-warning"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
     </video>
-  {% else %}
-    <video controls width="144%" height="81%" poster="{{ video.thumpnail.url }}" id="{{ video.id }}">
-      <source src="{{ video.video.url }}" type="video/mp4">
-      <div class="alert alert-warning"><b><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning: </b> Your browser does not support the video tag.</div>
-    </video>
-  {% endif %}
-
 <div style="width: 144%">
   <b style="font-size: 150%;float: left;">{{ video.title }}</b><span style="float: right; margin-top: 1%;">
         {% if video.avg_rating == 0.0 %}
