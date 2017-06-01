@@ -7,6 +7,7 @@
     .notimage {
    position: relative;
 }
+    .slow .toggle-group { transition: left 0.7s; -webkit-transition: left 0.7s; }
 .note {
     position: absolute;
     top: 24px;
@@ -198,16 +199,23 @@
       </div>
     </div>
   </nav>
-<!-- start row -->
-  <div class="row" style="padding-left: 3%">
-    <!-- start col-1 -->
-  <div class="col-sm-6">
-  <h1 style="padding-top: 30px;"></h1>
-    <video controls width="144%" height="81%" id="{{ video.id }}"  autoplay>
+
+
+  <div style="float: left;width: 78%">
+
+    <video controls width="99.2%" height="55.8%" id="{{ video.id }}"  autoplay>
       <source src="{{ video.video.url }}" type="video/mp4">
     </video>
+  <script>
+	$(document).ready(function() {
+		$('#{{ video.id }}').mediaelementplayer({
+			alwaysShowControls: false,
+			videoVolume: 'horizontal',
+			features: ['playpause','progress','volume','fullscreen']
+		});
+	});
+	</script>
 
-<div style="width: 144%">
   <b style="font-size: 150%;float: left;">{{ video.title }}</b><span style="float: right; margin-top: 1%;">
         {% if video.avg_rating == 0.0 %}
                 <img width="24px" height="24px" src="{% static 'bat.png'%}" >
@@ -337,7 +345,8 @@ function ShowMore() {
                 id="decb" type="button" onclick="ShowMore()">Show more</button>
 <Br>
   </p>
-    <p style="float: left;margin-top: 2%;">
+
+    <p style="float: left;margin-top: 1%;">
 <b><span class="glyphicon glyphicon-tags"></span> Tags: </b> <br><p></p>
 
     <div style="float: left;margin-top: 2%;" id="tag-list" class="btn-group">
@@ -350,72 +359,8 @@ function ShowMore() {
         {% endfor %}
     </div></p>
 
-    <br>
-</div>
-    </div>
-
-    <!-- end col-1 -->
-    <div style="padding-left: 13%;padding-top: 2.4%;" class="col-sm-6 col-md-6"  style="margin-top: 35px;padding-right: 1%;">
-      <h4>Next video:</h4>Autoplay:
-        <div class="checkbox">
-  <label>
-    <input style="padding-left: 1%; float: right;" id="toggle-one" type="checkbox" data-toggle="toggle">
-  </label>
-</div>
-        {% for v in rel_videos|slice:":1" %}
-            <script type='text/javascript'>
-
-    $('#toggle-one').bootstrapToggle({
-      on: 'On',
-      off: 'Off',
-        size: 'mini',
-    });
-
-              var t = setTimeout(vidEnd, 10000);
-              function stopAuto() {
-                  clearTimeout(t);
-              }
-    function vidEnd() {
-        document.getElementById('{{ video.id }}').addEventListener('ended',myHandler,false);
-    }
-    function myHandler(e) {
-
-        window.location="{% url 's_vid' v.id %}";
-    }
-</script>
-      <a href="{% url 's_vid' v.id %}">
-        <div class="row">
-        {% if not v.th %}
-             <img src="{{ v.thumpnail }}" width="38.4%" height="21.6%">
-        {% else %}
-       <img src="{{ v.thumpnail.url }}" width=38.4%" height="21.6%">
-        {% endif %}
-           <div style="position: inherit; float: inherit; "> <b>{{ v.title }} </b></a><br>Views: {{ v.views }}</div>
-        </div>
-      {% endfor %}
-    <h4>Related Videos:</h4>
-      {% for v in rel_videos|slice:"1:" %}
-      <a href="{% url 's_vid' v.id %}">
-        <div class="row">
-        {% if not v.th %}
-             <img src="{{ v.thumpnail }}" width="38.4%" height="21.6%">
-        {% else %}
-       <img src="{{ v.thumpnail.url }}" width=38.4%" height="21.6%">
-        {% endif %}
-           <div style="position: inherit; float: inherit; "> <b>{{ v.title }} </b></a><br>Views: {{ v.views }}</div>
-        </div>
-      {% endfor %}
-    </div>
-    <!-- end col-2 -->
-  </div>
-    <!-- end row -->
-
-
-
-  <hr>
-  <p></p>
-{#review part#}
-
+    <br><BR><Br><Br><BR><BR>
+  <div style="float: left;width: 100%!important;">
   {% if request.user.is_authenticated %}
     {% if not rated  %}
     <h3>Write a review for this video:</h3>
@@ -483,6 +428,66 @@ function ShowMore() {
         Warning: </b> You must be logged in to write a review for this video and approve or not a review.
     </div>
   {% endif %}
+    </div>
+</div>
+<div style=" float: right;width:21%;">
+
+        <div class="checkbox"><b style="margin-left: 15%;float: left;">Next video:   </b> <i style="margin-left:9%;text-align:right;font-size: 90%">   Autoplay: </i>
+  <label>
+      <input data-style="slow" style=" float: right;" id="toggle-one" type="checkbox" checked data-toggle="toggle"
+             data-on="<i class='fa fa-play'></i>" data-off="<i class='fa fa-pause'></i>">
+  </label>
+</div>
+        {% for v in rel_videos|slice:":1" %}
+            <script type='text/javascript'>
+
+    $('#toggle-one').bootstrapToggle({
+
+        size: 'mini',
+        offstyle: 'primary',
+        onstyle: 'info'
+
+    });
+    $('#toggle-one').bootstrapToggle('on')
+    function startAuto() {
+        var t = setTimeout(vidEnd, 10000);
+    }
+    function stopAuto() {
+        clearTimeout(t);
+              }
+    function vidEnd() {
+        document.getElementById('{{ video.id }}').addEventListener('ended',myHandler,false);
+    }
+    function myHandler(e) {
+
+        window.location="{% url 's_vid' v.id %}";
+    }
+</script>
+        <div class="row">
+        {% if not v.th %}
+             <a href="{% url 's_vid' v.id %}"><img src="{{ v.thumpnail }}" width="64%" height="36%"></a>
+        {% else %}
+       <a href="{% url 's_vid' v.id %}"><img src="{{ v.thumpnail.url }}" width="64%" height="36%"></a>
+        {% endif %}
+           <div style="position: inherit; float: inherit; "><a href="{% url 's_vid' v.id %}"> <b>{{ v.title }} </b></a><br>Views: {{ v.views }}
+        </div>
+</div>
+      {% endfor %}
+
+
+    <hr>
+      {% for v in rel_videos|slice:"1:" %}
+        <div style="padding-bottom:2%;" class="row">
+        {% if not v.th %}
+             <a href="{% url 's_vid' v.id %}"><img src="{{ v.thumpnail }}" width="64%" height="36%"></a>
+        {% else %}
+      <a href="{% url 's_vid' v.id %}"> <img src="{{ v.thumpnail.url }}" width="64%" height="36%"></a>
+        {% endif %}
+           <div style="padding-top:2%;position: inherit; float: inherit; "><a href="{% url 's_vid' v.id %}"> <b>{{ v.title }} </b></a><br>Views: {{ v.views }}
+          </div></div>
+      {% endfor %}
+
+
 {% endblock %}
 {% block js_files %}
     <script type='text/javascript'>

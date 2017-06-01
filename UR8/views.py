@@ -323,7 +323,7 @@ def s_vid(request, id):
                             if v not in rel_videos and v != video:
                                 rel_videos.append(v)
 
-        rel_videos = rel_videos[-5:]
+        rel_videos = rel_videos[-15:]
         rel_videos = sort_videos(rel_videos)
         return render(request, 's_vid.html', {'video': video, 'tags': tags, 'rated': rated, 'lists': lists, "rel_videos":rel_videos})
     elif request.method == 'POST':
