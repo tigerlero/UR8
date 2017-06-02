@@ -178,24 +178,24 @@
   {% if hasRes %}
 
     {% if term %}
-      <h1>Search results for: <i>{{ term }}</i></h1>
+      <h1 style="padding-left: 38%">Search results for: <i>{{ term }}</i></h1>
       <hr style="border-color: #ccebff;">
     {% endif %}
 
   {% else %}
 
     {% if term %}
-      <p class="bg-info text-info" style="border-radius:0px; border:0">No search results for: <b><i>{{ term }}</i></b></p>
+      <p class="bg-info text-info" style="border-radius:0px; border:0;padding-left: 38%;">No search results for: <b><i>{{ term }}</i></b></p>
     {% else %}
-      <p class="bg-info text-info" style="border-radius:0px; border:0">No term was typed...</p>
+      <p class="bg-info text-info" style="border-radius:0px; border:0;padding-left: 38%">No term was typed...</p>
     {% endif %}
 
   {% endif %}
 
   {% if hasRes %}
 
-<p class="bg-info text-info" style="margin-left: 0px;font-size: 170%; !important;margin-right: 0px !important;"><b>Channels</b></p><br>
-      <div class="row">
+<p class="bg-info text-info" style="margin-left: 0px;font-size: 170%; !important;margin-right: 0px !important; padding-left: 3%;"><b>Channels</b></p><br>
+      <div style="padding-left: 3%;" class="row">
       {% for channel in channels %}
           <div class="col-sm-3 col-md-2 col-bg-1">
              <h3><i>{{ channel.username }}</i></h3>
@@ -206,8 +206,8 @@
         {% endif %}</div>
       {% endfor %}</div>
     <br><br>
-    <p class="bg-info text-info" style="margin-left: 0px;font-size: 170%; !important;margin-right: 0px !important;"><b>Videos</b></p><br>
-      <div style="padding-left: 1%;padding-right: 1%;" class="row">
+    <p class="bg-info text-info" style="margin-left: 0px;font-size: 170%; !important;margin-right: 0px !important; padding-left: 3%;"><b>Videos</b></p><br>
+      <div style="padding-left: 3%;padding-right: 3%;" class="row">
       {% for video in results %}
        <div style=" padding:6px;font-size: 85%;" class="col-sm-3 col-md-2 col-bg-1">
       <div style=" border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">

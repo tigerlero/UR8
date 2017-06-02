@@ -89,13 +89,13 @@
     </div>
   </nav>
 
-  <h1>Create a New Account Here:</h1>
+  <h1 style="padding-left: 38%">Create a New Account Here:</h1>
   <hr>
   <br>
   <p></p>
   <br>
 
-  <form class="form-horizontal" action="{% url 'sign_up' %}" method="post">
+  <form style="padding-left: 40%" class="form-horizontal" action="{% url 'sign_up' %}" method="post">
     {% csrf_token %}
     {% for field in form %}
 
@@ -108,7 +108,7 @@
         <br>
         <p></p>
         {% if field.help_text %}
-          <small><ul class="alert alert-info" style="border-radius:0px; border:0">{{ field.help_text|safe }}</ul></small>
+          <small><ul  style="border-radius:0px; border:0">{{ field.help_text|safe }}</ul></small>
         {% endif %}
       </div>
     {% endfor %}
