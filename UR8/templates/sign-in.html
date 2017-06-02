@@ -108,15 +108,13 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
         y.style.paddingRight = "0%";
     } else {
         x.style.width = '0%';
-        y.style.width = '100%';
+        y.style.width = '98%';
         y.style.paddingLeft = "1%";
         y.style.paddingRight = "1%";
         x.style.display = 'none';
     }
 }
 </script>
-
-
 </div><div id="hideleft" style="background-color: #e8f7fd; width: 0%;display: none; float: left;position: absolute;height: 100%;margin-right: 10%;">
 
 <br><Br><div style="text-align: left; padding-left: 1%;">
@@ -160,7 +158,6 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
             {% else %}
                 {% for channel in users %}
             {% if not channel.is_superuser   %}
-
 <a href="{% url 'channel' channel.username %}">
                 {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
                     <img src="{% static channel.profile.image %}" width="25" height="25" >
@@ -171,14 +168,13 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
             {% endfor %}
             {% endif %}
       </div></div>
-        <div id="homediv"  style="width: 100%; padding-right:1%; padding-left:1%; float: right;">
+        <div id="homediv"  style="width: 98%; padding-right:1%; padding-left:1%; float: right;">
 
   <h1 style="padding-left: 38%">Sign In Here:</h1>
   <hr>
   <br>
   <p></p>
   <br>
-
   <form style="padding-left: 33%;" class="form-horizontal" action="{% url 'sign_in' %}" method="post">
     {% csrf_token %}
 
@@ -196,20 +192,17 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
         <input style="width: 30%;" type="text" class="form-control" name="uname" id="uname" placeholder="Enter username..">
       </div>
     </div>
-
   <div class="form-group">
     <label style="padding-right: 1%" class="control-label col-sm-2" for="pwd">Password:</label>
     <div class="col-sm-10">
       <input style="width: 30%;" type="password" class="form-control" name="pwd" id="pwd" placeholder="Enter password..">
     </div>
   </div>
-
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-success btn-lg" style="border-radius:0px;border:0;">Sign In !</button>
     </div>
   </div>
-
   </form>
         </div>
 {% endblock %}
