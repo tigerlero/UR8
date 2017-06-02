@@ -37,6 +37,8 @@
         </button>
           <span><a class="navbar-brand" href="{% url 'home' %}">
               <img src="{% static 'UR8.png' %}" width="45" height="30"></a></span>
+          <span class="navbar-brand"><input style="border-width:0px;
+border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hide.png' %}" width="35" height="33"></span>
 <form style="padding-top: 7px;" class="navbar-form navbar-left" action="{% url 'search_vid' %}" method="post">
             {% csrf_token %}
             <section class="flexbox">
@@ -106,8 +108,7 @@
     }
 }
 </script>
-              <input style="border-width:0px;
-border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hide.png' %}" width="35" height="33">
+
 
 </div>
     <div id="hideleft" style="width: 14%; float: left;">
