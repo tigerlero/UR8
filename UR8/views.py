@@ -505,8 +505,8 @@ def upld_vid(request):
                 clip.write_videofile(filename, fps=24)
                 s_vid = s_vid[:-4] + ".jpeg"
                 fileDir = os.path.dirname(os.path.realpath('__file__'))
-                clipim = clip.subclip(2, 3)
-                clipim.save_frame(os.path.join(fileDir, 'uploads/media/thumpnails/'+s_vid))
+
+                clip.save_frame((os.path.join(fileDir, 'uploads/media/thumpnails/'+s_vid)), t=2)
                 new_video.thumpnail = 'thumpnails/'+s_vid
                 print(new_video.thumpnail)
                 new_video.save()

@@ -30,7 +30,7 @@
   </style>
 {% endblock %}
 {% block body %}
- <nav class="navbar" style="border-radius:0px; border:0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+ <nav class="navbar navbar-fixed-top" style="border-radius:0px; border:0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);background-color: lightblue;">
     <div style="width: 100%"      >
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -85,7 +85,7 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
     </div>
   </nav>
 
-    <div style="width: 3%">
+    <div style="width: 3%;margin-top: 3.2%;">
               <script>
                   $('a[data-toggle="collapse"]').on('shown.bs.collapse', function (r) {
                         var x = document.getElementById('hideleft');
@@ -172,7 +172,7 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
 
     <div id="homediv" style="width: 84%;float: right;">
 
-<div style="text-align: left;">
+<div style="text-align: left;"><hr style="width: 100%; color: #d8f6fc; height: 0.005em; background-color:#d8f6fc;">
     <p  style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 130%;">Top Videos</b></p>
     {% if hasRes %}
     <div class="row">
