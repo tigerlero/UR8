@@ -103,13 +103,15 @@
   </style>
 {% endblock %}
 {% block body %}
-<nav class="navbar" style="border-radius:0px; border:0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-    <div style="width: 100%" >
+ <nav class="navbar navbar-fixed-top" style="border-radius:0px; border:0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);background-color: lightblue;">
+    <div style="width: 100%"      >
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         </button>
           <span><a class="navbar-brand" href="{% url 'home' %}">
               <img src="{% static 'UR8.png' %}" width="45" height="30"></a></span>
+          <span class="navbar-brand"><input style="border-width:0px;
+border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hide.png' %}" width="35" height="33"></span>
 <form style="padding-top: 7px;" class="navbar-form navbar-left" action="{% url 'search_vid' %}" method="post">
             {% csrf_token %}
             <section class="flexbox">
@@ -125,7 +127,6 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul style="float: right;" class="nav navbar-nav">
-
         <li class="navbar-text">{% if request.user.is_authenticated %}
               {% if request.user.profile.image == 'avatar/None/default_avatar.png' %}
                 <span><a href="{% url 'profile' %}">
