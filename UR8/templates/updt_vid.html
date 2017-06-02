@@ -88,13 +88,13 @@
     </div>
   </nav>
 
-  <h1>Update Your Video Here:</h1>
+  <h1 style="padding-left: 35%">Update Your Video Here:</h1>
   <hr>
   <br>
   <p></p>
   <br>
 
-  <form class="form-inline" action="{% url 'updt_vid' pk %}" method="post">
+  <form style="padding-left: 25%" class="form-inline" action="{% url 'updt_vid' pk %}" method="post">
     {% csrf_token %}
     {% for field in form %}
 
@@ -102,7 +102,7 @@
         {% if field.errors %}
             <small><ul class="alert alert-warning" >{{ field.errors }}</ul></small>
         {% endif %}
-
+<
         {{ field.label_tag }}
         <br>
         {{ field }}

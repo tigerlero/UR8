@@ -87,13 +87,13 @@
     </div>
   </nav>
 
-  <h1>Upload Your Video Here:</h1>
-  <hr>
+  <h1 style="padding-left: 40%">Upload Your Video Here:</h1>
+  <hr width="100%">
   <br>
   <p></p>
   <br>
 
-  <form class="form-horizontal" action="{% url 'upld_vid' %}" method="post" enctype="multipart/form-data">
+  <form style="padding-left: 40%" class="form-horizontal" action="{% url 'upld_vid' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="form-group">
         {% if form.title.errors %}
@@ -130,7 +130,7 @@
 
         {{ form.video.label_tag }}
         <br>
-        <input style="padding-left: 42%" type="file" name="video" accept="video/mp4">
+        <input type="file" name="video" accept="video/mp4">
         <br>
         <p></p>
         {% if form.video.help_text %}
@@ -144,7 +144,7 @@
 
         {{ form.thumpnail.label_tag }}
         <br>
-        <input style="padding-left: 42%" type="file" name="thumpnail" accept="image/*">
+        <input type="file" name="thumpnail" accept="image/*">
         <br>
         <p></p>
         {% if form.thumpnail.help_text %}
@@ -173,4 +173,5 @@
     </div>
 
   </form>
+
 {% endblock %}
