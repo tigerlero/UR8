@@ -59,9 +59,9 @@ def sort_videos(videos):
     overall = [0] * 30
     # calculate overall score
     for i, video in enumerate(videos):
-        overall[i] += 5 * video.id
+        overall[i] += 4 * video.id
         overall[i] += 10 * video.avg_rating
-        overall[i] += 7 * video.views
+        overall[i] += 5 * video.views
     # insertion sort for overall score
     for i in range(1, len(videos)):
         j = i
@@ -76,9 +76,9 @@ def best_videos(videos):
     overall = [0] * 30
     # calculate overall score
     for i, video in enumerate(videos):
-        overall[i] += 1 * video.id
+        overall[i] += 2 * video.id
         overall[i] += 10 * video.avg_rating
-        overall[i] += 2 * video.views
+        overall[i] += 1 * video.views
     # insertion sort for overall score
     for i in range(1, len(videos)):
         j = i
@@ -94,7 +94,7 @@ def popular_videos(videos):
     # calculate overall score
     for i, video in enumerate(videos):
         overall[i] += 1 * video.id
-        overall[i] += 1 * video.avg_rating
+        overall[i] += 5 * video.avg_rating
         overall[i] += 10 * video.views
     # insertion sort for overall score
     for i in range(1, len(videos)):
@@ -111,7 +111,7 @@ def new_videos(videos):
     # calculate overall score
     for i, video in enumerate(videos):
         overall[i] += 10 * video.id
-        overall[i] += 1 * video.avg_rating
+        overall[i] += 5 * video.avg_rating
         overall[i] += 1 * video.views
     # insertion sort for overall score
     for i in range(1, len(videos)):

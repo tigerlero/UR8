@@ -8,7 +8,11 @@
     .notimage {
    position: relative;
 }
-
+.flexbox { display: flex; }
+    .flexbox .stretch { flex: 1; }
+    .flexbox .normal { flex: 0; margin: 0 0 0 1rem; }
+    .flexbox div input { padding: .5em 1em; width: 100%; }
+    .flexbox div button { padding: .5em 1em; white-space: nowrap; }
 .note {
     position: absolute;
     top: 24px;
@@ -31,29 +35,29 @@
 {% endblock %}
 {% block body %}
 
-<nav class="navbar navbar-default" style="border-radius:0px; border:0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-    <div class="container-fluid">
+<nav class="navbar" style="border-radius:0px; border:0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+    <div style="width: 100%" >
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
         </button>
           <span><a class="navbar-brand" href="{% url 'home' %}">
               <img src="{% static 'UR8.png' %}" width="45" height="30"></a></span>
-          <form style="padding-top: 7px;" class="navbar-form navbar-left" action="{% url 'search_vid' %}" method="post">
+<form style="padding-top: 7px;" class="navbar-form navbar-left" action="{% url 'search_vid' %}" method="post">
             {% csrf_token %}
-            <div class="form-group">
-              <input type="text" size="17" class="form-control" style="border-radius:0px;" placeholder="Search..." name="search">
+            <section class="flexbox">
+            <div class="stretch">
+              <input  style="float:left;" type="text" class="form-control" style="border-radius:0px;" placeholder="Search..." name="search">
+                </div>
                 <button type="submit" style="border-radius:0px;
                                          background-color:#888888;
                                          border-color:#808080;
                                          " class="btn btn-primary search-btn"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-            </div>
+            </section>
           </form>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul style="float: right;" class="nav navbar-nav">
+
         <li class="navbar-text">{% if request.user.is_authenticated %}
               {% if request.user.profile.image == 'avatar/None/default_avatar.png' %}
                 <span><a href="{% url 'profile' %}">
@@ -70,13 +74,14 @@
             <li><a href="{% url 'sign_in' %}"><img src="{% static "login.png" %}" width="30" height="30"></a></li>
             <li><a href="{% url 'sign_up' %}"><img src="{% static "Sign.png" %}" width="30" height="30"></a></li>
           {% endif %}
-
           {% if request.user.is_authenticated %}
               <li><a href="{% url 'upld_vid' %}" ><img  src="{% static "up.png" %}" style="margin-top: 5px;" width="30" height="30"></a></li>
-              {% if requset.user.profile.count < 10%} <li><a href="{% url 'notifications' %}" >
+             {% if requset.user.profile.count < 10 %} <li><a href="{% url 'notifications' %}" >
                  <img class="notimage" src="{% static "not.png" %}" style="margin-top: 2px;" width="31" height="31">
-                  <div class="note">{{ request.user.profile.count }}</div>{% else %}<li><a href="{% url 'notifications' %}" >
-                 <img class="notimage" src="{% static "nonot.gif" %}" style="margin-top: 2px;" width="31" height="31">{% endif %}</a></li>
+                  <div class="note">{{ request.user.profile.count }}</div>
+             {% else %}<li><a href="{% url 'notifications' %}" >
+                 <img class="notimage" src="{% static "nonot.gif" %}" style="margin-top: 2px;" width="31" height="31">
+             {% endif %}</a></li>
             <li><a href="{% url 'sign_out' %}"><img src="{% static "door.png" %}" style="margin-top: 5px;" width="28" height="28"></a></li>
           {% endif %}
         </ul>

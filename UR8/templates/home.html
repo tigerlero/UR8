@@ -8,6 +8,11 @@
   .notimage {
    position: relative;
 }
+  .flexbox { display: flex; }
+    .flexbox .stretch { flex: 1; }
+    .flexbox .normal { flex: 0; margin: 0 0 0 1rem; }
+    .flexbox div input { padding: .5em 1em; width: 100%; }
+    .flexbox div button { padding: .5em 1em; white-space: nowrap; }
 .note {
     position: absolute;
     top: 24px;
@@ -25,25 +30,24 @@
   </style>
 {% endblock %}
 {% block body %}
- <nav class="navbar navbar-default" style="border-radius:0px; border:0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-    <div class="container-fluid">
+ <nav class="navbar" style="border-radius:0px; border:0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+    <div style="width: 100%" >
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
         </button>
           <span><a class="navbar-brand" href="{% url 'home' %}">
               <img src="{% static 'UR8.png' %}" width="45" height="30"></a></span>
-          <form style="padding-top: 7px;" class="navbar-form navbar-left" action="{% url 'search_vid' %}" method="post">
+<form style="padding-top: 7px;" class="navbar-form navbar-left" action="{% url 'search_vid' %}" method="post">
             {% csrf_token %}
-            <div class="form-group">
-              <input type="text" size="17" class="form-control" style="border-radius:0px;" placeholder="Search..." name="search">
+            <section class="flexbox">
+            <div class="stretch">
+              <input  style="float:left;" type="text" class="form-control" style="border-radius:0px;" placeholder="Search..." name="search">
+                </div>
                 <button type="submit" style="border-radius:0px;
                                          background-color:#888888;
                                          border-color:#808080;
                                          " class="btn btn-primary search-btn"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-            </div>
+            </section>
           </form>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
@@ -78,18 +82,44 @@
       </div>
     </div>
   </nav>
-    <div style="width: 14%; float: left;">
-        <img style="padding-right: 1%" src="{% static 'UR8.png' %}" width="118px;" height="84px;">
+
+    <div style="width: 3%">
+              <script>
+                  $('a[data-toggle="collapse"]').on('shown.bs.collapse', function (r) {
+                        var x = document.getElementById('hideleft');
+    var y = document.getElementById('homediv');
+    x.style.width = '0%';
+        y.style.width = '100%';
+        x.style.display = 'none';
+});
+    function HideSide() {
+    var x = document.getElementById('hideleft');
+    var y = document.getElementById('homediv');
+    if (x.style.width === '0%') {
+        x.style.width = '14%';
+        y.style.width = '84%';
+        x.style.display = 'block';
+    } else {
+        x.style.width = '0%';
+        y.style.width = '100%';
+        x.style.display = 'none';
+    }
+}
+</script>
+              <input onclick="HideSide()" type="image" src="{% static 'hide.png' %}" width="35" height="33">
+
+</div>
+    <div id="hideleft" style="width: 14%; float: left;">
+
 <br><Br><div style="text-align: left; padding-left: 1%;">
-    <div class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;">
+    <div style="margin-left: 0px !important;margin-right: 0px !important;">
         <b style="font-size: 130%;">
-        <a href="{% url 'subscribes' %}"><img style=" margin-right: 1%; margin-top: 1%;" src="{% static "sub.png" %}" width="13" height="13">
+        <a href="{% url 'subscribes' %}"><img style=" margin-right: 1%;" src="{% static "sub.png" %}" width="13" height="13">
          Subs</a></b>
     </div><br>
         {% if request.user.is_authenticated %}
             {% for channel in subchan %}
                 {% if not channel.is_superuser  %}
-
                     {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
                     <a href="{% url 'channel' channel.username %}"><img src="{% static channel.profile.image %}" width="25" height="25" ></a>
                     {% else %}
@@ -99,7 +129,7 @@
             {% endfor %}
         {% endif %}
 
-     <div class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;">
+     <div  style="margin-left: 0px !important;margin-right: 0px !important;">
         <b style="font-size: 130%;">
         <a href="{% url 'channels' %}"><img src="{% static "tv.png" %}" style=" margin-right: 1%;" width="13" height="13">
          Channels</a></b>
@@ -134,21 +164,19 @@
             {% endif %}
       </div></div>
 
-    <div style="width: 85%; float: right;">
+    <div id="homediv" style="width: 84%;float: right;">
 
 <div style="text-align: left;">
-  <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px;font-size: 200%; !important;"><b>Upload</b> videos and <b>see</b> your rating !</p>
-<hr>
-    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 130%;">Top Videos</b></p><BR>
+    <p  style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 130%;">Top Videos</b></p><BR>
     {% if hasRes %}
     <div class="row">
       {% for video in video_results %}
-      <div style="font-size: 85%;" class="col-sm-4 col-md-3 col-bg-2">
-      <div class="thumbnail" style=" border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
+      <div style=" padding:6px;font-size: 85%;" class="col-sm-3 col-md-2 col-bg-1">
+      <div style=" border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
  <a href="{% url 's_vid' video.id %}">{% if not video.th %}
-            <img src="{{ video.thumpnail }}" width="128%" height="72%">
+            <img src="{{ video.thumpnail }}" width="99.9%" height="58%">
         {% else %}
-       <img src="{{ video.thumpnail.url }}" width=128%" height="72%">
+       <img src="{{ video.thumpnail.url }}" width="99.9%" height="58%">
         {% endif %}
           <div class="caption">
               <div style="
@@ -226,17 +254,16 @@
       {% endfor %}
     </div>
   {% endif %}<hr>
-    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 130%;">Newest Videos</b></p><BR>
+    <p style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 130%;">Newest Videos</b></p><BR>
     {% if hasRes %}
     <div class="row">
       {% for video in new %}
-      <div style="font-size: 85%;" class="col-sm-4 col-md-3 col-bg-2">
-      <div class="thumbnail" style=" border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
- <a href="{% url 's_vid' video.id %}">
-         {% if not video.th %}
-           <img src="{{ video.thumpnail }}" width="128%" height="72%">
+         <div style=" padding:6px;font-size: 85%;" class="col-sm-3 col-md-2 col-bg-1">
+      <div style=" border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
+ <a href="{% url 's_vid' video.id %}">{% if not video.th %}
+            <img src="{{ video.thumpnail }}" width="99.9%" height="58%">
         {% else %}
-       <img src="{{ video.thumpnail.url }}" width=128%" height="72%">
+       <img src="{{ video.thumpnail.url }}" width="99.9%" height="58%">
         {% endif %}
           <div class="caption">
               <div style="
@@ -314,17 +341,16 @@
       {% endfor %}
     </div>
   {% endif %}<hR>
-    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 130%;">Popular Videos</b></p><BR>
+    <p style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 130%;">Popular Videos</b></p><BR>
     {% if hasRes %}
     <div style="font-size:89%;" class="row">
       {% for video in popular %}
-      <div style="font-size: 85%;" class="col-sm-4 col-md-3 col-bg-2">
-      <div class="thumbnail" style=" border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
- <a href="{% url 's_vid' video.id %}">
-         {% if not video.th %}
-            <img src="{{ video.thumpnail }}" width="128%" height="72%">
+         <div style=" padding:6px;font-size: 85%;" class="col-sm-3 col-md-2 col-bg-1">
+      <div style=" border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
+ <a href="{% url 's_vid' video.id %}">{% if not video.th %}
+            <img src="{{ video.thumpnail }}" width="99.9%" height="58%">
         {% else %}
-       <img src="{{ video.thumpnail.url }}" width=128%" height="72%">
+       <img src="{{ video.thumpnail.url }}" width="99.9%" height="58%">
         {% endif %}
           <div class="caption">
               <div style="
@@ -402,17 +428,16 @@
       {% endfor %}
     </div>
   {% endif %}<hr>
-    <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 130%;">Best Rated Videos</b></p><BR>
+    <p  style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 130%;">Best Rated Videos</b></p><BR>
     {% if hasRes %}
     <div class="row">
       {% for video in best %}
-      <div style="font-size: 85%;" class="col-sm-4 col-md-3 col-bg-2">
-      <div class="thumbnail" style=" border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
- <a href="{% url 's_vid' video.id %}">
-       {% if not video.th %}
-           <img src="{{ video.thumpnail }}" width="128%" height="72%">
+         <div style=" padding:6px;font-size: 85%;" class="col-sm-3 col-md-2 col-bg-1">
+      <div style=" border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
+ <a href="{% url 's_vid' video.id %}">{% if not video.th %}
+            <img src="{{ video.thumpnail }}" width="99.9%" height="58%">
         {% else %}
-       <img src="{{ video.thumpnail.url }}" width=128%" height="72%">
+       <img src="{{ video.thumpnail.url }}" width="99.9%" height="58%">
         {% endif %}
           <div class="caption">
               <div style="
