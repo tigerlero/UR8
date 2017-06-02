@@ -302,7 +302,7 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
       <br><span ><b style="font-size: 82%">Views: </b>
           {{video.views}}
       </span><br>
-
+      <b>Rating: </b>
            {% if video.avg_rating == 0.0 %}
                 <img width="12px" height="12px" src="{% static 'bat.png'%}" >
           {% if video.avg_rating > 4.6 %}
