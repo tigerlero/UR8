@@ -7,6 +7,7 @@ from .models import Profile, Video, Review
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from moviepy.editor import VideoFileClip
+import moviepy.video.fx.all as vfx
 import os
 import json
 import time
@@ -501,11 +502,10 @@ def upld_vid(request):
                 fileDir = os.path.dirname(os.path.realpath('__file__'))
                 filename = os.path.join(fileDir, 'uploads/media/videos/'+s_vid)
                 clip = VideoFileClip(filename)
-                clip = clip.resize((1280, 720))
-                clip.write_videofile(filename, fps=24)
+                clip = (clip.fx(vfx.resize, width=1280, height=720))
+                clip.write_videofile(filename)
                 s_vid = s_vid[:-4] + ".jpeg"
                 fileDir = os.path.dirname(os.path.realpath('__file__'))
-
                 clip.save_frame((os.path.join(fileDir, 'uploads/media/thumpnails/'+s_vid)), t=2)
                 new_video.thumpnail = 'thumpnails/'+s_vid
                 print(new_video.thumpnail)
@@ -524,8 +524,6 @@ def upld_vid(request):
             return render(request, 'upld_vid.html', {'form': form})
     else:
         return render(request, 'sign-in.html', {})
-
-
 # reset your password
 def reset_pwd(request):
     if request.method == 'GET' and request.user.is_authenticated():
