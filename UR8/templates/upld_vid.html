@@ -87,6 +87,90 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
       </div>
     </div>
   </nav>
+    <div style="width: 3%;margin-top: 3.2%;">
+              <script>
+                  $('a[data-toggle="collapse"]').on('shown.bs.collapse', function (r) {
+                        var x = document.getElementById('hideleft');
+    var y = document.getElementById('homediv');
+    x.style.width = '0%';
+        y.style.width = '100%';
+        x.style.display = 'none';
+});
+    function HideSide() {
+    var x = document.getElementById('hideleft');
+    var y = document.getElementById('homediv');
+    if (x.style.width === '0%') {
+        x.style.width = '14%';
+        y.style.width = '84%';
+        x.style.display = 'block';
+        y.style.paddingLeft = "0%";
+        y.style.paddingRight = "0%";
+    } else {
+        x.style.width = '0%';
+        y.style.width = '100%';
+        y.style.paddingLeft = "1%";
+        y.style.paddingRight = "1%";
+        x.style.display = 'none';
+    }
+}
+</script>
+
+
+</div><div id="hideleft" style="background-color: #e8f7fd; width: 0%;display: none; float: left;position: absolute;height: 100%;margin-right: 10%;">
+
+<br><Br><div style="text-align: left; padding-left: 1%;">
+    <div style="margin-left: 0px !important;margin-right: 0px !important;">
+        <b style="font-size: 130%;">
+        <a href="{% url 'subscribes' %}"><img style=" margin-right: 1%;" src="{% static "sub.png" %}" width="13" height="13">
+         Subs</a></b>
+    </div><br>
+        {% if request.user.is_authenticated %}
+            {% for channel in subchan %}
+                {% if not channel.is_superuser  %}
+                    {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
+                    <a href="{% url 'channel' channel.username %}"><img src="{% static channel.profile.image %}" width="25" height="25" ></a>
+                    {% else %}
+                    <a href="{% url 'channel' channel.username %}"><img src="{{ channel.profile.image.url }}" width="25" height="25" ></a>
+                    {% endif %}
+                {% endif %}<i style="font-size: 160%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
+            {% endfor %}
+        {% endif %}
+
+     <div  style="margin-left: 0px !important;margin-right: 0px !important;">
+        <b style="font-size: 130%;">
+        <a href="{% url 'channels' %}"><img src="{% static "tv.png" %}" style=" margin-right: 1%;" width="13" height="13">
+         Channels</a></b>
+    </div><br>
+            {% if request.user.is_authenicated %}
+                {% for channel in users %}
+                    {% if channel != request.user %}
+                        {% for sub in subchan %}
+                    {% if channel != sub %}
+                {% if not channel.is_superuser   %}
+                    {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
+                        <img src="{% static channel.profile.image %}" width="25" height="25" >
+                    {% else %}
+                        <img src="{{ channel.profile.image.url }}" width="25" height="25" >
+                    {% endif %}
+                {% endif %}<i style="font-size: 160%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
+                    {% endif %}
+                        {% endfor %}{% endif %}
+                {% endfor %}
+            {% else %}
+                {% for channel in users %}
+            {% if not channel.is_superuser   %}
+
+<a href="{% url 'channel' channel.username %}">
+                {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
+                    <img src="{% static channel.profile.image %}" width="25" height="25" >
+                {% else %}
+                    <img src="{{ channel.profile.image.url }}" width="25" height="25" >
+                </a>{% endif %}
+            {% endif %}<i style="font-size: 160%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
+            {% endfor %}
+            {% endif %}
+      </div></div>
+    <div id="homediv"  style="width: 100%; padding-right:1%; padding-left:1%; float: right;">
 
   <h1 style="padding-left: 40%">Upload Your Video Here:</h1>
   <hr width="100%">
@@ -174,5 +258,5 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
     </div>
 
   </form>
-
+    </div>
 {% endblock %}
