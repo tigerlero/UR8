@@ -31,7 +31,7 @@
 {% endblock %}
 {% block body %}
  <nav class="navbar" style="border-radius:0px; border:0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-    <div style="width: 100%" >
+    <div style="width: 100%"      >
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         </button>
@@ -101,9 +101,11 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
         x.style.width = '14%';
         y.style.width = '84%';
         x.style.display = 'block';
+        y.style.paddingLeft = "0%";
     } else {
         x.style.width = '0%';
         y.style.width = '100%';
+        y.style.paddingLeft = "5%";
         x.style.display = 'none';
     }
 }
