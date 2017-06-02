@@ -502,8 +502,7 @@ def upld_vid(request):
                 fileDir = os.path.dirname(os.path.realpath('__file__'))
                 filename = os.path.join(fileDir, 'uploads/media/videos/'+s_vid)
                 clip = VideoFileClip(filename)
-                clip = (clip.fx(vfx.resize, width=1280, height=720))
-                clip.write_videofile(filename)
+                clip.write_videofile(filename,preset = 'placebo')
                 s_vid = s_vid[:-4] + ".jpeg"
                 fileDir = os.path.dirname(os.path.realpath('__file__'))
                 clip.save_frame((os.path.join(fileDir, 'uploads/media/thumpnails/'+s_vid)), t=2)
