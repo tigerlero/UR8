@@ -96,18 +96,7 @@
     .bg-avatar{
       border-radius: 150px;
     }
-    /*.btn-primary:hover,
-    .btn-primary:focus,
-    .btn-primary:active,
-    .btn-primary.active,
-    .open .dropdown-toggle..btn-primary {
-      background-color: #595959;
-      border-color: #595959;
-    }*/
-    .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-        background-color: #595959 !important;
-        border-color: #595959 !important;
-    }
+
     h1{
       padding-top: 30px;
     }
@@ -180,12 +169,12 @@
   {% if hasRes %}
     <div class="row">
       {% for video in videos %}
-      <div style="font-size: 85%;" class="col-sm-4 col-md-3 col-bg-2">
-      <div class="thumbnail" style=" border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
+       <div style=" padding:6px;font-size: 85%;" class="col-sm-3 col-md-2 col-bg-1">
+      <div style=" border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
  <a href="{% url 's_vid' video.id %}">{% if not video.th %}
-            <img src="{{ video.thumpnail }}" width="128%" height="72%">
+            <img src="{{ video.thumpnail }}" width="99.9%" height="58%">
         {% else %}
-       <img src="{{ video.thumpnail.url }}" width=128%" height="72%">
+       <img src="{{ video.thumpnail.url }}" width="99.9%" height="58%">
         {% endif %}
           <div class="caption">
               <div style="

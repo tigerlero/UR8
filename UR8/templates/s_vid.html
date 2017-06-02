@@ -430,14 +430,11 @@ function ShowMore() {
         size: 'mini',
         offstyle: 'primary',
         onstyle: 'info',
-
-
     });
     $('#toggle-one').bootstrapToggle('off');
 
     function vidEnd() {
         document.getElementById('{{ video.id }}').addEventListener('ended',function (){var t = setTimeout(myHandler, 5000);},false);
-        return t;
     }
 
     function myHandler() {
