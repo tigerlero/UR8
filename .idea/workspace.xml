@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdba3134-eb2b-42f0-8c12-9d864dd77c7c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/edit_avatar.html" afterPath="$PROJECT_DIR$/UR8/templates/edit_avatar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/base.html" afterPath="$PROJECT_DIR$/UR8/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/home.html" afterPath="$PROJECT_DIR$/UR8/templates/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/s_vid.html" afterPath="$PROJECT_DIR$/UR8/templates/s_vid.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,21 +20,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="subscribes.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UR8/templates/subscribes.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4335">
-              <caret line="259" column="108" lean-forward="false" selection-start-line="259" selection-start-column="108" selection-end-line="259" selection-end-column="108" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UR8/templates/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="203" column="13" lean-forward="true" selection-start-line="203" selection-start-column="13" selection-end-line="203" selection-end-column="13" />
+            <state relative-caret-position="3451">
+              <caret line="203" column="13" lean-forward="false" selection-start-line="203" selection-start-column="13" selection-end-line="203" selection-end-column="13" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
@@ -49,7 +42,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit_avatar.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit_avatar.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UR8/templates/edit_avatar.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="249">
@@ -59,12 +52,36 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/UR8/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="27" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="s_vid.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UR8/templates/s_vid.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="436">
+              <caret line="208" column="39" lean-forward="false" selection-start-line="208" selection-start-column="39" selection-end-line="208" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UR8/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1768">
-              <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="14" selection-end-column="67" />
-              <folding />
+            <state relative-caret-position="187">
+              <caret line="135" column="122" lean-forward="true" selection-start-line="135" selection-start-column="122" selection-end-line="135" selection-end-column="122" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,8 +89,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UR8/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="723">
-              <caret line="157" column="25" lean-forward="true" selection-start-line="157" selection-start-column="25" selection-end-line="157" selection-end-column="25" />
+            <state relative-caret-position="2499">
+              <caret line="157" column="25" lean-forward="false" selection-start-line="157" selection-start-column="25" selection-end-line="157" selection-end-column="25" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
                 <element signature="e#5781#7153#0" expanded="false" />
@@ -92,20 +109,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sign-in.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UR8/templates/sign-in.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2839">
-              <caret line="171" column="108" lean-forward="false" selection-start-line="171" selection-start-column="108" selection-end-line="171" selection-end-column="108" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="channel.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UR8/templates/channel.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="785">
+            <state relative-caret-position="4080">
               <caret line="240" column="108" lean-forward="false" selection-start-line="240" selection-start-column="108" selection-end-line="240" selection-end-column="108" />
               <folding />
             </state>
@@ -115,7 +122,7 @@
       <file leaf-file-name="view_vid.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UR8/templates/view_vid.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4403">
+            <state relative-caret-position="4471">
               <caret line="263" column="108" lean-forward="false" selection-start-line="263" selection-start-column="108" selection-end-line="263" selection-end-column="108" />
               <folding />
             </state>
@@ -125,7 +132,7 @@
       <file leaf-file-name="updt_vid.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UR8/templates/updt_vid.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2839">
+            <state relative-caret-position="2907">
               <caret line="171" column="108" lean-forward="false" selection-start-line="171" selection-start-column="108" selection-end-line="171" selection-end-column="108" />
               <folding />
             </state>
@@ -135,7 +142,7 @@
       <file leaf-file-name="upld_vid.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UR8/templates/upld_vid.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2839">
+            <state relative-caret-position="2907">
               <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
               <folding />
             </state>
@@ -156,10 +163,7 @@
         <option value="$PROJECT_DIR$/UR8/models.py" />
         <option value="$PROJECT_DIR$/UR8/templates/css/style.css" />
         <option value="$PROJECT_DIR$/UR8/templates/js/mediaelement-and-player.min.js" />
-        <option value="$PROJECT_DIR$/UR8/templates/base.html" />
         <option value="$PROJECT_DIR$/ur8_proj/settings.py" />
-        <option value="$PROJECT_DIR$/UR8/templates/s_vid.html" />
-        <option value="$PROJECT_DIR$/UR8/templates/home.html" />
         <option value="$PROJECT_DIR$/UR8/templates/view_vid.html" />
         <option value="$PROJECT_DIR$/UR8/templates/upld_vid.html" />
         <option value="$PROJECT_DIR$/UR8/templates/reset_pwd.html" />
@@ -175,6 +179,9 @@
         <option value="$PROJECT_DIR$/UR8/templates/profile.html" />
         <option value="$PROJECT_DIR$/UR8/views.py" />
         <option value="$PROJECT_DIR$/UR8/templates/edit_avatar.html" />
+        <option value="$PROJECT_DIR$/UR8/templates/s_vid.html" />
+        <option value="$PROJECT_DIR$/UR8/templates/home.html" />
+        <option value="$PROJECT_DIR$/UR8/templates/base.html" />
       </list>
     </option>
   </component>
@@ -206,7 +213,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -325,6 +331,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -639,13 +646,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2652">
           <caret line="156" column="71" lean-forward="false" selection-start-line="156" selection-start-column="71" selection-end-line="156" selection-end-column="71" />
-          <folding>
-            <element signature="e#11175#11240#0#HTML" expanded="false" />
-            <element signature="e#11244#11268#0#HTML" expanded="false" />
-            <element signature="e#11421#11457#0#HTML" expanded="false" />
-            <element signature="e#11923#12077#0#HTML" expanded="false" />
-            <element signature="e#12124#12156#0#HTML" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -682,7 +683,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2550">
           <caret line="150" column="12" lean-forward="true" selection-start-line="150" selection-start-column="12" selection-end-line="150" selection-end-column="12" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -811,7 +816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -840,19 +844,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UR8/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/navbar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -868,14 +863,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="861">
           <caret line="172" column="108" lean-forward="false" selection-start-line="172" selection-start-column="108" selection-end-line="172" selection-end-column="108" />
-          <folding>
-            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -883,7 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
           <caret line="11" column="36" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -891,14 +878,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="861">
           <caret line="251" column="108" lean-forward="false" selection-start-line="251" selection-start-column="108" selection-end-line="251" selection-end-column="108" />
-          <folding>
-            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -907,12 +887,12 @@
         <state relative-caret-position="2125">
           <caret line="181" column="108" lean-forward="false" selection-start-line="181" selection-start-column="108" selection-end-line="181" selection-end-column="108" />
           <folding>
-            <element signature="e#1239#1303#0#HTML" expanded="true" />
-            <element signature="e#4659#4691#0#HTML" expanded="true" />
-            <element signature="e#5573#5708#0#HTML" expanded="true" />
+            <element signature="e#1239#1303#0#HTML" expanded="false" />
+            <element signature="e#4659#4691#0#HTML" expanded="false" />
+            <element signature="e#5573#5708#0#HTML" expanded="false" />
             <element signature="e#5554#8706#0#HTML" expanded="false" />
             <element signature="e#6826#7095#0#HTML" expanded="false" />
-            <element signature="e#8729#8814#0#HTML" expanded="true" />
+            <element signature="e#8729#8814#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -922,12 +902,12 @@
         <state relative-caret-position="3400">
           <caret line="259" column="108" lean-forward="false" selection-start-line="259" selection-start-column="108" selection-end-line="259" selection-end-column="108" />
           <folding>
-            <element signature="e#2811#2875#0#HTML" expanded="true" />
-            <element signature="e#6231#6263#0#HTML" expanded="true" />
-            <element signature="e#7145#7280#0#HTML" expanded="true" />
+            <element signature="e#2811#2875#0#HTML" expanded="false" />
+            <element signature="e#6231#6263#0#HTML" expanded="false" />
+            <element signature="e#7145#7280#0#HTML" expanded="false" />
             <element signature="e#7126#10278#0#HTML" expanded="false" />
             <element signature="e#8398#8667#0#HTML" expanded="false" />
-            <element signature="e#10301#10386#0#HTML" expanded="true" />
+            <element signature="e#10301#10386#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -936,14 +916,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2839">
           <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UR8/templates/s_vid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8483">
-          <caret line="518" column="44" lean-forward="false" selection-start-line="518" selection-start-column="44" selection-end-line="518" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -958,7 +930,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/sign-in.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2839">
+        <state relative-caret-position="2907">
           <caret line="171" column="108" lean-forward="false" selection-start-line="171" selection-start-column="108" selection-end-line="171" selection-end-column="108" />
           <folding />
         </state>
@@ -966,7 +938,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/subscribes.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4335">
+        <state relative-caret-position="4403">
           <caret line="259" column="108" lean-forward="false" selection-start-line="259" selection-start-column="108" selection-end-line="259" selection-end-column="108" />
           <folding />
         </state>
@@ -974,23 +946,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/updt_vid.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2839">
+        <state relative-caret-position="2907">
           <caret line="171" column="108" lean-forward="false" selection-start-line="171" selection-start-column="108" selection-end-line="171" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UR8/templates/upld_vid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2839">
-          <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/view_vid.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4403">
+        <state relative-caret-position="4471">
           <caret line="263" column="108" lean-forward="false" selection-start-line="263" selection-start-column="108" selection-end-line="263" selection-end-column="108" />
           <folding />
         </state>
@@ -998,8 +962,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="203" column="13" lean-forward="true" selection-start-line="203" selection-start-column="13" selection-end-line="203" selection-end-column="13" />
+        <state relative-caret-position="3451">
+          <caret line="203" column="13" lean-forward="false" selection-start-line="203" selection-start-column="13" selection-end-line="203" selection-end-column="13" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
@@ -1018,24 +982,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/channel.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="785">
+        <state relative-caret-position="4080">
           <caret line="240" column="108" lean-forward="false" selection-start-line="240" selection-start-column="108" selection-end-line="240" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UR8/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1768">
-          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="14" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/UR8/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="157" column="25" lean-forward="true" selection-start-line="157" selection-start-column="25" selection-end-line="157" selection-end-column="25" />
+        <state relative-caret-position="2499">
+          <caret line="157" column="25" lean-forward="false" selection-start-line="157" selection-start-column="25" selection-end-line="157" selection-end-column="25" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
             <element signature="e#5781#7153#0" expanded="false" />
@@ -1053,10 +1009,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/UR8/templates/upld_vid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2907">
+          <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/edit_avatar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
           <caret line="135" column="19" lean-forward="false" selection-start-line="135" selection-start-column="19" selection-end-line="135" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UR8/templates/s_vid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="208" column="39" lean-forward="false" selection-start-line="208" selection-start-column="39" selection-end-line="208" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UR8/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="135" column="122" lean-forward="true" selection-start-line="135" selection-start-column="122" selection-end-line="135" selection-end-column="122" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UR8/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="27" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
           <folding />
         </state>
       </provider>
