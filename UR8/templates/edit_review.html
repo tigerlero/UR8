@@ -60,13 +60,13 @@
 {% endblock %}
 
 {% block body %}
-  <nav class="navbar navbar-fixed-top" style="border-radius:0px; border:0;background-color: lightblue;">
+ <nav class="navbar navbar-fixed-top" style="border-radius:0px; border:0;background-color: lightblue;">
     <div style="width: 100%">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         </button>
           <span><a class="navbar-brand" href="{% url 'home' %}">
-              <img src="{% static 'UR8.png' %}" width="34" height="26"></a></span>
+              <img src="{% static 'UR8.png' %}" width="39" height="26"></a></span>
           <span class="navbar-brand"><input style="border-width:0px;
 border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hide.png' %}" width="27" height="26"></span>
 <form style="padding-top: 1px;" class="navbar-form navbar-left" action="{% url 'search_vid' %}" method="post">
@@ -96,26 +96,23 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
                  <img class="notimage" src="{% static "nonot.gif" %}" style="margin-top: 1px;" width="26" height="26">
              {% endif %}
           </a></li>
-               <li style="position: initial;" class="dropdown fill-width" >
-
+              <li style="position: initial;" class="dropdown fill-width" >
               {% if request.user.profile.image == 'avatar/None/default_avatar.png' %}
                 <span style="margin-right: 5%;padding: 13px;" class=" dropdown-toggle" data-toggle="dropdown">
                    <a href=""> <img style="margin-top: 14px;margin-right: 4%;" class="sm-avatar" src="{% static request.user.profile.image %}" width="29" height="29"></a></span>
-              <ul style="margin-right: 12px;" role="menu" class="dropdown-menu dropdown-menu-right">
+              <ul style="padding-right: 40px;" role="menu" class="dropdown-menu dropdown-menu-right">
             <li><a href="{% url 'profile' %}"><b style="font-size: 140%;">Profile</b></a></li>
             <li><a href="{% url 'reset_pwd' %}"><b style="font-size: 140%;">Reset Password</b></a></li>
                   <li><a href="{% url 'edit_avatar' %}"><b style="font-size: 140%;">Edit Avatar</b></a></li>
                   <li><a href="{% url 'view_vid' %}"><b style="font-size: 140%;">My Videos</b></a></li>
               <li><a href="{% url 'sign_out' %}"><b style="font-size: 140%;">Sign out</b></a></li>
           </ul>
-
               {% else %}
-
                 <span style="margin-right: 5%;padding: 13px;" class="dropdown-toggle" data-toggle="dropdown">
                     <a href="">
                         <img  style="margin-top: 14px;" class="sm-avatar" src="{{ request.user.profile.image.url }}" width="29" height="29">
                     </a></span>
-              <ul style="margin-right: 12px;" role="menu" class="dropdown-menu dropdown-menu-right">
+              <ul style="padding-right: 40px;" role="menu" class="dropdown-menu dropdown-menu-right">
             <li  ><a href="{% url 'profile' %}"><b style="font-size: 140%;">Profile</b></a></li>
             <li><a href="{% url 'reset_pwd' %}"><b style="font-size: 140%;">Reset Password</b></a></li>
                   <li><a href="{% url 'edit_avatar' %}"><b style="font-size: 140%;">Edit Avatar</b></a></li>
@@ -123,18 +120,9 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
               <li><a href="{% url 'sign_out' %}"><b style="font-size: 140%;">Sign out</b></a></li>
           </ul>
           {% endif %} {% endif %}
-
-                {% if not request.user.is_authenticated %}
-                <span style="margin-right: 5%;padding: 13px;" class="dropdown-toggle" data-toggle="dropdown">
-                   <a href=""> <img style="margin-top: 14px;margin-right: 4%;" src="{% static "v.png" %}" width="29" height="29"></a></span>
-              <ul style="margin-right: 12px;" role="menu" class="dropdown-menu dropdown-menu-right">
-            <li><a href="{% url 'sign_in' %}"><b style="font-size: 140%;">Sigin in</b></a></li>
-            <li><a href="{% url 'sign_up' %}"><b style="font-size: 140%;">Sign up</b></a></li>
-          </ul>
-
-            {% endif %}
-           </li>
-
+           </li>{% if not request.user.is_authenticated %}
+            <li><a href="{% url 'sign_in' %}"><img src="{% static 'login.png' %}" width="27" height="27"></a></li>
+            <li><a href="{% url 'sign_up' %}"><img src="{% static 'Sign.png' %}" width="27" height="27"></a></li>{% endif %}
         </ul>
       </div>
     </div>
