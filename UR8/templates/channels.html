@@ -110,7 +110,23 @@
     h1{
       padding-top: 30px;
     }
+.fill-width.dropdown {
+    position: static;
+}.dropdown-menu {
+  max-width: 222px; min-width:auto;min-height: auto;
+      background-color: #ccebff;position: absolute;
 
+}
+.dropdown-menu li a {
+
+}
+.fill-width.dropdown > .dropdown-menu {
+    left: auto;
+}
+.fill-width.dropdown > .dropdown-menu > li > a {
+   white-space: normal;
+    padding-left: 6%;
+}
   </style>
 {% endblock %}
 {% block body %}
@@ -138,49 +154,57 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
       </div>
       <div  class=" collapse navbar-collapse" id="myNavbar">
           <ul style="float: right;" class="nav navbar-nav">
-          {% if request.user.is_authenticated %}
-              <li><a href="{% url 'upld_vid' %}" ><img  src="{% static "up.png" %}" width="27" height="28"></a></li>
-             {% if requset.user.profile.count < 10 %} <li><a href="{% url 'notifications' %}" >
+            {% if request.user.is_authenticated %}
+              <li><a href="{% url 'upld_vid' %}" >
+                  <img  src="{% static "up.png" %}" width="27" height="28"></a></li>
+             {% if requset.user.profile.count < 10 %}
+                 <li><a href="{% url 'notifications' %}" >
                  <img class="notimage" src="{% static "not.png" %}" style="margin-top: 1px;" width="26" height="26">
                   <div class="note">{{ request.user.profile.count }}</div>
-             {% else %}<li><a href="{% url 'notifications' %}" >
+             {% else %}
+                 <li><a href="{% url 'notifications' %}" >
                  <img class="notimage" src="{% static "nonot.gif" %}" style="margin-top: 1px;" width="26" height="26">
-             {% endif %}</a></li>
+             {% endif %}
+          </a></li>
               <li style="position: initial;" class="dropdown fill-width" >
-          {% if request.user.is_authenticated %}
+
               {% if request.user.profile.image == 'avatar/None/default_avatar.png' %}
-                <span style="margin-right: 4%;padding: 12px;" class=" dropdown-toggle" data-toggle="dropdown">
+                <span style="margin-right: 5%;padding: 13px;" class=" dropdown-toggle" data-toggle="dropdown">
                    <a href=""> <img style="margin-top: 14px;margin-right: 4%;" class="sm-avatar" src="{% static request.user.profile.image %}" width="29" height="29"></a></span>
-          {% if request.user.is_authenticated %}
-              <ul style="margin-right: 7px;" role="menu" class="dropdown-menu dropdown-menu-right">
+              <ul style="margin-right: 12px;" role="menu" class="dropdown-menu dropdown-menu-right">
             <li><a href="{% url 'profile' %}"><b style="font-size: 70%;">Profile</b></a></li>
             <li><a href="{% url 'reset_pwd' %}"><b style="font-size: 70%;">Reset Password</b></a></li>
                   <li><a href="{% url 'edit_avatar' %}"><b style="font-size: 70%;">Edit Avatar</b></a></li>
                   <li><a href="{% url 'view_vid' %}"><b style="font-size: 70%;">My Videos</b></a></li>
               <li><a href="{% url 'sign_out' %}"><b style="font-size: 70%;">Sign out</b></a></li>
-          </ul>{% endif %}
+          </ul>
+
               {% else %}
-                <span style="margin-right: 4%;padding: 12px;" class="dropdown-toggle" data-toggle="dropdown">
-                    <a href=""><img  style="margin-top: 14px;" class="sm-avatar" src="{{ request.user.profile.image.url }}" width="29" height="29"></a></span>
-          {% if request.user.is_authenticated %}
-              <ul style="margin-right: 7px;" role="menu" class="dropdown-menu dropdown-menu-right">
+
+                <span style="margin-right: 5%;padding: 13px;" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="">
+                        <img  style="margin-top: 14px;" class="sm-avatar" src="{{ request.user.profile.image.url }}" width="29" height="29">
+                    </a></span>
+              <ul style="margin-right: 12px;" role="menu" class="dropdown-menu dropdown-menu-right">
             <li  ><a href="{% url 'profile' %}"><b style="font-size: 70%;">Profile</b></a></li>
             <li><a href="{% url 'reset_pwd' %}"><b style="font-size: 70%;">Reset Password</b></a></li>
                   <li><a href="{% url 'edit_avatar' %}"><b style="font-size: 70%;">Edit Avatar</b></a></li>
                   <li><a href="{% url 'view_vid' %}"><b style="font-size: 70%;">My Videos</b></a></li>
-              <li><a href="{% url 'sign_up' %}"><b style="font-size: 70%;">Sign up</b></a></li>
+              <li><a href="{% url 'sign_out' %}"><b style="font-size: 70%;">Sign out</b></a></li>
           </ul>
-          {% endif %}
-              {% endif %}{% else %}
-                <span style="margin-right: 4%;padding: 12px;" class="dropdown-toggle" data-toggle="dropdown">
+          {% endif %} {% endif %}
+
+                {% if not request.user.is_authenticated %}
+                <span style="margin-right: 5%;padding: 13px;" class="dropdown-toggle" data-toggle="dropdown">
                    <a href=""> <img style="margin-top: 14px;margin-right: 4%;" src="{% static "v.png" %}" width="29" height="29"></a></span>
-          {% if not request.user.is_authenticated %}
-              <ul style="margin-right: 7px;" role="menu" class="dropdown-menu dropdown-menu-right">
+              <ul style="margin-right: 12px;" role="menu" class="dropdown-menu dropdown-menu-right">
             <li><a href="{% url 'sign_in' %}"><b style="font-size: 70%;">Sigin in</b></a></li>
             <li><a href="{% url 'sign_up' %}"><b style="font-size: 70%;">Sign up</b></a></li>
-          </ul>{% endif %}
-            {% endif %}</li>
-          {% endif %}
+          </ul>
+
+            {% endif %}
+           </li>
+
         </ul>
       </div>
     </div>
