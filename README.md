@@ -19,7 +19,9 @@ It will include:
 - [x] Notifications
 - [x] Auto thumbnail generate
 - [x] Upload Custom thumbnail
-- [ ] Auto generate custom thumbnail by video specific frame
+- [ ] Auto generate custom thumbnail by video specific frame of user's choice
+- [x] Resize thumbnail to 16:9 dimensions
+- [x] Contain video to video player and change with % width and height in aspect ration 16:9
 - [ ] Channel Sort
 
 
