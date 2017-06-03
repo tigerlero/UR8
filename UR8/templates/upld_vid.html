@@ -156,10 +156,10 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
 }
 </script>
 </div>
-    <div id="hideleft" style="background-color: #e8f7fd; width: 0%;display: none; float: left;position: fixed;height: 100%;margin-right: 9%;padding-left: 1%;">
+     <div id="hideleft" style="background-color: #e8f7fd; width: 0%;display: none; float: left;position: fixed;height: 100%;margin-right: 9%;padding-left: 1%;">
 <br><Br><div style="text-align: left; padding-left: 1%;">
     <div style="margin-left: 0px !important;margin-right: 0px !important;">
-        <b style="font-size: 130%;">
+        <b style="font-size: 170%;">
         <a href="{% url 'subscribes' %}"><img style=" margin-right: 1%;" src="{% static "sub.png" %}" width="13" height="13">
          Subs</a></b>
     </div><br>
@@ -171,12 +171,12 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
                     {% else %}
                     <a href="{% url 'channel' channel.username %}"><img src="{{ channel.profile.image.url }}" width="25" height="25" ></a>
                     {% endif %}
-                {% endif %}<i style="font-size: 160%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
+                {% endif %}<i style="font-size: 180%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
             {% endfor %}
         {% endif %}
-
+<hr color="white">
      <div  style="margin-left: 0px !important;margin-right: 0px !important;">
-        <b style="font-size: 130%;">
+        <b style="font-size: 170%;">
         <a href="{% url 'channels' %}"><img src="{% static "tv.png" %}" style=" margin-right: 1%;" width="13" height="13">
          Channels</a></b>
     </div><br>
@@ -191,7 +191,7 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
                     {% else %}
                         <img src="{{ channel.profile.image.url }}" width="25" height="25" >
                     {% endif %}
-                {% endif %}<i style="font-size: 160%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
+                {% endif %}<i style="font-size: 180%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
                     {% endif %}
                         {% endfor %}{% endif %}
                 {% endfor %}
@@ -205,7 +205,7 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
                 {% else %}
                     <img src="{{ channel.profile.image.url }}" width="25" height="25" >
                 </a>{% endif %}
-            {% endif %}<i style="font-size: 160%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
+            {% endif %}<i style="font-size: 180%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
             {% endfor %}
             {% endif %}
       </div></div>
