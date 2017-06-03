@@ -26,7 +26,7 @@ SECRET_KEY = 'lxprlcqarvh1vwopff_z7u-&bwt-yyff=yo$z3mqp+6v(442p4'
 DEBUG = True
 
 ALLOWED_HOSTS = ['ur8.herokuapp.com',
-                 'ur8.herokuapp.com/ur8',]
+                 'ur8.herokuapp.com/ur8', '127.0.0.1',]
 
 
 # Application definition

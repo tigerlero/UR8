@@ -293,10 +293,10 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
 
 
   <div style="float: left; width: 80%;padding-left: 2%;">
-
-    <video controls width="99.2%" height="55.8%" id="{{ video.id }}"  autoplay>
+<div class="embed-responsive embed-responsive-16by9">
+    <video style="background-color: #123456 !important; object-fit:contain; " controls width="99.2%" height="55.8%" id="{{ video.id }}"  autoplay>
       <source src="{{ video.video.url }}" type="video/mp4">
-    </video>
+    </video></div>
 
   <b style="font-size: 150%;float: left;">{{ video.title }}</b><span style="float: right; margin-top: 1%;">
         {% if video.avg_rating == 0.0 %}
@@ -510,29 +510,33 @@ function ShowMore() {
   </label></i>
 </div>
         {% for v in rel_videos|slice:":1" %}
-            <script type='text/javascript'>
+            <script type='text/javascript'>var timer;
     $('#toggle-one').bootstrapToggle({
         size: 'mini',
         offstyle: 'primary',
         onstyle: 'info',
     });
     $('#toggle-one').bootstrapToggle('off');
-
     function vidEnd() {
-        document.getElementById('{{ video.id }}').addEventListener('ended',function (){var t = setTimeout(myHandler, 5000);},false);
+        document.getElementById('{{ video.id }}').addEventListener('ended',start,false);return false;
+    }
+    function start() {
+        timer = window.setTimeout(myHandler, 5000);
+        return false;
     }
 
     function myHandler() {
-        window.location="{% url 's_vid' v.id %}";
+        window.location="{% url 's_vid' v.id %}";return false;
     }
 $(function() {
     $('#toggle-one').change(function() {
       var tg = $(this).prop('checked');
       if (tg == true){
           vidEnd();}
-else if(tg == false){window.clearTimeout();}
-    })
-  })
+    else if (tg == false){clearTimeout(timer);clearTimeout();window.clearTimeout(timer);window.clearTimeout();
+      }
+    return false;})
+  return false;})
 </script>
         <div class="row">
         {% if not v.th %}

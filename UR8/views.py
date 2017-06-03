@@ -6,8 +6,7 @@ from .forms import UserRegFrom, EditAvatarForm, ResetPasswordForm, UploadVideoFo
 from .models import Profile, Video, Review
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-from moviepy.editor import VideoFileClip
-import moviepy.video.fx.all as vfx
+from moviepy.editor import *
 import os
 import json
 import time
@@ -19,7 +18,6 @@ def home(request):
     new = []
     popular = []
     best = []
-    users = User.objects.all()
     for video in videos:
         video_results.append(video)
         new.append(video)
@@ -38,6 +36,7 @@ def home(request):
         hasRes = True
     else:
         hasRes = False
+    users = User.objects.all()
     if request.method == 'GET' and request.user.is_authenticated():
         u = request.user
         subchan = []
@@ -137,8 +136,31 @@ def channel(request, username):
         for video in videos:
             video.tags = video.tags.split(',')
             video.tags.pop()
+        users = User.objects.all()
+        return render(request, 'channel.html',
+                  {'hasRes': hasRes, 'videos': videos, 'user': user, 'users': users})
+    if request.method == 'GET' and request.user.is_authenticated():
+        user = User.objects.get(username=username)
+        videos = user.video_set.all()
+        hasRes = False
+        if len(videos) >= 1:
+            hasRes = True
+        else:
+            hasRes = False
 
-        return render(request, 'channel.html', {'hasRes': hasRes, 'videos': videos, 'user': user})
+        for video in videos:
+            video.tags = video.tags.split(',')
+            video.tags.pop()
+        users = User.objects.all()
+        subchan = []
+        subs = user.profile.subscribes
+        videos2 = Video.objects.all()
+        for v in videos2:
+            if (v.user.username in subs) and (subs != ""):
+                if v.user not in subchan and v.user != user:
+                    subchan.append(v.user)
+
+        return render(request, 'channel.html', {'hasRes': hasRes, 'videos': videos,'subchan': subchan, 'user': user, 'users': users})
     else:
         return render(request, 'home.html', {})
 
@@ -501,17 +523,13 @@ def upld_vid(request):
                 s_vid = s_vid[:-1]
                 fileDir = os.path.dirname(os.path.realpath('__file__'))
                 filename = os.path.join(fileDir, 'uploads/media/videos/'+s_vid)
-                clip = VideoFileClip(filename)
-                clip.write_videofile(filename,preset = 'placebo')
+                clip = VideoFileClip(filename).subclip(2,3).resize((256,144))
                 s_vid = s_vid[:-4] + ".jpeg"
-                fileDir = os.path.dirname(os.path.realpath('__file__'))
-                clip.save_frame((os.path.join(fileDir, 'uploads/media/thumpnails/'+s_vid)), t=2)
+                clip.save_frame((os.path.join(fileDir, 'uploads/media/thumpnails/'+s_vid)))
                 new_video.thumpnail = 'thumpnails/'+s_vid
-                print(new_video.thumpnail)
                 new_video.save()
             else:
                 th = True
-                print(new_video.thumpnail.url)
             for u in users:
                 if u != user and (user.username in u.profile.subscribes):
                     u = u.profile

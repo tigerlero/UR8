@@ -84,7 +84,7 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
       </div>
     </div>
   </nav>
-    <div style="width: 3%;margin-top: 3.2%;">
+    <div style="width: 3%;margin-top: 3%">
               <script>
                   $('a[data-toggle="collapse"]').on('shown.bs.collapse', function (r) {
                         var x = document.getElementById('hideleft');
@@ -97,11 +97,11 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
     var x = document.getElementById('hideleft');
     var y = document.getElementById('homediv');
     if (x.style.width === '0%') {
-        x.style.width = '14%';
-        y.style.width = '84%';
+        x.style.width = '13%';
+        y.style.width = '83%';
         x.style.display = 'block';
-        y.style.paddingLeft = "0%";
-        y.style.paddingRight = "0%";
+        y.style.paddingLeft = "1%";
+        y.style.paddingRight = "1%";
     } else {
         x.style.width = '0%';
         y.style.width = '98%';
@@ -112,7 +112,7 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
 }
 </script>
 </div>
-    <div id="hideleft" style="background-color: #e8f7fd; width: 0%;display: none; float: left;position: absolute;height: 100%;margin-right: 9%;">
+    <div id="hideleft" style="background-color: #e8f7fd; width: 0%;display: none; float: left;position: fixed;height: 100%;margin-right: 9%;padding-left: 1%;">
 <br><Br><div style="text-align: left; padding-left: 1%;">
     <div style="margin-left: 0px !important;margin-right: 0px !important;">
         <b style="font-size: 130%;">
@@ -165,8 +165,8 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
             {% endfor %}
             {% endif %}
       </div></div>
-    <div id="homediv" style="width: 98%; padding-right:1%; padding-left:1%; float: right;">
-<div style="text-align: left;"><hr style="width: 100%; color: #d8f6fc; height: 0.005em; background-color:#d8f6fc;">
+    <div id="homediv" style="width: 98%; padding-right:1%; padding-left:1%; padding-top: 1%; float: right;">
+<div style="text-align: left;"><hr style="width: 98%; color: #d8f6fc; height: 0.006em; background-color:#d8f6fc;">
     <p  style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 130%;">Top Videos</b></p>
     {% if hasRes %}
     <div class="row">

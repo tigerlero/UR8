@@ -34,16 +34,16 @@
   </style>
 {% endblock %}
 {% block body %}
- <nav class="navbar navbar-fixed-top" style="border-radius:0px; border:0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);background-color: lightblue;">
+ <nav class="navbar navbar-fixed-top" style="border-radius:0px; border:0;background-color: lightblue;">
     <div style="width: 100%"      >
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         </button>
           <span><a class="navbar-brand" href="{% url 'home' %}">
-              <img src="{% static 'UR8.png' %}" width="45" height="30"></a></span>
+              <img src="{% static 'UR8.png' %}" width="40" height="28"></a></span>
           <span class="navbar-brand"><input style="border-width:0px;
-border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hide.png' %}" width="35" height="33"></span>
-<form style="padding-top: 7px;" class="navbar-form navbar-left" action="{% url 'search_vid' %}" method="post">
+border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hide.png' %}" width="28" height="26"></span>
+<form style="padding-top: 1px;" class="navbar-form navbar-left" action="{% url 'search_vid' %}" method="post">
             {% csrf_token %}
             <section class="flexbox">
             <div class="stretch">
@@ -61,26 +61,26 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
         <li class="navbar-text">{% if request.user.is_authenticated %}
               {% if request.user.profile.image == 'avatar/None/default_avatar.png' %}
                 <span><a href="{% url 'profile' %}">
-                    <img class="sm-avatar" src="{% static request.user.profile.image %}" width="30" height="30">
+                    <img class="sm-avatar" src="{% static request.user.profile.image %}" width="28" height="28">
                     </a></span>
               {% else %}
                 <span><a href="{% url 'profile' %}">
-                    <img class="sm-avatar" src="{{ request.user.profile.image.url }}" width="30" height="30">
+                    <img class="sm-avatar" src="{{ request.user.profile.image.url }}" width="28" height="28">
                    </a></span>
               {% endif %}{% else %}
-                <img src="{% static "v.png" %}" width="30" height="30">
+                <img src="{% static "v.png" %}" width="28" height="28">
             {% endif %}</li>
           {% if not request.user.is_authenticated %}
-            <li><a href="{% url 'sign_in' %}"><img src="{% static "login.png" %}" width="30" height="30"></a></li>
-            <li><a href="{% url 'sign_up' %}"><img src="{% static "Sign.png" %}" width="30" height="30"></a></li>
+            <li><a href="{% url 'sign_in' %}"><img src="{% static "login.png" %}" width="28" height="28"></a></li>
+            <li><a href="{% url 'sign_up' %}"><img src="{% static "Sign.png" %}" width="28" height="28"></a></li>
           {% endif %}
           {% if request.user.is_authenticated %}
-              <li><a href="{% url 'upld_vid' %}" ><img  src="{% static "up.png" %}" style="margin-top: 5px;" width="30" height="30"></a></li>
+              <li><a href="{% url 'upld_vid' %}" ><img  src="{% static "up.png" %}" style="margin-top: 5px;" width="28" height="28"></a></li>
              {% if requset.user.profile.count < 10 %} <li><a href="{% url 'notifications' %}" >
-                 <img class="notimage" src="{% static "not.png" %}" style="margin-top: 2px;" width="31" height="31">
+                 <img class="notimage" src="{% static "not.png" %}" style="margin-top: 2px;" width="28" height="28">
                   <div class="note">{{ request.user.profile.count }}</div>
              {% else %}<li><a href="{% url 'notifications' %}" >
-                 <img class="notimage" src="{% static "nonot.gif" %}" style="margin-top: 2px;" width="31" height="31">
+                 <img class="notimage" src="{% static "nonot.gif" %}" style="margin-top: 2px;" width="28" height="28">
              {% endif %}</a></li>
             <li><a href="{% url 'sign_out' %}"><img src="{% static "door.png" %}" style="margin-top: 5px;" width="28" height="28"></a></li>
           {% endif %}
@@ -88,7 +88,7 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
       </div>
     </div>
   </nav>
-    <div style="width: 3%;margin-top: 4%;">
+    <div style="width: 3%;margin-top: 3%">
               <script>
                   $('a[data-toggle="collapse"]').on('shown.bs.collapse', function (r) {
                         var x = document.getElementById('hideleft');
@@ -101,24 +101,22 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
     var x = document.getElementById('hideleft');
     var y = document.getElementById('homediv');
     if (x.style.width === '0%') {
-        x.style.width = '14%';
-        y.style.width = '84%';
+        x.style.width = '13%';
+        y.style.width = '83%';
         x.style.display = 'block';
-        y.style.paddingLeft = "0%";
-        y.style.paddingRight = "0%";
+        y.style.paddingLeft = "1%";
+        y.style.paddingRight = "1%";
     } else {
         x.style.width = '0%';
-        y.style.width = '100%';
+        y.style.width = '98%';
         y.style.paddingLeft = "1%";
         y.style.paddingRight = "1%";
         x.style.display = 'none';
     }
 }
 </script>
-
-
-</div><div id="hideleft" style="background-color: #e8f7fd; width: 0%;display: none; float: left;position: absolute;height: 100%;margin-right: 10%;">
-
+</div>
+    <div id="hideleft" style="background-color: #e8f7fd; width: 0%;display: none; float: left;position: fixed;height: 100%;margin-right: 9%;padding-left: 1%;">
 <br><Br><div style="text-align: left; padding-left: 1%;">
     <div style="margin-left: 0px !important;margin-right: 0px !important;">
         <b style="font-size: 130%;">
@@ -171,7 +169,7 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
             {% endfor %}
             {% endif %}
       </div></div>
-        <div id="homediv"  style="width: 100%; padding-right:1%; padding-left:1%; float: right;">
+    <div id="homediv" style="width: 98%; padding-right:1%; padding-left:1%; padding-top: 1%; float: right;">
 
   <h1 style="padding-left: 35%">Update Your Video Here:</h1>
   <hr>
