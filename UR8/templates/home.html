@@ -7,7 +7,7 @@
   <style>.fill-width.dropdown {
     position: static;
 }.dropdown-menu {
-  max-width: 222px; min-width:auto;min-height: auto;
+  max-width: auto; min-height: auto;
       background-color: #ccebff;position: absolute;
 
 }
@@ -88,11 +88,11 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
                 <span style="margin-right: 5%;padding: 13px;" class=" dropdown-toggle" data-toggle="dropdown">
                    <a href=""> <img style="margin-top: 14px;margin-right: 4%;" class="sm-avatar" src="{% static request.user.profile.image %}" width="29" height="29"></a></span>
               <ul style="margin-right: 12px;" role="menu" class="dropdown-menu dropdown-menu-right">
-            <li><a href="{% url 'profile' %}"><b style="font-size: 70%;">Profile</b></a></li>
-            <li><a href="{% url 'reset_pwd' %}"><b style="font-size: 70%;">Reset Password</b></a></li>
-                  <li><a href="{% url 'edit_avatar' %}"><b style="font-size: 70%;">Edit Avatar</b></a></li>
-                  <li><a href="{% url 'view_vid' %}"><b style="font-size: 70%;">My Videos</b></a></li>
-              <li><a href="{% url 'sign_out' %}"><b style="font-size: 70%;">Sign out</b></a></li>
+            <li><a href="{% url 'profile' %}"><b style="font-size: 140%;">Profile</b></a></li>
+            <li><a href="{% url 'reset_pwd' %}"><b style="font-size: 140%;">Reset Password</b></a></li>
+                  <li><a href="{% url 'edit_avatar' %}"><b style="font-size: 140%;">Edit Avatar</b></a></li>
+                  <li><a href="{% url 'view_vid' %}"><b style="font-size: 140%;">My Videos</b></a></li>
+              <li><a href="{% url 'sign_out' %}"><b style="font-size: 140%;">Sign out</b></a></li>
           </ul>
 
               {% else %}
@@ -102,11 +102,11 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
                         <img  style="margin-top: 14px;" class="sm-avatar" src="{{ request.user.profile.image.url }}" width="29" height="29">
                     </a></span>
               <ul style="margin-right: 12px;" role="menu" class="dropdown-menu dropdown-menu-right">
-            <li  ><a href="{% url 'profile' %}"><b style="font-size: 70%;">Profile</b></a></li>
-            <li><a href="{% url 'reset_pwd' %}"><b style="font-size: 70%;">Reset Password</b></a></li>
-                  <li><a href="{% url 'edit_avatar' %}"><b style="font-size: 70%;">Edit Avatar</b></a></li>
-                  <li><a href="{% url 'view_vid' %}"><b style="font-size: 70%;">My Videos</b></a></li>
-              <li><a href="{% url 'sign_out' %}"><b style="font-size: 70%;">Sign out</b></a></li>
+            <li  ><a href="{% url 'profile' %}"><b style="font-size: 140%;">Profile</b></a></li>
+            <li><a href="{% url 'reset_pwd' %}"><b style="font-size: 140%;">Reset Password</b></a></li>
+                  <li><a href="{% url 'edit_avatar' %}"><b style="font-size: 140%;">Edit Avatar</b></a></li>
+                  <li><a href="{% url 'view_vid' %}"><b style="font-size: 140%;">My Videos</b></a></li>
+              <li><a href="{% url 'sign_out' %}"><b style="font-size: 140%;">Sign out</b></a></li>
           </ul>
           {% endif %} {% endif %}
 
@@ -114,8 +114,8 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
                 <span style="margin-right: 5%;padding: 13px;" class="dropdown-toggle" data-toggle="dropdown">
                    <a href=""> <img style="margin-top: 14px;margin-right: 4%;" src="{% static "v.png" %}" width="29" height="29"></a></span>
               <ul style="margin-right: 12px;" role="menu" class="dropdown-menu dropdown-menu-right">
-            <li><a href="{% url 'sign_in' %}"><b style="font-size: 70%;">Sigin in</b></a></li>
-            <li><a href="{% url 'sign_up' %}"><b style="font-size: 70%;">Sign up</b></a></li>
+            <li><a href="{% url 'sign_in' %}"><b style="font-size: 140%;">Sigin in</b></a></li>
+            <li><a href="{% url 'sign_up' %}"><b style="font-size: 140%;">Sign up</b></a></li>
           </ul>
 
             {% endif %}
@@ -156,7 +156,7 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
     <div id="hideleft" style="background-color: #e8f7fd; width: 0%;display: none; float: left;position: fixed;height: 100%;margin-right: 9%;padding-left: 1%;">
 <br><Br><div style="text-align: left; padding-left: 1%;">
     <div style="margin-left: 0px !important;margin-right: 0px !important;">
-        <b style="font-size: 130%;">
+        <b style="font-size: 170%;">
         <a href="{% url 'subscribes' %}"><img style=" margin-right: 1%;" src="{% static "sub.png" %}" width="13" height="13">
          Subs</a></b>
     </div><br>
@@ -168,12 +168,12 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
                     {% else %}
                     <a href="{% url 'channel' channel.username %}"><img src="{{ channel.profile.image.url }}" width="25" height="25" ></a>
                     {% endif %}
-                {% endif %}<i style="font-size: 160%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
+                {% endif %}<i style="font-size: 180%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
             {% endfor %}
         {% endif %}
-
+<hr color="white">
      <div  style="margin-left: 0px !important;margin-right: 0px !important;">
-        <b style="font-size: 130%;">
+        <b style="font-size: 170%;">
         <a href="{% url 'channels' %}"><img src="{% static "tv.png" %}" style=" margin-right: 1%;" width="13" height="13">
          Channels</a></b>
     </div><br>
@@ -188,7 +188,7 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
                     {% else %}
                         <img src="{{ channel.profile.image.url }}" width="25" height="25" >
                     {% endif %}
-                {% endif %}<i style="font-size: 160%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
+                {% endif %}<i style="font-size: 180%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
                     {% endif %}
                         {% endfor %}{% endif %}
                 {% endfor %}
@@ -202,11 +202,11 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
                 {% else %}
                     <img src="{{ channel.profile.image.url }}" width="25" height="25" >
                 </a>{% endif %}
-            {% endif %}<i style="font-size: 160%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
+            {% endif %}<i style="font-size: 180%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
             {% endfor %}
             {% endif %}
       </div></div>
-    <div id="homediv" style="width: 98%; padding-right:1%; padding-left:1%; padding-top: 1%; float: right;">
+    <div id="homediv" style="font-size:120%; width: 98%; padding-right:1%; padding-left:1%; padding-top: 1%; float: right;">
 <div style="text-align: left;">
     <p  style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 130%;">Top Videos</b></p>
     {% if hasRes %}
