@@ -23,6 +23,7 @@ It will include:
 - [x] Resize thumbnail to 16:9 dimensions
 - [x] Contain video to video player and change with % width and height in aspect ration 16:9
 - [ ] Channel Sort
+- [x] Custom Error Pages 404 403 400 500
 
 
 ### Enjoy!!
