@@ -24,13 +24,10 @@ def home(request):
         popular.append(video)
         best.append(video)
     video_results = video_results[-29:]
-    new = new[-29:]
-    popular = popular[-29:]
-    best = best[-29:]
-    video_results = sort_videos(video_results)
-    new = new_videos(new)
-    popular = popular_videos(popular)
-    best = best_videos(best)
+    new = sort_videos(video_results, 10, 5, 1)
+    popular = sort_videos(video_results, 1, 5, 10)
+    best = sort_videos(video_results, 1, 10, 2)
+    video_results = sort_videos(video_results, 4, 10, 5)
     hasRes = False
     if len(video_results) >= 1:
         hasRes = True
@@ -55,64 +52,13 @@ def home(request):
                        'best': best})
 
 
-def sort_videos(videos):
+def sort_videos(videos, id_mod, avg_mod, video_mod):
     overall = [0] * 30
     # calculate overall score
     for i, video in enumerate(videos):
-        overall[i] += 4 * video.id
-        overall[i] += 10 * video.avg_rating
-        overall[i] += 5 * video.views
-    # insertion sort for overall score
-    for i in range(1, len(videos)):
-        j = i
-        while (j > 0) and (overall[j] > overall[j - 1]):
-            videos[j], videos[j - 1] = videos[j - 1], videos[j]
-            overall[j], overall[j - 1] = overall[j - 1], overall[j]
-            j -= 1
-    return videos
-
-
-def best_videos(videos):
-    overall = [0] * 30
-    # calculate overall score
-    for i, video in enumerate(videos):
-        overall[i] += 2 * video.id
-        overall[i] += 10 * video.avg_rating
-        overall[i] += 1 * video.views
-    # insertion sort for overall score
-    for i in range(1, len(videos)):
-        j = i
-        while (j > 0) and (overall[j] > overall[j - 1]):
-            videos[j], videos[j - 1] = videos[j - 1], videos[j]
-            overall[j], overall[j - 1] = overall[j - 1], overall[j]
-            j -= 1
-    return videos
-
-
-def popular_videos(videos):
-    overall = [0] * 30
-    # calculate overall score
-    for i, video in enumerate(videos):
-        overall[i] += 1 * video.id
-        overall[i] += 5 * video.avg_rating
-        overall[i] += 10 * video.views
-    # insertion sort for overall score
-    for i in range(1, len(videos)):
-        j = i
-        while (j > 0) and (overall[j] > overall[j - 1]):
-            videos[j], videos[j - 1] = videos[j - 1], videos[j]
-            overall[j], overall[j - 1] = overall[j - 1], overall[j]
-            j -= 1
-    return videos
-
-
-def new_videos(videos):
-    overall = [0] * 30
-    # calculate overall score
-    for i, video in enumerate(videos):
-        overall[i] += 10 * video.id
-        overall[i] += 5 * video.avg_rating
-        overall[i] += 1 * video.views
+        overall[i] += id_mod * video.id
+        overall[i] += avg_mod * video.avg_rating
+        overall[i] += video_mod * video.views
     # insertion sort for overall score
     for i in range(1, len(videos)):
         j = i
