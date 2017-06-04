@@ -241,7 +241,7 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
                 <a href="{% url 'subscribes' %}"><img style=" margin-right: 1%;" src="{% static "sub.png" %}" width="13" height="13">
                 Subs</a></b>
         </div><br>
-         {% for channel in request.user.profile.subscribes %}
+         {% for channel in users %}
              {% if channel.username in request.user.profile.subscribes %}
              {% if not channel.is_superuser and channel != '' %}
                  {% if channel.profile.image == 'avatar/None/default_avatar.png'%}

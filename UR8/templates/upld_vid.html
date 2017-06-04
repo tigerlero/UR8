@@ -152,7 +152,7 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
                 <a href="{% url 'subscribes' %}"><img style=" margin-right: 1%;" src="{% static "sub.png" %}" width="13" height="13">
                 Subs</a></b>
         </div><br>
-         {% for channel in request.user.profile.subscribes %}
+         {% for channel in users %}
              {% if channel.username in request.user.profile.subscribes %}
              {% if not channel.is_superuser and channel != '' %}
                  {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
@@ -198,14 +198,11 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
       </div>
     </div>
     <div id="homediv" style="width: 98%; padding-right:1%; padding-left:1%; padding-top: 1%; float: right;">
-
-
   <h1 style="padding-left: 40%">Upload Your Video Here:</h1>
   <hr width="100%">
   <br>
   <p></p>
   <br>
-
   <form style="padding-left: 40%" class="form-horizontal" action="{% url 'upld_vid' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="form-group">
@@ -278,7 +275,6 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
           <small><ul class="alert alert-info">{{ form.tags.help_text|safe }}</ul></small>
         {% endif %}
       </div>
-
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-8">
         <button type="submit" class="btn btn-lg btn-success" style="border-radius:0px;border:0;">Upload Video</button>

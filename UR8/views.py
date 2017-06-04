@@ -516,7 +516,22 @@ def subscribes(request):
     if request.user.is_authenticated():
         u = request.user
         videos = Video.objects.all()
-        return render(request, 'subscribes.html', {'users': users})
+        sub_vid = []
+        subscr = []
+        subchan = []
+        subs = u.profile.subscribes
+        for v in videos:
+            if (v.user.username in subs) and (subs != ""):
+                if v.user not in subchan and v.user != u:
+                    subscr.append(v.user.username)
+                    subchan.append(v.user)
+                    sub_vid.append(v)
+        hasRes = False
+        if len(sub_vid) >= 1:
+            hasRes = True
+        else:
+            hasRes = False
+        return render(request, 'subscribes.html', {'hasRes': hasRes, "subscr": subscr, "sub_vid": sub_vid, "subchan": subchan, 'users': users})
     else:
         return render(request, 'home.html', {'users': users})
 

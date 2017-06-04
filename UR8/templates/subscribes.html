@@ -241,7 +241,7 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
                 <a href="{% url 'subscribes' %}"><img style=" margin-right: 1%;" src="{% static "sub.png" %}" width="13" height="13">
                 Subs</a></b>
         </div><br>
-         {% for channel in request.user.profile.subscribes %}
+         {% for channel in users %}
              {% if channel.username in request.user.profile.subscribes %}
              {% if not channel.is_superuser and channel != '' %}
                  {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
@@ -309,12 +309,11 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
     <p class="bg-info text-info" style="margin-left: 0px !important;margin-right: 0px !important;"><b style="font-size: 250%;">Top Videos</b></p><br>
     {% if hasRes %}
     <div style="padding-left: 1%;padding-right: 1%;" class="row">
-    {% for channel in users %}
-        {% if channel in request.user.profile.subscribes %}
-      {% for video in channel.video %}
-             <div style=" padding:6px;font-size: 85%;" class="col-sm-3 col-md-2 col-bg-1">
-             <div style=" border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
-             <a href="{% url 's_vid' video.id %}">{% if not video.th %}
+
+      {% for video in sub_vid %}
+     <div style=" padding:6px;font-size: 85%;" class="col-sm-3 col-md-2 col-bg-1">
+      <div style=" border: 0; border-radius: 0px; box-shadow:0 10px 16px 0 rgba(4,4,4,0.2),0 6px 20px 0 rgba(4,4,4,0.19) !important;">
+ <a href="{% url 's_vid' video.id %}">{% if not video.th %}
             <img src="{{ video.thumpnail }}" width="99.9%" height="58%">
         {% else %}
        <img src="{{ video.thumpnail.url }}" width="99.9%" height="58%">
@@ -393,7 +392,6 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
  </div>
         </div>
         </div>
-          {% endfor %}{% endif %}
       {% endfor %}
     </div>
   {% endif %}
