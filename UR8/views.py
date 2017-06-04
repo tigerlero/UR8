@@ -14,6 +14,7 @@ import time
 
 def home(request):
     videos = Video.objects.all()
+    users = User.objects.all()
     video_results = []
     new = []
     popular = []
@@ -36,23 +37,12 @@ def home(request):
         hasRes = True
     else:
         hasRes = False
-    users = User.objects.all()
     if request.method == 'GET' and request.user.is_authenticated():
-        u = request.user
-        subchan = []
-        subs = u.profile.subscribes
-        for v in videos:
-            if (v.user.username in subs) and (subs != ""):
-                if v.user not in subchan and v.user != u:
-                    subchan.append(v.user)
-
-        return render(request, 'home.html',
-                      {'video_results': video_results, 'hasRes': hasRes, 'users': users, 'new': new, 'popular': popular,
-                       'best': best, "subchan": subchan })
+        return render(request, 'home.html', {'video_results': video_results, 'hasRes': hasRes, 'new': new, 'popular': popular, 'best': best, 'users': users})
     else:
         return render(request, 'home.html',
-                      {'video_results': video_results, 'hasRes': hasRes, 'users': users, 'new': new, 'popular': popular,
-                       'best': best})
+                      {'video_results': video_results, 'hasRes': hasRes, 'new': new, 'popular': popular, 'best': best,
+                       'users': users})
 
 
 def sort_videos(videos, id_mod, avg_mod, video_mod):
@@ -73,61 +63,38 @@ def sort_videos(videos, id_mod, avg_mod, video_mod):
 
 
 def channel(request, username):
+    user = User.objects.get(username=username)
+    users = User.objects.all()
+    videos = user.video_set.all()
     if request.method == 'GET':
-        user = User.objects.get(username=username)
-        videos = user.video_set.all()
         hasRes = False
         if len(videos) >= 1:
             hasRes = True
         else:
             hasRes = False
-
         for video in videos:
             video.tags = video.tags.split(',')
             video.tags.pop()
-        users = User.objects.all()
-        return render(request, 'channel.html',
-                  {'hasRes': hasRes, 'videos': videos, 'user': user, 'users': users})
-    if request.method == 'GET' and request.user.is_authenticated():
-        user = User.objects.get(username=username)
-        videos = user.video_set.all()
-        hasRes = False
-        if len(videos) >= 1:
-            hasRes = True
-        else:
-            hasRes = False
-
-        for video in videos:
-            video.tags = video.tags.split(',')
-            video.tags.pop()
-        users = User.objects.all()
-        subchan = []
-        subs = user.profile.subscribes
-        videos2 = Video.objects.all()
-        for v in videos2:
-            if (v.user.username in subs) and (subs != ""):
-                if v.user not in subchan and v.user != user:
-                    subchan.append(v.user)
-
-        return render(request, 'channel.html', {'hasRes': hasRes, 'videos': videos,'subchan': subchan, 'user': user, 'users': users})
+        return render(request, 'channel.html', {'hasRes': hasRes, 'videos': videos, 'user': user, 'users': users})
     else:
-        return render(request, 'home.html', {})
+        return render(request, 'home.html', {'users': users})
 
 
 def channels(request):
+    users = User.objects.all()
     if request.method == 'GET':
-        users = User.objects.all()
         return render(request, 'channels.html', {'users': users})
     else:
-        return render(request, 'home.html', {})
+        return render(request, 'home.html', {'users': users})
 
 
 def edit_review(request, vid, rid):
+    users = User.objects.all()
     if request.method == 'GET' and request.user.is_authenticated():
         review = Review.objects.get(id=rid)
         video = Video.objects.get(id=vid)
         vID = video.id
-        return render(request, 'edit_review.html', {'review':review, 'vID':vID})
+        return render(request, 'edit_review.html', {'review': review, 'vID': vID, 'users': users})
     elif request.method == 'POST' and request.is_ajax() and request.POST['edit_review'] == 'yes' and request.user.is_authenticated():
         newText = request.POST['text']
         newVal = int(request.POST['rating']) # new rating
@@ -162,7 +129,6 @@ def delete_review(request, rID):
         review = Review.objects.get(id=rID)
         vID = request.POST['vID']
         video = Video.objects.get(id=vID)
-
         # average = ((average * nbValues) - value) / (nbValues - 1)
         old_avg = float(video.avg_rating)
         rating = float(review.rating)
@@ -170,11 +136,9 @@ def delete_review(request, rID):
         new_avg = 0.0
         if (count - 1) > 0:
             new_avg = ( (old_avg * count) - rating ) / ( count-1 )
-
         video.avg_rating = new_avg
         video.rating_counter -= 1
         video.save()
-
         review.delete()
         data = {'ok':'yes'}
         return HttpResponse(json.dumps(data), content_type='application/json')
@@ -185,7 +149,6 @@ def rated_review2(request, vID, rID):
         video = Video.objects.get(id=vID)
         review = Review.objects.get(id=rID)
         uname = request.user.username
-
         if request.POST['disapprove'] == 'yes':
             if (uname in review.disapprovedBy):
                 data = {'ok':'yes'}
@@ -214,7 +177,6 @@ def rated_review(request, vID, rID):
         video = Video.objects.get(id=vID)
         review = Review.objects.get(id=rID)
         uname = request.user.username
-
         if request.POST['approve'] == 'yes':
             if (uname in review.approvedBy):
                 data = {'ok':'yes'}
@@ -223,7 +185,7 @@ def rated_review(request, vID, rID):
                 if uname in review.disapprovedBy:
                     review.approvedBy += uname
                     review.approvedBy += ","
-                    disliked = review.disapprovedBy.replace(''+uname+',', "")
+                    disliked = review.disapprovedBy.replace(''+uname+',', " ")
                     review.disapprovedBy = disliked
                     review.save()
 
@@ -256,6 +218,7 @@ def rated_video(request, id):
 
 # view a specific uploaded video
 def s_vid(request, id):
+    users = User.objects.all()
     if request.method == 'GET':
         video = Video.objects.get(id=id)
         videos = Video.objects.all()
@@ -294,21 +257,20 @@ def s_vid(request, id):
                         if other.lower() == tag.lower():
                             if v not in rel_videos and v != video:
                                 rel_videos.append(v)
-
         rel_videos = rel_videos[-15:]
         rel_videos = sort_videos(rel_videos, 4, 10, 5)
-        return render(request, 's_vid.html', {'video': video, 'tags': tags, 'rated': rated, 'lists': lists, "rel_videos":rel_videos})
+        return render(request, 's_vid.html', {'video': video, 'tags': tags, 'rated': rated, 'lists': lists, "rel_videos":rel_videos, 'users': users})
     elif request.method == 'POST':
-        return render(request, 'home.html', {})
+        return render(request, 'home.html', {'users': users})
     else:
-        return render(request, 'home.html', {})
+        return render(request, 'home.html', {'users': users})
 
 
 # search for a video in db
 def search_vid(request):
+    users = User.objects.all()
     if request.method == 'POST':
         if (request.POST['search'] != "") and (request.POST['search'] is not None):
-            users = User.objects.all()
             channels = []
             term = request.POST['search']
             t = term.lower()
@@ -333,29 +295,29 @@ def search_vid(request):
                 video.tags = video.tags.split(',')
                 video.tags.pop()
 
-            return render(request, 'search_res.html', {'results': results, 'term': term, 'hasRes': hasRes, 'channels': channels})
+            return render(request, 'search_res.html', {'results': results, 'term': term, 'hasRes': hasRes, 'channels': channels, 'users': users})
         else:
             term = request.POST['search']
             hasRes = False
-            return render(request, 'search_res.html', {'term': term, 'hasRes': hasRes})
+            return render(request, 'search_res.html', {'term': term, 'hasRes': hasRes, 'users': users})
     else:
-        return render(request, 'home.html', {})
+        return render(request, 'home.html', {'users': users})
 
 
 # update a video here (description and title only !):
 def updt_vid(request, id):
+    users = User.objects.all()
     if request.method == 'GET' and request.user.is_authenticated():
         user = request.user
         video = user.video_set.get(id=id)
         pk = video.id
         form = UpdateVideoForm(instance=video)
-        return render(request, 'updt_vid.html', {'form': form, 'pk': pk})
+        return render(request, 'updt_vid.html', {'form': form, 'pk': pk, 'users': users})
     elif request.method == 'POST' and request.user.is_authenticated():
         form = UpdateVideoForm(request.POST, request.FILES)
         user = request.user
         video = user.video_set.get(id=id)
         pk = video.id
-        users = User.objects.all()
         if form.is_valid():
             t = form.cleaned_data['title']
             d = form.cleaned_data['description']
@@ -380,22 +342,20 @@ def updt_vid(request, id):
                 pass
             else:
                 video.tags = tg
-
             video.save()
-            return render(request, 'profile.html', {})
+            return render(request, 'profile.html', {'users': users})
         else:
-            return render(request, 'updt_vid.html', {'form': form, 'pk': pk,"users":users})
+            return render(request, 'updt_vid.html', {'form': form, 'pk': pk, "users": users})
     else:
-        return render(request, 'sign-in.html', {})
+        return render(request, 'sign-in.html', {'users': users})
 
 
 # deletes a specific video
 def del_vid(request, id):
+    users = User.objects.all()
     if request.method == 'GET' and request.user.is_authenticated():
         user = request.user
-        users = User.objects.all()
         video = user.video_set.get(id=id)
-
         for u in users:
                 if video.title in u.profile.notifications:
                     u.profile.notifications = u.profile.notifications.replace(video.title, " ")
@@ -404,10 +364,11 @@ def del_vid(request, id):
         video.delete()
         return render(request, 'profile.html', {'video': video, "users": users})
     else:
-        return render(request, 'sign-in.html', {})
+        return render(request, 'sign-in.html', {'users': users})
 
 
 def del_notifications(request, id):
+    users = User.objects.all()
     if request.method == 'GET' and request.user.is_authenticated():
         user = request.user
         u = user.profile
@@ -416,24 +377,26 @@ def del_notifications(request, id):
             u.notifications = u.notifications.replace(video.title, " ")
             u.count -= 1
             u.save()
-        return render(request, 'profile.html', {"u": u})
+        return render(request, 'profile.html', {"u": u, 'users': users})
     else:
-        return render(request, 'sign-in.html', {})
+        return render(request, 'sign-in.html', {'users': users})
 
 
 def del_subscribes(request, id):
+    users = User.objects.all()
     if request.method == 'GET' and request.user.is_authenticated():
         u = request.user.profile
         video = Video.objects.get(id=id)
         if video.user.username in u.subscribes:
             u.subscribes = u.subscribes.replace(video.user.username, " ")
             u.save()
-        return render(request, 'profile.html', {"u": u, "video": video})
+        return render(request, 'profile.html', {"u": u, "video": video, 'users': users})
     else:
-        return render(request, 'sign-in.html', {})
+        return render(request, 'sign-in.html', {'users': users})
 
 
 def view_vid(request):
+    users = User.objects.all()
     if request.method == 'GET' and request.user.is_authenticated():
         user = request.user
         videos = user.video_set.all()
@@ -442,21 +405,20 @@ def view_vid(request):
             hasRes = True
         else:
             hasRes = False
-
-        return render(request, 'view_vid.html', {'hasRes': hasRes, 'videos': videos})
+        return render(request, 'view_vid.html', {'hasRes': hasRes, 'videos': videos,'users': users})
     else:
-        return render(request, 'sign-in.html', {})
+        return render(request, 'sign-in.html', {'users': users})
 
 
 # upload video to 'uploads/media/videos'
 def upld_vid(request):
+    users = User.objects.all()
     if request.method == 'GET' and request.user.is_authenticated():
         form = UploadVideoForm()
-        return render(request, 'upld_vid.html', {'form': form})
+        return render(request, 'upld_vid.html', {'form': form, 'users': users})
     elif request.method == 'POST' and request.user.is_authenticated():
         form = UploadVideoForm(request.POST, request.FILES)
         if form.is_valid():
-            users = User.objects.all()
             user = request.user
             v = form.cleaned_data['video']
             t = form.cleaned_data['title']
@@ -485,16 +447,19 @@ def upld_vid(request):
                     u.notifications = u.notifications + " " + t
                     u.count += 1
                     u.save()
-            return render(request, 'profile.html', {"users": users, "th": th})
+            return render(request, 'profile.html', {"users": users, "th": th, 'users': users})
         else:
-            return render(request, 'upld_vid.html', {'form': form})
+            return render(request, 'upld_vid.html', {'form': form, 'users': users})
     else:
-        return render(request, 'sign-in.html', {})
+        return render(request, 'sign-in.html', {'users': users})
+
+
 # reset your password
 def reset_pwd(request):
+    users = User.objects.all()
     if request.method == 'GET' and request.user.is_authenticated():
         form = ResetPasswordForm()
-        return render(request, 'reset_pwd.html', {'form': form})
+        return render(request, 'reset_pwd.html', {'form': form, 'users': users})
     elif request.method == 'POST' and request.user.is_authenticated():
         form = ResetPasswordForm(request.POST)
         if form.is_valid():
@@ -503,14 +468,15 @@ def reset_pwd(request):
             user = User.objects.get(username=uname)
             user.set_password(new_pwd)
             user.save()
-            return render(request, 'profile.html', {})
+            return render(request, 'profile.html', { 'users': users})
         else:
-            return render(request, 'reset_pwd.html', {'form': form})
+            return render(request, 'reset_pwd.html', {'form': form, 'users': users})
     else:
-        return render(request, 'sign-in.html', {})
+        return render(request, 'sign-in.html', { 'users': users})
 
 
 def notifications(request):
+    users = User.objects.all()
     if request.method == 'GET' and request.user.is_authenticated():
         u = request.user
         videos = Video.objects.all()
@@ -527,52 +493,40 @@ def notifications(request):
             hasRes = True
         else:
             hasRes = False
-        return render(request, 'notifications.html', {'hasRes': hasRes, "nots": nots, "not_vid": not_vid})
+        return render(request, 'notifications.html', {'hasRes': hasRes, "nots": nots, "not_vid": not_vid, 'users': users})
     else:
-        return render(request, 'home.html', {})
+        return render(request, 'home.html', {'users': users})
 
 
 def sub(request, id):
+    users = User.objects.all()
     if request.method == 'GET' and request.user.is_authenticated():
-        # subscribe
         u = request.user.profile
         video = Video.objects.get(id=id)
         if video.user.username not in u.subscribes:
             u.subscribes = u.subscribes + " " + video.user.username
             u.save()
-        return render(request, 'profile.html', {"video": video})
+        return render(request, 'profile.html', {"video": video, 'users': users})
     else:
-        return render(request, 'home.html', {})
+        return render(request, 'home.html', {'users': users})
 
 
 def subscribes(request):
+    users = User.objects.all()
     if request.user.is_authenticated():
         u = request.user
         videos = Video.objects.all()
-        sub_vid = []
-        subscr = []
-        subchan = []
-        subs = u.profile.subscribes
-        for v in videos:
-            if (v.user.username in subs) and (subs != ""):
-                if v.user not in subchan and v.user != u:
-                    subscr.append(v.user.username)
-                    subchan.append(v.user)
-                    sub_vid.append(v)
-        hasRes = False
-        if len(sub_vid) >= 1:
-            hasRes = True
-        else:
-            hasRes = False
-        return render(request, 'subscribes.html', {'hasRes': hasRes, "subscr": subscr, "sub_vid": sub_vid, "subchan": subchan})
+        return render(request, 'subscribes.html', {'users': users})
     else:
-        return render(request, 'home.html', {})
+        return render(request, 'home.html', {'users': users})
+
 
 # edit profile picture
 def edit_avatar(request):
+    users = User.objects.all()
     if request.method == 'GET' and request.user.is_authenticated():
         form = EditAvatarForm()
-        return render(request, 'edit_avatar.html', {'form': form})
+        return render(request, 'edit_avatar.html', {'form': form,'users': users})
     elif request.method == 'POST' and request.user.is_authenticated():
         form = EditAvatarForm(request.POST, request.FILES)
         if form.is_valid():
@@ -580,33 +534,35 @@ def edit_avatar(request):
             new_image = form.cleaned_data["image"]
             if def_img == new_image:
                 error = "You haven't selected any image. Please try again."
-                return render(request, 'profile.html', {'form': form, 'error': error})
+                return render(request, 'profile.html', {'form': form, 'error': error,'users': users})
             else:
                 profile = request.user.profile
                 profile.image = new_image
                 profile.save()
                 return render(request, 'profile.html', {})
         else:
-            return render(request, 'edit_avatar.html', {'form': form})
+            return render(request, 'edit_avatar.html', {'form': form,'users': users})
     else:
-        return render(request, 'sign-in.html', {})
+        return render(request, 'sign-in.html', {'users': users})
 
 
 # view your profile
 def profile(request):
+    users = User.objects.all()
     if request.method == 'GET' and request.user.is_authenticated():
-        return render(request, 'profile.html', {})
+        return render(request, 'profile.html', {'users': users})
     else:
-        return render(request, 'sign-in.html', {})
+        return render(request, 'sign-in.html', {'users': users})
 
 
 # Signs in the user..
 def signin_view(request):
+    users = User.objects.all()
     if request.method == 'GET':
         if request.user.is_authenticated():
-            return render(request, 'profile.html', {})
+            return render(request, 'profile.html', {'users': users})
         else:
-            return render(request, 'sign-in.html', {})
+            return render(request, 'sign-in.html', {'users': users})
     elif request.method == 'POST':
         uname = request.POST['uname']
         pwd = request.POST['pwd']
@@ -614,20 +570,20 @@ def signin_view(request):
 
         if user is not None:
             login(request, user)
-            return render(request, 'profile.html', {})
+            return render(request, 'profile.html', {'users': users})
         else:
             error = 'Username or password are invalid. Please, try again.'
-            return render(request, 'sign-in.html', {'error': error})
+            return render(request, 'sign-in.html', {'error': error,'users': users})
     else:
-        return render(request, 'sign-in.html', {})
+        return render(request, 'sign-in.html', {'users': users})
 
 
 # Signs up the user..
 def signup_view(request):
+    users = User.objects.all()
     if request.method == 'POST':
-
         if request.user.is_authenticated():
-            return render(request, 'profile.html', {})
+            return render(request, 'profile.html', {'users': users})
 
         form = UserRegFrom(request.POST)
         if form.is_valid():
@@ -644,19 +600,20 @@ def signup_view(request):
             img_path = user.profile.image
             print("Image math: ", img_path)
 
-            return render(request, 'profile.html', {})
+            return render(request, 'profile.html', {'users': users})
 
         else:
-            return render(request, 'sign-up.html', {'form': form})
+            return render(request, 'sign-up.html', {'form': form, 'users': users})
     else:
         if (request.method == 'GET') and (not request.user.is_authenticated()):
             form = UserRegFrom()
-            return render(request, 'sign-up.html', {'form': form})
+            return render(request, 'sign-up.html', {'form': form, 'users': users})
         else:
-            return render(request, 'home.html', {})
+            return render(request, 'home.html', {'users': users})
 
 
 # Logs out the user..
 def signout_view(request):
+    users = User.objects.all()
     logout(request)
-    return render(request, 'sign-in.html', {})
+    return render(request, 'sign-in.html', {'users': users})
