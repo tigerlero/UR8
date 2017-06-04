@@ -27,7 +27,7 @@ def home(request):
     new = new[-29:]
     popular = popular[-29:]
     best = best[-29:]
-    video_results = sort_videos(video_results)
+    video_results = sort_videos(video_results, 4, 10, 5)
     new = sort_videos(new, 10, 4, 1)
     popular = sort_videos(popular, 1, 5, 10)
     best = sort_videos(best, 1, 10, 2)
