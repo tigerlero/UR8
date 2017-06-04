@@ -10,22 +10,23 @@ from moviepy.editor import *
 import os
 import json
 import time
-from django.shortcuts import render_to_response
-from django.template import RequestContext
+
+
+def handler400(request):
+    return render(request, '400.html', status=400)
+
+
+def handler403(request):
+    return render(request, '403.html', status=403)
 
 
 def handler404(request):
-    response = render_to_response('404.html', {},
-                                  context_instance=RequestContext(request))
-    response.status_code = 404
-    return response
+    return render(request, '404.html', status=404)
 
 
 def handler500(request):
-    response = render_to_response('500.html', {},
-                                  context_instance=RequestContext(request))
-    response.status_code = 500
-    return response
+    return render(request, '500.html', status=500)
+
 
 def home(request):
     videos = Video.objects.all()
@@ -43,10 +44,10 @@ def home(request):
     new = new[-29:]
     popular = popular[-29:]
     best = best[-29:]
-    video_results = sort_videos(video_results, 4, 10, 5)
-    new = sort_videos(new, 10, 4, 1)
-    popular = sort_videos(popular, 1, 5, 10)
-    best = sort_videos(best, 1, 10, 2)
+    video_results = sort_videos(video_results, 4, 12, 5)
+    new = sort_videos(new, 10, 6, 1)
+    popular = sort_videos(popular, 1, 6, 10)
+    best = sort_videos(best, 1, 17, 2)
     hasRes = False
     if len(video_results) >= 1:
         hasRes = True

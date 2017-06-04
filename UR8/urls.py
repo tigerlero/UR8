@@ -1,6 +1,9 @@
 from django.conf.urls import url
 from . import views
-
+handler404 = views.handler404
+handler500 = views.handler500
+handler403 = views.handler403
+handler400 = views.handler400
 urlpatterns = [
     url(r'^$', views.home, name="home"),
     url(r'^sign-up/$', views.signup_view, name="sign_up"),

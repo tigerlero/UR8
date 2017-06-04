@@ -23,10 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'lxprlcqarvh1vwopff_z7u-&bwt-yyff=yo$z3mqp+6v(442p4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['ur8.herokuapp.com',
-                 'ur8.herokuapp.com/ur8', '127.0.0.1',]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -125,7 +124,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 STATIC_URL = '/static/'
-STATIC_ROOT= os.path.join(BASE_DIR, '')
+STATIC_ROOT = os.path.join(BASE_DIR, '')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads/media')
 MEDIA_URL = '/media/'

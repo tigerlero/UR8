@@ -13,22 +13,32 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+
+
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-from django.conf.urls import (
-handler400, handler403, handler404, handler500
-)
-
-
+import django.views.defaults
+from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('UR8.urls'))
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    url(r'^', include('UR8.urls')),
+    url(r'^404/$', django.views.defaults.page_not_found, ),
+    url(r'^500/$', django.views.defaults.server_error),
+    url(r'^403/$', django.views.defaults.permission_denied),
+    url(r'^400/$', django.views.defaults.bad_request),
+]
 
-
-handler400 = 'UR8.views.bad_request'
-handler403 = 'UR8.views.permission_denied'
-handler404 = 'UR8.views.handler404'
-handler500 = 'UR8.views.handler500'
+if settings.DEBUG:
+    urlpatterns += static(
+        settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(
+        settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+elif getattr(settings, 'FORCE_SERVE_STATIC', True):
+    settings.DEBUG = True
+    urlpatterns += static(
+        settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(
+        settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    settings.DEBUG = False
