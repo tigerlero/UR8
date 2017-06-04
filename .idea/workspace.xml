@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdba3134-eb2b-42f0-8c12-9d864dd77c7c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/channel.html" afterPath="$PROJECT_DIR$/UR8/templates/channel.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/channels.html" afterPath="$PROJECT_DIR$/UR8/templates/channels.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/edit_avatar.html" afterPath="$PROJECT_DIR$/UR8/templates/edit_avatar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/edit_review.html" afterPath="$PROJECT_DIR$/UR8/templates/edit_review.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/home.html" afterPath="$PROJECT_DIR$/UR8/templates/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/notifications.html" afterPath="$PROJECT_DIR$/UR8/templates/notifications.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/profile.html" afterPath="$PROJECT_DIR$/UR8/templates/profile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/reset_pwd.html" afterPath="$PROJECT_DIR$/UR8/templates/reset_pwd.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/s_vid.html" afterPath="$PROJECT_DIR$/UR8/templates/s_vid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/search_res.html" afterPath="$PROJECT_DIR$/UR8/templates/search_res.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/sign-in.html" afterPath="$PROJECT_DIR$/UR8/templates/sign-in.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/sign-up.html" afterPath="$PROJECT_DIR$/UR8/templates/sign-up.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/subscribes.html" afterPath="$PROJECT_DIR$/UR8/templates/subscribes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/updt_vid.html" afterPath="$PROJECT_DIR$/UR8/templates/updt_vid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/upld_vid.html" afterPath="$PROJECT_DIR$/UR8/templates/upld_vid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/view_vid.html" afterPath="$PROJECT_DIR$/UR8/templates/view_vid.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,34 +32,62 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="sign-up.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sign-up.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UR8/templates/sign-up.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="725">
-              <caret line="46" column="28" lean-forward="true" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+            <state relative-caret-position="861">
+              <caret line="121" column="8" lean-forward="false" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="8" />
               <folding>
+                <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
                 <element signature="n#nav#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#nav#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
                 <element signature="n#if#8;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UR8/templates/home.html">
+      <file leaf-file-name="subscribes.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UR8/templates/subscribes.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="633">
-              <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="195" selection-end-column="10" />
+            <state relative-caret-position="861">
+              <caret line="209" column="8" lean-forward="false" selection-start-line="209" selection-start-column="8" selection-end-line="209" selection-end-column="8" />
               <folding>
-                <element signature="n#nav#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#!!top" expanded="false" />
+                <element signature="e#3141#3205#0#HTML" expanded="true" />
+                <element signature="e#3104#7972#0#HTML" expanded="false" />
+                <element signature="e#3216#3234#0#HTML" expanded="true" />
+                <element signature="e#3636#3687#0#HTML" expanded="true" />
+                <element signature="e#3821#3892#0#HTML" expanded="true" />
+                <element signature="e#3900#3919#0#HTML" expanded="true" />
+                <element signature="e#4123#4149#0#HTML" expanded="true" />
+                <element signature="e#4250#4448#0#HTML" expanded="true" />
+                <element signature="e#4629#7952#0#HTML" expanded="false" />
+                <element signature="e#4698#4719#0#HTML" expanded="true" />
+                <element signature="e#4826#4852#0#HTML" expanded="true" />
+                <element signature="e#5541#5567#0#HTML" expanded="true" />
+                <element signature="e#5706#5745#0#HTML" expanded="true" />
+                <element signature="e#5831#5875#0#HTML" expanded="true" />
+                <element signature="e#5993#6020#0#HTML" expanded="true" />
+                <element signature="e#6650#6689#0#HTML" expanded="true" />
+                <element signature="e#6799#6843#0#HTML" expanded="true" />
+                <element signature="e#6979#7006#0#HTML" expanded="true" />
+                <element signature="e#7977#8872#0#HTML" expanded="false" />
                 <element signature="n#if#8;n#!!top" expanded="false" />
-                <element signature="n#if#16;n#!!top" expanded="false" />
-                <element signature="n#if#22;n#!!top" expanded="false" />
-                <element signature="n#if#30;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -53,9 +96,29 @@
       <file leaf-file-name="updt_vid.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UR8/templates/updt_vid.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="155" column="32" lean-forward="false" selection-start-line="155" selection-start-column="32" selection-end-line="155" selection-end-column="32" />
+            <state relative-caret-position="356">
+              <caret line="121" column="8" lean-forward="false" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="8" />
               <folding>
+                <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#nav#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#nav#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#!!top" expanded="false" />
                 <element signature="n#if#8;n#!!top" expanded="false" />
               </folding>
             </state>
@@ -65,46 +128,58 @@
       <file leaf-file-name="upld_vid.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UR8/templates/upld_vid.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="154" column="32" lean-forward="false" selection-start-line="154" selection-start-column="32" selection-end-line="154" selection-end-column="32" />
+            <state relative-caret-position="861">
+              <caret line="120" column="8" lean-forward="false" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="8" />
               <folding>
+                <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#nav#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#nav#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#!!top" expanded="false" />
                 <element signature="n#if#8;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search_res.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UR8/templates/search_res.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1201">
-              <caret line="242" column="32" lean-forward="false" selection-start-line="242" selection-start-column="32" selection-end-line="242" selection-end-column="32" />
-              <folding>
-                <element signature="n#if#8;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view_vid.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="view_vid.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UR8/templates/view_vid.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="249" column="26" lean-forward="false" selection-start-line="249" selection-start-column="26" selection-end-line="249" selection-end-column="26" />
+            <state relative-caret-position="257">
+              <caret line="213" column="8" lean-forward="false" selection-start-line="213" selection-start-column="8" selection-end-line="213" selection-end-column="8" />
               <folding>
-                <element signature="n#if#8;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="s_vid.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UR8/templates/s_vid.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="573">
-              <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="236" selection-end-column="8" />
-              <folding>
+                <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
                 <element signature="n#nav#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#nav#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
                 <element signature="n#if#8;n#!!top" expanded="false" />
               </folding>
             </state>
@@ -115,14 +190,88 @@
         <entry file="file://$PROJECT_DIR$/UR8/templates/sign-in.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="861">
-              <caret line="117" column="8" lean-forward="false" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="8" />
+              <caret line="120" column="8" lean-forward="false" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="8" />
               <folding>
+                <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
                 <element signature="n#nav#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#nav#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
                 <element signature="n#if#8;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#div#2;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search_res.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UR8/templates/search_res.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="861">
+              <caret line="208" column="8" lean-forward="false" selection-start-line="208" selection-start-column="8" selection-end-line="208" selection-end-column="8" />
+              <folding>
+                <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#nav#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#nav#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#!!top" expanded="false" />
+                <element signature="n#if#8;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="s_vid.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UR8/templates/s_vid.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="691">
+              <caret line="239" column="8" lean-forward="false" selection-start-line="239" selection-start-column="8" selection-end-line="239" selection-end-column="8" />
+              <folding>
+                <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#nav#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#nav#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#if#8;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -141,11 +290,28 @@
       <file leaf-file-name="reset_pwd.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UR8/templates/reset_pwd.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="119" column="4" lean-forward="true" selection-start-line="119" selection-start-column="4" selection-end-line="146" selection-end-column="6" />
+            <state relative-caret-position="861">
+              <caret line="121" column="8" lean-forward="false" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="8" />
               <folding>
+                <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#nav#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#nav#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
                 <element signature="n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#!!top" expanded="false" />
                 <element signature="n#if#8;n#!!top" expanded="false" />
               </folding>
             </state>
@@ -171,22 +337,22 @@
         <option value="$PROJECT_DIR$/UR8/urls.py" />
         <option value="$PROJECT_DIR$/UR8/templates/base.html" />
         <option value="$PROJECT_DIR$/UR8/views.py" />
-        <option value="$PROJECT_DIR$/UR8/templates/subscribes.html" />
-        <option value="$PROJECT_DIR$/UR8/templates/view_vid.html" />
-        <option value="$PROJECT_DIR$/UR8/templates/upld_vid.html" />
-        <option value="$PROJECT_DIR$/UR8/templates/updt_vid.html" />
-        <option value="$PROJECT_DIR$/UR8/templates/search_res.html" />
-        <option value="$PROJECT_DIR$/UR8/templates/s_vid.html" />
-        <option value="$PROJECT_DIR$/UR8/templates/reset_pwd.html" />
-        <option value="$PROJECT_DIR$/UR8/templates/profile.html" />
-        <option value="$PROJECT_DIR$/UR8/templates/notifications.html" />
+        <option value="$PROJECT_DIR$/UR8/templates/home.html" />
         <option value="$PROJECT_DIR$/UR8/templates/edit_review.html" />
         <option value="$PROJECT_DIR$/UR8/templates/edit_avatar.html" />
         <option value="$PROJECT_DIR$/UR8/templates/channels.html" />
         <option value="$PROJECT_DIR$/UR8/templates/channel.html" />
-        <option value="$PROJECT_DIR$/UR8/templates/home.html" />
-        <option value="$PROJECT_DIR$/UR8/templates/sign-up.html" />
+        <option value="$PROJECT_DIR$/UR8/templates/notifications.html" />
+        <option value="$PROJECT_DIR$/UR8/templates/profile.html" />
+        <option value="$PROJECT_DIR$/UR8/templates/reset_pwd.html" />
+        <option value="$PROJECT_DIR$/UR8/templates/s_vid.html" />
+        <option value="$PROJECT_DIR$/UR8/templates/search_res.html" />
         <option value="$PROJECT_DIR$/UR8/templates/sign-in.html" />
+        <option value="$PROJECT_DIR$/UR8/templates/sign-up.html" />
+        <option value="$PROJECT_DIR$/UR8/templates/subscribes.html" />
+        <option value="$PROJECT_DIR$/UR8/templates/updt_vid.html" />
+        <option value="$PROJECT_DIR$/UR8/templates/upld_vid.html" />
+        <option value="$PROJECT_DIR$/UR8/templates/view_vid.html" />
       </list>
     </option>
   </component>
@@ -643,18 +809,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2652">
           <caret line="156" column="71" lean-forward="false" selection-start-line="156" selection-start-column="71" selection-end-line="156" selection-end-column="71" />
-          <folding>
-            <element signature="e#3103#7821#0#HTML" expanded="false" />
-            <element signature="e#4582#4603#0#HTML" expanded="false" />
-            <element signature="e#4697#4723#0#HTML" expanded="false" />
-            <element signature="e#4917#5188#0#HTML" expanded="false" />
-            <element signature="e#5192#5388#0#HTML" expanded="false" />
-            <element signature="e#5412#5438#0#HTML" expanded="false" />
-            <element signature="e#5577#5616#0#HTML" expanded="false" />
-            <element signature="e#5862#5889#0#HTML" expanded="false" />
-            <element signature="e#6519#6558#0#HTML" expanded="false" />
-            <element signature="e#6830#6857#0#HTML" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -692,7 +847,24 @@
         <state relative-caret-position="2550">
           <caret line="150" column="12" lean-forward="true" selection-start-line="150" selection-start-column="12" selection-end-line="150" selection-end-column="12" />
           <folding>
+            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
             <element signature="n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#!!top" expanded="false" />
             <element signature="n#if#8;n#!!top" expanded="false" />
@@ -857,7 +1029,7 @@
         <state relative-caret-position="493">
           <caret line="29" column="1" lean-forward="false" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -890,11 +1062,118 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/UR8/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="116" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#!!top" expanded="false" />
+            <element signature="n#if#8;n#!!top" expanded="false" />
+            <element signature="n#if#16;n#!!top" expanded="false" />
+            <element signature="n#if#22;n#!!top" expanded="false" />
+            <element signature="n#if#30;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UR8/templates/edit_review.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="861">
+          <caret line="131" column="8" lean-forward="false" selection-start-line="131" selection-start-column="8" selection-end-line="131" selection-end-column="8" />
+          <folding>
+            <element signature="e#1572#1636#0#HTML" expanded="true" />
+            <element signature="e#1535#6403#0#HTML" expanded="false" />
+            <element signature="e#1647#1665#0#HTML" expanded="true" />
+            <element signature="e#2067#2118#0#HTML" expanded="true" />
+            <element signature="e#2252#2323#0#HTML" expanded="true" />
+            <element signature="e#2331#2350#0#HTML" expanded="true" />
+            <element signature="e#2554#2580#0#HTML" expanded="true" />
+            <element signature="e#2681#2879#0#HTML" expanded="true" />
+            <element signature="e#3060#6383#0#HTML" expanded="false" />
+            <element signature="e#3129#3150#0#HTML" expanded="true" />
+            <element signature="e#3257#3283#0#HTML" expanded="true" />
+            <element signature="e#3972#3998#0#HTML" expanded="true" />
+            <element signature="e#4137#4176#0#HTML" expanded="true" />
+            <element signature="e#4262#4306#0#HTML" expanded="true" />
+            <element signature="e#4424#4451#0#HTML" expanded="true" />
+            <element signature="e#5081#5120#0#HTML" expanded="true" />
+            <element signature="e#5230#5274#0#HTML" expanded="true" />
+            <element signature="e#5410#5437#0#HTML" expanded="true" />
+            <element signature="n#if#8;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UR8/templates/edit_avatar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="861">
+          <caret line="121" column="8" lean-forward="false" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="8" />
+          <folding>
+            <element signature="e#1316#1380#0#HTML" expanded="true" />
+            <element signature="e#1279#6147#0#HTML" expanded="false" />
+            <element signature="e#1391#1409#0#HTML" expanded="true" />
+            <element signature="e#1811#1862#0#HTML" expanded="true" />
+            <element signature="e#1996#2067#0#HTML" expanded="true" />
+            <element signature="e#2075#2094#0#HTML" expanded="true" />
+            <element signature="e#2298#2324#0#HTML" expanded="true" />
+            <element signature="e#2425#2623#0#HTML" expanded="true" />
+            <element signature="e#2804#6127#0#HTML" expanded="false" />
+            <element signature="e#2873#2894#0#HTML" expanded="true" />
+            <element signature="e#3001#3027#0#HTML" expanded="true" />
+            <element signature="e#3716#3742#0#HTML" expanded="true" />
+            <element signature="e#3881#3920#0#HTML" expanded="true" />
+            <element signature="e#4006#4050#0#HTML" expanded="true" />
+            <element signature="e#4168#4195#0#HTML" expanded="true" />
+            <element signature="e#4825#4864#0#HTML" expanded="true" />
+            <element signature="e#4974#5018#0#HTML" expanded="true" />
+            <element signature="e#5154#5181#0#HTML" expanded="true" />
+            <element signature="n#if#8;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/channels.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="224" column="1" lean-forward="true" selection-start-line="224" selection-start-column="1" selection-end-line="224" selection-end-column="1" />
+        <state relative-caret-position="861">
+          <caret line="201" column="8" lean-forward="false" selection-start-line="201" selection-start-column="8" selection-end-line="201" selection-end-column="8" />
           <folding>
+            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
             <element signature="n#if#8;n#!!top" expanded="false" />
           </folding>
         </state>
@@ -902,9 +1181,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/channel.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="224" column="32" lean-forward="false" selection-start-line="224" selection-start-column="32" selection-end-line="224" selection-end-column="32" />
+        <state relative-caret-position="861">
+          <caret line="190" column="8" lean-forward="false" selection-start-line="190" selection-start-column="8" selection-end-line="190" selection-end-column="8" />
           <folding>
+            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#!!top" expanded="false" />
             <element signature="n#if#8;n#!!top" expanded="false" />
           </folding>
         </state>
@@ -920,29 +1218,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/notifications.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="243" column="32" lean-forward="false" selection-start-line="243" selection-start-column="32" selection-end-line="243" selection-end-column="32" />
+        <state relative-caret-position="861">
+          <caret line="209" column="8" lean-forward="false" selection-start-line="209" selection-start-column="8" selection-end-line="209" selection-end-column="8" />
           <folding>
-            <element signature="n#if#8;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UR8/templates/edit_avatar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="155" column="32" lean-forward="false" selection-start-line="155" selection-start-column="32" selection-end-line="155" selection-end-column="32" />
-          <folding>
-            <element signature="n#if#8;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UR8/templates/edit_review.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="165" column="32" lean-forward="false" selection-start-line="165" selection-start-column="32" selection-end-line="165" selection-end-column="32" />
-          <folding>
+            <element signature="e#3144#3208#0#HTML" expanded="true" />
+            <element signature="e#3107#7975#0#HTML" expanded="false" />
+            <element signature="e#3219#3237#0#HTML" expanded="true" />
+            <element signature="e#3639#3690#0#HTML" expanded="true" />
+            <element signature="e#3824#3895#0#HTML" expanded="true" />
+            <element signature="e#3903#3922#0#HTML" expanded="true" />
+            <element signature="e#4126#4152#0#HTML" expanded="true" />
+            <element signature="e#4253#4451#0#HTML" expanded="true" />
+            <element signature="e#4632#7955#0#HTML" expanded="false" />
+            <element signature="e#4701#4722#0#HTML" expanded="true" />
+            <element signature="e#4829#4855#0#HTML" expanded="true" />
+            <element signature="e#5544#5570#0#HTML" expanded="true" />
+            <element signature="e#5709#5748#0#HTML" expanded="true" />
+            <element signature="e#5834#5878#0#HTML" expanded="true" />
+            <element signature="e#5996#6023#0#HTML" expanded="true" />
+            <element signature="e#6653#6692#0#HTML" expanded="true" />
+            <element signature="e#6802#6846#0#HTML" expanded="true" />
+            <element signature="e#6982#7009#0#HTML" expanded="true" />
+            <element signature="e#8876#12130#0#HTML" expanded="false" />
             <element signature="n#if#8;n#!!top" expanded="false" />
           </folding>
         </state>
@@ -950,49 +1247,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="173" column="32" lean-forward="false" selection-start-line="173" selection-start-column="32" selection-end-line="173" selection-end-column="32" />
+        <state relative-caret-position="861">
+          <caret line="138" column="8" lean-forward="false" selection-start-line="138" selection-start-column="8" selection-end-line="138" selection-end-column="8" />
           <folding>
+            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#!!top" expanded="false" />
             <element signature="n#if#8;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UR8/templates/subscribes.html">
+    <entry file="file://$PROJECT_DIR$/UR8/templates/reset_pwd.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="243" column="32" lean-forward="false" selection-start-line="243" selection-start-column="32" selection-end-line="243" selection-end-column="32" />
+        <state relative-caret-position="861">
+          <caret line="121" column="8" lean-forward="false" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="8" />
           <folding>
-            <element signature="n#if#8;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UR8/templates/updt_vid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="155" column="32" lean-forward="false" selection-start-line="155" selection-start-column="32" selection-end-line="155" selection-end-column="32" />
-          <folding>
-            <element signature="n#if#8;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UR8/templates/upld_vid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="154" column="32" lean-forward="false" selection-start-line="154" selection-start-column="32" selection-end-line="154" selection-end-column="32" />
-          <folding>
-            <element signature="n#if#8;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UR8/templates/view_vid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="249" column="26" lean-forward="false" selection-start-line="249" selection-start-column="26" selection-end-line="249" selection-end-column="26" />
-          <folding>
+            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#!!top" expanded="false" />
             <element signature="n#if#8;n#!!top" expanded="false" />
           </folding>
         </state>
@@ -1006,40 +1312,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UR8/templates/reset_pwd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="119" column="4" lean-forward="true" selection-start-line="119" selection-start-column="4" selection-end-line="146" selection-end-column="6" />
-          <folding>
-            <element signature="n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#!!top" expanded="false" />
-            <element signature="n#if#8;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UR8/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="195" selection-end-column="10" />
-          <folding>
-            <element signature="n#nav#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#!!top" expanded="false" />
-            <element signature="n#if#8;n#!!top" expanded="false" />
-            <element signature="n#if#16;n#!!top" expanded="false" />
-            <element signature="n#if#22;n#!!top" expanded="false" />
-            <element signature="n#if#30;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/s_vid.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="236" selection-end-column="8" />
+        <state relative-caret-position="691">
+          <caret line="239" column="8" lean-forward="false" selection-start-line="239" selection-start-column="8" selection-end-line="239" selection-end-column="8" />
           <folding>
+            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
             <element signature="n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
             <element signature="n#if#8;n#!!top" expanded="false" />
           </folding>
         </state>
@@ -1047,9 +1342,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/search_res.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1201">
-          <caret line="242" column="32" lean-forward="false" selection-start-line="242" selection-start-column="32" selection-end-line="242" selection-end-column="32" />
+        <state relative-caret-position="861">
+          <caret line="208" column="8" lean-forward="false" selection-start-line="208" selection-start-column="8" selection-end-line="208" selection-end-column="8" />
           <folding>
+            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#!!top" expanded="false" />
             <element signature="n#if#8;n#!!top" expanded="false" />
           </folding>
         </state>
@@ -1058,26 +1372,170 @@
     <entry file="file://$PROJECT_DIR$/UR8/templates/sign-in.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="861">
-          <caret line="117" column="8" lean-forward="false" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="8" />
+          <caret line="120" column="8" lean-forward="false" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="8" />
           <folding>
+            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
             <element signature="n#nav#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
             <element signature="n#if#8;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/UR8/templates/sign-up.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="46" column="28" lean-forward="true" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+        <state relative-caret-position="861">
+          <caret line="121" column="8" lean-forward="false" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="8" />
           <folding>
+            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
             <element signature="n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#if#8;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UR8/templates/subscribes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="861">
+          <caret line="209" column="8" lean-forward="false" selection-start-line="209" selection-start-column="8" selection-end-line="209" selection-end-column="8" />
+          <folding>
+            <element signature="e#3141#3205#0#HTML" expanded="true" />
+            <element signature="e#3104#7972#0#HTML" expanded="false" />
+            <element signature="e#3216#3234#0#HTML" expanded="true" />
+            <element signature="e#3636#3687#0#HTML" expanded="true" />
+            <element signature="e#3821#3892#0#HTML" expanded="true" />
+            <element signature="e#3900#3919#0#HTML" expanded="true" />
+            <element signature="e#4123#4149#0#HTML" expanded="true" />
+            <element signature="e#4250#4448#0#HTML" expanded="true" />
+            <element signature="e#4629#7952#0#HTML" expanded="false" />
+            <element signature="e#4698#4719#0#HTML" expanded="true" />
+            <element signature="e#4826#4852#0#HTML" expanded="true" />
+            <element signature="e#5541#5567#0#HTML" expanded="true" />
+            <element signature="e#5706#5745#0#HTML" expanded="true" />
+            <element signature="e#5831#5875#0#HTML" expanded="true" />
+            <element signature="e#5993#6020#0#HTML" expanded="true" />
+            <element signature="e#6650#6689#0#HTML" expanded="true" />
+            <element signature="e#6799#6843#0#HTML" expanded="true" />
+            <element signature="e#6979#7006#0#HTML" expanded="true" />
+            <element signature="e#7977#8872#0#HTML" expanded="false" />
+            <element signature="n#if#8;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UR8/templates/updt_vid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="121" column="8" lean-forward="false" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#!!top" expanded="false" />
+            <element signature="n#if#8;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UR8/templates/upld_vid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="861">
+          <caret line="120" column="8" lean-forward="false" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#!!top" expanded="false" />
+            <element signature="n#if#8;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UR8/templates/view_vid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="213" column="8" lean-forward="false" selection-start-line="213" selection-start-column="8" selection-end-line="213" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#section#0;n#form#0;n#span#2;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#1;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
             <element signature="n#if#8;n#!!top" expanded="false" />
           </folding>
         </state>

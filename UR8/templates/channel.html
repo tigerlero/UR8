@@ -119,20 +119,22 @@
   </style>
 {% endblock %}
 {% block body %}
-<nav class="navbar navbar-fixed-top" style="border-radius:0px; border:0;background-color: lightblue;">
-    <div style="width: 100%">
+ <nav class="navbar navbar-fixed-top" style="border-radius:0px; border:0;background-color: lightblue;">
+    <div style="width: 98%">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         </button>
           <span><a class="navbar-brand" href="{% url 'home' %}">
               <img src="{% static 'UR8.png' %}" width="39" height="26"></a></span>
-          <span class="navbar-brand"><input style="border-width:0px;
-border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hide.png' %}" width="27" height="26"></span>
-<form style="padding-top: 1px;" class="navbar-form navbar-left" action="{% url 'search_vid' %}" method="post">
+          <span class="nav navbar-brand navbar-left collapse navbar-collapse">
+              <input style="border-width:0px;border:none;outline: none;" onclick="HideSide()" type="image"
+                     src="{% static 'hide.png' %}" width="27" height="26"></span>
+          <span  style="margin-left: 1%;padding-top: 11px;width: 63%;position: absolute">
+<form style="width: 100%" action="{% url 'search_vid' %}" method="post">
             {% csrf_token %}
             <section class="flexbox">
             <div class="stretch">
-              <input  style="float:left;" type="text" class="form-control" style="border-radius:0px;" placeholder="Search..." name="search">
+              <input  type="text" class="form-control" style="border-radius:0px;" placeholder="Search..." name="search">
                 </div>
                 <button type="submit" style="border-radius:0px;
                                          background-color:#888888;
@@ -140,9 +142,10 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
                                          " class="btn btn-primary search-btn"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
             </section>
           </form>
+</span>
       </div>
       <div  class=" collapse navbar-collapse" id="myNavbar">
-          <ul style="float: right;" class="nav navbar-nav">
+          <ul style="float: right;" class="nav navbar-nav navbar-right">
             {% if request.user.is_authenticated %}
               <li style="margin-right: 1px;"><a href="{% url 'upld_vid' %}" >
                   <img  src="{% static "up.png" %}" width="27" height="28"></a></li>
@@ -158,7 +161,7 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
               <li style="position: initial;" class="dropdown fill-width" >
               {% if request.user.profile.image == 'avatar/None/default_avatar.png' %}
                 <span style="margin-right: 5%;padding: 13px;" class=" dropdown-toggle" data-toggle="dropdown">
-                   <a href=""> <img style="margin-top: 14px;margin-right: 4%;" class="sm-avatar" src="{% static request.user.profile.image %}" width="29" height="29"></a></span>
+                   <a href=""> <img style="margin-top: 14px;margin-right: 20px;" class="sm-avatar" src="{% static request.user.profile.image %}" width="29" height="29"></a></span>
               <ul style="margin-right: 20px;" role="menu" class="dropdown-menu dropdown-menu-right">
             <li><a href="{% url 'profile' %}"><b style="font-size: 140%;">Profile</b></a></li>
             <li><a href="{% url 'reset_pwd' %}"><b style="font-size: 140%;">Reset Password</b></a></li>
@@ -169,7 +172,7 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
               {% else %}
                 <span style="margin-right: 5%;padding: 13px;" class="dropdown-toggle" data-toggle="dropdown">
                     <a href="">
-                        <img  style="margin-top: 14px;" class="sm-avatar" src="{{ request.user.profile.image.url }}" width="29" height="29">
+                        <img style="margin-top: 14px;margin-right: 20px;" class="sm-avatar" src="{{ request.user.profile.image.url }}" width="29" height="29">
                     </a></span>
               <ul style="margin-right: 20px;" role="menu" class="dropdown-menu dropdown-menu-right">
             <li  ><a href="{% url 'profile' %}"><b style="font-size: 140%;">Profile</b></a></li>
@@ -180,8 +183,8 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
           </ul>
           {% endif %} {% endif %}
            </li>{% if not request.user.is_authenticated %}
-            <li><a href="{% url 'sign_in' %}"><img src="{% static 'login.png' %}" width="27" height="27"></a></li>
-            <li><a href="{% url 'sign_up' %}"><img src="{% static 'Sign.png' %}" width="27" height="27"></a></li>{% endif %}
+            <li ><a href="{% url 'sign_in' %}"><img src="{% static 'login.png' %}" width="27" height="27"></a></li>
+            <li><a href="{% url 'sign_up' %}"><img  src="{% static 'Sign.png' %}" width="27" height="27"></a></li>{% endif %}
         </ul>
       </div>
     </div>
