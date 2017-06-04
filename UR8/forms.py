@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django import forms
-from .models import Profile, Video, Review
+from .models import Profile, Video
 
 
 class UpdateVideoForm(forms.ModelForm):
@@ -35,9 +35,3 @@ class UserRegFrom(forms.ModelForm):
     class Meta:
         model = User
         fields = ['username', 'email', 'password']
-
-
-# class ReviewVideo(forms.ModelForm):
-#     class Meta:
-#         model = Review
-#         fields = ['rating', 'text']
