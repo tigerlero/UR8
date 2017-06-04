@@ -24,10 +24,13 @@ def home(request):
         popular.append(video)
         best.append(video)
     video_results = video_results[-29:]
-    new = sort_videos(video_results, 10, 5, 1)
-    popular = sort_videos(video_results, 1, 5, 10)
-    best = sort_videos(video_results, 1, 10, 2)
-    video_results = sort_videos(video_results, 4, 10, 5)
+    new = new[-29:]
+    popular = popular[-29:]
+    best = best[-29:]
+    video_results = sort_videos(video_results)
+    new = sort_videos(new, 10, 4, 1)
+    popular = sort_videos(popular, 1, 5, 10)
+    best = sort_videos(best, 1, 10, 2)
     hasRes = False
     if len(video_results) >= 1:
         hasRes = True
