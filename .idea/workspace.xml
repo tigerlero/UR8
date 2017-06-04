@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdba3134-eb2b-42f0-8c12-9d864dd77c7c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/400.html" afterPath="$PROJECT_DIR$/UR8/templates/400.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/403.html" afterPath="$PROJECT_DIR$/UR8/templates/403.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/404.html" afterPath="$PROJECT_DIR$/UR8/templates/404.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UR8/templates/500.html" afterPath="$PROJECT_DIR$/UR8/templates/500.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ur8_proj/urls.py" afterPath="$PROJECT_DIR$/ur8_proj/urls.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -76,8 +72,8 @@
       <file leaf-file-name="403.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UR8/templates/403.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="768">
-              <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="139" />
+            <state relative-caret-position="394">
+              <caret line="178" column="41" lean-forward="false" selection-start-line="178" selection-start-column="41" selection-end-line="178" selection-end-column="41" />
               <folding>
                 <element signature="n#style#0;n#DIV#0;n#div#0;n#div#2;n#!!top" expanded="true" />
               </folding>
@@ -85,10 +81,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="400.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="400.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UR8/templates/400.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="768">
+            <state relative-caret-position="742">
               <caret line="200" column="123" lean-forward="false" selection-start-line="200" selection-start-column="123" selection-end-line="200" selection-end-column="123" />
               <folding>
                 <element signature="n#style#0;n#DIV#0;n#div#0;n#div#2;n#!!top" expanded="true" />
@@ -100,8 +96,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UR8/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="85" column="22" lean-forward="false" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
+            <state relative-caret-position="306">
+              <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
               </folding>
@@ -119,13 +115,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ur8_proj/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="14" lean-forward="false" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+            <state relative-caret-position="459">
+              <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
               <folding>
-                <element signature="e#644#685#0" expanded="true" />
+                <element signature="e#642#683#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -165,7 +161,6 @@
         <option value="$PROJECT_DIR$/UR8/templates/js/mediaelement-and-player.min.js" />
         <option value="$PROJECT_DIR$/UR8/templates/navbar.html" />
         <option value="$PROJECT_DIR$/UR8/templates/base.html" />
-        <option value="$PROJECT_DIR$/ur8_proj/urls.py" />
         <option value="$PROJECT_DIR$/UR8/urls.py" />
         <option value="$PROJECT_DIR$/UR8/views.py" />
         <option value="$PROJECT_DIR$/UR8/templates/home.html" />
@@ -189,6 +184,7 @@
         <option value="$PROJECT_DIR$/UR8/templates/500.html" />
         <option value="$PROJECT_DIR$/UR8/templates/403.html" />
         <option value="$PROJECT_DIR$/UR8/templates/400.html" />
+        <option value="$PROJECT_DIR$/ur8_proj/urls.py" />
       </list>
     </option>
   </component>
@@ -1025,24 +1021,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UR8/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="85" column="22" lean-forward="false" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ur8_proj/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
@@ -1077,12 +1055,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UR8/templates/403.html">
+    <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="139" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UR8/templates/400.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="742">
+          <caret line="200" column="123" lean-forward="false" selection-start-line="200" selection-start-column="123" selection-end-line="200" selection-end-column="123" />
           <folding>
             <element signature="n#style#0;n#DIV#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UR8/templates/403.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="178" column="41" lean-forward="false" selection-start-line="178" selection-start-column="41" selection-end-line="178" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#DIV#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UR8/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1099,20 +1105,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ur8_proj/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="14" lean-forward="false" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+        <state relative-caret-position="459">
+          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
           <folding>
-            <element signature="e#644#685#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UR8/templates/400.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="200" column="123" lean-forward="false" selection-start-line="200" selection-start-column="123" selection-end-line="200" selection-end-column="123" />
-          <folding>
-            <element signature="n#style#0;n#DIV#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="e#642#683#0" expanded="true" />
           </folding>
         </state>
       </provider>
