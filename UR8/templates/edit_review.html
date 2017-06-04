@@ -252,7 +252,7 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
       var text = $('#edit-review-area').val();
       var pk = $(this).data('id');
       var pk2 = $(this).data('vid');
-      var url = "https://ur8.herokuapp.com/ur8/edit-review/"+pk2+"/"+pk+"/";
+      var url = "https://ur8.herokuapp.com/edit-review/"+pk2+"/"+pk+"/";
       var token = $('#edit-review-form > input[name=csrfmiddlewaretoken]').val();
 
       e.preventDefault();
@@ -270,7 +270,7 @@ border:none;outline: none;" onclick="HideSide()" type="image" src="{% static 'hi
           },
           success:function(data){
             if (data.ok == 'yes') {
-              var url = "https://ur8.herokuapp.com/ur8/";
+              var url = "https://ur8.herokuapp.com/";
               $(location).attr('href', url);
             }
           }
