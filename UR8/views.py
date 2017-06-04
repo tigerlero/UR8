@@ -296,7 +296,7 @@ def s_vid(request, id):
                                 rel_videos.append(v)
 
         rel_videos = rel_videos[-15:]
-        rel_videos = sort_videos(rel_videos)
+        rel_videos = sort_videos(rel_videos, 4, 10, 5)
         return render(request, 's_vid.html', {'video': video, 'tags': tags, 'rated': rated, 'lists': lists, "rel_videos":rel_videos})
     elif request.method == 'POST':
         return render(request, 'home.html', {})
