@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'UR8.apps.Ur8Config',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
