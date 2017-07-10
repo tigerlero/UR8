@@ -405,7 +405,7 @@
                     <img class="sm-avatar" src="{{ video.user.profile.image.url }}" width="40" height="40">
                    </a></span>
         {% endif %}
-          <a href="{% url 'channel' video.user.username %}">{{ video.user.username }}</b></a>
+          <a href="{% url 'channel' video.user.username %}">{{ video.user.username }}</a></b>
 
       {% if video.user.username in request.user.profile.subscribes and video.user.username != request.user.username %}
           <a style="background-color: darkcyan; border-color: seagreen; float: right" href="{% url 'del_subscribes' video.id %}" class="btn btn-danger" role="button">
@@ -489,7 +489,7 @@ function ShowMore() {
             <img src="{% static 'star.png'%}" id="5">
           </label><br>
           <p></p>
-      <textarea style="text-align:left;padding-left: 0%; width: 77%;" id="review-area" rows="6"></textarea><BR>
+      <textarea style="text-align:left;padding-left: 0%; width: 80%;" id="review-area" rows="6"></textarea><BR>
       <button type="submit" id="review-btn" style="border-radius:0px;margin-left:5px;margin-bottom:26px;" class="btn btn-success">Write Review !</button>
     </form>
     <hr>
