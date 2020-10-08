@@ -5,7 +5,7 @@ from django.db import models
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(upload_to="avatars", default="avatar/None/default_avatar.png")
     notifications = models.CharField(default="", max_length=4000000)
     count = models.IntegerField(default=0)
