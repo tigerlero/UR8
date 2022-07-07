@@ -1,4 +1,4 @@
-# UR8
+# UR8 Django Youtube Clone
 The hippest and hoppest.
 
 In this project our team will be creating a simple django YouTube clone.
