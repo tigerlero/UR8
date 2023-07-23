@@ -1,0 +1,700 @@
+{% extends "base.html" %}
+{% block title %}View Video Page{% endblock %}
+{% block css_files %}
+  {% load static %}
+    <link rel="shortcut icon" href="{% static 'UR8.png' %}">
+  <link rel="stylesheet" href="{% static 'css_files/styles.css' %}">
+  <style>.fill-width.dropdown {
+    position: static;
+}.dropdown-menu {
+  max-width: auto;min-height: auto;
+      background-color: #ccebff;position: absolute;
+
+}
+.dropdown-menu li a {
+
+}
+.fill-width.dropdown > .dropdown-menu {
+    left: auto;
+}
+.fill-width.dropdown > .dropdown-menu > li > a {
+   white-space: normal;
+    padding-left: 6%;
+}
+    .notimage {
+   position: relative;
+}
+    .flexbox { display: flex; }
+    .flexbox .stretch { flex: 1; }
+    .flexbox .normal { flex: 0; margin: 0 0 0 1rem; }
+    .flexbox div input { padding: .5em 1em; width: 100%; }
+    .flexbox div button { padding: .5em 1em; white-space: nowrap; }
+    .slow .toggle-group { transition: left 0.7s; -webkit-transition: left 0.7s; }
+.note {
+    position: absolute;
+    top: 24px;
+    text-align: center;
+    color: black;
+    width: 28px;
+}
+    .description{
+      background-color: aliceblue;
+      border: none;
+      resize: none;
+    }
+    .btn-link{
+      background-color: aliceblue;
+      color: #007399;
+      border-radius: 3px;
+      border-color: #007399;
+      border-style: solid;
+      border-width: 2px;
+      text-decoration: none;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .btn-link:hover, .btn-link:active, .btn-link:visited {
+        background-color: #007399 !important;
+        border-color: #007399 !important;
+        color: aliceblue !important;
+        text-decoration: none;
+    }
+    .bg-primary{
+      background: gray;
+      padding-bottom: 2px;
+      color: white;
+      font-weight: 200;
+    }
+    label > input{ /* HIDE RADIO */
+        visibility: hidden; /* Makes input not-clickable */
+        position: absolute; /* Remove input from document flow */
+    }
+      label > input + img{ /* IMAGE STYLES */
+        cursor:pointer;
+        border:2px solid transparent;
+    }
+      label > input:checked + img { /*(RADIO CHECKED) IMAGE STYLES */
+        opacity: .6;
+    }
+    .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+        background-color: #595959 !important;
+        border-color: #595959 !important;
+    }
+    .btn-success{
+      background-color: #3399ff !important;
+      border-color: #3399ff !important;
+    }
+    .btn-success:hover, .btn-success:active, .btn-success:visited {
+        background-color: #0073e6 !important;
+        border-color: #0073e6 !important;
+        color: #d9d9d9 !important;
+    }
+    .btn-default{
+      border-radius: 0px;
+      border: 0px;
+    }
+    #ED{
+      background-color: #ffaa00 !important;
+      border-color: #ffaa00 !important;
+      color: white;
+    }
+    #ED:hover, #ED:active, #ED:visited{
+      background-color: #e69900 !important;
+      border-color: #e69900 !important;
+      color: #d9d9d9 !important;
+    }
+    #DEL{
+      background-color: #ffcc00 !important;
+      border-color: #ffcc00 !important;
+      color: white;
+    }
+    #DEL:hover, #DEL:active, #DEL:visited{
+      background-color: #e6b800 !important;
+      border-color: #e6b800 !important;
+      color: #d9d9d9 !important;
+    }
+    #OK{
+      background-color: #00b300 !important;
+      border-color: #00b300 !important;
+      color: white;
+    }
+    #OK:hover, #OK:active, #OK:visited{
+      background-color: #009900 !important;
+      border-color: #009900 !important;
+      color: #d9d9d9 !important;
+    }
+    #RM{
+      background-color: #e63900 !important;
+      border-color: #e63900 !important;
+      color: white;
+    }
+    #RM:hover, #RM:active, #RM:visited{
+      background-color: #cc3300 !important;
+      border-color: #cc3300 !important;
+      color: #d9d9d9 !important;
+    }
+    .material-icons{
+      color: #ffcc00;
+      font-size: 24px;
+    }
+    .material-icons:hover,
+    .material-icons:active{
+      color: #ffe680;
+    }
+    .fa-thumbs-o-up{
+      color: #0066cc;
+      font-size: 24px;
+    }
+    .fa-thumbs-o-up:hover,
+    .fa-thumbs-o-up:active{
+      color: #1a8cff;
+    }
+    .fa-thumbs-o-down{
+      color: #cc3300;
+      font-size: 24px;
+    }
+    .fa-thumbs-o-down:hover,
+    .fa-thumbs-o-down:active{
+      color: #ff4000;
+    }
+    .alert-warning{
+      padding: 5px 5px 5px 5px;
+    }
+    hr{
+      border-color: #ccebff;
+    }
+  </style>
+{% endblock %}
+{% block body %}
+ <nav class="navbar navbar-fixed-top" style="border-radius:0px; border:0;background-color: lightblue;">
+    <div style="width: 98%">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        </button>
+          <span><a class="navbar-brand" href="{% url 'home' %}">
+              <img src="{% static 'UR8.png' %}" width="45" height="28"></a></span>
+          <span class="nav navbar-brand navbar-left collapse navbar-collapse">
+              <input style="border-width:0px;border:none;outline: none;" onclick="HideSide()" type="image"
+                     src="{% static 'hide.png' %}" width="27" height="26"></span>
+          <span  style="margin-left: 1%;padding-top: 11px;width: 63%;position: absolute">
+<form style="width: 100%" action="{% url 'search_vid' %}" method="post">
+            {% csrf_token %}
+            <section class="flexbox">
+            <div class="stretch">
+              <input  type="text" class="form-control" style="border-radius:0px;" placeholder="Search..." name="search">
+                </div>
+                <button type="submit" style="border-radius:0px;
+                                         background-color:#888888;
+                                         border-color:#808080;
+                                         " class="btn btn-primary search-btn"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            </section>
+          </form>
+</span>
+      </div>
+      <div  class=" collapse navbar-collapse" id="myNavbar">
+          <ul style="float: right;" class="nav navbar-nav navbar-right">
+            {% if request.user.is_authenticated %}
+              <li style="margin-right: 1px;"><a href="{% url 'upload_video' %}" >
+                  <img  src="{% static "up.png" %}" width="27" height="28"></a></li>
+             {% if requset.user.profile.count < 10 %}
+                 <li><a href="{% url 'notifications' %}" >
+                 <img class="notimage" src="{% static "not.png" %}" style="margin-top: 1px;" width="26" height="26">
+                  <div class="note">{{ request.user.profile.count }}</div>
+             {% else %}
+                 <li><a href="{% url 'notifications' %}" >
+                 <img class="notimage" src="{% static "nonot.gif" %}" style="margin-top: 1px;" width="26" height="26">
+             {% endif %}
+          </a></li>
+              <li style="position: initial;" class="dropdown fill-width" >
+              {% if request.user.profile.image == 'avatar/None/default_avatar.png' %}
+                <span style="margin-right: 5%;padding: 13px;" class=" dropdown-toggle" data-toggle="dropdown">
+                   <a href=""> <img style="margin-top: 14px;margin-right: 20px;" class="sm-avatar" src="{% static request.user.profile.image %}" width="29" height="29"></a></span>
+              <ul style="margin-right: 20px;" role="menu" class="dropdown-menu dropdown-menu-right">
+            <li><a href="{% url 'profile' %}"><b style="font-size: 140%;">Profile</b></a></li>
+            <li><a href="{% url 'reset_pwd' %}"><b style="font-size: 140%;">Reset Password</b></a></li>
+                  <li><a href="{% url 'edit_avatar' %}"><b style="font-size: 140%;">Edit Avatar</b></a></li>
+                  <li><a href="{% url 'view_vid' %}"><b style="font-size: 140%;">My Videos</b></a></li>
+              <li><a href="{% url 'sign_out' %}"><b style="font-size: 140%;">Sign out</b></a></li>
+          </ul>
+              {% else %}
+                <span style="margin-right: 5%;padding: 13px;" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="">
+                        <img style="margin-top: 14px;margin-right: 20px;" class="sm-avatar" src="{{ request.user.profile.image.url }}" width="29" height="29">
+                    </a></span>
+              <ul style="margin-right: 20px;" role="menu" class="dropdown-menu dropdown-menu-right">
+            <li  ><a href="{% url 'profile' %}"><b style="font-size: 140%;">Profile</b></a></li>
+            <li><a href="{% url 'reset_pwd' %}"><b style="font-size: 140%;">Reset Password</b></a></li>
+                  <li><a href="{% url 'edit_avatar' %}"><b style="font-size: 140%;">Edit Avatar</b></a></li>
+                  <li><a href="{% url 'view_vid' %}"><b style="font-size: 140%;">My Videos</b></a></li>
+              <li><a href="{% url 'sign_out' %}"><b style="font-size: 140%;">Sign out</b></a></li>
+          </ul>
+          {% endif %} {% endif %}
+           </li>{% if not request.user.is_authenticated %}
+            <li ><a href="{% url 'sign_in' %}"><img src="{% static 'login.png' %}" width="27" height="27"></a></li>
+            <li><a href="{% url 'sign_up' %}"><img  src="{% static 'Sign.png' %}" width="27" height="27"></a></li>{% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+   <div style="width: 3%;margin-top: 0%">
+              <script>
+                  $('a[data-toggle="collapse"]').on('shown.bs.collapse', function (r) {
+                        var x = document.getElementById('hideleft');
+    var y = document.getElementById('homediv');
+    x.style.width = '0%';
+        y.style.width = '100%';
+        x.style.display = 'none';
+});
+    function HideSide() {
+    var x = document.getElementById('hideleft');
+    var y = document.getElementById('homediv');
+    if (x.style.width === '0%') {
+        x.style.width = '13%';
+        y.style.width = '83%';
+        x.style.display = 'block';
+        y.style.paddingLeft = "1%";
+        y.style.paddingRight = "1%";
+    } else {
+        x.style.width = '0%';
+        y.style.width = '98%';
+        y.style.paddingLeft = "1%";
+        y.style.paddingRight = "1%";
+        x.style.display = 'none';
+    }
+}
+</script>
+</div>
+<div id="hideleft" style="background-color: #e8f7fd; width: 0%;display: none; float: left;position: fixed;height: 100%;margin-right: 9%;padding-left: 1%;">
+    {% if request.user.is_authenticated %}<br><Br>
+        <div style="text-align: left; padding-left: 1%;">
+            <div style="margin-left: 0px !important;margin-right: 0px !important;">
+                <b style="font-size: 170%;">
+                <a href="{% url 'subscribes' %}"><img style=" margin-right: 1%;" src="{% static "sub.png" %}" width="13" height="13">
+                Subs</a></b>
+        </div><br>
+         {% for channel in users %}
+             {% if channel.username in request.user.profile.subscribes %}
+             {% if not channel.is_superuser and channel != '' %}
+                 {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
+                    <a href="{% url 'channel' channel.username %}"><img src="{% static channel.profile.image %}" width="25" height="25" ></a>
+                 {% else %}
+                    <a href="{% url 'channel' channel.username %}"><img src="{{ channel.profile.image.url }}" width="25" height="25" ></a>
+                 {% endif %}
+             {% endif %}<i style="font-size: 180%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
+         {% endif %}
+         {% endfor %}
+    {% endif %}
+    <hr color="white">
+     <div  style="margin-left: 0px !important;margin-right: 0px !important;">
+        <b style="font-size: 170%;">
+        <a href="{% url 'channels' %}"><img src="{% static "tv.png" %}" style=" margin-right: 1%;" width="13" height="13">
+         Channels</a></b>
+    </div><br>
+            {% if request.user.is_authenicated %}
+                {% for channel in users %}
+                    {% if channel != request.user %}
+                        {% if not channel.is_superuser   %}
+                            {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
+                                <img src="{% static channel.profile.image %}" width="25" height="25" >
+                            {% else %}
+                                <img src="{{ channel.profile.image.url }}" width="25" height="25" >
+                        {% endif %}
+                    {% endif %}
+                        <i style="font-size: 180%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                {% for channel in users %}
+            {% if not channel.is_superuser   %}
+                    <a href="{% url 'channel' channel.username %}">
+                {% if channel.profile.image == 'avatar/None/default_avatar.png'%}
+                    <img src="{% static channel.profile.image %}" width="25" height="25" >
+                {% else %}
+                    <img src="{{ channel.profile.image.url }}" width="25" height="25" >
+                </a>{% endif %}
+            {% endif %}<i style="font-size: 180%"><a style="font-size: 70%;" href="{% url 'channel' channel.username %}">  {{ channel.username }}</a></i><br>
+            {% endfor %}
+            {% endif %}
+      </div>
+    </div>
+
+        <div id="homediv" style="font-size:120%; width: 98%; padding-right:1%; padding-left:1%; padding-top: 1%; float: right;">
+  <div style="float: left; width: 80%;padding-left: 2%;">
+    <div class="embed-responsive embed-responsive-16by9">
+    <video style="background-color: #123456 !important; object-fit:contain; " controls width="99.2%" height="55.8%" id="{{ video.id }}"  autoplay>
+      <source src="{{ video.video.url }}" type="video/mp4">
+    </video>
+    </div>
+
+  <b style="font-size: 150%;float: left;">{{ video.title }}</b><span style="float: right; margin-top: 1%;">
+        {% if video.avg_rating == 0.0 %}
+                <img width="24px" height="24px" src="{% static 'bat.png'%}" >
+          {% elif video.avg_rating >= 0 and video.avg_rating < 1 %}
+              {% if video.avg_rating > 0.6 %}
+                <img src="{% static '75.png'%}" >
+              {% elif video.avg_rating > 0.3 %}
+                <img src="{% static '50.png'%}" >
+              {% elif video.avg_rating > 0.0 %}
+                <img src="{% static '25.png'%}" >
+                {% endif %}
+      {% elif video.avg_rating >= 1 and video.avg_rating < 2  %}
+        <img style="" src="{% static 'star.png'%}"  alt="star">
+          {% if video.avg_rating > 1.6 %}
+                <img style="" src="{% static '75.png'%}" >
+          {% elif video.avg_rating > 1.3 %}
+                <img style="" src="{% static '50.png'%}" >
+          {% elif video.avg_rating > 1.0 %}
+                <img style="" src="{% static '25.png'%}" >
+          {% endif %}
+      {% elif video.avg_rating >= 2 and video.avg_rating < 3 %}
+        <img src="{% static 'star.png'%}"  alt="star">
+        <img style="" src="{% static 'star.png'%}"  alt="star2">
+          {% if video.avg_rating > 2.6 %}
+                <img style="" src="{% static '75.png'%}"  alt="star2">
+          {% elif video.avg_rating > 2.3 %}
+                <img style="" src="{% static '50.png'%}"  alt="star2">
+          {% elif video.avg_rating > 2.0 %}
+                <img style="" src="{% static '25.png'%}"  alt="star2">
+          {% endif %}
+      {% elif video.avg_rating >= 3 and video.avg_rating < 4  %}
+        <img src="{% static 'star.png'%}"  alt="star3">
+        <img src="{% static 'star.png'%}"  alt="star3">
+        <img style="" src="{% static 'star.png'%}"  alt="star3">
+          {% if video.avg_rating > 3.6 %}
+                <img style="" src="{% static '75.png'%}"  alt="star3">
+          {% elif video.avg_rating > 3.3 %}
+                <img style="" src="{% static '50.png'%}"  alt="star3">
+          {% elif video.avg_rating > 3.0 %}
+                <img style="" src="{% static '25.png'%}"  alt="star3">
+          {% endif %}
+      {% elif video.avg_rating >= 4 and video.avg_rating < 5  %}
+              <img src="{% static 'star.png'%}" >
+        <img src="{% static 'star.png'%}" >
+        <img style="" src="{% static 'star.png'%}" >
+              <img style="" src="{% static 'star.png'%}" >
+          {% if video.avg_rating > 4.6 %}
+                <img style="" src="{% static '75.png'%}" >
+          {% elif video.avg_rating > 4.3 %}
+                <img style="" src="{% static '50.png'%}" >
+          {% elif video.avg_rating > 4.0 %}
+                <img style="" src="{% static '25.png'%}" >
+          {% endif %}
+          {% elif video.avg_rating == 5.0 %}
+        <img src="{% static 'star.png'%}" >
+              <img style="" src="{% static 'star.png'%}" >
+              <img style="" src="{% static 'star.png'%}" >
+              <img style="" src="{% static 'star.png'%}" >
+              <img style="" src="{% static 'star.png'%}" >
+      {% endif %}
+      </span><BR><Br>
+      <Br>
+<div style="padding-right: 12px;float: left;">
+    <b>Views: </b>
+          {{video.views}}
+      </div>
+  <hr>
+  <p>
+    <b style="float: left">
+        {% if video.user.profile.image == 'avatar/None/default_avatar.png' %}
+                <span><a href="{% url 'profile' %}">
+                    <img class="sm-avatar" src="{% static video.user.profile.image %}" width="40" height="40">
+                    </a></span>
+        {% else %}
+                <span><a href="{% url 'profile' %}">
+                    <img class="sm-avatar" src="{{ video.user.profile.image.url }}" width="40" height="40">
+                   </a></span>
+        {% endif %}
+          <a href="{% url 'channel' video.user.username %}">{{ video.user.username }}</a></b>
+
+      {% if video.user.username in request.user.profile.subscribes and video.user.username != request.user.username %}
+          <a style="background-color: darkcyan; border-color: seagreen; float: right" href="{% url 'del_subscribes' video.id %}" class="btn btn-danger" role="button">
+                  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Subscribed </a>
+      {% elif video.user.username not in request.user.profile.subscribes and video.user.username != request.user.username %}
+      <a style="background-color: darkcyan; border-color: seagreen; float: right" href="{% url 'sub' video.id %}" class="btn btn-danger" role="button">
+                  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Subscribe </a>
+      {% endif %}<br><br>
+      <div id="dec"
+         style="margin-top: 2%;
+         float: left;
+      white-space: pre-wrap;
+    width: 100%;
+    height: 1.4em;
+    overflow: hidden;
+    text-overflow: clip;"><div style="text-align: left">{{ video.description }}</div></div>
+        <script>
+function ShowMore() {
+    if (document.getElementById("dec").style.height == "1.4em") {document.getElementById("dec").style.height = "100%";}
+    else {document.getElementById("dec").style.height = "1.4em";}
+    var change = document.getElementById("decb");
+    if (change.innerHTML == "Show more")
+    {change.innerHTML = "Hide";}
+    else
+    {        change.innerHTML = "Show more";}}
+</script><BR>
+        <button style=" background-color: Transparent;
+            background-repeat:no-repeat;
+            border: none;
+            cursor:pointer;
+            overflow: hidden;
+            text-align: left;
+            font-size: 134%;
+            outline:none;
+            width: 100%;
+            float: left;"
+                id="decb" type="button" onclick="ShowMore()">Show more</button>
+<Br>
+  </p>
+
+    <p style="float: left;margin-top: 1%;">
+<b><span class="glyphicon glyphicon-tags"></span> Tags: </b> <br><p></p>
+
+    <div style="float: left;margin-top: 2%;" id="tag-list" class="btn-group">
+        {% for tag in tags %}
+          {% if forloop.last %}
+            <button type="button" style="margin-bottom: 2%;" class="btn-link"><b>{{ tag }}</b></button>
+          {% else %}
+            <button type="button" style="margin-bottom: 2%;" class="btn-link"><b>{{ tag }}</b></button> ,
+          {% endif %}
+        {% endfor %}
+    </div></p>
+
+    <br><BR><Br><Br><BR><BR>
+  <div style="float: left;width: 100%!important;">
+  {% if request.user.is_authenticated %}
+    {% if not rated  %}
+    <h3>Write a review for this video:</h3>
+    <hr>
+    <span id="error" class="alert alert-danger" style="border-radius:0;border:0;display:none;">Your review must be less than 1000 characters.</span>
+    <form class="" id="review-form">
+      {% csrf_token %}
+            <label>
+            <input type="radio" name="star" value=1>
+              <img src="{% static 'star.png'%}" id="1">
+            </label>
+            <label>
+            <input type="radio" name="star" value=2 >
+            <img src="{% static 'star.png'%}" id="2">
+            </label>
+            <label>
+            <input type="radio" name="star" value=3 >
+            <img src="{% static 'star.png'%}" id="3">
+            </label>
+            <label>
+            <input type="radio" name="star" value=4>
+            <img src="{% static 'star.png'%}" id="4">
+            </label>
+            <label>
+            <input type="radio" name="star" value=5>
+            <img src="{% static 'star.png'%}" id="5">
+          </label><br>
+          <p></p>
+      <textarea style="text-align:left;padding-left: 0%; width: 80%;" id="review-area" rows="6"></textarea><BR>
+      <button type="submit" id="review-btn" style="border-radius:0px;margin-left:5px;margin-bottom:26px;" class="btn btn-success">Write Review !</button>
+    </form>
+    <hr>
+    {% else %}
+      <span class="bg-info text-info" style="padding-right: 105px; padding-left: 105px;"><b>You've already rated!</b></span>
+      <hr>
+    {% endif %}
+    <h3>
+      Video Reviews:
+    </h3>
+    <hr>
+    <span id="reviews">
+      {% if lists %}
+        {% for review, approve, disapprove in lists %}
+            {% include 'review.html' with src=review.user.profile.image text=review.text uname=review.user.username rating=review.rating like=approve dislike=disapprove ID=review.id %}
+        {% endfor %}
+      {% else %}
+        <p><b>There are no reviews yet.</b></p>
+      {% endif %}
+    </span>
+  {% else %}
+     <h3>
+      Video Reviews:
+    </h3><hr>
+    <span id="reviews">
+      {% if lists %}
+        {% for review, approve, disapprove in lists %}
+            {% include 'review.html' with src=review.user.profile.image text=review.text uname=review.user.username rating=review.rating like=approve dislike=disapprove ID=review.id %}
+        {% endfor %}
+      {% else %}
+        <p><b>There are no reviews yet.</b></p>
+      {% endif %}
+    </span>
+    <div class="bg-info text-info" style="margin-right: 15px;margin-left: 15px;border-radius:0px;border:0;"><b>
+        <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
+        Warning: </b> You must be logged in to write a review for this video and approve or not a review.
+    </div>
+  {% endif %}
+    </div>
+</div>
+<div style=" float: right;width:18%;">
+
+        <div class="checkbox"><b style="float: left;">Next video:</b> <i style="float:right;font-size: 85%;padding-bottom: 5px;">   Autoplay:
+  <label >
+      <input data-style="slow" style=" float: right;" id="toggle-one" type="checkbox" checked data-toggle="toggle"
+             data-on="<i class='fa fa-play'></i>" data-off="<i class='fa fa-pause'></i>">
+  </label></i>
+</div>
+        {% for v in rel_videos|slice:":1" %}
+            <script type='text/javascript'>var timer;
+    $('#toggle-one').bootstrapToggle({
+        size: 'mini',
+        offstyle: 'primary',
+        onstyle: 'info',
+    });
+    $('#toggle-one').bootstrapToggle('off');
+    function vidEnd() {
+        document.getElementById('{{ video.id }}').addEventListener('ended',start,false);return false;
+    }
+    function start() {
+        timer = window.setTimeout(myHandler, 5000);
+        return false;
+    }
+
+    function myHandler() {
+        window.location="{% url 's_vid' v.id %}";return false;
+    }
+$(function() {
+    $('#toggle-one').change(function() {
+      var tg = $(this).prop('checked');
+      if (tg == true){
+          vidEnd();}
+    else if (tg == false){clearTimeout(timer);clearTimeout();window.clearTimeout(timer);window.clearTimeout();
+      }
+    return false;})
+  return false;})
+</script>
+        <div class="row">
+        {% if not v.th %}
+             <a href="{% url 's_vid' v.id %}"><img src="{{ v.thumbnail }}" width="96%" height="54%"></a>
+        {% else %}
+       <a href="{% url 's_vid' v.id %}"><img src="{{ v.thumbnail.url }}" width="96%" height="54%"></a>
+        {% endif %}
+           <div style="position: inherit; float: inherit; "><a href="{% url 's_vid' v.id %}"> <b>{{ v.title }} </b></a><br>Views: {{ v.views }}
+        </div>
+</div>
+      {% endfor %}
+
+
+    <hr>
+      {% for v in rel_videos|slice:"1:" %}
+        <div style="padding-bottom:2%;" class="row">
+        {% if not v.th %}
+             <a href="{% url 's_vid' v.id %}"><img src="{{ v.thumbnail }}" width="96%" height="54%"></a>
+        {% else %}
+      <a href="{% url 's_vid' v.id %}"> <img src="{{ v.thumbnail.url }}" width="96%" height="54%"></a>
+        {% endif %}
+           <div style="padding-top:2%;position: inherit; float: inherit; "><a href="{% url 's_vid' v.id %}"> <b>{{ v.title }} </b></a><br>Views: {{ v.views }}
+          </div></div>
+      {% endfor %}
+
+</div></div>
+{% endblock %}
+{% block js_files %}
+    <script type='text/javascript'>
+ $(document).ready(function() {
+      $("#review-form").submit(function(e){
+        var text = $('#review-area').val();
+        var pk = $("video").attr('id');
+        var url = "http://127.0.0.1:8000/rated-video/"+pk+"/";
+        var token = $('#review-form > input[name=csrfmiddlewaretoken]').val();
+        e.preventDefault();
+        if($('input[name=star]').is(':checked') && (text != "") && (text.length > 0) ){
+          var rating = $('input[name=star]:checked').val();
+          $.ajax({
+            type:'POST',
+            url:url,
+            data:{
+              rated:'yes',
+              rating:rating,
+              text:text,
+              csrfmiddlewaretoken:token
+            },
+            success:function(data){
+              if (data.ok == 'yes') {
+                location.reload();
+              }
+            }
+          });
+        }else{
+          window.alert("You haven't rated or reviewed the video");
+        }
+      });
+      $( ".ok-btn" ).on("click",function(e) {
+        var id = $(this).attr('id');
+        var video_id = $("video").attr('id');
+        var review_id = $(this).parent('#approve-form').data('id');
+        var token = $(this).siblings("input[name=csrfmiddlewaretoken]").val();
+        var url = "http://127.0.0.1:8000/liked-review/"+video_id+"/"+review_id+"/";
+        $.ajax({
+          type:'POST',
+          url:url,
+          data:{
+            approve:'yes',
+            csrfmiddlewaretoken:token
+          },
+          success:function(data){
+            if (data.ok == 'yes') {
+              location.reload();
+            }
+          }
+        });
+      });
+      $( ".rm-btn" ).on("click",function(e) {
+        var id = $(this).attr('id');
+        var video_id = $("video").attr('id');
+        var review_id = $(this).parent('#approve-form').data('id');
+        var token = $(this).siblings("input[name=csrfmiddlewaretoken]").val();
+        var url = "http://127.0.0.1:8000/disliked-review/"+video_id+"/"+review_id+"/";
+        $.ajax({
+          type:'POST',
+          url:url,
+          data:{
+            disapprove:'yes',
+            csrfmiddlewaretoken:token
+          },
+          success:function(data){
+            if (data.ok == 'yes') {
+              location.reload();
+            }
+          }
+        });
+      });
+      $( ".del-btn" ).on("click",function(e) {
+        var id = $(this).attr('id');
+        var review_id = $(this).parent('#approve-form').data('id');
+        var video_id = $("video").attr('id');
+        var token = $(this).siblings("input[name=csrfmiddlewaretoken]").val();
+        var url = "http://127.0.0.1:8000/delete-review/"+review_id+"/"+video_id+"/";
+        window.alert( "Review deleted !" );
+        $.ajax({
+          type:'POST',
+          url:url,
+          data:{
+            del_review:'yes',
+            video_id:video_id,
+            csrfmiddlewaretoken:token
+          },
+          success:function(data){
+            if (data.ok == 'yes') {
+              location.reload();
+            }
+          }
+        });
+      });
+      $( ".ed-btn" ).on("click",function(e) {
+        var review_id = $(this).parent('#approve-form').data('id');
+        var video_id = $("video").attr('id');
+        var url = "http://127.0.0.1:8000/edit-review/"+video_id+"/"+review_id+"/";
+        $(location).attr('href', url);
+      });
+   });
+</script>
+{% endblock %}
+
+
+

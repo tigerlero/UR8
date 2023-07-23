@@ -22,7 +22,7 @@ It will include:
 - [x] Auto thumbnail generate
 - [x] Upload Custom thumbnail
 - [ ] Auto generate custom thumbnail by video specific frame of user's choice
-- [x] Resize thumbnail to 16:9 dimensions
+- [ ] Resize thumbnail to 16:9 dimensions
 - [x] Contain video to HTML5 player while resizing player with % 16:9 scale
 - [ ] Channel Sort
 - [x] Custom Error Pages 404 403 400 500
@@ -32,19 +32,29 @@ It will include:
 
 ## We use:
 
+jQuery 3.7.0
+Bootstrap 3.3.7
+font-awesome/4.7.0
 
+Django==4.2.3
 
-1. Python 3
+1asgiref==3.7.2
+certifi==2023.7.22
+charset-normalizer==3.2.0
+colorama==0.4.6
+decorator==4.4.2
+idna==3.4
+imageio==2.31.1
+imageio-ffmpeg==0.4.8
+moviepy==1.0.3
+numpy==1.25.1
+Pillow==10.0.0
+proglog==0.1.10
+requests==2.31.0
+sqlparse==0.4.4
+tqdm==4.65.0
+tzdata==2023.3
+urllib3==2.0.4
 
-	1.1 Moviepy
-	1.2 Pillow
-	1.3 JSON
-	1.4
-2. Django 1.11
-3. Bootstrap 3.3.7
-4. Postgres
- 9.6
-5. AJAX
-	5.1 Jquery 3.2.0
 
 

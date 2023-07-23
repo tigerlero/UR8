@@ -1,0 +1,51 @@
+{% load static %}
+<div class="media">
+  <div class="media-left">
+    <!-- style="width:60px;border-radius:50px;" -->
+    {% if src == 'avatar/None/default_avatar.png' %}
+      <img src="{% static 'avatar/None/default_avatar.png' %}" class="media-object" style="width:60px;height:60px;border-radius:50px;">
+    {% else %}
+      <img src="{{ src.url }}" class="media-object" style="width:60px; height:60px;border-radius:50px;">
+    {% endif %}
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading text-left">
+
+      <span style="padding-left: 5px; padding-right: 5px;"class="bg-primary">{{ uname }}</span>
+
+      <span class="bg-info text-info" style="margin-left: 10px;font-weight: normal; padding-left: 5px; padding-right: 7px; padding-bottom: 3px;">Rated:
+      {% if rating > 0 %}
+        <img style="height: 16px; width: 16px;" src="{% static 'star.png' %}" >
+      {% endif %}
+      {% if rating > 1 %}
+        <img style="height: 16px; width: 16px;" src="{% static 'star.png' %}" >
+      {% endif %}
+      {% if rating > 2 %}
+        <img style="height: 16px; width: 16px;" src="{% static 'star.png' %}">
+      {% endif %}
+      {% if rating > 3 %}
+        <img style="height: 16px; width: 16px;" src="{% static 'star.png'%}" >
+      {% endif %}
+      {% if rating > 4 %}
+        <img style="height: 16px; width: 16px;" src="{% static 'star.png'%}" >
+      {% endif %}
+    </span></h4>
+    <p>
+      {{ text }}
+      <form class="form-inline" id="approve-form" data-id="{{ ID }}">
+        {% csrf_token %}
+        <button id="OK" type="button" class="btn btn-default ok-btn"><span class="glyphicon glyphicon-ok">
+
+        </span> Approve ({{ like }})</button>
+      <button type="button" id="RM" class="btn btn-default rm-btn"><span class="glyphicon glyphicon-remove"></span> Disapprove ({{ dislike }})</button>
+        {% if request.user.username == uname %}
+          <button id="ED" type="button" class="btn btn-default ed-btn"><span class="glyphicon glyphicon-pencil">
+
+          </span> Edit</button>
+            <button id="DEL" type="button" class="btn btn-default del-btn"><span class="glyphicon glyphicon-minus"></span> Delete</button>
+        {% endif %}
+      </form>
+    </p>
+  </div>
+</div>
+<hr>
