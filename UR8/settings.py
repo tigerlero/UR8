@@ -26,14 +26,14 @@ SECRET_KEY = "django-insecure-0q=+9=4h2u(82_3mke0fh7mpgw5edcmkc5^)!w-6$=nv7zed)c
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', "127.0.0.1", 'ur8.onrender.com']
-CORS_ALLOWED_ORIGINS = [
-    'localhost', 
-    "127.0.0.1",
-    "https://ur8.onrender.com",
-    # Add other allowed origins here if needed
-]
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_CREDENTIALS = True
+# CORS_ALLOWED_ORIGINS = [
+#     'localhost', 
+#     "127.0.0.1",
+#     "https://ur8.onrender.com",
+#     # Add other allowed origins here if needed
+# ]
+# CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = [
     'localhost', 
     "127.0.0.1",
