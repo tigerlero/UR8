@@ -33,10 +33,20 @@ It will include:
 - [ ] Crop Video with time selection
 - [ ] STT for subtitles based on language
 - [ ] Upload Subtitles for video
-- [ ] Add meta data for video such as voice and text language
+- [ ] Add meta data for video such as voice and text language, minimum age
 - [ ] Donate to Channel for Support
 - [ ] Toggle Visibility of Video with date and button
 - [ ] Make css good
+- [ ] Create Playlists
+- [ ] Live Streaming
+- [ ] Analytics
+- [ ] Change audio on specific timetable
+- [ ] Video Chapters
+- [ ] Dark Mode
+- [ ] Restricted Mode And Parental Controls
+- [ ] Detection of User Internet Speed for providing Quality
+- [ ] Channel Trailer
+- [ ] Creators Awards with Icon based on Subs Views Watch Time
       
 
 
@@ -44,8 +54,8 @@ It will include:
 
 ## We use:
 
-jQuery 3.7.0
-Bootstrap 3.3.7
+jQuery 3.7.0 soon to be replaced with HTMX
+Bootstrap 3.3.7 soon to be updated
 font-awesome/4.7.0
 
 Django==4.2.3
