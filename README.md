@@ -29,18 +29,19 @@ It will include:
 - [ ] Create 10 second version of video for autoplaying when you mouse over the thumbnail
 - [ ] Create lower quality versions of the video
 - [ ] Create Shorts 9:16 aspect ratio portait mode
-- [ ] Replace JQuery with HTMX
-- [ ] Crop Video with time selection
+- [ ] Replace JQuery with HTMX in progress
+- [ ] Crop Video with time selection in progress
 - [ ] STT for subtitles based on language
+- [ ] TTS for puting audio on video on specific timetable in progress
+- [ ] Change audio on specific timetable in progress
 - [ ] Upload Subtitles for video
 - [ ] Add meta data for video such as voice and text language, minimum age
 - [ ] Donate to Channel for Support
 - [ ] Toggle Visibility of Video with date and button
-- [ ] Make css good
+- [ ] Make CSS good
 - [ ] Create Playlists
 - [ ] Live Streaming
 - [ ] Analytics
-- [ ] Change audio on specific timetable
 - [ ] Video Chapters
 - [ ] Dark Mode
 - [ ] Restricted Mode And Parental Controls
