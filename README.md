@@ -22,10 +22,22 @@ It will include:
 - [x] Auto thumbnail generate
 - [x] Upload Custom thumbnail
 - [ ] Auto generate custom thumbnail by video specific frame of user's choice
-- [ ] Resize thumbnail to 16:9 dimensions
+- [ ] Resize thumbnail to 16:9 dimensions for normal videos
 - [x] Contain video to HTML5 player while resizing player with % 16:9 scale
 - [ ] Channel Sort
 - [x] Custom Error Pages 404 403 400 500
+- [ ] Create 10 second version of video for autoplaying when you mouse over the thumbnail
+- [ ] Create lower quality versions of the video
+- [ ] Create Shorts 9:16 aspect ratio portait mode
+- [ ] Replace JQuery with HTMX
+- [ ] Crop Video with time selection
+- [ ] STT for subtitles based on language
+- [ ] Upload Subtitles for video
+- [ ] Add meta data for video such as voice and text language
+- [ ] Donate to Channel for Support
+- [ ] Toggle Visibility of Video with date and button
+- [ ] Make css good
+      
 
 
 ### Enjoy!!
