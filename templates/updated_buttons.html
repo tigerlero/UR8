@@ -1,0 +1,9 @@
+<div id="button-container-{{ review_id }}">
+    <button id="OK-{{ review_id }}" class="btn btn-default ok-btn" hx-get="/like_review/{{ review_id }}/" hx-trigger="click" hx-swap="outerHTML" hx-target="#button-container-{{ review_id }}" hx-include="#RM-{{ review_id }}">
+        <span class="glyphicon glyphicon-thumbs-up"></span> {{ like }}
+    </button>
+
+    <button id="RM-{{ review_id }}" class="btn btn-default rm-btn" hx-get="/dislike_review/{{ review_id }}/" hx-trigger="click" hx-swap="outerHTML" hx-target="#button-container-{{ review_id }}" hx-include="#OK-{{ review_id }}">
+    <span class="glyphicon glyphicon-thumbs-down"></span> {{ dislike }}
+</button>
+</div>

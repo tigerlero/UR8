@@ -10,6 +10,7 @@ class Profile(models.Model):
     notifications = models.CharField(default="Welcome", max_length=4000000)
     count = models.IntegerField(default=0)
     subscribes = models.CharField(default="", max_length=40000)
+    subscribers = models.CharField(default="", max_length=40000)
     # images will be uploaded to: 'uploads/media/avatars'
 
     def __str__(self):
@@ -23,6 +24,8 @@ class Video(models.Model):
     title = models.CharField(max_length=46)
     tags = models.CharField(default="", max_length=200)
     description = models.TextField(max_length=3000)
+    voice_language = models.TextField(max_length=2, default="el")
+    subtitles_language = models.TextField(max_length=2, default="el")
     avg_rating = models.DecimalField(max_digits=2, decimal_places=1, default=0.0)
     rating_counter = models.IntegerField(default=0)
     thumbnail = models.FileField(upload_to="thumbnails", default="thumbnail/None/default_thumb.png")

@@ -1,4 +1,5 @@
 {% load static %}
+<div id="form-container-{{ review_id }}">
 <div class="media">
   <div class="media-left">
     <!-- style="width:60px;border-radius:50px;" -->
@@ -8,6 +9,7 @@
       <img src="{{ src.url }}" class="media-object" style="width:60px; height:60px;border-radius:50px;">
     {% endif %}
   </div>
+
   <div class="media-body">
     <h4 class="media-heading text-left">
 
@@ -32,20 +34,46 @@
     </span></h4>
     <p>
       {{ text }}
+        </p>
       <form class="form-inline" id="approve-form" data-id="{{ ID }}">
         {% csrf_token %}
-        <button id="OK" type="button" class="btn btn-default ok-btn"><span class="glyphicon glyphicon-ok">
+{#        <button id="OK" type="button" class="btn btn-default ok-btn"><span class="glyphicon glyphicon-ok">#}
+{##}
+{#        </span> Approve ({{ like }})</button>#}
 
-        </span> Approve ({{ like }})</button>
-      <button type="button" id="RM" class="btn btn-default rm-btn"><span class="glyphicon glyphicon-remove"></span> Disapprove ({{ dislike }})</button>
+{#      <div id="review-{{ review_id }}">#}
+<div id="button-container-{{ review_id }}">
+    <button id="OK-{{ review_id }}" class="btn btn-default ok-btn" hx-get="/like_review/{{ review_id }}/" hx-trigger="click" hx-swap="outerHTML" hx-target="#button-container-{{ review_id }}" hx-include="#RM-{{ review_id }}">
+        <span class="glyphicon glyphicon-thumbs-up"></span> {{ like }}
+    </button>
+
+    <button id="RM-{{ review_id }}" class="btn btn-default rm-btn" hx-get="/dislike_review/{{ review_id }}/" hx-trigger="click" hx-swap="outerHTML" hx-target="#button-container-{{ review_id }}" hx-include="#OK-{{ review_id }}">
+    <span class="glyphicon glyphicon-thumbs-down"></span> {{ dislike }}
+</button>
+</div>
+
+<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
         {% if request.user.username == uname %}
-          <button id="ED" type="button" class="btn btn-default ed-btn"><span class="glyphicon glyphicon-pencil">
 
-          </span> Edit</button>
-            <button id="DEL" type="button" class="btn btn-default del-btn"><span class="glyphicon glyphicon-minus"></span> Delete</button>
+            <button id="ED-{{ review_id }}" hx-trigger="click" hx-get="/edit_review/{{ video_id }}/{{ review_id }}/" hx-swap="outerHTML" class="btn btn-default ed-btn">
+                <span class="glyphicon glyphicon-pencil"></span>
+            </button>
+
+{#            <button id="DEL-{{ review_id }}" type="button" class="btn btn-default del-btn"><span class="glyphicon glyphicon-remove"></span></button>#}
+            <button id="DEL-{{ review_id }}" hx-trigger="click" hx-post="/delete_review/{{ review_id }}/{{ video_id }}/" hx-swap="outerHTML" hx-target="#form-container-{{ review_id }}" class="btn btn-default del-btn">
+                <span class="glyphicon glyphicon-remove"></span>
+            </button>
         {% endif %}
       </form>
-    </p>
+
   </div>
 </div>
 <hr>
+</div>

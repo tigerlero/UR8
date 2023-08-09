@@ -1,0 +1,39 @@
+ {% load static %}
+<div id="form-not-rated-{{ video_id }}">
+  {% if request.user.is_authenticated %}
+    {% if not rated  %}
+    <h3>Write a review for this video:</h3>
+    <hr>
+    <span id="error" class="alert alert-danger" style="border-radius:0;border:0;display:none;">Your review must be less than 1000 characters.</span>
+    <form class="" id="review-form">
+      {% csrf_token %}
+            <label>
+            <input type="radio" name="star" value=1>
+              <img src="{% static 'star.png'%}" id="1">
+            </label>
+            <label>
+            <input type="radio" name="star" value=2 >
+            <img src="{% static 'star.png'%}" id="2">
+            </label>
+            <label>
+            <input type="radio" name="star" value=3 >
+            <img src="{% static 'star.png'%}" id="3">
+            </label>
+            <label>
+            <input type="radio" name="star" value=4>
+            <img src="{% static 'star.png'%}" id="4">
+            </label>
+            <label>
+            <input type="radio" name="star" value=5>
+            <img src="{% static 'star.png'%}" id="5">
+          </label><br>
+          <p></p>
+      <textarea style="text-align:left;padding-left: 0%; width: 80%;" id="review-area" rows="6"></textarea><BR>
+      <button type="submit" id="review-btn" style="border-radius:0px;margin-left:5px;margin-bottom:26px;" class="btn btn-success">Write Review !</button>
+    </form>
+    <hr>
+      {% else %}
+      <hr>
+    {% endif %}
+{% endif %}
+      </div>

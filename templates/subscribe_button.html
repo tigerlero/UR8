@@ -1,0 +1,11 @@
+ <span id="subscribe-to-{{ user.username }}">
+        {% if user.username in request.user.profile.subscribes and user.username != request.user.username %}
+            <button hx-trigger="click" hx-get="{% url 'toggle_subscription' user.id %}" hx-swap="outerHTML" hx-target="#subscribe-to-{{ user.username }}" class="btn btn-danger"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> Subscribed</button>
+        {% elif user.username not in request.user.profile.subscribes and user.username != request.user.username %}
+            <button hx-trigger="click" hx-get="{% url 'toggle_subscription' user.id %}" hx-swap="outerHTML" hx-target="#subscribe-to-{{ user.username }}" class="btn btn-danger"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Subscribe</button>
+        {% endif %}
+ <br>
+    <span style="font-size: 12px; color: #888;">
+        {{ user.profile.subscribers.split|length }} subscribers
+    </span>
+</span>
