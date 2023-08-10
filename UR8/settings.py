@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-0q=+9=4h2u(82_3mke0fh7mpgw5edcmkc5^)!w-6$=nv7zed)c"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', "127.0.0.1", 'ur8.onrender.com']
 # CORS_ALLOWED_ORIGINS = [
@@ -34,10 +34,10 @@ ALLOWED_HOSTS = ['localhost', "127.0.0.1", 'ur8.onrender.com']
 # ]
 # CORS_ORIGIN_ALLOW_ALL = True
 # CORS_ALLOW_CREDENTIALS = True
-CSRF_TRUSTED_ORIGINS = ['http://localhost', "http://127.0.0.1", 'https://ur8.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['http://localhost', "http://127.0.0.1", 'https://ur8.onrender.com', 'https://ur8.onrender.com/*/', 'https://ur8.onrender.com/sign-up/', 'https://ur8.onrender.com/sign-in/']
 
-CSRF_COOKIE_DOMAIN = ['http://localhost', "http://127.0.0.1", 'https://ur8.onrender.com']
-CSRF_COOKIE_PATH = ['http://localhost', "http://127.0.0.1", 'https://ur8.onrender.com']
+CSRF_COOKIE_DOMAIN = ['http://localhost', "http://127.0.0.1", 'https://ur8.onrender.com', 'https://ur8.onrender.com/*/', 'https://ur8.onrender.com/sign-up/', 'https://ur8.onrender.com/sign-in/']
+CSRF_COOKIE_PATH = ['http://localhost', "http://127.0.0.1", 'https://ur8.onrender.com', 'https://ur8.onrender.com/*/', 'https://ur8.onrender.com/sign-up/', 'https://ur8.onrender.com/sign-in/']
 
 # Application definition
 
