@@ -57,29 +57,30 @@
   <br>
   <p></p>
   <br>
-  <form style="padding-left: 40%" class="form-horizontal" action="{% url 'sign_up' %}" method="post">
-    {% csrf_token %}
-    {% for field in form %}
+ <form style="padding-left: 40%" class="form-horizontal" hx-post="{% url 'sign_up' %}" hx-target="#form-container" hx-swap="outerHTML" method="post">
+  {% csrf_token %}
 
+  <div id="form-group">
+    {% for field in form %}
       <div class="form-group">
         {% if field.errors %}
-            <small><ul class="alert alert-warning" style="border-radius:0px; border:0">{{ field.errors }}</ul></small>
+          <small><ul class="alert alert-warning" style="border-radius: 0px; border: 0">{{ field.errors }}</ul></small>
         {% endif %}
-
         {{ field.label_tag }} {{ field }}
         <br>
         <p></p>
         {% if field.help_text %}
-          <small><ul  style="border-radius:0px; border:0">{{ field.help_text|safe }}</ul></small>
+          <small><ul style="border-radius: 0px; border: 0">{{ field.help_text|safe }}</ul></small>
         {% endif %}
       </div>
     {% endfor %}
 
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-8">
-        <button type="submit" class="btn btn-lg btn-success" style="border-radius:0px;border:0;">Sign Up !</button>
+        <button type="submit" class="btn btn-lg btn-success" style="border-radius: 0px; border: 0;">Sign Up!</button>
       </div>
     </div>
-  </form>
+  </div>
+</form>
         </div>
 {% endblock %}
