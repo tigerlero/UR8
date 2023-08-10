@@ -58,7 +58,7 @@
   <br>
   <p></p>
   <br>
-  <form style="padding-left: 33%;" class="form-horizontal" hx-post="{% url 'sign_in' %}" hx-target="#form-container" hx-swap="outerHTML" method="post">
+  <form style="padding-left: 33%;" class="form-horizontal" hx-post="{% url 'sign_in' %}" hx-target="#homediv" hx-swap="outerHTML" method="post">
     {% csrf_token %}
 
     {% if error %}
