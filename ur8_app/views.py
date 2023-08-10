@@ -14,7 +14,7 @@ import json
 import time
 from django.http import JsonResponse
 from gtts import gTTS
-
+from django.db import connection
 
 def text_to_speech(text, language='el', output_file='output.mp3'):
     tts = gTTS(text=text, lang=language)
@@ -56,11 +56,12 @@ def home(request):
     new = []
     popular = []
     best = []
-    for video in videos:
-        video_results.append(video)
-        new.append(video)
-        popular.append(video)
-        best.append(video)
+    if Video._meta.db_table in connection.introspection.table_names():
+        for video in videos:
+            video_results.append(video)
+            new.append(video)
+            popular.append(video)
+            best.append(video)
     video_results = video_results[-29:]
     new = new[-29:]
     popular = popular[-29:]
