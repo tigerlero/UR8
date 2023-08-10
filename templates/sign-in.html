@@ -58,8 +58,7 @@
   <br>
   <p></p>
   <br>
-  <form style="padding-left: 33%;" class="form-horizontal" hx-post="{% url 'sign_in' %}" hx-target="#homediv" hx-swap="outerHTML" method="post">
-    {% csrf_token %}
+  <form style="padding-left: 33%;" class="form-horizontal" hx-post="{% url 'sign_in' %}" hx-target="#homediv" hx-headers="{ 'X-CSRFToken': '{{ csrf_token }}' }" hx-swap="outerHTML" method="post">
 
     {% if error %}
       <div class="form-group">

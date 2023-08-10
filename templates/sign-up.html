@@ -57,9 +57,7 @@
   <br>
   <p></p>
   <br>
- <form style="padding-left: 40%" class="form-horizontal" hx-post="{% url 'sign_up' %}" hx-target="#homediv" hx-swap="outerHTML" method="post">
-  {% csrf_token %}
-
+ <form style="padding-left: 40%" class="form-horizontal" hx-post="{% url 'sign_up' %}" hx-headers="{ 'X-CSRFToken': '{{ csrf_token }}' }" hx-target="#homediv" hx-swap="outerHTML" method="post">
   <div id="form-group">
     {% for field in form %}
       <div class="form-group">
