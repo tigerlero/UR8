@@ -730,6 +730,7 @@ def profile(request):
 
 
 # Signs in the user
+# @ensure_csrf_cookie
 def signin_view(request):
     users = User.objects.all()
     if request.method == 'GET':
@@ -753,6 +754,7 @@ def signin_view(request):
 
 
 # Signs up the user
+# @ensure_csrf_cookie
 def signup_view(request):
     users = User.objects.all()
     if request.method == 'POST':
